@@ -1,0 +1,36 @@
+﻿@model FavorisViewModel
+<div>
+    <!-- Modal-->
+    
+    <!--Modal Dialog-->
+    <div class="modal fade" name="modalRetirer@(Model.Id)" id="modalRetirer@(Model.Id)" tabindex="-1" aria-labelledby="modalRetirer@(Model.Id)Label" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content ">
+                <div class="modal-header bg-dark">
+                    <h1 class="modal-title fs-5" id="modalRetirer@(Model.Id)Label">Retirer artiste ?</h1>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-black ">
+                    <div class="cardul">
+                        <img src="/Images/Artistes/descktop/@Model.ImageURL" class="card-img-top" alt="@Model.Nom">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">@Model.Nom</h4>
+                            <div class="card-img-overlay text-end">
+                                <h3>ID : @Model.Id</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-center m-3"> 
+                        @(ViewData["Title"]=="Favoris" ? "Souhaitez-vous retirer cet artiste de votre liste de favoris ?" : "Souhaitez-vous supprimer cet artiste de la base de données ?")
+                        
+                        </h3>
+                </div>
+                <div class="modal-footer bg-dark ">
+                    <button type="button" class="btn-reinitialiser" data-bs-dismiss="modal">Non</button>
+                    <button type="submit" class="btn-rechercher" style="position:relative">Oui</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+</div>

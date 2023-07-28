@@ -1,0 +1,58 @@
+﻿@model Artiste;
+
+@*Carte d'artiste avec bouton d'ajout aux favoris et bouton de suppression de la base de données*@
+@* Dans cette viewPartielle, une autre viewPartielle(_ModalPartielle) est utilisée pour la fenêtre modale. *@
+<!--Card-->
+            <div class="col position-relative">
+                <a href="/Artiste/Detail/@Model.Id">
+                    <div class="card">
+                        <img src="~/Images/Artistes/descktop/@Model.ImageURL" class="card-img-top" alt="@Model.Nom">
+                        <div class="card-body text-center">
+                            <h4 class="card-title"> @Model.Nom</h4>
+                            @if (Model.EstVedette)
+                            {
+                                <div class="card-img-overlay ">
+                                    <i class="fa-solid fa-star fa-lg vedette-star"></i>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </a>
+                <div class="form-check btn-ajouter-coeur-card-position">
+                    <form asp-controller="Favoris" asp-action="Favoris" method="post">
+                        <button type="submit" class="fa-solid fa-heart-circle-plus fa-2xl btn-heart-retirer">
+                        </button>
+                        <div>
+                            <input type="hidden" name="Id" value="@Model.Id"> <!--Input Hidden nomArtiste-->
+                        </div>
+                    </form>
+                </div>
+                <div class="form-check ">
+                    <form asp-controller="GestionArtiste" asp-action="DeletePost" method="post">
+                        <div>
+                            <input type="hidden" name="Id" value="@Model.Id"> <!--Input Hidden nomArtiste-->
+                        </div>
+
+                        <div>
+                           
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger btn-circle btn-sm fa-solid fa-trash fa-xl btn-supprimer-artiste" data-bs-toggle="modal" data-bs-target="#modalRetirer@(Model.Id)">
+                            </button>
+                            <!-- Modal-->
+                                @{
+                                    var x = new FavorisViewModel()
+                                        {
+                                            Id = Model.Id,
+                                            ImageURL = Model.ImageURL,
+                                            Nom = Model.Nom,
+                                        };
+                                    }
+
+                            @await Html.PartialAsync("_ModalPartielle", x)
+
+                             <!--ModalFin-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+<!--Card_Fin-->

@@ -1,0 +1,69 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TP_FusionVox_Culaxiz_Alexei
+build_property.RootNamespace = TP_FusionVox_Culaxiz_Alexei
+build_property.ProjectDir = M:\Programmation Web transactionnelle\Clone Repo Git\TP_FusionVox\TP_FusionVox\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = M:\Programmation Web transactionnelle\Clone Repo Git\TP_FusionVox\TP_FusionVox
+build_property._RazorSourceGeneratorDebug = 
+
+[M:/Programmation Web transactionnelle/Clone Repo Git/TP_FusionVox/TP_FusionVox/Views/Artiste/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0ZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[M:/Programmation Web transactionnelle/Clone Repo Git/TP_FusionVox/TP_FusionVox/Views/Artiste/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0ZVxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[M:/Programmation Web transactionnelle/Clone Repo Git/TP_FusionVox/TP_FusionVox/Views/Artiste/Recherche.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0ZVxSZWNoZXJjaGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[M:/Programmation Web transactionnelle/Clone Repo Git/TP_FusionVox/TP_FusionVox/Views/Favoris/Favoris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3Jpc1xGYXZvcmlzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[M:/Programmation Web transactionnelle/Clone Repo Git/TP_FusionVox/TP_FusionVox/Views/GestionArtiste/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VzdGlvbkFydGlzdGVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[M:/Programmation Web transactionnelle/Clone Repo Git/TP_FusionVox/TP_FusionVox/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[M:/Programmation Web transactionnelle/Clone Repo Git/TP_FusionVox/TP_FusionVox/Views/Shared/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[M:/Programmation Web transactionnelle/Clone Repo Git/TP_FusionVox/TP_FusionVox/Views/Shared/_ArtisteCardPartielle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BcnRpc3RlQ2FyZFBhcnRpZWxsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[M:/Programmation Web transactionnelle/Clone Repo Git/TP_FusionVox/TP_FusionVox/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[M:/Programmation Web transactionnelle/Clone Repo Git/TP_FusionVox/TP_FusionVox/Views/Shared/_ModalPartielle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Nb2RhbFBhcnRpZWxsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[M:/Programmation Web transactionnelle/Clone Repo Git/TP_FusionVox/TP_FusionVox/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[M:/Programmation Web transactionnelle/Clone Repo Git/TP_FusionVox/TP_FusionVox/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[M:/Programmation Web transactionnelle/Clone Repo Git/TP_FusionVox/TP_FusionVox/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

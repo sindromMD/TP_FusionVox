@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\TP_FusionVox_Culaxiz_Alexei.props" />
+</Project>

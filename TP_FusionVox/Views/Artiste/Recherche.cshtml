@@ -1,0 +1,201 @@
+﻿@model PageRechercheViewModel;
+@{
+    ViewData["Title"] = "Recherche";
+}
+
+<main class="container"> <!--intro hero-->
+            <div class="row marge_bot_titre_artistes text-center align-items-center ">
+            <div class="col-sm-1 d-none d-sm-block">
+                    
+            </div>
+            <div class="col ">    
+                <h1 class="h0">RECHERCHER UN ARTISTE</h1> 
+                <br>
+                    <form asp-controller="Artiste" asp-action="Filtrage" method="post" class="text-start p1"> 
+                      <div class="row justify-content-center">
+                        <div class="col col-md-10 col-lg-8 col-xl-6  mb-3  ">
+                            <label for="InputNomArtiste" class="form-label">Nom de l'artiste</label>
+                            <input type="text" class="form-control" name="InputNomArtiste" id="InputNomArtiste" placeholder="Ex: Eminem" value="@Model.Criteres.InputNomArtiste">
+                          </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col col-md-5 col-lg-4 col-xl-3">
+                          <label for="NbMinAbonnes" class="form-label">Nombre d'abonnees</label>
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="NbMinAbonnesLabel">Min</span>
+                            <input type="number" class="form-control" name="NbMinAbonnes" id="NbMinAbonnes" placeholder="0" aria-label="Nombre Min Abonnes" aria-describedby="NbMinAbonnesLabel" min="0" value="@Model.Criteres.NbMinAbonnes">
+                          </div>
+                          
+                        </div>
+                        <div class="col col-md-5 col-lg-4 col-xl-3">
+                          <label for="NbMaxAbonnes" class="form-label">Nombre d'abonnees</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="NbMaxAbonnesLabel">Max</span>
+                                <input type="number" class="form-control" name="NbMaxAbonnes" id="NbMaxAbonnes" placeholder="1-1000..." aria-label="Nombre Max Abonnes" aria-describedby="NbMaxAbonnesLabel" min="0" value="@Model.Criteres.NbMaxAbonnes">
+                              </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col col-md-5 col-lg-4 col-xl-3">
+                            <label for="CheckBoxPop" class="form-label">Genres musicaux</label>
+                            <div class="form-check form-switch">
+                                @if(Model.Criteres.EstGenreMusicalPOP)
+                                {
+                                    <input class="form-check-input" type="checkbox" role="switch" id="EstGenreMusicalPOP" name="EstGenreMusicalPOP" value="true" checked>
+                                }
+                                else
+                                {
+                                    <input class="form-check-input" type="checkbox" role="switch" id="EstGenreMusicalPOP" name="EstGenreMusicalPOP" value="true">
+                                }
+
+                                <label class="form-check-label" for="EstGenreMusicalPOP">POP</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                @if(Model.Criteres.EstGenreMusicalHipHop)
+                                {
+                                    <input class="form-check-input" type="checkbox" role="switch" id="EstGenreMusicalHipHop" name="EstGenreMusicalHipHop" value="true" checked>
+                                }
+                                else
+                                {
+                                    <input class="form-check-input" type="checkbox" role="switch" id="EstGenreMusicalHipHop" name="EstGenreMusicalHipHop" value="true" >
+                                }
+                            <label class="form-check-label" for="EstGenreMusicalHipHop">Hip-Hop</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                @if(Model.Criteres.EstGenreMuscialElectro)
+                                {
+                                    <input class="form-check-input" type="checkbox" role="switch" id="EstGenreMuscialElectro" name="EstGenreMuscialElectro" value="true" checked>
+                                }
+                                else
+                                {
+                                    <input class="form-check-input" type="checkbox" role="switch" id="EstGenreMuscialElectro" name="EstGenreMuscialElectro" value="true">
+                                }
+                            <label class="form-check-label" for="EstGenreMuscialElectro">Électro</label>
+                            </div>
+                        </div>
+                        <div class="col col-md-5 col-lg-4 col-xl-3">
+                            <label for="ChoiPourPersonnageVedette" class="form-label">Artiste vedette</label>
+                            <select class="form-select" name="ChoiPourPersonnageVedette" id="ChoiPourPersonnageVedette" aria-label="Artiste vedette">
+                                @if(Model.Criteres.ChoiPourPersonnageVedette == "Peu importe")
+                                {
+                                    <option selected>Peu importe</option>
+                                }
+                                else
+                                {
+                                    <option>Peu importe</option>
+                                }
+                                @if(Model.Criteres.ChoiPourPersonnageVedette == "Oui")
+                                {
+                                    <option selected>Oui</option>
+                                }
+                                else
+                                {
+                                    <option>Oui</option>
+                                }
+                                 @if(Model.Criteres.ChoiPourPersonnageVedette == "Non")
+                                {
+                                    <option selected>Non</option>
+                                }
+                                else
+                                {
+                                    <option>Non</option>
+                                }
+                            </select>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center text-center m-2">
+                        <div class="col col-md-6">
+                            <button type="submit" class="btn-rechercher ">
+                              RECHERCHER 
+                              <i class="fa-solid fa-magnifying-glass fa-sm"></i> 
+                          </button>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center text-center m-2" >
+                        <div class="col col-md-6 my-2">
+                             <a class="btn-reinitialiser" href="/Artiste/Recherche">
+                                    Réinitialiser <i class="fa-solid fa-arrow-rotate-left me-2"></i></a>
+                           @* <button type="reset" class="btn-reinitialiser">
+                              Réinitialiser <i class="fa-solid fa-arrow-rotate-left"></i>
+                            </button>*@
+                        </div>
+                    </div>
+                    </form> 
+            </div>
+
+            <!--nav reseaux sociaux--> 
+            <div class="col-sm-1 d-none d-sm-block "> 
+                <nav class="text-center">
+                    <ul >
+                        <li ><a href="https://www.facebook.com/" ><i class="fa-brands fa-facebook fa-2xl btn-reseaux_sociaux"></i></a></li>
+                        <li><a href="https://www.youtube.com/"><i class="fa-brands fa-youtube fa-xl btn-reseaux_sociaux"></i></a></li>
+                        <li><a href="https://www.Instagram.com/"><i class="fa-brands fa-instagram fa-2xl btn-reseaux_sociaux"></i></a></li>
+                        <li><a href="https://music.apple.com/"><i class="fa-brands fa-deezer fa-xl btn-reseaux_sociaux"></i></a></li>
+                        <li><a href="https://www.Spotify.com/"><i class="fa-brands fa-spotify fa-2xl btn-reseaux_sociaux"></i></a></li>
+                    </ul>
+                </nav>
+            </div>  
+        </div> 
+
+        <div class="row justify-content-center text-center pb-lg-5 pt-lg-2">
+          <div class="col">
+            <P class="p1">CATALOGUE DES ARTISTES</p>
+              <a href="#sectionPOP"> <img src="~/Images/Icons/_img_Scroll_down.svg" alt="Scroll DOwn" class="d-none d-lg-inline-flex"></a>
+              <a href="#sectionPOP"> <img src="~/Images/Icons/_img_Scroll_down_android.svg" alt="Scroll DOwn" class="d-lg-none"></a>
+          </div>
+      </div> 
+      <!--Message au cas où l'artiste ne serait pas trouvé. -->
+
+       @if (!string.IsNullOrWhiteSpace(TempData["NotFound"] as string))
+        {
+            <div class="cardul bg-transparent my-5 text-center">
+            <div class="card-header text-white h1">Artiste introuvable</div>
+            <div class="card-body">
+                <h2 class="card-title text-warning h0"> Erreur </h2>
+                <p class="p1 py-2">@TempData["NotFound"]</p>
+                    <a href="/Artiste/Recherche" class="bouton-parents btn-action-icon">Réinitialiser la liste des artistes</a>
+            </div>
+             </div>
+        }
+
+        <!--Titre section list artiste favoris-->
+
+    @foreach (var Genre in Model.Resultat)
+    {
+        <div class="row   mb-3">
+            <div class="col col-sm-6 " style="width: 21rem;" id="section@(Genre.Key)">
+                <h1>
+                    @Genre.Key
+                </h1>
+                <div class="divider-@Genre.Key mb-3 "></div>
+            </div>
+            <div class="col-md-5 d-none d-md-block"></div>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4 marge-description-genre ">
+
+            @foreach (var artiste in Genre)
+            {
+                //carte d'artiste avec modal de suppression
+
+                 @await Html.PartialAsync("_ArtisteCardPartielle",artiste)
+
+            }
+        </div>
+    }
+
+</main>
+
+@section monStyle {
+     <style >
+        body{
+          background-image:url("../Images/Background/BG_Artiste_descktop_1400-900_fade.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 900px;
+         }
+
+     </style>
+}
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

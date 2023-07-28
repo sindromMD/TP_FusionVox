@@ -1,0 +1,233 @@
+﻿@model Artiste;
+@{
+    ViewData["Title"] = "Details";
+}
+
+<main class="container">
+
+     <!--intro hero-->
+    <div class="row marge_bot_titre_Details text-center align-items-center ">
+
+            <!--Tire hero-->
+        <div class="col">
+            <h1 class="h0 shadow-tittre ">
+                @Model.Nom @if (Model.EstVedette)
+                {
+                  <i class="fa-solid fa-star fa-lg"> </i>
+                }
+            </h1>
+        </div>
+    </div>
+    <div class="container-fluid">
+
+        <div class="row justify-content-center p1">
+            <div class="col col-lg-10 col-xl-8">
+                <div class="position-relative">
+                    <video class="w-100 dust_video" autoplay loop muted>
+                        <source src="/Video/dust.mp4" type="video/mp4">
+                    </video>
+
+                    <div class="form-check btn-ajouter-coeur-card-position">
+                        <form asp-controller="Favoris" asp-action="Favoris" method="post">
+                            <button type="submit" class="fa-solid fa-heart-circle-plus fa-2xl btn-heart-retirer">
+                            </button>
+                            <div>
+                                <input type="hidden" name="Id" value="@Model.Id"> <!--Input Hidden nomArtiste-->
+                            </div>
+                        </form>
+                    </div>
+                    <div class="nom_artiste_superpose">
+                        <h1 class="h3">@Model.Nom</h1>
+                        <div class="divider-2 mb-3 "></div><!--devider linear gradient cian-->
+                    </div>
+                    <div class="row text-center detail_artiste_superpose ms-0 d-none d-md-flex">
+                        <div class="col-md-4">
+                            <i class="fa-solid fa-location-dot fa-xl icons-rs"></i>
+                            <p class="p2">
+                                Pays <br>
+                                <span class="infoSpan">
+                                    @Model.Pays
+                                </span>
+                            </p>
+                            <div class="divider-2 mb-3 "></div><!--devider linear gradient cian-->
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fa-solid fa-microphone-lines fa-xl icons-rs"></i>
+                            <p class="p2">
+                                Genre <br>
+                                <span class="infoSpan">
+                                    @Model.GenreMusical.Nom
+                                </span>
+                            </p>
+                            <div class="divider-2 mb-3 "></div><!--devider linear gradient cian-->
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fa-solid fa-user-tie fa-xl icons-rs"></i>
+                            <p class="p2">
+                                Agent <br>
+                                <span class="infoSpan">
+                                   @Model.Agent
+                                </span>
+                            </p>
+                            <div class="divider-2 mb-3 "></div><!--devider linear gradient cian-->
+                         </div>
+                    </div>
+
+                        <!-- <div class="row">
+                      <div class="col-8 col-md-6 col-lg-4"> -->
+                    <div class="RS-Details row justify-content-center">
+                        <nav class="text-center my-2">
+                            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                            <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube fa-lg"></i></a>
+                            <a href="https://www.Instagram.com/"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                            <a href="https://music.apple.com/"><i class="fa-brands fa-deezer fa-lg"></i></a>
+                            <a href="https://www.Spotify.com/"><i class="fa-brands fa-spotify fa-lg"></i></a>
+                        </nav>
+                    </div>
+                    <!-- </div>
+
+                    </div> -->
+                </div>
+
+                <div class="biography">
+                    <p>
+                       @Model.Biographie
+                    </p>
+                        <!--Biographie colapse-->
+                    <p class="text-center">
+                        <button class="btn-reinitialiser mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#infoplus" aria-expanded="false" aria-controls="InfoPlus">
+                            Détails de l'artiste <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </p>
+                    <div class="collapse" id="infoplus">
+                        <div class="cardul card-body">
+                              <!--tableau details-->
+                            <div class="table-responsive-sm">
+                                <table class="table table-borderless">
+                                    <Caption>Détails du artiste</Caption>
+                                    <tbody>
+                                        <tr>
+                                            <th>Nom :</th>
+                                            <td>@Model.Nom</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Pays</th>
+                                            <td>@Model.Pays</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Agent</th>
+                                            <td>@Model.Agent</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Date de début</th>
+                                            <td>@Model.DebutCarrier.ToString("MMM yyyy")</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Nombre de chansons</th>
+                                            <td>@Model.NbChansons</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Genre de musique</th>
+                                            <td>@Model.GenreMusical.Nom</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Nombres d'abonnees'</th>
+                                            <td>@Model.NbAbonnees</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                        <!--Carousell-->
+
+                        @*<div id="carousel" class="carousel slide mb-1">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="Images/Background/Details/Daft_pank_carousel1.jpg" class="d-block w-100" alt="Daft Punk galery">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Sans visage</h5>
+                                        <p>Une des originalités de Daft Punk est la culture de leur notoriété d'artistes indépendants et sans visage, portant toujours en public des casques et des costumes. Ils s'inspirent sur ce point du film Phantom of the Paradise de Brian De Palma.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Images/Background/Details/Daft_pank_carousel2.jpg" class="d-block w-100" alt="Daft Punk galery 2">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Premier Album</h5>
+                                        <p>Le 7 janvier 1997, à la suite de la sortie du single Da Funk, Daft Punk sort son premier album Homework, caractérisé par la house et les rythmes techno inspirés de la scène de Chicago. </p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Images/Background/Details/Daft_pank_carousel3.jpg" class="d-block w-100" alt="Daft Punk galery 3">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Les dix ans de Random Access Memories (2023)</h5>
+                                        <p>SEn 2023, à nouveau le 22 février, une version anniversaire de leur dernier album, Random Access Memories, est annoncée pour le 12 mai, à l'occasion des dix ans de sa sortie.</p>
+                                    </div>
+                                </div>
+                            </div>*@
+                         @*   <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>*@
+
+                        <!--Youtube Video-->
+
+                      <div class="youtube-video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLTKxUk7Bbk_8z0ozTPCvzKm9aXEznlSfi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+
+
+                        <!--spotify-->
+                        <div class="mt-2">
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2bSXxL80SZdZz5hyhzHrNP?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</main>
+
+@section monStyle {
+    <style>
+     /*   body {
+            background-image: url("/Images/Background/Details_Artistes/@Model.ImageURL");
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 900px;
+            width:1440px;
+        }*/
+        .hero-image_Details {
+            background-image: url("/Images/Background/Details_Artistes/@Model.ImageURL");
+        }
+
+       
+    </style>
+    <style type="text/css" media="(min-width:361px) and (max-width:835px)">
+        .hero-image_Details {
+            background-image: url("/Images/Background/Details_Artistes/834x521/@Model.ImageURL");
+            height: 521px;
+        }
+    </style>
+    <style type="text/css" media="(max-width:360px)">
+        .hero-image_Details {
+            background-image: url("/Images/Background/Details_Artistes/360x413/@Model.ImageURL");
+            height: 413px;
+        }
+    </style>
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

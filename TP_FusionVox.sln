@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP_FusionVox_Culaxiz_Alexei", "TP_FusionVox\TP_FusionVox_Culaxiz_Alexei.csproj", "{BC068A87-133A-4BFC-B5E0-265FEB365818}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC068A87-133A-4BFC-B5E0-265FEB365818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC068A87-133A-4BFC-B5E0-265FEB365818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC068A87-133A-4BFC-B5E0-265FEB365818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC068A87-133A-4BFC-B5E0-265FEB365818}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F287639E-7E42-4332-98DB-3855ECCE4F4A}
+	EndGlobalSection
+EndGlobal
