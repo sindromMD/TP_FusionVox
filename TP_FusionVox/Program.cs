@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using TP2.Models;
 
 var builder = WebApplication.CreateBuilder(args); // Crée une web app avec les paramètres envoyés
