@@ -29,7 +29,7 @@ namespace TP2.Models
         public DateTime DebutCarrier { get; set; }
 
         [Display(Name = "Biographie de l'artiste")]
-        [StringLength(600, MinimumLength = 0, ErrorMessage = "La biographie doit comporter entre {2} et {1} caractères.")]
+        [StringLength(2500, MinimumLength = 0, ErrorMessage = "La biographie doit comporter entre {2} et {1} caractères.")]
         [DataType(DataType.MultilineText)]
         public string Biographie { get; set; }
 

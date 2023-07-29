@@ -6,12 +6,15 @@ namespace TP_FusionVox.Models.Data
 {
     public class TP_FusionVoxDbContext :DbContext
     {
-        public DbSet<Artiste> Artists { get; set; }
-        public DbSet<GenreMusical> genreMusicals { get; set; }
+        public DbSet<Artiste> Artistes { get; set; }
+        public DbSet<GenreMusical> genresMusicaux { get; set; }
 
-        public TP_FusionVoxDbContext(DbContextOptions<TP_FusionVoxDbContext> options) : base(options)
+        public TP_FusionVoxDbContext(DbContextOptions<TP_FusionVoxDbContext> options) : base(options) { }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
+            //Générer des données de départ
+            modelBuilder.GenerateData();
         }
     }
 }

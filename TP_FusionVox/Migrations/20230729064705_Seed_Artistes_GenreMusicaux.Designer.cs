@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TP_FusionVox.Models.Data;
 
@@ -11,9 +12,10 @@ using TP_FusionVox.Models.Data;
 namespace TP_FusionVox.Migrations
 {
     [DbContext(typeof(TP_FusionVoxDbContext))]
-    partial class TP_FusionVoxDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230729064705_Seed_Artistes_GenreMusicaux")]
+    partial class Seed_Artistes_GenreMusicaux
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

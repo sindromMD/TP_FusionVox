@@ -21,7 +21,7 @@ namespace TP2.Models
         public string ImageUrl { get; set; }
 
         [Display(Name = "Description du genre musical")]
-        [StringLength(250, MinimumLength = 0, ErrorMessage = "La description doit comporter entre {2} et {1} caractères.")]
+        [StringLength(500, MinimumLength = 0, ErrorMessage = "La description doit comporter entre {2} et {1} caractères.")]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
