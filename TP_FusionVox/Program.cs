@@ -10,7 +10,10 @@ builder.Services.AddMvc().AddRazorRuntimeCompilation();
 builder.Services.AddSingleton<BaseDeDonnees>(); // Permet l'utilisation du Singleton
 
 builder.Services.AddDbContext<TP_FusionVoxDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseLazyLoadingProxies();
+});
 
 builder.Services.AddDistributedMemoryCache(); // Permet l'utilisation de cookies
 builder.Services.AddSession(option => { option.IdleTimeout = TimeSpan.FromMinutes(20); }); // Configure l'expiration d'un cookies,
