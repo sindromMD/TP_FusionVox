@@ -67,7 +67,7 @@
                                     </tr>
                                     <tr>
                                         <th>@Html.DisplayNameFor(model => model.DebutCarrier)</th>
-                                        <td>@Model.DebutCarrier.ToString("MMM yyyy")</td>
+                                        <td>@(Model.DebutCarrier != null ? Model.DebutCarrier.Value.ToString("MMM yyyy") : "")</td>
                                     </tr>
                                     <tr>
                                         <th>@Html.DisplayNameFor(model => model.NbChansons)</th>

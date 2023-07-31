@@ -28,7 +28,7 @@ namespace TP2.Models
         [Required(ErrorMessage = "La date du début est obligatoire")]
         [Display(Name = "Date de début de la carrière")]
         [DataType(DataType.DateTime, ErrorMessage = "La date du début doit être valide")]
-        public DateTime DebutCarrier { get; set; }
+        public DateTime? DebutCarrier { get; set; }
 
         [Display(Name = "Biographie de l'artiste")]
         [StringLength(2500, MinimumLength = 0, ErrorMessage = "La biographie doit comporter entre {2} et {1} caractères.")]

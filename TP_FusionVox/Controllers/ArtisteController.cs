@@ -99,40 +99,31 @@ namespace TP2.Controllers
         [Route("artiste/upsert/edit/{id:int}")]
         public IActionResult Upsert(int? Id)
         {
-            NewArtisteVM artisteVM = new NewArtisteVM();
-            artisteVM.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
+            NewArtisteVM ArtisteVM = new NewArtisteVM();
+            ArtisteVM.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
+            
             {
                 Text = gm.Nom,
                 Value = gm.Id.ToString()
             }).OrderBy(gm => gm.Text);
+
             if (Id == null || Id == 0)
             {
-                //Create
-                return View(artisteVM);
+                //create
+                ArtisteVM.Artiste = new Artiste();
+                return View(ArtisteVM);
             }
             else
             {
                 //Edit
-                var artiste = _baseDonnees.Artistes.Find(Id);
-                if (artiste == null)
+                ArtisteVM.Artiste = _baseDonnees.Artistes.Find(Id);
+                if(ArtisteVM.Artiste == null)
                 {
                     return View("NotFound");
                 }
-                //Remplir artisteVM avec les valeurs de Artiste
-                artisteVM.ID = artiste.Id;
-                artisteVM.Nom = artiste.Nom;
-                artisteVM.ImageURL = artiste.ImageURL;
-                artisteVM.Pays = artiste.Pays;
-                artisteVM.Agent = artiste.Agent;
-                artisteVM.DebutCarrier = artiste.DebutCarrier;
-                artisteVM.NbChansons = artiste.NbChansons;
-                artisteVM.Biographie = artiste.Biographie;
-                artisteVM.EstVedette = artiste.EstVedette;
-                artisteVM.GenreMusicalId = artiste.IdGenreMusical;
+                return View(ArtisteVM);
 
-                return View(artisteVM);
             }
-
         }
 
         // POST: UPSERT 
@@ -142,63 +133,30 @@ namespace TP2.Controllers
         [Route("artiste/upsert/edit/{id:int}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert(NewArtisteVM newArtiste)
+        public IActionResult Upsert(NewArtisteVM artisteVM)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
+                if(artisteVM.Artiste.Id == 0)
                 {
-                    Artiste artiste;
-                    if (newArtiste.ID == 0)
-                    {
-                        //create
-                        artiste = new Artiste()
-                        {
-                            GenreMusical = _baseDonnees.genresMusicaux.Where(g => g.Id == newArtiste.GenreMusicalId).First(),
-                            ImageURL = newArtiste.ImageURL,
-                            Nom = newArtiste.Nom,
-                            Pays = newArtiste.Pays,
-                            Agent = newArtiste.Agent,
-                            DebutCarrier = (DateTime)newArtiste.DebutCarrier,
-                            NbChansons = (int)newArtiste.NbChansons,
-                            Biographie = newArtiste.Biographie,
-                            EstVedette = newArtiste.EstVedette,
-
-                        };
-                        //artiste.Id = _baseDonnees.Artistes.OrderByDescending(a=>a.Id).LastOrDefault().Id + 1;
-                        _baseDonnees.Artistes.Add(artiste);
-                        artiste.GenreMusical.Artistes.Add(artiste);
-                        TempData["Success"] = $"{artiste.Nom} a été ajouté";
-                    }
-                    else
-                    {
-                        //update
-                        artiste = _baseDonnees.Artistes.Find(newArtiste.ID);
-                        artiste.GenreMusical = _baseDonnees.genresMusicaux.Find(newArtiste.GenreMusicalId);
-                        artiste.ImageURL = newArtiste.ImageURL;
-                        artiste.Nom = newArtiste.Nom;
-                        artiste.Pays = newArtiste.Pays;
-                        artiste.Agent = newArtiste.Agent;
-                        artiste.DebutCarrier = (DateTime)newArtiste.DebutCarrier;
-                        artiste.NbChansons = newArtiste.NbChansons.Value;
-                        artiste.Biographie = newArtiste.Biographie;
-                        artiste.EstVedette = newArtiste.EstVedette;
-                        TempData["Success"] = $"Les informations sur l'artiste {artiste.Nom} ont été modifiées";
-                    }
-                    _baseDonnees.SaveChanges();
-                    return RedirectToAction("Recherche");
+                    //create
+                    _baseDonnees.Artistes.Add(artisteVM.Artiste);
                 }
-                newArtiste.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
+                else
                 {
-                    Text = gm.Nom,
-                    Value = gm.Id.ToString()
-                }).OrderBy(gm => gm.Text);
-                return View(newArtiste);
+                    //update
+                    _baseDonnees.Artistes.Update(artisteVM.Artiste);
+                }
+                _baseDonnees.SaveChanges();
+                return RedirectToAction("Recherche");
             }
-            catch
+            artisteVM.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
             {
-                return View();
-            }
+                Text = gm.Nom,
+                Value = gm.Id.ToString()
+            }).OrderBy(gm => gm.Text);
+            return View(artisteVM);
+
         }
     }
 }
