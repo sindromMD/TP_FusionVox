@@ -18,20 +18,22 @@ namespace TP2.Models
 
         [Display(Name = "Image URL")]
         [DataType(DataType.Url)]
-        public string ImageURL { get; set; }
+        public string? ImageURL { get; set; }
 
+        [Required(AllowEmptyStrings = true, ErrorMessage = "Pays d'origine est obligatoire")]
+        [Display(Name = "Pays d'origine")]
         [StringLength(25, MinimumLength = 0, ErrorMessage = "Le nom du pays doit comporter entre {2} et {1} caractères.")]
         public string Pays { get; set; }
 
         [Required(ErrorMessage = "La date du début est obligatoire")]
-        [Display(Name = "Date de début")]
+        [Display(Name = "Date de début de la carrière")]
         [DataType(DataType.DateTime, ErrorMessage = "La date du début doit être valide")]
         public DateTime DebutCarrier { get; set; }
 
         [Display(Name = "Biographie de l'artiste")]
         [StringLength(2500, MinimumLength = 0, ErrorMessage = "La biographie doit comporter entre {2} et {1} caractères.")]
         [DataType(DataType.MultilineText)]
-        public string Biographie { get; set; }
+        public string? Biographie { get; set; }
 
         [Display(Name = "Artiste vedette")]
         public bool EstVedette { get; set; }
@@ -44,16 +46,16 @@ namespace TP2.Models
         [Range(0, int.MaxValue, ErrorMessage = "Le nombre de chansons doit être supérieur ou égal à {1}.")]
         public int NbChansons { get; set; }
 
+        [Required(ErrorMessage = "Ce champ est obligatoire, choisissez l'agent")]
         [DataType(DataType.Text)]
         [StringLength(25, MinimumLength = 0, ErrorMessage = "Le nom de l'agent doit comporter entre {2} et {1} caractères.")]
         public string Agent { get; set; }
 
         [ForeignKey("GenreMusical")]
-        public int IdGenreMusical { get; set; }
+        [Required(ErrorMessage = "Le genre musical est obligatoire")]
+        public int? IdGenreMusical { get; set; }
 
         [ValidateNever]
-        [Required(ErrorMessage = "Le genre musical est obligatoire")]
-        [Display(Name = "Genre de musique")]
         public virtual GenreMusical GenreMusical { get; set; }
 
     }
