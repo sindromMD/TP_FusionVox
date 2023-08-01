@@ -23,14 +23,14 @@
                         <button type="submit" class="fa-solid fa-heart-circle-plus fa-2xl btn-heart-retirer">
                         </button>
                         <div>
-                            <input type="hidden" name="Id" value="@Model.Id"> <!--Input Hidden nomArtiste-->
+                            <input type="hidden" asp-for="@Model.Id" /> <!--Input Hidden nomArtiste-->
                         </div>
                     </form>
                 </div>
                 <div class="form-check ">
-                    <form asp-controller="GestionArtiste" asp-action="DeletePost" method="post">
+                    <form asp-controller="Artiste" asp-action="DeletePost" method="post">
                         <div>
-                            <input type="hidden" name="Id" value="@Model.Id"> <!--Input Hidden nomArtiste-->
+                            <input type="hidden" asp-for="@Model.Id" /> <!--Input Hidden nomArtiste-->
                         </div>
 
                         <div>

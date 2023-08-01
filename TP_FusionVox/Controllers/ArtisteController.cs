@@ -158,5 +158,68 @@ namespace TP2.Controllers
             return View(artisteVM);
 
         }
+
+        // GET: Artiste/Delete/5
+        [Route("Artiste/Delete/{id:int}")]
+        [Route("Artiste/Supprimer/{id:int}")]
+        [Route("Delete/{id:int}")]
+        [Route("Supprimer/{id:int}")]
+        public IActionResult Delete(int id)
+        {
+            NewArtisteVM artisteVM = new NewArtisteVM();
+
+            artisteVM.Artiste = _baseDonnees.Artistes.Where(a => a.Id == id).FirstOrDefault();
+            if (artisteVM.Artiste != null)
+            {
+                return View(artisteVM.Artiste);
+            }
+            else
+            { 
+                return View("NotFound");
+            }
+
+        }
+
+        // POST: delete
+        [Route("Artiste/DeletePost")]
+        [Route("Artiste/Supprimer")]
+        [Route("DeletePost")]
+        [Route("Supprimer")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeletePost(int Id)
+        {
+            try
+            {   //1.Supprimer l'artiste de la base de données
+
+                Artiste? artisteASupprimer = _baseDonnees.Artistes.Where(a => a.Id == Id).FirstOrDefault();
+                if(artisteASupprimer == null)
+                {
+                    return View("NotFound");
+                }
+
+                _baseDonnees.Artistes.Remove(artisteASupprimer);
+                _baseDonnees.SaveChanges();
+
+
+                //2.Supprimer un artiste de la liste des favoris
+                //(un artiste supprimé de la BD doit également être supprimé de la liste des favoris)
+
+                List<FavorisViewModel> artisteFavoris = HttpContext.Session.Get<List<FavorisViewModel>>("Artistes");
+                if (artisteFavoris != null)
+                {
+                    artisteFavoris.Remove(artisteFavoris.Where(f => f.Id == Id).SingleOrDefault());
+                    if (artisteFavoris.Count == 0)
+                        artisteFavoris = null;
+                }
+                HttpContext.Session.Set<List<FavorisViewModel>>("Artistes", artisteFavoris);
+
+                return RedirectToAction("Recherche", "Artiste");
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }
