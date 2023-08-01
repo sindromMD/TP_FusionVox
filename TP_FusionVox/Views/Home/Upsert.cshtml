@@ -1,0 +1,88 @@
+﻿@model GenreMusical
+@{
+    ViewData["Title"] = "Create";
+    var titre = "AJOUTER UN NOUVEAU GENRE MUSICAL";
+    if (Model.Id != 0)
+    {
+        //Edit
+        titre = "MODIFIER LE GENRE DE MUSIQUE";
+    }
+}
+<main class="container">
+    <div class="container-fluid">
+        <div class="row justify-content-around text-center">
+            <div class="col col-lg-10 col-xl-8">
+                <h1 class="h0">@titre</h1>
+                <div class="divider-2 mb-3 "></div><!--devider linear gradient cian-->
+                <br>
+                <!--Form ajouter Genres de Musique-->
+                <form asp-controller="Home" asp-action="Upsert" method="post" class="text-start p1">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+
+                    <!--Nom Genre Musical-->
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                            <label asp-for="Nom" class="form-label"></label>
+                            <input type="text" class="form-control" asp-for="Nom" placeholder="Exemple: Hip-Hop">
+                            <span asp-validation-for="Nom" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <!--Description-->
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6">
+                            <div class="mb-3">
+                                <label asp-for="Description" class="form-label"></label>
+                                <textarea class="form-control" asp-for="Description" rows="3" placeholder="Exemple: Saisir la description du genre musical"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--ImgUrl-->
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                            <label asp-for="ImageUrl" class="form-label"></label>
+                            <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Exemple: Hip_Hop.png">
+                            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+
+                        </div>
+                    </div>
+                    <div class="row justify-content-center text-center">
+                        @if (Model.Id == 0)
+                        {
+                            <div class="col col-md-8 col-xl-6 mb-2 mt-4">
+                                <button type="submit" class="btn-rechercher">
+                                    Ajouter le genre musical
+                                    <i class="fa-solid fa-user-plus"></i>
+                                </button>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col col-md-8 col-xl-6 mb-2 mt-4">
+                                <button type="submit" class="btn-rechercher">
+                                    Modifie le genre de musique
+                                    <i class="fa-solid fa-user-plus"></i>
+                                </button>
+                            </div>
+                        }
+
+                    </div>
+                    <div class="row justify-content-center text-center">
+                        <div class="col col-md-8 col-xl-6">
+                            <button type="reset" class="btn-reinitialiser">
+                                Réinitialiser <i class="fa-solid fa-arrow-rotate-left"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

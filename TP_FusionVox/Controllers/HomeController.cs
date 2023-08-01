@@ -7,7 +7,7 @@ using TP_FusionVox.Models.Data;
 
 namespace TP2.Controllers
 {
-    
+
     public class HomeController : Controller
     {
         private TP_FusionVoxDbContext _baseDonnees { get; set; }
@@ -42,6 +42,61 @@ namespace TP2.Controllers
 
             };
             return View(statistiqueVM);
+        }
+        //GET Upsert
+        [Route("GenreMusical/create")]
+        [Route("GenreMusical/edit/{id:int}")]
+        public IActionResult Upsert(int? id)
+        {
+            GenreMusical genreMusical = new GenreMusical();
+            if (id == null || id == 0)
+            {
+                //create
+                return View(genreMusical);
+            }
+            else
+            {
+                //Edit
+                genreMusical = _baseDonnees.genresMusicaux.Find(id);
+                if (genreMusical == null)
+                {
+                    return View("NotFound");
+                }
+                return View(genreMusical);
+            }
+        }
+
+        //Post: Upsert
+        [Route("GenreMusical/create")]
+        [Route("GenreMusical/edit/{id:int}")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Upsert (GenreMusical genreMusical)
+        {
+            try
+            {
+                if(ModelState.IsValid)
+                {
+                    if(genreMusical.Id == 0)
+                    {
+                        //create
+                        
+                        _baseDonnees.genresMusicaux.Add(genreMusical);
+                    }
+                    else
+                    {
+                        //Update
+                        _baseDonnees.genresMusicaux.Update(genreMusical);
+                    }
+                    _baseDonnees.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(genreMusical);
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }

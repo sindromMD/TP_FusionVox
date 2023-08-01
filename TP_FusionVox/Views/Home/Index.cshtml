@@ -118,12 +118,12 @@
                     </div>
                     <div class="col-5 d-none d-lg-block"></div>
                 </div>           
-
+                @{int cmt = 1;}
          @foreach(var genre in Model.StatsGenresMusicaux){
 
             <!--@genre.Nom-->
            
-             <div class="row justify-content-around mb-5 @(genre.Id%2==0 ? "flex-row-reverse" : "")">
+             <div class="row justify-content-around mb-5 @(cmt%2==0 ? "flex-row-reverse" : "")">
                     <!--( IMG_@genre.Nom + btn )-->
                     <div class="col-12 col-lg-5 text-center" >
                         <img src="Images/Background/@genre.ImageUrl " alt="musique @genre.Nom" class="img-fluid mb-4 border-img-parents">
@@ -164,6 +164,7 @@
                         </div>
                     </div>
             </div>
+            cmt++;
         }
      
 </main>

@@ -135,27 +135,34 @@ namespace TP2.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Upsert(NewArtisteVM artisteVM)
         {
-            if (ModelState.IsValid)
+            try
             {
-                if(artisteVM.Artiste.Id == 0)
+                if (ModelState.IsValid)
                 {
-                    //create
-                    _baseDonnees.Artistes.Add(artisteVM.Artiste);
+                    if (artisteVM.Artiste.Id == 0)
+                    {
+                        //create
+                        _baseDonnees.Artistes.Add(artisteVM.Artiste);
+                    }
+                    else
+                    {
+                        //update
+                        _baseDonnees.Artistes.Update(artisteVM.Artiste);
+                    }
+                    _baseDonnees.SaveChanges();
+                    return RedirectToAction("Recherche");
                 }
-                else
+                artisteVM.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
                 {
-                    //update
-                    _baseDonnees.Artistes.Update(artisteVM.Artiste);
-                }
-                _baseDonnees.SaveChanges();
-                return RedirectToAction("Recherche");
+                    Text = gm.Nom,
+                    Value = gm.Id.ToString()
+                }).OrderBy(gm => gm.Text);
+                return View(artisteVM);
             }
-            artisteVM.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
+            catch
             {
-                Text = gm.Nom,
-                Value = gm.Id.ToString()
-            }).OrderBy(gm => gm.Text);
-            return View(artisteVM);
+                return View();
+            }
 
         }
 
