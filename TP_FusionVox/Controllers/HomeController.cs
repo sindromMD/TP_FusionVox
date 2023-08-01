@@ -2,15 +2,17 @@
 using TP2.Models;
 using System.Linq;
 using TP2.ViewModels;
+using TP_FusionVox.ViewModels;
+using TP_FusionVox.Models.Data;
 
 namespace TP2.Controllers
 {
     
     public class HomeController : Controller
     {
-        private BaseDeDonnees _baseDonnees { get; set; }
+        private TP_FusionVoxDbContext _baseDonnees { get; set; }
 
-        public HomeController(BaseDeDonnees baseDonnees)
+        public HomeController(TP_FusionVoxDbContext baseDonnees)
         {
             _baseDonnees = baseDonnees;
         }
@@ -18,9 +20,12 @@ namespace TP2.Controllers
         [Route("Home")]
         public IActionResult Index()
         {
-            List<StatistiqueVM> listGenresMusicaux = _baseDonnees.genresMusicaux
-                .GroupBy(g => new { g.Id, g.Nom, g.Description, g.ImageUrl, NbA = g.Artistes.Count, NbC = g.Artistes.Select(x => x.NbChansons).Sum(), NbAb = g.Artistes.Select(x=>x.NbAbonnees).Sum() })
-                .Select(std => new StatistiqueVM
+            StatistiqueVM statistiqueVM = new StatistiqueVM()
+            {
+                // remplissage de statistiques pour chaque genre musical
+                StatsGenresMusicaux = _baseDonnees.genresMusicaux
+                .GroupBy(g => new { g.Id, g.Nom, g.Description, g.ImageUrl, NbA = g.Artistes.Count, NbC = g.Artistes.Select(x => x.NbChansons).Sum(), NbAb = g.Artistes.Select(x => x.NbAbonnees).Sum() })
+                .Select(std => new StatistiqueGenresMusicauxVM
                 {
                     Id = std.Key.Id,
                     Nom = std.Key.Nom,
@@ -29,12 +34,14 @@ namespace TP2.Controllers
                     NbArtistes = std.Key.NbA,
                     NbChansonsPubliees = std.Key.NbC,
                     NbAbonnees = std.Key.NbAb,
-                }).ToList();
-            ViewData["infoCount"] = _baseDonnees.Artistes.Count();
-            ViewData["infoNbAbonnees"] = _baseDonnees.Artistes.Select(a=>a.NbAbonnees).Sum();
-            ViewData["infoNbChanson"] = _baseDonnees.Artistes.Select(a => a.NbChansons).Sum();
+                }).ToList(),
+                //statistiques globales sur les totaux des entités de la société d'enregistrement
+                NbTotalArtistes = _baseDonnees.Artistes.Count(),
+                NbTotalAbonnees = _baseDonnees.Artistes.Select(a => a.NbAbonnees).Sum(),
+                NbTotalChansons = _baseDonnees.Artistes.Select(a => a.NbChansons).Sum()
 
-            return View(listGenresMusicaux);
+            };
+            return View(statistiqueVM);
         }
     }
 }

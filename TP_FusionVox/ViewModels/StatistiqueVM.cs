@@ -1,14 +1,13 @@
-﻿namespace TP2.ViewModels
+﻿using TP_FusionVox.ViewModels;
+
+namespace TP2.ViewModels
 {
     public class StatistiqueVM
     {
-        public int Id { get; set; }
-        public string Nom { get; set; }
-        public string ImageUrl { get; set; }
-        public string Description { get; set; }
-        public int NbChansonsPubliees { get; set; }
-        public int NbArtistes { get; set; }
-        public int NbAbonnees { get; set; }
+        public int NbTotalArtistes { get; set; }
+        public int NbTotalAbonnees { get; set; }
+        public int NbTotalChansons { get; set; }
         
+        public List<StatistiqueGenresMusicauxVM> StatsGenresMusicaux { get; set; }
     }
 }
