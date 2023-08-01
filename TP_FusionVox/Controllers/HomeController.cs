@@ -71,16 +71,16 @@ namespace TP2.Controllers
         [Route("GenreMusical/edit/{id:int}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert (GenreMusical genreMusical)
+        public IActionResult Upsert(GenreMusical genreMusical)
         {
             try
             {
-                if(ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
-                    if(genreMusical.Id == 0)
+                    if (genreMusical.Id == 0)
                     {
                         //create
-                        
+
                         _baseDonnees.genresMusicaux.Add(genreMusical);
                     }
                     else
@@ -97,6 +97,36 @@ namespace TP2.Controllers
             {
                 return View();
             }
+        }
+
+        [Route("GenreMusical/Delete/{id:int}")]
+        [Route("GenreMusical/Supprimer/{id:int}")]
+        public IActionResult Delete(int id)
+        {
+            GenreMusical genreMusical = _baseDonnees.genresMusicaux.Find(id);
+            if(genreMusical != null) 
+            {
+                return View(genreMusical);
+            }
+            else
+                return View("NotFound");
+            
+        }
+
+        [Route("GenreMusical/Delete")]
+        [Route("GenreMusical/Supprimer")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeletePost (int id)
+        {
+            GenreMusical? genreMusical = _baseDonnees.genresMusicaux.Find(id);
+            if(genreMusical == null)
+            { 
+                return View("NotFound"); 
+            }
+            _baseDonnees.genresMusicaux.Remove(genreMusical);
+            _baseDonnees.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
