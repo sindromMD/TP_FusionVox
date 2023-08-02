@@ -850,6 +850,22 @@ genres musicaux, pour chaque catégorie de musique. */
 .white-link a {
     color: rgba(255, 255, 255, 0.65);
 }
+.note-frame {
+    background: #FFFFFF;
+    color: black;
+    font-family: 'Montserrat';
+}
+    .note-frame h0,
+    .note-frame h1,
+    .note-frame h2,
+    .note-frame h3,
+    .note-frame h4,
+    .note-frame .p1,
+    .note-frame .p2,
+    .note-frame .p3,
+    .note-frame .p4 {
+        color: black;
+    }
 
 /*.form-switch input::backdrop{
     color:black;
