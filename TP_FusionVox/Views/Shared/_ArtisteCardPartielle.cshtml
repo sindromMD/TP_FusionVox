@@ -18,15 +18,9 @@
                         </div>
                     </div>
                 </a>
-                <div class="form-check btn-ajouter-coeur-card-position">
-                    <form asp-controller="Favoris" asp-action="Favoris" method="post">
-                        <button type="submit" class="fa-solid fa-heart-circle-plus fa-2xl btn-heart-retirer">
-                        </button>
-                        <div>
-                            <input type="hidden" asp-for="@Model.Id" /> <!--Input Hidden nomArtiste-->
-                        </div>
-                    </form>
-                </div>
+
+                <partial name="_FormAjoutAuFavorisEtButtonPartielle" model="@Model"></partial>
+
                 <div class="form-check ">
                     <form asp-controller="Artiste" asp-action="DeletePost" method="post">
                         <div>
@@ -36,7 +30,7 @@
                         <div>
                            
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-danger btn-circle btn-sm fa-solid fa-trash fa-xl btn-supprimer-artiste" data-bs-toggle="modal" data-bs-target="#modalRetirer@(Model.Id)">
+                             <button type="button" class="btn btn-warning btn-circle btn-sm fa-solid fa-trash btn-supprimer-artiste" data-bs-toggle="modal" data-bs-target="#modalRetirer@(Model.Id)">
                             </button>
                             <!-- Modal-->
                                 @{
@@ -53,6 +47,13 @@
                              <!--ModalFin-->
                         </div>
                     </form>
+                    
+                </div>
+                <!--Button edit-->
+                <div class="form-check btn-edit-card-position">
+                    <a asp-action="Upsert" asp-route-Id="@Model.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste">
+                    <i class="fa-solid fa-pen-to-square fa-lg"></i>
+                    </a>
                 </div>
             </div>
 <!--Card_Fin-->

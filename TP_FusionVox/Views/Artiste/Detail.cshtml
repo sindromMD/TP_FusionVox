@@ -27,15 +27,8 @@
                         <source src="/Video/dust.mp4" type="video/mp4">
                     </video>
 
-                    <div class="form-check btn-ajouter-coeur-card-position">
-                        <form asp-controller="Favoris" asp-action="Favoris" method="post">
-                            <button type="submit" class="fa-solid fa-heart-circle-plus fa-2xl btn-heart-retirer">
-                            </button>
-                            <div>
-                                <input type="hidden" name="Id" value="@Model.Id"> <!--Input Hidden nomArtiste-->
-                            </div>
-                        </form>
-                    </div>
+                    <partial name="_FormAjoutAuFavorisEtButtonPartielle" model="@Model"></partial>
+
                     <div class="nom_artiste_superpose">
                         <h1 class="h3">@Model.Nom</h1>
                         <div class="divider-2 mb-3 "></div><!--devider linear gradient cian-->
@@ -208,9 +201,9 @@
             width:1440px;
         }*/
         .hero-image_Details {
-            background-image: url("/Images/Background/Details_Artistes/@Model.ImageURL");
+/*            background-image: url("/Images/Background/Details_Artistes/@Model.ImageURL");*/
+            background-image: url("@(string.IsNullOrEmpty(Model.ImageURL) ? "/Images/Background/Details_Artistes/BG_Details_descktop_1440x900_Fade.png" : "/Images/Background/Details_Artistes/" + Model.ImageURL)");
         }
-
        
     </style>
     <style type="text/css" media="(min-width:361px) and (max-width:835px)">

@@ -682,13 +682,23 @@ genres musicaux, pour chaque catégorie de musique. */
 
 .btn-ajouter-coeur-card-position {
     position: absolute;
-    top: 10px;
+    top: 4px;
+    right: 20px;
+}
+/*.btn-ajouter-coeur-detail-position {
+    position: absolute;
+    top: 15px;
     right: 25px;
+}*/
+.btn-edit-card-position {
+    position: absolute;
+    bottom: -2px;
+    right: 30px;
 }
 .vedette-star {
     position: absolute;
     top: 20px;
-    left: 15px;
+    left: 12px;
     color:#ffc920;
 }
 .btn-supprimer-artiste {
@@ -722,12 +732,15 @@ genres musicaux, pour chaque catégorie de musique. */
     }
 
 .btn-supprimer-artiste:hover {
-    color: #F29D9D;
+    color: #FFFFFF;
+    background-color:#916e07;
 }
 
-    .btn-supprimer-artiste:active {
-        color: #FFC920;
-    }
+.btn-supprimer-artiste:active {
+    color: #FFC920;
+    background-color:#FFC920;
+    transition-duration:0.3s
+}
 .nom_artiste_superpose {
     position: absolute;
     top: 30%;
