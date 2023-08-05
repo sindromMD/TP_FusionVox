@@ -5,6 +5,7 @@ using TP2.ViewModels;
 using TP_FusionVox.ViewModels;
 using TP_FusionVox.Models.Data;
 using Microsoft.EntityFrameworkCore;
+using TP_FusionVox.Utility;
 
 namespace TP2.Controllers
 {
@@ -83,11 +84,13 @@ namespace TP2.Controllers
                         //create
 
                         await _baseDonnees.genresMusicaux.AddAsync(genreMusical);
+                        TempData[AppConstants.Success] = $"Le genre de la musique {genreMusical.Nom} a été ajouté.";
                     }
                     else
                     {
                         //Update
                         _baseDonnees.genresMusicaux.Update(genreMusical);
+                        TempData[AppConstants.Success] = $"Les renseignements sur le genre musical {genreMusical.Nom} ont été modifiés.";
                     }
                     await _baseDonnees.SaveChangesAsync();
                     return RedirectToAction("Index");
@@ -126,6 +129,7 @@ namespace TP2.Controllers
                 return View("NotFound"); 
             }
             _baseDonnees.genresMusicaux.Remove(genreMusical);
+            TempData[AppConstants.Success] = $"Le genre de la musique {genreMusical.Nom} a été supprimer.";
             await _baseDonnees.SaveChangesAsync();
             return RedirectToAction("Index");
         }

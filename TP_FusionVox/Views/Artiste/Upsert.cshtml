@@ -1,11 +1,11 @@
-﻿@model TP2.ViewModels.NewArtisteVM
+﻿@model NewArtisteVM
 @{
-    ViewData["Title"] = "Ajouter l'artiste"; // Il est également utilisé pour le texte des boutons
+    ViewData["Title"] = "Ajouter"; // Il est également utilisé pour le texte des boutons
     var titreFormulaire = "AJOUTER UN ARTISTE";
     if (Model.Artiste.Id != 0)
     {
         //Edit
-        ViewData["Title"] = "Modifier l'artiste"; //Il est également utilisé pour le texte des boutons
+        ViewData["Title"] = "Modifier"; //Il est également utilisé pour le texte des boutons
         titreFormulaire = "MODIFIER LES DONNÉES DE L'ARTISTE";
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 @model StatistiqueVM;
 @{
-    ViewData["Title"] = "Page d'accueil";
+    ViewData["Title"] = "Accueil";
 }
 
  <main class="container">
@@ -125,18 +125,25 @@
            
              <div class="row justify-content-around mb-5 @(cmt%2==0 ? "flex-row-reverse" : "")">
                     <!--( IMG_@genre.Nom + btn )-->
-                    <div class="col-12 col-lg-5 text-center" >
+                    <div class="col-12 col-lg-5 text-center position-relative">
                         <img src="Images/Background/@genre.ImageUrl " alt="musique @genre.Nom" class="img-fluid mb-4 border-img-parents">
                         <a href="Artiste/Recherche#section@(genre.Nom)" class="bouton-parents btn-action-icon" style="position: relative; top:-38px">
                                 NOS ARTISTES 
                                 <i class="fa-solid fa-angle-right"></i>
                         </a> 
+                        
                     </div>
                     <!--description-->
-                    <div class="col-12 col-lg-5 ">
+                    <div class="col-12 col-lg-5 x position-relative">
                         <h2>
                             @genre.Nom
                         </h2>
+                            <a asp-action="Upsert" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste btn-edit-card-position">
+                            <i class="fa-solid fa-pen-to-square fa-lg"></i>
+                            </a>
+                             <a asp-action="Delete" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste">
+                            <i class="fa-solid fa-trash"></i>
+                            </a>
                         <br>
                         <p class="p1 description-genre">
                             @genre.Description
@@ -170,14 +177,9 @@
 </main>
 
 @section monStyle {
-      <style >
-         body{
-         background-image:url("../Images/Background/Accueil_fade_bot_1400-900.jpg");
-         background-position: center;
-         background-repeat: no-repeat;
-         height: 900px;
-            }
-    </style>
+
+          <!--Solution trouvée pour l\'image du héros-->
+
 }
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

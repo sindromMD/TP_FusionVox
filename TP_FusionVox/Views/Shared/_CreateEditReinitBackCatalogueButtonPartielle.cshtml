@@ -8,7 +8,10 @@
         //create
         <div class="col col-md-8 col-xl-6 mb-2 mt-4">
             <button type="submit" class="btn-rechercher">
-                @btnText
+                <span id="btntextUpsert">
+                    @*ici la fonction JQuery ajoute à ce texte un morceau en fonction de ce qui est créé ou modifié (artiste ou genre musical)*@
+                    @btnText
+                </span>
                 <i class="fa-solid fa-user-plus"></i>
             </button>
         </div>
@@ -18,7 +21,9 @@
         //Edit
         <div class="col col-md-8 col-xl-6 mb-2 mt-4">
             <button type="submit" class="btn-rechercher">
-                @btnText
+                <span id="btntextUpsert">
+                    @btnText
+                </span>
                 <i class="fa-solid fa-user-pen"></i>
             </button>
         </div>

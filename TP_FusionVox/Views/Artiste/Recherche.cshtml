@@ -176,24 +176,15 @@
             @foreach (var artiste in Genre)
             {
                 //carte d'artiste avec modal de suppression
-
                  @await Html.PartialAsync("_ArtisteCardPartielle",artiste)
-
             }
         </div>
     }
-
 </main>
 
 @section monStyle {
      <style >
-        body{
-          background-image:url("../Images/Background/BG_Artiste_descktop_1400-900_fade.png");
-          background-position: center;
-          background-repeat: no-repeat;
-          height: 900px;
-         }
-
+    <!--Solution trouvée pour l'image du héros-->
      </style>
 }
 @section Scripts {

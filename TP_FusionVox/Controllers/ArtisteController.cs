@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using TP_FusionVox.Models.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
+using TP_FusionVox.Utility;
 
 namespace TP2.Controllers
 {
@@ -145,11 +146,13 @@ namespace TP2.Controllers
                     {
                         //create
                        await _baseDonnees.Artistes.AddAsync(artisteVM.Artiste);
+                        TempData[AppConstants.Success] = $"L'artiste {artisteVM.Artiste.Nom} a été ajouté.";
                     }
                     else
                     {
                         //update
                        _baseDonnees.Artistes.Update(artisteVM.Artiste);
+                        TempData[AppConstants.Success] = $"Les renseignements sur l'artiste {artisteVM.Artiste.Nom} ont été modifiés.";
                     }
                     await _baseDonnees.SaveChangesAsync();
                     return RedirectToAction("Recherche");
@@ -208,6 +211,7 @@ namespace TP2.Controllers
                 }
 
                 _baseDonnees.Artistes.Remove(artisteASupprimer);
+                TempData[AppConstants.Success] = $"L'artiste {artisteASupprimer.Nom} a été supprimé de la base de données.";
                 await _baseDonnees.SaveChangesAsync();
 
 
