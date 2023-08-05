@@ -4,6 +4,7 @@ using System.Linq;
 using TP2.ViewModels;
 using TP_FusionVox.ViewModels;
 using TP_FusionVox.Models.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace TP2.Controllers
 {
@@ -18,12 +19,12 @@ namespace TP2.Controllers
         }
         [Route("")]
         [Route("Home")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             StatistiqueVM statistiqueVM = new StatistiqueVM()
             {
                 // remplissage de statistiques pour chaque genre musical
-                StatsGenresMusicaux = _baseDonnees.genresMusicaux
+                StatsGenresMusicaux =await _baseDonnees.genresMusicaux
                 .GroupBy(g => new { g.Id, g.Nom, g.Description, g.ImageUrl, NbA = g.Artistes.Count, NbC = g.Artistes.Select(x => x.NbChansons).Sum(), NbAb = g.Artistes.Select(x => x.NbAbonnees).Sum() })
                 .Select(std => new StatistiqueGenresMusicauxVM
                 {
@@ -34,11 +35,11 @@ namespace TP2.Controllers
                     NbArtistes = std.Key.NbA,
                     NbChansonsPubliees = std.Key.NbC,
                     NbAbonnees = std.Key.NbAb,
-                }).ToList(),
+                }).ToListAsync(),
                 //statistiques globales sur les totaux des entités de la société d'enregistrement
-                NbTotalArtistes = _baseDonnees.Artistes.Count(),
-                NbTotalAbonnees = _baseDonnees.Artistes.Select(a => a.NbAbonnees).Sum(),
-                NbTotalChansons = _baseDonnees.Artistes.Select(a => a.NbChansons).Sum()
+                NbTotalArtistes = await _baseDonnees.Artistes.CountAsync(),
+                NbTotalAbonnees = await _baseDonnees.Artistes.Select(a => a.NbAbonnees).SumAsync(),
+                NbTotalChansons = await _baseDonnees.Artistes.Select(a => a.NbChansons).SumAsync()
 
             };
             return View(statistiqueVM);
@@ -46,9 +47,9 @@ namespace TP2.Controllers
         //GET Upsert
         [Route("GenreMusical/create")]
         [Route("GenreMusical/edit/{id:int}")]
-        public IActionResult Upsert(int? id)
+        public async Task<IActionResult> Upsert(int? id)
         {
-            GenreMusical genreMusical = new GenreMusical();
+            GenreMusical? genreMusical = new GenreMusical();
             if (id == null || id == 0)
             {
                 //create
@@ -57,7 +58,7 @@ namespace TP2.Controllers
             else
             {
                 //Edit
-                genreMusical = _baseDonnees.genresMusicaux.Find(id);
+                genreMusical = await _baseDonnees.genresMusicaux.FindAsync(id);
                 if (genreMusical == null)
                 {
                     return View("NotFound");
@@ -71,7 +72,7 @@ namespace TP2.Controllers
         [Route("GenreMusical/edit/{id:int}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert(GenreMusical genreMusical)
+        public async Task<IActionResult> Upsert(GenreMusical genreMusical)
         {
             try
             {
@@ -81,14 +82,14 @@ namespace TP2.Controllers
                     {
                         //create
 
-                        _baseDonnees.genresMusicaux.Add(genreMusical);
+                        await _baseDonnees.genresMusicaux.AddAsync(genreMusical);
                     }
                     else
                     {
                         //Update
                         _baseDonnees.genresMusicaux.Update(genreMusical);
                     }
-                    _baseDonnees.SaveChanges();
+                    await _baseDonnees.SaveChangesAsync();
                     return RedirectToAction("Index");
                 }
                 return View(genreMusical);
@@ -101,9 +102,9 @@ namespace TP2.Controllers
 
         [Route("GenreMusical/Delete/{id:int}")]
         [Route("GenreMusical/Supprimer/{id:int}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            GenreMusical genreMusical = _baseDonnees.genresMusicaux.Find(id);
+            GenreMusical? genreMusical = await _baseDonnees.genresMusicaux.FindAsync(id);
             if(genreMusical != null) 
             {
                 return View(genreMusical);
@@ -117,15 +118,15 @@ namespace TP2.Controllers
         [Route("GenreMusical/Supprimer")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeletePost (int id)
+        public async Task<IActionResult> DeletePost (int id)
         {
-            GenreMusical? genreMusical = _baseDonnees.genresMusicaux.Find(id);
+            GenreMusical? genreMusical = await _baseDonnees.genresMusicaux.FindAsync(id);
             if(genreMusical == null)
             { 
                 return View("NotFound"); 
             }
             _baseDonnees.genresMusicaux.Remove(genreMusical);
-            _baseDonnees.SaveChanges();
+            await _baseDonnees.SaveChangesAsync();
             return RedirectToAction("Index");
         }
     }

@@ -4,6 +4,8 @@ using System.Linq;
 using TP2.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TP_FusionVox.Models.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 
 namespace TP2.Controllers
 {
@@ -20,7 +22,7 @@ namespace TP2.Controllers
 
         [Route("artiste")]
         [Route("artiste/recherche")]
-        public IActionResult Recherche()
+        public async Task<IActionResult> Recherche()
         {
             //IEnumerable<IGrouping<string, Artiste>> ListeArtisteByGenreMusical = _baseDonnees.Artistes.GroupBy(a => a.GenreMusical.Nom);
             var model = new PageRechercheViewModel();
@@ -28,8 +30,9 @@ namespace TP2.Controllers
             model.Criteres.EstGenreMusicalPOP = true;
             model.Criteres.EstGenreMusicalHipHop = true;
             model.Criteres.EstGenreMuscialElectro = true;
-            model.Resultat = _baseDonnees.Artistes.AsEnumerable().GroupBy(a => a.GenreMusical.Nom);
-
+            //model.Resultat = _baseDonnees.Artistes.AsEnumerable().GroupBy(a => a.GenreMusical.Nom);
+            var ListArtiste = await _baseDonnees.Artistes.Include(a => a.GenreMusical).ToListAsync();
+            model.Resultat = ListArtiste.GroupBy(a => a.GenreMusical.Nom).ToList();
 
             return View(model);
         }
@@ -64,11 +67,11 @@ namespace TP2.Controllers
         [Route("artiste/detail/{id:int}")]
         [Route("artiste/{id:int}")]
         [Route("{id:int}")]
-        public IActionResult DetailParID(int id)
+        public async Task<IActionResult> DetailParID(int id)
         {
 
-            Artiste detailArtiste = null;
-            detailArtiste = _baseDonnees.Artistes.Where(a => a.Id == id).FirstOrDefault();
+            //Artiste detailArtiste = null;
+            Artiste? detailArtiste =await _baseDonnees.Artistes.Where(a => a.Id == id).FirstOrDefaultAsync();
             if (detailArtiste != null)
             {
                 return View("Detail", detailArtiste);
@@ -82,10 +85,9 @@ namespace TP2.Controllers
         [Route("artiste/detail/{Nom}")]
         [Route("artiste/{Nom}")]
         [Route("{Nom}")]
-        public IActionResult DetailParNom(string Nom)
-        {
-            Artiste detailArtiste = null;
-            detailArtiste = _baseDonnees.Artistes.Where(a => a.Nom.ToLower() == Nom.ToLower()).FirstOrDefault();
+        public async Task<IActionResult> DetailParNom(string Nom)
+        { 
+            Artiste? detailArtiste = await _baseDonnees.Artistes.Where(a => a.Nom.ToLower() == Nom.ToLower()).FirstOrDefaultAsync();
             if (detailArtiste != null)
                 return View("Detail", detailArtiste);
             else
@@ -97,7 +99,7 @@ namespace TP2.Controllers
         [Route("artiste/upsert/create")]
         [Route("artiste/edit/{id:int}")]
         [Route("artiste/upsert/edit/{id:int}")]
-        public IActionResult Upsert(int? Id)
+        public async Task<IActionResult> Upsert(int? Id)
         {
             NewArtisteVM ArtisteVM = new NewArtisteVM();
             ArtisteVM.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
@@ -116,7 +118,7 @@ namespace TP2.Controllers
             else
             {
                 //Edit
-                ArtisteVM.Artiste = _baseDonnees.Artistes.Find(Id);
+                ArtisteVM.Artiste = await _baseDonnees.Artistes.FindAsync(Id);
                 if(ArtisteVM.Artiste == null)
                 {
                     return View("NotFound");
@@ -133,7 +135,7 @@ namespace TP2.Controllers
         [Route("artiste/upsert/edit/{id:int}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert(NewArtisteVM artisteVM)
+        public async Task<IActionResult> Upsert(NewArtisteVM artisteVM)
         {
             try
             {
@@ -142,14 +144,14 @@ namespace TP2.Controllers
                     if (artisteVM.Artiste.Id == 0)
                     {
                         //create
-                        _baseDonnees.Artistes.Add(artisteVM.Artiste);
+                       await _baseDonnees.Artistes.AddAsync(artisteVM.Artiste);
                     }
                     else
                     {
                         //update
-                        _baseDonnees.Artistes.Update(artisteVM.Artiste);
+                       _baseDonnees.Artistes.Update(artisteVM.Artiste);
                     }
-                    _baseDonnees.SaveChanges();
+                    await _baseDonnees.SaveChangesAsync();
                     return RedirectToAction("Recherche");
                 }
                 artisteVM.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
@@ -171,11 +173,11 @@ namespace TP2.Controllers
         [Route("Artiste/Supprimer/{id:int}")]
         [Route("Delete/{id:int}")]
         [Route("Supprimer/{id:int}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             NewArtisteVM artisteVM = new NewArtisteVM();
 
-            artisteVM.Artiste = _baseDonnees.Artistes.Where(a => a.Id == id).FirstOrDefault();
+            artisteVM.Artiste =await _baseDonnees.Artistes.Where(a => a.Id == id).FirstOrDefaultAsync();
             if (artisteVM.Artiste != null)
             {
                 return View(artisteVM.Artiste);
@@ -194,25 +196,25 @@ namespace TP2.Controllers
         [Route("Supprimer")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeletePost(int Id)
+        public async Task<IActionResult> DeletePost(int Id)
         {
             try
             {   //1.Supprimer l'artiste de la base de données
 
-                Artiste? artisteASupprimer = _baseDonnees.Artistes.Where(a => a.Id == Id).FirstOrDefault();
+                Artiste? artisteASupprimer = await _baseDonnees.Artistes.Where(a => a.Id == Id).FirstOrDefaultAsync();
                 if(artisteASupprimer == null)
                 {
                     return View("NotFound");
                 }
 
                 _baseDonnees.Artistes.Remove(artisteASupprimer);
-                _baseDonnees.SaveChanges();
+                await _baseDonnees.SaveChangesAsync();
 
 
                 //2.Supprimer un artiste de la liste des favoris
                 //(un artiste supprimé de la BD doit également être supprimé de la liste des favoris)
 
-                List<FavorisViewModel> artisteFavoris = HttpContext.Session.Get<List<FavorisViewModel>>("Artistes");
+                List<FavorisViewModel>? artisteFavoris = HttpContext.Session.Get<List<FavorisViewModel>>("Artistes");
                 if (artisteFavoris != null)
                 {
                     artisteFavoris.Remove(artisteFavoris.Where(f => f.Id == Id).SingleOrDefault());

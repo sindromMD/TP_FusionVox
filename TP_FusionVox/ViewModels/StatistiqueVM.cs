@@ -8,6 +8,6 @@ namespace TP2.ViewModels
         public int NbTotalAbonnees { get; set; }
         public int NbTotalChansons { get; set; }
         
-        public List<StatistiqueGenresMusicauxVM> StatsGenresMusicaux { get; set; }
+        public List<StatistiqueGenresMusicauxVM>? StatsGenresMusicaux { get; set; }
     }
 }
