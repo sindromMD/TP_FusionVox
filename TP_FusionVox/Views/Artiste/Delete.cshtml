@@ -30,8 +30,8 @@
                         </div>
                         <div class="card-body">
                                 <div class="col text-center my-4">
-                                        
-                                        <img src="~/Images/Artistes/descktop/@Model.ImageURL" alt="@Model.Nom" class="card-img border-img-parents w-50">
+
+                                <img src="@AppConstants.ImagePathArtiste@(string.IsNullOrWhiteSpace(Model.ImageURL) ? AppConstants.ImageGenericArtiste : Model.ImageURL)" alt="@Model.Nom" class="card-img border-img-parents w-50">
                                 </div>
                          
                             <!--tableau details-->
