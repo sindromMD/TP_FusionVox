@@ -4,17 +4,17 @@
 @* Dans cette viewPartielle, une autre viewPartielle(_ModalPartielle) est utilisée pour la fenêtre modale. *@
 <!--Card-->
             <div class="col position-relative">
-                <a href="/Artiste/Detail/@Model.Id">
+                <a asp-action="DetailParID" asp-route-Id="@Model.Id">
                     <div class="card">
-                        <img src="~/Images/Artistes/descktop/@Model.ImageURL" class="card-img-top" alt="@Model.Nom">
+                        <img src="@AppConstants.ImagePathArtiste@(string.IsNullOrWhiteSpace(Model.ImageURL) ? AppConstants.ImageGenericArtiste : Model.ImageURL)" class="card-img-top" alt="@Model.Nom">
                         <div class="card-body text-center">
                             <h4 class="card-title"> @Model.Nom</h4>
-                            @if (Model.EstVedette)
-                            {
+                        @if (Model.EstVedette)
+                        {
                                 <div class="card-img-overlay ">
                                     <i class="fa-solid fa-star fa-lg vedette-star"></i>
                                 </div>
-                            }
+                        }
                         </div>
                     </div>
                 </a>
@@ -37,7 +37,7 @@
                                     var x = new FavorisViewModel()
                                         {
                                             Id = Model.Id,
-                                            ImageURL = Model.ImageURL,
+                                            ImageURL = string.IsNullOrWhiteSpace(Model.ImageURL) ? AppConstants.ImageGenericArtiste : Model.ImageURL,
                                             Nom = Model.Nom,
                                         };
                                     }

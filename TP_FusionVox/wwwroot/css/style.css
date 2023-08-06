@@ -130,10 +130,15 @@ body {
     height: 145px;
     position: absolute;
 }
+
 .border-img-parents{
     border:4px solid #FFC920;
+}
+.border-img-artiste{
+    border:2px solid #FFFFFF;
+}
+.border-img-artiste, .border-img-parents {
     border-radius: 10px;
-    
 }
 /*----------------Style de police-------------*/
  /* H0 Montserrat 48*/

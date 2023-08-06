@@ -17,16 +17,18 @@
                 <div class="divider-2 mb-3 "></div><!--devider linear gradient cian-->
                 <br>
                 <!--Form ajouter artiste-->
-                <form asp-controller="Artiste" asp-action="Upsert" method="post" class="text-start p1">
+                <form asp-controller="Artiste" asp-action="Upsert" method="post" enctype="multipart/form-data" class="text-start p1">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type="hidden" asp-for="Artiste.Id" />
+                    <!--region input Hidden-->
+                    <input type="hidden" asp-for="@Model.Artiste.Id" />
+                    <input asp-for="@Model.AncienneImage" value="@Model.Artiste.ImageURL" class="form-control" type="hidden" /> <!--permet de conserver l'ancienne image-->
                     <!--Vedtte switch-->
                     <div class="row justify-content-center ">
                         <div class="col col-md-8 col-lg-7 col-xl-6 mb-3">
                             <div class="form-check form-switch form-check-reverse">
-                                <label class="form-check-label" asp-for="Artiste.EstVedette"> </label>
-                                <input class="form-check-input" type="checkbox" role="switch" asp-for="Artiste.EstVedette" value=true checked>
-                                <span asp-validation-for="Artiste.EstVedette" class="text-danger"></span>
+                                <label class="form-check-label" asp-for="@Model.Artiste.EstVedette"> </label>
+                                <input class="form-check-input" type="checkbox" role="switch" asp-for="@Model.Artiste.EstVedette" value=true checked>
+                                <span asp-validation-for="@Model.Artiste.EstVedette" class="text-danger"></span>
 
                             </div>
                         </div>
@@ -35,36 +37,36 @@
                     <!--Nom Artiste-->
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6 ">
-                            <label asp-for="Artiste.Nom" class="form-label"></label>
-                            <input type="text" class="form-control" asp-for="Artiste.Nom" placeholder="Exemple: Eminem">
-                            <span asp-validation-for="Artiste.Nom" class="text-danger"></span>
+                            <label asp-for="@Model.Artiste.Nom" class="form-label"></label>
+                            <input type="text" class="form-control" asp-for="@Model.Artiste.Nom" placeholder="Exemple: Eminem">
+                            <span asp-validation-for="@Model.Artiste.Nom" class="text-danger"></span>
                         </div>
                     </div>
 
                     <!--Pays Artiste-->
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6 ">
-                            <label asp-for="Artiste.Pays" class="form-label"></label>
-                            <input type="text" class="form-control" asp-for="Artiste.Pays" placeholder="Exemple: Canada">
-                            <span asp-validation-for="Artiste.Pays" class="text-danger"></span>
+                            <label asp-for="@Model.Artiste.Pays" class="form-label"></label>
+                            <input type="text" class="form-control" asp-for="@Model.Artiste.Pays" placeholder="Exemple: Canada">
+                            <span asp-validation-for="@Model.Artiste.Pays" class="text-danger"></span>
                         </div>
                     </div>
 
                     <!--Agent-->
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6 ">
-                            <label asp-for="Artiste.Agent" class="form-label"></label>
-                            <input type="text" class="form-control" asp-for="Artiste.Agent" placeholder="Exemple: Cristi Ochiu">
-                            <span asp-validation-for="Artiste.Agent" class="text-danger"></span>
+                            <label asp-for="@Model.Artiste.Agent" class="form-label"></label>
+                            <input type="text" class="form-control" asp-for="@Model.Artiste.Agent" placeholder="Exemple: Cristi Ochiu">
+                            <span asp-validation-for="@Model.Artiste.Agent" class="text-danger"></span>
                         </div>
                     </div>
 
                     <!--Date de début de la carrière-->
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6 ">
-                            <label asp-for="Artiste.DebutCarrier" class="form-label"></label>
-                            <input type="date" class="form-control" asp-for="Artiste.DebutCarrier">
-                            <span asp-validation-for="Artiste.DebutCarrier" class="text-danger"></span>
+                            <label asp-for="@Model.Artiste.DebutCarrier" class="form-label"></label>
+                            <input type="date" class="form-control" asp-for="@Model.Artiste.DebutCarrier">
+                            <span asp-validation-for="@Model.Artiste.DebutCarrier" class="text-danger"></span>
 
                         </div>
                     </div>
@@ -72,9 +74,9 @@
                     <!--Nombre de chansons-->
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6">
-                            <label asp-for="Artiste.NbChansons" class="form-label"></label>
-                            <input type="number" class="form-control" asp-for="Artiste.NbChansons" min="0" placeholder="0">
-                            <span asp-validation-for="Artiste.NbChansons" class="text-danger"></span>
+                            <label asp-for="@Model.Artiste.NbChansons" class="form-label"></label>
+                            <input type="number" class="form-control" asp-for="@Model.Artiste.NbChansons" min="0" placeholder="0">
+                            <span asp-validation-for="@Model.Artiste.NbChansons" class="text-danger"></span>
                         </div>
                     </div>
 
@@ -82,9 +84,9 @@
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6">
                             <div class="mb-3">
-                                <label asp-for="Artiste.Biographie" class="form-label"></label>
-                                <textarea class="form-control summernote " asp-for="Artiste.Biographie" rows="3" placeholder="Exemple: Saisir la biographie de l'artiste"></textarea>
-                                <span asp-validation-for="Artiste.Biographie" class="text-danger"></span>
+                                <label asp-for="@Model.Artiste.Biographie" class="form-label"></label>
+                                <textarea class="form-control summernote " asp-for="@Model.Artiste.Biographie" rows="3" placeholder="Exemple: Saisir la biographie de l'artiste"></textarea>
+                                <span asp-validation-for="@Model.Artiste.Biographie" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
@@ -92,9 +94,14 @@
                     <!--Nom ImgUrl-->
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6 ">
-                            <label asp-for="Artiste.ImageURL" class="form-label"></label>
-                            <input type="text" class="form-control" asp-for="Artiste.ImageURL" placeholder="Exemple: Eminem.jpg">
-                            <span asp-validation-for="Artiste.ImageURL" class="text-danger"></span>
+                            <label asp-for="@Model.Artiste.ImageURL" class="form-label">
+                                <div class="text-center mb-2">
+                                    <img src="@AppConstants.ImagePathArtiste@(string.IsNullOrWhiteSpace(Model.Artiste.ImageURL) ? AppConstants.ImageGenericArtiste : Model.Artiste.ImageURL)" class="w-75 border-img-artiste" alt="@Model.Artiste.Nom">
+                                </div>
+                                Image URL
+                            </label>
+                            <input type="file" name="files" class="form-control" asp-for="@Model.Artiste.ImageURL" onchange="this.nextElementSibling.style.display = 'none'" placeholder="Exemple: Eminem.jpg" multiple>
+                            <span asp-validation-for="@Model.Artiste.ImageURL" class="text-danger"></span>
 
                         </div>
                     </div>
@@ -102,8 +109,8 @@
                     <!--Genres de musique-->
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6">
-                            <label asp-for="Artiste.IdGenreMusical" class="form-label"></label>
-                            <select class="form-select" asp-for="Artiste.IdGenreMusical" aria-label="Genre de musique" asp-items="@Model.GenresSelectList">
+                            <label asp-for="@Model.Artiste.IdGenreMusical" class="form-label"></label>
+                            <select class="form-select" asp-for="@Model.Artiste.IdGenreMusical" aria-label="Genre de musique" asp-items="@Model.GenresSelectList">
                                 <option selected value="">Choisissez parmi les options proposées</option>
                                 @*<option value="POP">POP</option>
                                 <option value="HIP-HOP">Hip-Hop</option>
@@ -111,10 +118,10 @@
 
                             </select>
                             @*<span asp-validation-for="GenreMusical" class="text-danger"></span>*@
-                            <span asp-validation-for="Artiste.IdGenreMusical" class="text-danger"></span>
+                            <span asp-validation-for="@Model.Artiste.IdGenreMusical" class="text-danger"></span>
                         </div>
                     </div>
-                    <partial name="_CreateEditReinitBackCatalogueButtonPartielle" model="Model.Artiste.Id" />
+                    <partial name="_CreateEditReinitBackCatalogueButtonPartielle" model="@Model.Artiste.Id" />
                 </form>
             </div>
         </div>

@@ -15,10 +15,12 @@ namespace TP2.Controllers
     {
 
         private TP_FusionVoxDbContext _baseDonnees { get; set; }
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public ArtisteController(TP_FusionVoxDbContext baseDonnees)
+        public ArtisteController(TP_FusionVoxDbContext baseDonnees, IWebHostEnvironment webHostEnvironment)
         {
             _baseDonnees = baseDonnees;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         [Route("artiste")]
@@ -120,7 +122,8 @@ namespace TP2.Controllers
             {
                 //Edit
                 ArtisteVM.Artiste = await _baseDonnees.Artistes.FindAsync(Id);
-                if(ArtisteVM.Artiste == null)
+                ArtisteVM.AncienneImage = ArtisteVM.Artiste.ImageURL;//permet de mettre en valeur l'image de l'artiste dans AncienneImage
+                if (ArtisteVM.Artiste == null)
                 {
                     return View("NotFound");
                 }
@@ -145,13 +148,77 @@ namespace TP2.Controllers
                     if (artisteVM.Artiste.Id == 0)
                     {
                         //create
-                       await _baseDonnees.Artistes.AddAsync(artisteVM.Artiste);
+
+                        string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de zombies
+                        var files = HttpContext.Request.Form.Files; // Nouvelle image récupérée
+
+                        if (files.Count > 0)
+                        {
+                            //Générer un nom de fichier, qui est unique
+                            string fileName = Guid.NewGuid().ToString();
+                            //Trouver le chemin pour uploader les images de l'artiste, en combinant les path
+                            var uploads = Path.Combine(webRootPath, AppConstants.ImagePathArtisteCtrl);
+                            // extraire l'extention du fichier
+                            var extension = Path.GetExtension(files[0].FileName);
+
+                            //Create un cannal pour transférer le fichier
+                            using (var filesStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                            {
+                                files[0].CopyTo(filesStreams);
+                            }
+                            //Composer un nom pour le fichier en ajoutant l'extension qui sera enregistrée dans la base de données
+                            //avec le chemin relatif en tenant compte de la racine(Root).
+                            // sans le path relatif (le path devra être ajouté dans la View)
+
+                            artisteVM.Artiste.ImageURL = fileName + extension;
+                        }
+
+                        await _baseDonnees.Artistes.AddAsync(artisteVM.Artiste);
                         TempData[AppConstants.Success] = $"L'artiste {artisteVM.Artiste.Nom} a été ajouté.";
                     }
                     else
                     {
+
+                        string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de zombies
+                        var files = HttpContext.Request.Form.Files; // Nouvelle image récupérée
+
+                        if (files.Count > 0)
+                        {
+                            //Générer un nom de fichier, qui est unique
+                            string fileName = Guid.NewGuid().ToString();
+                            //Trouver le chemin pour uploader les images de l'artiste, en combinant les path
+                            var uploads = Path.Combine(webRootPath, AppConstants.ImagePathArtisteCtrl);
+                            // extraire l'extention du fichier
+                            var extension = Path.GetExtension(files[0].FileName);
+
+                            if (artisteVM.AncienneImage != artisteVM.Artiste.ImageURL)
+                            {
+                                //L'image est modifiée: l'ancienne doit être supprimée
+                                var PreviousImage = Path.Combine(webRootPath, AppConstants.ImagePathArtisteCtrl, artisteVM.AncienneImage.TrimStart('\\'));
+                                if (System.IO.File.Exists(PreviousImage))
+                                {
+                                    System.IO.File.Delete(PreviousImage);
+                                }
+                            }
+
+                            //Create un cannal pour transférer le fichier
+                            using (var filesStrams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                            {
+                                files[0].CopyTo(filesStrams);
+                            }
+                            //Composer un nom pour le fichier en ajoutant l'extension qui sera enregistrée dans la base de données
+                            //avec le chemin relatif en tenant compte de la racine(Root).
+                            // sans le path relatif (le path devra être ajouté dans la View)
+
+                            artisteVM.Artiste.ImageURL = fileName + extension;
+                        }
+                        else
+                        {
+                            artisteVM.Artiste.ImageURL = artisteVM.AncienneImage;
+                        }
+
                         //update
-                       _baseDonnees.Artistes.Update(artisteVM.Artiste);
+                        _baseDonnees.Artistes.Update(artisteVM.Artiste);
                         TempData[AppConstants.Success] = $"Les renseignements sur l'artiste {artisteVM.Artiste.Nom} ont été modifiés.";
                     }
                     await _baseDonnees.SaveChangesAsync();
@@ -170,6 +237,7 @@ namespace TP2.Controllers
             }
 
         }
+
 
         // GET: Artiste/Delete/5
         [Route("Artiste/Delete/{id:int}")]
