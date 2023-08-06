@@ -145,13 +145,13 @@ namespace TP2.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    if (artisteVM.Artiste.Id == 0)
+
+                    string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de zombies
+                    var files = HttpContext.Request.Form.Files; // Nouvelle image récupérée
+
+                    // Télécharger l'image et obtenons le chemin d'accès à cette image.
+                    string TelechargerImageEtObtenirURL(string? ancienneImageURL)
                     {
-                        //create
-
-                        string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de zombies
-                        var files = HttpContext.Request.Form.Files; // Nouvelle image récupérée
-
                         if (files.Count > 0)
                         {
                             //Générer un nom de fichier, qui est unique
@@ -161,40 +161,10 @@ namespace TP2.Controllers
                             // extraire l'extention du fichier
                             var extension = Path.GetExtension(files[0].FileName);
 
-                            //Create un cannal pour transférer le fichier
-                            using (var filesStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
-                            {
-                                files[0].CopyTo(filesStreams);
-                            }
-                            //Composer un nom pour le fichier en ajoutant l'extension qui sera enregistrée dans la base de données
-                            //avec le chemin relatif en tenant compte de la racine(Root).
-                            // sans le path relatif (le path devra être ajouté dans la View)
-
-                            artisteVM.Artiste.ImageURL = fileName + extension;
-                        }
-
-                        await _baseDonnees.Artistes.AddAsync(artisteVM.Artiste);
-                        TempData[AppConstants.Success] = $"L'artiste {artisteVM.Artiste.Nom} a été ajouté.";
-                    }
-                    else
-                    {
-
-                        string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de zombies
-                        var files = HttpContext.Request.Form.Files; // Nouvelle image récupérée
-
-                        if (files.Count > 0)
-                        {
-                            //Générer un nom de fichier, qui est unique
-                            string fileName = Guid.NewGuid().ToString();
-                            //Trouver le chemin pour uploader les images de l'artiste, en combinant les path
-                            var uploads = Path.Combine(webRootPath, AppConstants.ImagePathArtisteCtrl);
-                            // extraire l'extention du fichier
-                            var extension = Path.GetExtension(files[0].FileName);
-
-                            if (artisteVM.AncienneImage != artisteVM.Artiste.ImageURL)
+                            if (ancienneImageURL != artisteVM.Artiste.ImageURL)
                             {
                                 //L'image est modifiée: l'ancienne doit être supprimée
-                                var PreviousImage = Path.Combine(webRootPath, AppConstants.ImagePathArtisteCtrl, artisteVM.AncienneImage.TrimStart('\\'));
+                                var PreviousImage = Path.Combine(webRootPath, AppConstants.ImagePathArtisteCtrl, ancienneImageURL.TrimStart('\\'));
                                 if (System.IO.File.Exists(PreviousImage))
                                 {
                                     System.IO.File.Delete(PreviousImage);
@@ -210,14 +180,25 @@ namespace TP2.Controllers
                             //avec le chemin relatif en tenant compte de la racine(Root).
                             // sans le path relatif (le path devra être ajouté dans la View)
 
-                            artisteVM.Artiste.ImageURL = fileName + extension;
+                            return fileName + extension;
                         }
                         else
                         {
-                            artisteVM.Artiste.ImageURL = artisteVM.AncienneImage;
+                            return ancienneImageURL;
                         }
+                    }
 
+                    if (artisteVM.Artiste.Id == 0)
+                    {
+                         //create
+                         artisteVM.Artiste.ImageURL = TelechargerImageEtObtenirURL(null);
+                         await _baseDonnees.Artistes.AddAsync(artisteVM.Artiste);
+                         TempData[AppConstants.Success] = $"L'artiste {artisteVM.Artiste.Nom} a été ajouté.";
+                    }
+                    else
+                    {
                         //update
+                        artisteVM.Artiste.ImageURL = TelechargerImageEtObtenirURL(artisteVM.AncienneImage);
                         _baseDonnees.Artistes.Update(artisteVM.Artiste);
                         TempData[AppConstants.Success] = $"Les renseignements sur l'artiste {artisteVM.Artiste.Nom} ont été modifiés.";
                     }
@@ -237,7 +218,6 @@ namespace TP2.Controllers
             }
 
         }
-
 
         // GET: Artiste/Delete/5
         [Route("Artiste/Delete/{id:int}")]
@@ -273,12 +253,24 @@ namespace TP2.Controllers
             {   //1.Supprimer l'artiste de la base de données
 
                 Artiste? artisteASupprimer = await _baseDonnees.Artistes.Where(a => a.Id == Id).FirstOrDefaultAsync();
-                if(artisteASupprimer == null)
+                if (artisteASupprimer == null)
                 {
                     return View("NotFound");
                 }
-
+         
                 _baseDonnees.Artistes.Remove(artisteASupprimer);
+
+                // Supprimer les images du fichier
+                string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de zombies
+                if (artisteASupprimer.ImageURL != null)
+                {
+                    var pathImage = Path.Combine(webRootPath, AppConstants.ImagePathArtisteCtrl, artisteASupprimer.ImageURL.TrimStart('\\'));
+                    if (System.IO.File.Exists(pathImage))
+                    {
+                        System.IO.File.Delete(pathImage);
+                    }
+                }
+
                 TempData[AppConstants.Success] = $"L'artiste {artisteASupprimer.Nom} a été supprimé de la base de données.";
                 await _baseDonnees.SaveChangesAsync();
 
