@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Build.ObjectModelRemoting;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
@@ -56,6 +57,10 @@ namespace TP2.ViewModels
         //public int? GenreMusicalId { get; set; }
 
         public Artiste? Artiste { get; set; }
+
+        [ValidateNever]
+        public string? AncienneImage { get; set; } = "";
+
         public IEnumerable<SelectListItem>? GenresSelectList { get; set; }
 
     }

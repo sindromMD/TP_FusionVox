@@ -25,6 +25,18 @@
       "PackagePath": "staticwebassets\\Images\\Artistes\\descktop\\Eminem.png"
     },
     {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\GenericArtiste.png",
+      "PackagePath": "staticwebassets\\Images\\Artistes\\descktop\\GenericArtiste.png"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\GenericArtiste2.png",
+      "PackagePath": "staticwebassets\\Images\\Artistes\\descktop\\GenericArtiste2.png"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\GenericArtiste3.png",
+      "PackagePath": "staticwebassets\\Images\\Artistes\\descktop\\GenericArtiste3.png"
+    },
+    {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\Lil_Nas_X.png",
       "PackagePath": "staticwebassets\\Images\\Artistes\\descktop\\Lil_Nas_X.png"
     },

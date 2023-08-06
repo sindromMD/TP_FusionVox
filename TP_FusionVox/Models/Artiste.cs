@@ -52,6 +52,7 @@ namespace TP2.Models
         public string Agent { get; set; }
 
         [ForeignKey("GenreMusical")]
+        [Display(Name = "Genre Musical")]
         [Required(ErrorMessage = "Le genre musical est obligatoire")]
         public int? IdGenreMusical { get; set; }
 
