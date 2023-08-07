@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using TP2.Models;
 using System.Linq;
 using TP2.ViewModels;

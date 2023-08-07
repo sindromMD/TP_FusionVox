@@ -1,4 +1,4 @@
-﻿namespace TP_FusionVox.Utility
+namespace TP_FusionVox.Utility
 {
     public static class AppConstants
     {
