@@ -31,7 +31,7 @@
                         <div class="card-body">
                             <div class="col text-center my-4">
 
-                                <img src="~/Images/Background/@Model.ImageUrl" alt="@Model.Nom" class="card-img border-img-parents w-50">
+                                <img src="@AppConstants.ImagePathGenreMusical@(string.IsNullOrWhiteSpace(Model.ImageUrl) ? AppConstants.ImageGenericGenreMusical : Model.ImageUrl)" alt="@Model.Nom" class="card-img border-img-parents w-50">
                             </div>
 
                             <!--tableau details-->

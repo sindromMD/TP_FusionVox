@@ -17,10 +17,10 @@ namespace TP2.Models
         [Display(Name = "Genre de musique")]
         public string Nom { get; set; }
 
-        [Required (ErrorMessage = "L'image est obligatoire")]
+        //[Required(ErrorMessage = "L'image est obligatoire")]
         [Display(Name = "Image URL")]
         [DataType(DataType.Url)]
-        public string ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
         [Display(Name = "Description du genre musical")]
         [StringLength(500, MinimumLength = 0, ErrorMessage = "La description doit comporter entre {2} et {1} caractères.")]

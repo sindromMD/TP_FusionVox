@@ -136,7 +136,7 @@
                 </div>
                         <!--Carousell-->
 
-                        @*<div id="carousel" class="carousel slide mb-1">
+                        <div id="carousel" class="carousel slide mb-1">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                                 <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -144,28 +144,29 @@
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="Images/Background/Details/Daft_pank_carousel1.jpg" class="d-block w-100" alt="Daft Punk galery">
+                                    <img src="/Images/Background/Details/Daft_pank_carousel1.jpg" class="d-block w-100" alt="Daft Punk galery">
                                     <div class="carousel-caption d-none d-md-block">
+                                <h1 class="text-warning">En cours de développement</h1>
                                         <h5>Sans visage</h5>
                                         <p>Une des originalités de Daft Punk est la culture de leur notoriété d'artistes indépendants et sans visage, portant toujours en public des casques et des costumes. Ils s'inspirent sur ce point du film Phantom of the Paradise de Brian De Palma.</p>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Images/Background/Details/Daft_pank_carousel2.jpg" class="d-block w-100" alt="Daft Punk galery 2">
+                                    <img src="/Images/Background/Details/Daft_pank_carousel2.jpg" class="d-block w-100" alt="Daft Punk galery 2">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>Premier Album</h5>
                                         <p>Le 7 janvier 1997, à la suite de la sortie du single Da Funk, Daft Punk sort son premier album Homework, caractérisé par la house et les rythmes techno inspirés de la scène de Chicago. </p>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Images/Background/Details/Daft_pank_carousel3.jpg" class="d-block w-100" alt="Daft Punk galery 3">
+                                    <img src="/Images/Background/Details/Daft_pank_carousel3.jpg" class="d-block w-100" alt="Daft Punk galery 3">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>Les dix ans de Random Access Memories (2023)</h5>
                                         <p>SEn 2023, à nouveau le 22 février, une version anniversaire de leur dernier album, Random Access Memories, est annoncée pour le 12 mai, à l'occasion des dix ans de sa sortie.</p>
                                     </div>
                                 </div>
-                            </div>*@
-                         @*   <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
@@ -173,7 +174,7 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
-                        </div>*@
+                        </div>
 
                         <!--Youtube Video-->
 
@@ -193,28 +194,20 @@
 
 @section monStyle {
     <style>
-     /*   body {
-            background-image: url("/Images/Background/Details_Artistes/@Model.ImageURL");
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 900px;
-            width:1440px;
-        }*/
         .hero-image_Details {
-/*            background-image: url("/Images/Background/Details_Artistes/@Model.ImageURL");*/
-            background-image: url("@(string.IsNullOrEmpty(Model.ImageURL) ? "/Images/Background/Details_Artistes/BG_Details_descktop_1440x900_Fade.png" : "/Images/Background/Details_Artistes/" + Model.ImageURL)");
+            background-image: url("@(string.IsNullOrEmpty(Model.ImageURL) ? "/Images/Background/Details_Artistes/GenericDetailsArtiste.png" : "/Images/Background/Details_Artistes/" + Model.ImageURL)");
         }
        
     </style>
     <style type="text/css" media="(min-width:361px) and (max-width:835px)">
         .hero-image_Details {
-            background-image: url("/Images/Background/Details_Artistes/834x521/@Model.ImageURL");
+            background-image: url("@(string.IsNullOrEmpty(Model.ImageURL) ? "/Images/Background/Details_Artistes/834x521/GenericDetailsArtiste.png" : "/Images/Background/Details_Artistes/834x521/" + Model.ImageURL)");
             height: 521px;
         }
     </style>
     <style type="text/css" media="(max-width:360px)">
         .hero-image_Details {
-            background-image: url("/Images/Background/Details_Artistes/360x413/@Model.ImageURL");
+            background-image: url("@(string.IsNullOrEmpty(Model.ImageURL) ? "/Images/Background/Details_Artistes/360x413/GenericDetailsArtiste.png" : "/Images/Background/Details_Artistes/360x413/" + Model.ImageURL)");
             height: 413px;
         }
     </style>

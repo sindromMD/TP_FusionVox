@@ -1,4 +1,5 @@
 ﻿using TP_FusionVox.ViewModels;
+using TP2.Models;
 
 namespace TP2.ViewModels
 {

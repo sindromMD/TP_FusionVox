@@ -1,8 +1,8 @@
-﻿@model GenreMusical
+﻿@model GenreMusicalVM
 @{
     ViewData["Title"] = "Ajouter";//Il est également utilisé pour le texte des boutons
     var titre = "AJOUTER UN NOUVEAU GENRE MUSICAL";
-    if (Model.Id != 0)
+    if (Model.GenreMusical.Id != 0)
     {
         //Edit
         ViewData["Title"] = "Modifier";//Il est également utilisé pour le texte des boutons
@@ -17,25 +17,26 @@
                 <div class="divider-2 mb-3 "></div><!--devider linear gradient cian-->
                 <br>
                 <!--Form ajouter Genres de Musique-->
-                <form asp-controller="Home" asp-action="Upsert" method="post" class="text-start p1">
+                <form asp-controller="Home" asp-action="Upsert" method="post" enctype="multipart/form-data" class="text-start p1">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="@Model.GenreMusical.Id" />
+                    <input asp-for="@Model.AncienneImage" value="@Model.GenreMusical.ImageUrl" class="form-control" type="hidden" /> <!--permet de conserver l'ancienne image-->
 
                     <!--Nom Genre Musical-->
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6 ">
-                            <label asp-for="Nom" class="form-label"></label>
-                            <input type="text" class="form-control" asp-for="Nom" placeholder="Exemple: Hip-Hop">
-                            <span asp-validation-for="Nom" class="text-danger"></span>
+                            <label asp-for="@Model.GenreMusical.Nom" class="form-label"></label>
+                            <input type="text" class="form-control" asp-for="@Model.GenreMusical.Nom" placeholder="Exemple: Hip-Hop">
+                            <span asp-validation-for="@Model.GenreMusical.Nom" class="text-danger"></span>
                         </div>
                     </div>
                     <!--Description-->
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6">
                             <div class="mb-3">
-                                <label asp-for="Description" class="form-label"></label>
-                                <textarea class="form-control summernote" asp-for="Description" rows="3" placeholder="Exemple: Saisir la description du genre musical"></textarea>
-                                <span asp-validation-for="Description" class="text-danger"></span>
+                                <label asp-for="@Model.GenreMusical.Description" class="form-label"></label>
+                                <textarea class="form-control summernote" asp-for="@Model.GenreMusical.Description" rows="3" placeholder="Exemple: Saisir la description du genre musical"></textarea>
+                                <span asp-validation-for="@Model.GenreMusical.Description" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
@@ -43,13 +44,18 @@
                     <!--ImgUrl-->
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6 ">
-                            <label asp-for="ImageUrl" class="form-label"></label>
-                            <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Exemple: Hip_Hop.png">
-                            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                            <label asp-for="@Model.GenreMusical.ImageUrl" class="form-label">
+                                <div class="text-center mb-2">
+                                    <img src="@AppConstants.ImagePathGenreMusical@(string.IsNullOrWhiteSpace(Model.GenreMusical.ImageUrl) ? AppConstants.ImageGenericGenreMusical : Model.GenreMusical.ImageUrl)" class="w-75 border-img-artiste" alt="@Model.GenreMusical.Nom">
+                                </div>
+                                Image URL
+                            </label>
+                            <input type="file" name="files" class="form-control" asp-for="@Model.GenreMusical.ImageUrl" onchange="this.nextElementSibling.style.display = 'none'" placeholder="Exemple: Hip_Hop.png" multiple>
+                            <span asp-validation-for="@Model.GenreMusical.ImageUrl" class="text-danger"></span>
 
                         </div>
                     </div>
-                    <partial name="_CreateEditReinitBackCatalogueButtonPartielle" model="Model.Id" />
+                    <partial name="_CreateEditReinitBackCatalogueButtonPartielle" model="@Model.GenreMusical.Id" />
                 </form>
             </div>
         </div>

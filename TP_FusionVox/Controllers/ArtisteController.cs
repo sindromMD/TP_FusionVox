@@ -146,7 +146,7 @@ namespace TP2.Controllers
                 if (ModelState.IsValid)
                 {
 
-                    string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de zombies
+                    string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de Artiste
                     var files = HttpContext.Request.Form.Files; // Nouvelle image récupérée
 
                     // Télécharger l'image et obtenons le chemin d'accès à cette image.
@@ -172,9 +172,9 @@ namespace TP2.Controllers
                             }
 
                             //Create un cannal pour transférer le fichier
-                            using (var filesStrams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                            using (var filesStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                             {
-                                files[0].CopyTo(filesStrams);
+                                files[0].CopyTo(filesStreams);
                             }
                             //Composer un nom pour le fichier en ajoutant l'extension qui sera enregistrée dans la base de données
                             //avec le chemin relatif en tenant compte de la racine(Root).

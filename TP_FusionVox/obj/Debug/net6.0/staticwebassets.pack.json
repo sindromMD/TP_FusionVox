@@ -161,6 +161,10 @@
       "PackagePath": "staticwebassets\\Images\\Background\\Details_Artistes\\360x413\\Eminem.png"
     },
     {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Background\\Details_Artistes\\360x413\\GenericDetailsArtiste.png",
+      "PackagePath": "staticwebassets\\Images\\Background\\Details_Artistes\\360x413\\GenericDetailsArtiste.png"
+    },
+    {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Background\\Details_Artistes\\360x413\\Lil_Nas_X.png",
       "PackagePath": "staticwebassets\\Images\\Background\\Details_Artistes\\360x413\\Lil_Nas_X.png"
     },
@@ -209,6 +213,10 @@
       "PackagePath": "staticwebassets\\Images\\Background\\Details_Artistes\\834x521\\Eminem.png"
     },
     {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Background\\Details_Artistes\\834x521\\GenericDetailsArtiste.png",
+      "PackagePath": "staticwebassets\\Images\\Background\\Details_Artistes\\834x521\\GenericDetailsArtiste.png"
+    },
+    {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Background\\Details_Artistes\\834x521\\Lil_Nas_X.png",
       "PackagePath": "staticwebassets\\Images\\Background\\Details_Artistes\\834x521\\Lil_Nas_X.png"
     },
@@ -241,14 +249,6 @@
       "PackagePath": "staticwebassets\\Images\\Background\\Details_Artistes\\BG_Details_descktop_1440x900.png"
     },
     {
-      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Background\\Details_Artistes\\BG_Details_descktop_1440x900_Fade.png",
-      "PackagePath": "staticwebassets\\Images\\Background\\Details_Artistes\\BG_Details_descktop_1440x900_Fade.png"
-    },
-    {
-      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Background\\Details_Artistes\\BG_Details_descktop_834x521.png",
-      "PackagePath": "staticwebassets\\Images\\Background\\Details_Artistes\\BG_Details_descktop_834x521.png"
-    },
-    {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Background\\Details_Artistes\\Bruno_Mars.png",
       "PackagePath": "staticwebassets\\Images\\Background\\Details_Artistes\\Bruno_Mars.png"
     },
@@ -267,6 +267,10 @@
     {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Background\\Details_Artistes\\Eminem.png",
       "PackagePath": "staticwebassets\\Images\\Background\\Details_Artistes\\Eminem.png"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Background\\Details_Artistes\\GenericDetailsArtiste.png",
+      "PackagePath": "staticwebassets\\Images\\Background\\Details_Artistes\\GenericDetailsArtiste.png"
     },
     {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Background\\Details_Artistes\\Lil_Nas_X.png",
@@ -297,18 +301,6 @@
       "PackagePath": "staticwebassets\\Images\\Background\\Details_Artistes\\tiesto.png"
     },
     {
-      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Background\\Hip-Hop.jpg",
-      "PackagePath": "staticwebassets\\Images\\Background\\Hip-Hop.jpg"
-    },
-    {
-      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Background\\POP.jpg",
-      "PackagePath": "staticwebassets\\Images\\Background\\POP.jpg"
-    },
-    {
-      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Background\\electro.jpg",
-      "PackagePath": "staticwebassets\\Images\\Background\\electro.jpg"
-    },
-    {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Carousel\\11\\1.jpg",
       "PackagePath": "staticwebassets\\Images\\Carousel\\11\\1.jpg"
     },
@@ -319,6 +311,22 @@
     {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Carousel\\11\\3.jpg",
       "PackagePath": "staticwebassets\\Images\\Carousel\\11\\3.jpg"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\GenresMusicaux\\GenericGenreMusical.jpg",
+      "PackagePath": "staticwebassets\\Images\\GenresMusicaux\\GenericGenreMusical.jpg"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\GenresMusicaux\\Hip-Hop.jpg",
+      "PackagePath": "staticwebassets\\Images\\GenresMusicaux\\Hip-Hop.jpg"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\GenresMusicaux\\POP.jpg",
+      "PackagePath": "staticwebassets\\Images\\GenresMusicaux\\POP.jpg"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\GenresMusicaux\\electro.jpg",
+      "PackagePath": "staticwebassets\\Images\\GenresMusicaux\\electro.jpg"
     },
     {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Icons\\Line.svg",
