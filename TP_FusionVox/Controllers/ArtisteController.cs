@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using TP2.Models;
 using System.Linq;
 using TP2.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using TP_FusionVox.Models.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
+using TP_FusionVox.Utility;
 
 namespace TP2.Controllers
 {
@@ -10,16 +14,18 @@ namespace TP2.Controllers
     public class ArtisteController : Controller
     {
 
-        private BaseDeDonnees _baseDonnees { get; set; }
+        private TP_FusionVoxDbContext _baseDonnees { get; set; }
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public ArtisteController(BaseDeDonnees baseDonnees)
+        public ArtisteController(TP_FusionVoxDbContext baseDonnees, IWebHostEnvironment webHostEnvironment)
         {
             _baseDonnees = baseDonnees;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         [Route("artiste")]
         [Route("artiste/recherche")]
-        public IActionResult Recherche()
+        public async Task<IActionResult> Recherche()
         {
             //IEnumerable<IGrouping<string, Artiste>> ListeArtisteByGenreMusical = _baseDonnees.Artistes.GroupBy(a => a.GenreMusical.Nom);
             var model = new PageRechercheViewModel();
@@ -27,8 +33,9 @@ namespace TP2.Controllers
             model.Criteres.EstGenreMusicalPOP = true;
             model.Criteres.EstGenreMusicalHipHop = true;
             model.Criteres.EstGenreMuscialElectro = true;
-            model.Resultat = _baseDonnees.Artistes.GroupBy(a => a.GenreMusical.Nom);
-
+            //model.Resultat = _baseDonnees.Artistes.AsEnumerable().GroupBy(a => a.GenreMusical.Nom);
+            var ListArtiste = await _baseDonnees.Artistes.Include(a => a.GenreMusical).ToListAsync();
+            model.Resultat = ListArtiste.GroupBy(a => a.GenreMusical.Nom).ToList();
 
             return View(model);
         }
@@ -52,8 +59,8 @@ namespace TP2.Controllers
             if (criteres.ChoiPourPersonnageVedette == "Non")
                 ListArtisteFiltre = ListArtisteFiltre.Where(a => !a.EstVedette);
 
-            modelRecherche.Resultat = ListArtisteFiltre.GroupBy(a => a.GenreMusical.Nom);
-            if(modelRecherche.Resultat.Count() == 0)
+            modelRecherche.Resultat = ListArtisteFiltre.AsEnumerable().GroupBy(a => a.GenreMusical.Nom);
+            if (modelRecherche.Resultat.Count() == 0)
                 TempData["NotFound"] = $"Malheureusement, l'artiste {criteres.InputNomArtiste} que vous recherchez ne figure pas sur notre liste. ";
 
             return View("Recherche", modelRecherche);
@@ -63,11 +70,11 @@ namespace TP2.Controllers
         [Route("artiste/detail/{id:int}")]
         [Route("artiste/{id:int}")]
         [Route("{id:int}")]
-        public IActionResult DetailParID(int id)
+        public async Task<IActionResult> DetailParID(int id)
         {
 
-            Artiste detailArtiste = null;
-            detailArtiste = _baseDonnees.Artistes.Where(a => a.Id == id).FirstOrDefault();
+            //Artiste detailArtiste = null;
+            Artiste? detailArtiste =await _baseDonnees.Artistes.Where(a => a.Id == id).FirstOrDefaultAsync();
             if (detailArtiste != null)
             {
                 return View("Detail", detailArtiste);
@@ -81,65 +88,211 @@ namespace TP2.Controllers
         [Route("artiste/detail/{Nom}")]
         [Route("artiste/{Nom}")]
         [Route("{Nom}")]
-        public IActionResult DetailParNom(string Nom)
-        {
-            Artiste detailArtiste = null;
-            detailArtiste = _baseDonnees.Artistes.Where(a => a.Nom.ToLower() == Nom.ToLower()).FirstOrDefault();
+        public async Task<IActionResult> DetailParNom(string Nom)
+        { 
+            Artiste? detailArtiste = await _baseDonnees.Artistes.Where(a => a.Nom.ToLower() == Nom.ToLower()).FirstOrDefaultAsync();
             if (detailArtiste != null)
                 return View("Detail", detailArtiste);
             else
                 return View("NotFound");
 
         }
-        // GET:Create
+        //Get UPSERT
         [Route("artiste/create")]
-        public IActionResult Create()
+        [Route("artiste/upsert/create")]
+        [Route("artiste/edit/{id:int}")]
+        [Route("artiste/upsert/edit/{id:int}")]
+        public async Task<IActionResult> Upsert(int? Id)
         {
-            NewArtisteVM newArtisteVM = new NewArtisteVM();
-            newArtisteVM.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
-            {
-                Text = gm.Nom,
-                Value = gm.Id.ToString()
-            }).OrderBy(gm => gm.Text); 
-            return View(newArtisteVM);
-        }
-
-        // POST: Create
-        [Route("artiste/create")]
-        [HttpPost]
-        public IActionResult Create(NewArtisteVM newArtiste)
-        {
-            if (ModelState.IsValid)
-            {
-                Artiste artiste = new Artiste()
-                {
-                    GenreMusical = _baseDonnees.genresMusicaux.Where(g => g.Id == newArtiste.GenreMusicalId).First(),
-                    ImageURL = newArtiste.ImageURL,
-                    Nom = newArtiste.Nom,
-                    Pays = newArtiste.Pays,
-                    Agent = newArtiste.Agent,
-                    DebutCarrier = (DateTime)newArtiste.DebutCarrier,
-                    NbChansons = (int)newArtiste.NbChansons,
-                    Biographie = newArtiste.Biographie,
-                    EstVedette = newArtiste.EstVedette,
-                    Id = _baseDonnees.Artistes.LastOrDefault().Id + 1,
-                };
-                
-            _baseDonnees.Artistes.Add(artiste);
-            artiste.GenreMusical.Artistes.Add(artiste);
-                
-                return RedirectToAction("Recherche");
-            }
-            newArtiste.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
+            NewArtisteVM ArtisteVM = new NewArtisteVM();
+            ArtisteVM.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
+            
             {
                 Text = gm.Nom,
                 Value = gm.Id.ToString()
             }).OrderBy(gm => gm.Text);
-            return View(newArtiste);
+
+            if (Id == null || Id == 0)
+            {
+                //create
+                ArtisteVM.Artiste = new Artiste();
+                return View(ArtisteVM);
+            }
+            else
+            {
+                //Edit
+                ArtisteVM.Artiste = await _baseDonnees.Artistes.FindAsync(Id);
+                ArtisteVM.AncienneImage = ArtisteVM.Artiste.ImageURL;//permet de mettre en valeur l'image de l'artiste dans AncienneImage
+                if (ArtisteVM.Artiste == null)
+                {
+                    return View("NotFound");
+                }
+                return View(ArtisteVM);
+
+            }
+        }
+
+        // POST: UPSERT 
+        [Route("artiste/create")]
+        [Route("artiste/upsert/create")]
+        [Route("artiste/edit/{id:int}")]
+        [Route("artiste/upsert/edit/{id:int}")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Upsert(NewArtisteVM artisteVM)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+
+                    string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de Artiste
+                    var files = HttpContext.Request.Form.Files; // Nouvelle image récupérée
+
+                    // Télécharger l'image et obtenons le chemin d'accès à cette image.
+                    string TelechargerImageEtObtenirURL(string? ancienneImageURL)
+                    {
+                        if (files.Count > 0)
+                        {
+                            //Générer un nom de fichier, qui est unique
+                            string fileName = Guid.NewGuid().ToString();
+                            //Trouver le chemin pour uploader les images de l'artiste, en combinant les path
+                            var uploads = Path.Combine(webRootPath, AppConstants.ImagePathArtisteCtrl);
+                            // extraire l'extention du fichier
+                            var extension = Path.GetExtension(files[0].FileName);
+
+                            if (ancienneImageURL != artisteVM.Artiste.ImageURL)
+                            {
+                                //L'image est modifiée: l'ancienne doit être supprimée
+                                var PreviousImage = Path.Combine(webRootPath, AppConstants.ImagePathArtisteCtrl, ancienneImageURL.TrimStart('\\'));
+                                if (System.IO.File.Exists(PreviousImage))
+                                {
+                                    System.IO.File.Delete(PreviousImage);
+                                }
+                            }
+
+                            //Create un cannal pour transférer le fichier
+                            using (var filesStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                            {
+                                files[0].CopyTo(filesStreams);
+                            }
+                            //Composer un nom pour le fichier en ajoutant l'extension qui sera enregistrée dans la base de données
+                            //avec le chemin relatif en tenant compte de la racine(Root).
+                            // sans le path relatif (le path devra être ajouté dans la View)
+
+                            return fileName + extension;
+                        }
+                        else
+                        {
+                            return ancienneImageURL;
+                        }
+                    }
+
+                    if (artisteVM.Artiste.Id == 0)
+                    {
+                         //create
+                         artisteVM.Artiste.ImageURL = TelechargerImageEtObtenirURL(null);
+                         await _baseDonnees.Artistes.AddAsync(artisteVM.Artiste);
+                         TempData[AppConstants.Success] = $"L'artiste {artisteVM.Artiste.Nom} a été ajouté.";
+                    }
+                    else
+                    {
+                        //update
+                        artisteVM.Artiste.ImageURL = TelechargerImageEtObtenirURL(artisteVM.AncienneImage);
+                        _baseDonnees.Artistes.Update(artisteVM.Artiste);
+                        TempData[AppConstants.Success] = $"Les renseignements sur l'artiste {artisteVM.Artiste.Nom} ont été modifiés.";
+                    }
+                    await _baseDonnees.SaveChangesAsync();
+                    return RedirectToAction("Recherche");
+                }
+                artisteVM.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
+                {
+                    Text = gm.Nom,
+                    Value = gm.Id.ToString()
+                }).OrderBy(gm => gm.Text);
+                return View(artisteVM);
+            }
+            catch
+            {
+                return View();
+            }
 
         }
 
-        
+        // GET: Artiste/Delete/5
+        [Route("Artiste/Delete/{id:int}")]
+        [Route("Artiste/Supprimer/{id:int}")]
+        [Route("Delete/{id:int}")]
+        [Route("Supprimer/{id:int}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            NewArtisteVM artisteVM = new NewArtisteVM();
 
+            artisteVM.Artiste =await _baseDonnees.Artistes.Where(a => a.Id == id).FirstOrDefaultAsync();
+            if (artisteVM.Artiste != null)
+            {
+                return View(artisteVM.Artiste);
+            }
+            else
+            { 
+                return View("NotFound");
+            }
+
+        }
+
+        // POST: delete
+        [Route("Artiste/DeletePost")]
+        [Route("Artiste/Supprimer")]
+        [Route("DeletePost")]
+        [Route("Supprimer")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeletePost(int Id)
+        {
+            try
+            {   //1.Supprimer l'artiste de la base de données
+
+                Artiste? artisteASupprimer = await _baseDonnees.Artistes.Where(a => a.Id == Id).FirstOrDefaultAsync();
+                if (artisteASupprimer == null)
+                {
+                    return View("NotFound");
+                }
+         
+                _baseDonnees.Artistes.Remove(artisteASupprimer);
+
+                // Supprimer les images du fichier
+                string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de zombies
+                if (artisteASupprimer.ImageURL != null)
+                {
+                    var pathImage = Path.Combine(webRootPath, AppConstants.ImagePathArtisteCtrl, artisteASupprimer.ImageURL.TrimStart('\\'));
+                    if (System.IO.File.Exists(pathImage))
+                    {
+                        System.IO.File.Delete(pathImage);
+                    }
+                }
+
+                TempData[AppConstants.Success] = $"L'artiste {artisteASupprimer.Nom} a été supprimé de la base de données.";
+                await _baseDonnees.SaveChangesAsync();
+
+
+                //2.Supprimer un artiste de la liste des favoris
+                //(un artiste supprimé de la BD doit également être supprimé de la liste des favoris)
+
+                List<FavorisViewModel>? artisteFavoris = HttpContext.Session.Get<List<FavorisViewModel>>("Artistes");
+                if (artisteFavoris != null)
+                {
+                    artisteFavoris.Remove(artisteFavoris.Where(f => f.Id == Id).SingleOrDefault());
+                    if (artisteFavoris.Count == 0)
+                        artisteFavoris = null;
+                }
+                HttpContext.Session.Set<List<FavorisViewModel>>("Artistes", artisteFavoris);
+
+                return RedirectToAction("Recherche", "Artiste");
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }

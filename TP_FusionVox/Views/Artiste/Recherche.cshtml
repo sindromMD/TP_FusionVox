@@ -41,11 +41,11 @@
                             <div class="form-check form-switch">
                                 @if(Model.Criteres.EstGenreMusicalPOP)
                                 {
-                                    <input class="form-check-input" type="checkbox" role="switch" id="EstGenreMusicalPOP" name="EstGenreMusicalPOP" value="true" checked>
+                                    <input class="form-check-input" type="checkbox"  id="EstGenreMusicalPOP" name="EstGenreMusicalPOP" value="true" checked>
                                 }
                                 else
                                 {
-                                    <input class="form-check-input" type="checkbox" role="switch" id="EstGenreMusicalPOP" name="EstGenreMusicalPOP" value="true">
+                                    <input class="form-check-input" type="checkbox" id="EstGenreMusicalPOP" name="EstGenreMusicalPOP" value="true">
                                 }
 
                                 <label class="form-check-label" for="EstGenreMusicalPOP">POP</label>
@@ -53,22 +53,22 @@
                             <div class="form-check form-switch">
                                 @if(Model.Criteres.EstGenreMusicalHipHop)
                                 {
-                                    <input class="form-check-input" type="checkbox" role="switch" id="EstGenreMusicalHipHop" name="EstGenreMusicalHipHop" value="true" checked>
+                                    <input class="form-check-input" type="checkbox"  id="EstGenreMusicalHipHop" name="EstGenreMusicalHipHop" value="true" checked>
                                 }
                                 else
                                 {
-                                    <input class="form-check-input" type="checkbox" role="switch" id="EstGenreMusicalHipHop" name="EstGenreMusicalHipHop" value="true" >
+                                    <input class="form-check-input" type="checkbox"  id="EstGenreMusicalHipHop" name="EstGenreMusicalHipHop" value="true" >
                                 }
                             <label class="form-check-label" for="EstGenreMusicalHipHop">Hip-Hop</label>
                             </div>
                             <div class="form-check form-switch">
                                 @if(Model.Criteres.EstGenreMuscialElectro)
                                 {
-                                    <input class="form-check-input" type="checkbox" role="switch" id="EstGenreMuscialElectro" name="EstGenreMuscialElectro" value="true" checked>
+                                    <input class="form-check-input" type="checkbox"  id="EstGenreMuscialElectro" name="EstGenreMuscialElectro" value="true" checked>
                                 }
                                 else
                                 {
-                                    <input class="form-check-input" type="checkbox" role="switch" id="EstGenreMuscialElectro" name="EstGenreMuscialElectro" value="true">
+                                    <input class="form-check-input" type="checkbox" id="EstGenreMuscialElectro" name="EstGenreMuscialElectro" value="true">
                                 }
                             <label class="form-check-label" for="EstGenreMuscialElectro">Électro</label>
                             </div>
@@ -176,24 +176,15 @@
             @foreach (var artiste in Genre)
             {
                 //carte d'artiste avec modal de suppression
-
                  @await Html.PartialAsync("_ArtisteCardPartielle",artiste)
-
             }
         </div>
     }
-
 </main>
 
 @section monStyle {
      <style >
-        body{
-          background-image:url("../Images/Background/BG_Artiste_descktop_1400-900_fade.png");
-          background-position: center;
-          background-repeat: no-repeat;
-          height: 900px;
-         }
-
+    <!--Solution trouvée pour l'image du héros-->
      </style>
 }
 @section Scripts {

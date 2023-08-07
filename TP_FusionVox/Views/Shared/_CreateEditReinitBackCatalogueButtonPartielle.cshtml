@@ -1,0 +1,47 @@
+﻿@model int
+@{
+    var btnText = ViewData["Title"];
+}
+<div class="row justify-content-center text-center">
+    @if (Model == 0)
+    {
+        //create
+        <div class="col col-md-8 col-xl-6 mb-2 mt-4">
+            <button type="submit" class="btn-rechercher">
+                <span id="btntextUpsert">
+                    @*ici la fonction JQuery ajoute à ce texte un morceau en fonction de ce qui est créé ou modifié (artiste ou genre musical)*@
+                    @btnText
+                </span>
+                <i class="fa-solid fa-user-plus"></i>
+            </button>
+        </div>
+    }
+    else
+    {
+        //Edit
+        <div class="col col-md-8 col-xl-6 mb-2 mt-4">
+            <button type="submit" class="btn-rechercher">
+                <span id="btntextUpsert">
+                    @btnText
+                </span>
+                <i class="fa-solid fa-user-pen"></i>
+            </button>
+        </div>
+    }
+
+</div>
+<div class="row justify-content-center text-center">
+    <div class="col col-md-8 col-xl-6 my-2">
+        <button type="reset" class="btn-reinitialiser">
+            Réinitialiser <i class="fa-solid fa-arrow-rotate-left"></i>
+        </button>
+    </div>
+</div>
+<div class="row justify-content-center text-center">
+    <div class="col col-md-8 col-xl-6 my-2 ">
+        <a class="p1 " asp-controller="Artiste" asp-action="Recherche">
+            <i class="fa-solid fa-chevron-left"></i>
+            Retour au catalogue
+        </a>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using TP_FusionVox.Utility;
 using TP2.Models;
 using TP2.ViewModels;
 
@@ -23,7 +24,7 @@ namespace TP2.Controllers
 
             return View(artistesFavoris);
         }
-        //Add
+        //Add- POST
         [Route("Favoris")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -37,20 +38,23 @@ namespace TP2.Controllers
             {
                 // Nous n'ajoutons pas le même artiste à la liste.
                 string nomArtiste = artisteFavoris.Find(af => af.Id == Id).Nom;
-                TempData["ajoutRepete"] = $"L'artiste ( {nomArtiste} ) que vous souhaitez ajouter figure déjà dans la liste.";
+                TempData[AppConstants.Info] = $"L'artiste {nomArtiste} que vous souhaitez ajouter figure déjà dans la liste.";
             }
             else
-                artisteFavoris.Add(_baseDonnees.Artistes.Where(a => a.Id == Id)
-                    .Select(x => new FavorisViewModel() 
-                    { Id = x.Id, ImageURL = x.ImageURL, Nom = x.Nom, GenreMusical = x.GenreMusical.Nom, NbAbonnees = x.NbAbonnees }).Single());
-
+            {
+                var artiste = _baseDonnees.Artistes.Where(a => a.Id == Id)
+                    .Select(x => new FavorisViewModel()
+                    { Id = x.Id, ImageURL = x.ImageURL, Nom = x.Nom, GenreMusical = x.GenreMusical.Nom, NbAbonnees = x.NbAbonnees }).Single();
+                artisteFavoris.Add(artiste);
+                TempData[AppConstants.Success] = $"L'artiste {artiste.Nom} a été ajouté.";
+            }
                 HttpContext.Session.Set<List<FavorisViewModel>>("Artistes", artisteFavoris);
-
+                
 
             return RedirectToAction("Favoris");
         }
 
-        //Delete
+        //Delete-POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult SupprimerFavoris(int Id)
@@ -62,7 +66,9 @@ namespace TP2.Controllers
                 if (artisteFavoris != null )
                 //artisteFavoris = new List<FavorisViewModel>();
                 {
-                    artisteFavoris.Remove(artisteFavoris.Where(f => f.Id == Id).SingleOrDefault());
+                    var artiste = artisteFavoris.Where(f => f.Id == Id).SingleOrDefault();
+                    artisteFavoris.Remove(artiste);
+                    TempData[AppConstants.Success] = $"L'artiste {artiste.Nom} a été supprimé de la base de données.";
                     if (artisteFavoris.Count == 0)
                         artisteFavoris = null;
                 }

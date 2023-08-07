@@ -1,0 +1,11 @@
+﻿@model Artiste
+
+<div class="form-check btn-ajouter-coeur-card-position">
+    <form asp-controller="Favoris" asp-action="Favoris" method="post">
+        <button type="submit" class="fa-solid fa-heart-circle-plus fa-xl btn-heart-retirer">
+        </button>
+        <div>
+            <input type="hidden" asp-for="@Model.Id" /> <!--Input Hidden nomArtiste-->
+        </div>
+    </form>
+</div>

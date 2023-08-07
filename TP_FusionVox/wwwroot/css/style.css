@@ -89,41 +89,32 @@ body {
     
 }
 /*-------Ces classes se comportent différemment aux points d'arrêt------*/
-.marge_header_bot_Accueil{
-    margin-bottom: 200px;
-}
-.marge_bot_titre_Accueil{
+
+.marge_bot_titre_Accueil,
+.marge_header_bot_Delete {
     margin-bottom: 120px;
 }
 
-.marge_header_bot_Favoris{
-    margin-bottom: 200px;
-}
 .marge_top_titre_favoris{
     margin-top: 100px;
 }
 
-.marge_header_bot_Ajouter{
+.marge_header_bot_Ajouter,
+.marge_header_bot_Modifier,
+.marge_header_bot_Accueil,
+.marge_header_bot_Favoris,
+.marge_header_bot_Recherche,
+.marge_header_bot_Details {
     margin-bottom: 200px;
 }
 
-.marge_header_bot_Artistes{
-    margin-bottom: 200px;
-    
-}
 .marge_bot_titre_artistes{
     margin-bottom: 180px;
-}
-
-.marge_header_bot_Details{
-    margin-bottom: 200px;
 }
 .marge_bot_titre_Details{
     margin-bottom: 220px;
 }
 /*-----------------------*/
-
-
 
 .marge-description-genre{
     margin-bottom: 50px;
@@ -139,10 +130,15 @@ body {
     height: 145px;
     position: absolute;
 }
+
 .border-img-parents{
     border:4px solid #FFC920;
+}
+.border-img-artiste{
+    border:2px solid #FFFFFF;
+}
+.border-img-artiste, .border-img-parents {
     border-radius: 10px;
-    
 }
 /*----------------Style de police-------------*/
  /* H0 Montserrat 48*/
@@ -351,7 +347,7 @@ a:active{
 .btn-menu{
     gap: 10px;
     align-items: flex-start;
-    display: flex;
+    display: block;
     padding: 10px 20px;
     position: relative;
     color:#FFFFFF;
@@ -404,8 +400,7 @@ a:active{
 /*Boutons utilisés dans le menu pour ajouter un artiste*/
 .btn-ajouter-artistes{
     gap: 10px;
-    align-items: flex-start;
-    display: flex;
+    align-items: center;
     padding: 10px 20px;
     position: relative;
     color:#FFFFFF;
@@ -414,6 +409,7 @@ a:active{
     margin-left: 15px;
     margin-right: 15px;
     border-color: #FFFFFF;
+    cursor:pointer;
 }
 .btn-ajouter-artistes:hover{
     padding-bottom:8px;
@@ -421,8 +417,7 @@ a:active{
     color: #898585;
     border: 2px solid ;
     border-radius: 10px;
-
-}
+    }
 .btn-ajouter-artistes:active{
     padding-bottom:6px;
     
@@ -431,9 +426,18 @@ a:active{
     border-radius: 10px;
     border-color: #FFC920;
 }
+header .dropdown-menu{
+    background-color:#1A1A1A;
+    border:1px solid #FFFFFF;
+    margin-right:15px;
+    width:190px;
+}
+header .p1 {
+text-align:center;
+}
+
 /*----Utilisés pour les Boutons Reseaux sociaux----*/
-.btn-reseaux_sociaux{
-  
+.btn-reseaux_sociaux {
     width: 36px;
     height: 36px;
     color: #FFFFFF;
@@ -489,21 +493,21 @@ a:active{
 
 /* ----- Images héros pour chaque page,
     insérées dans le body sous l'en-tête----*/
-.hero-image_accueil{
+.hero-image_Accueil{
     background-image:url("../Images/Background/Accueil_fade_bot_1400-900.jpg");
     background-position: center;
     background-repeat: no-repeat;
     height: 900px;
     
 }
-.hero-image_favoris{
-    background-image:url("../Images/Background/Bg_descktop_Favoris._1400-900_fade.jpg");
+.hero-image_Favoris{
+    background-image: url("../Images/Background/Bg_descktop_Favoris._1400-900_fade.jpg");
     background-position: center;
     background-repeat: no-repeat;
     height: 900px;
 }
-.hero-image_artistes{
-    background-image:url("../Images/Background/BG_Artiste_descktop_1400-900_fade.png");
+.hero-image_Recherche{
+    background-image: url("../Images/Background/BG_Artiste_descktop_1400-900_fade.png");
     background-position: center;
     background-repeat: no-repeat;
     height: 900px;
@@ -682,14 +686,30 @@ genres musicaux, pour chaque catégorie de musique. */
 
 .btn-ajouter-coeur-card-position {
     position: absolute;
-    top: 10px;
+    top: 4px;
+    right: 20px;
+}
+/*.btn-ajouter-coeur-detail-position {
+    position: absolute;
+    top: 15px;
     right: 25px;
+}*/
+i.fa-flip, .vedette-star, span.h4 {
+    color: #ffc920;
+}
+span.h4{
+    font-weight:bold;
+}
+.btn-edit-card-position {
+    position: absolute;
+    bottom: -2px;
+    right: 30px;
 }
 .vedette-star {
     position: absolute;
     top: 20px;
-    left: 15px;
-    color:#ffc920;
+    left: 12px;
+    
 }
 .btn-supprimer-artiste {
     position: absolute;
@@ -702,6 +722,14 @@ genres musicaux, pour chaque catégorie de musique. */
     background-color: transparent;
     border: none;
 }
+div.x a.btn-supprimer-artiste {
+    top: 0px;
+}
+div.x a.btn-edit-card-position {
+    right:50px;
+    top:0px;
+}
+
 .btn-circle {
     border-radius: 100%;
     height: 2.5rem;
@@ -722,12 +750,15 @@ genres musicaux, pour chaque catégorie de musique. */
     }
 
 .btn-supprimer-artiste:hover {
-    color: #F29D9D;
+    color: #FFFFFF;
+    background-color:#916e07;
 }
 
-    .btn-supprimer-artiste:active {
-        color: #FFC920;
-    }
+.btn-supprimer-artiste:active {
+    color: #FFC920;
+    background-color:#FFC920;
+    transition-duration:0.3s
+}
 .nom_artiste_superpose {
     position: absolute;
     top: 30%;
@@ -850,6 +881,22 @@ genres musicaux, pour chaque catégorie de musique. */
 .white-link a {
     color: rgba(255, 255, 255, 0.65);
 }
+.note-frame {
+    background: #FFFFFF;
+    color: black;
+    font-family: 'Montserrat';
+}
+    .note-frame h0,
+    .note-frame h1,
+    .note-frame h2,
+    .note-frame h3,
+    .note-frame h4,
+    .note-frame .p1,
+    .note-frame .p2,
+    .note-frame .p3,
+    .note-frame .p4 {
+        color: black;
+    }
 
 /*.form-switch input::backdrop{
     color:black;
@@ -871,13 +918,15 @@ genres musicaux, pour chaque catégorie de musique. */
             font-size: 28px;
             line-height: 34px;
         }
-        .marge_header_bot_Artistes{
+        .marge_header_bot_Recherche{
             margin-bottom: 70px;
         }
         .marge_bot_titre_artistes{
             margin-bottom: 80px;
         }
-        .marge_header_bot_Ajouter{
+        .marge_header_bot_Ajouter,
+        .marge_header_bot_Modifier,
+        .marge_header_bot_Delete {
             margin-bottom: 100px;
         }
         .marge_header_bot_Accueil{
@@ -902,26 +951,26 @@ genres musicaux, pour chaque catégorie de musique. */
             background-image: url("../Images/Background/BG_Details_descktop_834x521.png");
             height: 521px;
         }
-    .hero-image_favoris{
-        background-image:url("../Images/Background/BG_Favoris_Ipad_834_521.25_fade.png");
-        height: 521px;
-    }
-    .marge_header_bot_Favoris {
-        margin-bottom: 55px;
-    }
-    .hero-image_artistes{
-        background-image:url("../Images/Background/BG_Artistes_Ipad_834_fade.png");
-        height: 521px;
-    }
-    .hero-image_accueil{
-        background-image:url("../Images/Background/BG_Accueil_ipad_834_fade.png");
-        height: 521px;
-    }
+        .hero-image_Favoris{
+            background-image:url("../Images/Background/BG_Favoris_Ipad_834_521.25_fade.png");
+            height: 521px;
+        }
+        .marge_header_bot_Favoris {
+            margin-bottom: 55px;
+        }
+        .hero-image_Recherche{
+            background-image: url("../Images/Background/BG_Artistes_Ipad_834_fade.png");
+            height: 521px;
+        }
+        .hero-image_Accueil{
+            background-image:url("../Images/Background/BG_Accueil_ipad_834_fade.png");
+            height: 521px;
+        }
   
     }
     
     @media (max-width:575px){
-        .marge_header_bot_Favoris{
+        .marge_header_bot_Favoris{/**/
             margin-bottom: 160px;
         }
         caption{
@@ -942,31 +991,28 @@ genres musicaux, pour chaque catégorie de musique. */
     }
 
     @media (max-width:360px) {
-        .hero-image_Details{
+  /*      .hero-image_Details{
             background-image:url("../Images/Background/BG_Details_Daft_Punk_Android_360_fade.png");
             height: 413px;
-    }
-        .hero-image_favoris{
+    }*/
+        .hero-image_Favoris{
             background-image:url("../Images/Background/BG_Favoris_Androi_360_522_fade.png");
             height: 522px;
     }
-       .hero-image_artistes{
-        background-image:url("../Images/Background/BG_Artiste_Android_360_fade.png");
-        height: 521px;
-    }
+        .hero-image_Recherche{
+            background-image: url("../Images/Background/BG_Artiste_Android_360_fade.png");
+            height: 521px;
+        }
 
-       .hero-image_accueil{
+       .hero-image_Accueil{
         background-image:url("../Images/Background/BG_Accueil_Androi_360_fade.png");
         height: 521px;
     }
-       
-       .marge_header_bot_Details{
-        margin-bottom: 100px;
-    }
-       .marge_bot_titre_Details{
-        margin-bottom: 100px;
-    }
-    
+
+        .marge_header_bot_Details,
+        .marge_bot_titre_Details {
+            margin-bottom: 100px;
+        }  
 
     }
 

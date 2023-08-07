@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP_FusionVox_Culaxiz_Alexei", "TP_FusionVox\TP_FusionVox_Culaxiz_Alexei.csproj", "{BC068A87-133A-4BFC-B5E0-265FEB365818}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP_FusionVox", "TP_FusionVox\TP_FusionVox.csproj", "{BC068A87-133A-4BFC-B5E0-265FEB365818}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

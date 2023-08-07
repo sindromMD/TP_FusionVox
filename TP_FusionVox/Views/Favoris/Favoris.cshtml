@@ -42,23 +42,18 @@
           </div>
        <div class="col-5 d-none d-lg-block"></div>
     </div>
-    @if (!string.IsNullOrWhiteSpace(TempData["ajoutRepete"] as string))
-        {
-            <div class="alert alert-info">@TempData["ajoutRepete"]</div>
-        }
+
     @if(Model == null)
     {
         <p class="p1">Votre liste des artistes favoris est vide !</p>
-        
     }
     else
     {
-
             <div class="table-responsive-sm">
         <table class="table table-dark table-striped align-middle text-center marge-description-genre " >
-            <caption class="p1"><i class="fa-solid fa-circle-info fa-flip" style="color: #ffc920;"></i> 
+            <caption class="p1"><i class="fa-solid fa-circle-info fa-flip"></i> 
                 Vous avez 
-                        <span class="h4 mx-2" style="color:#ffc920; font-weight:bold;">@ViewData["CountFavoris"]</span>  
+                        <span class="h4 mx-2">@ViewData["CountFavoris"]</span>  
                         artiste en favoris !</caption>
                 <thead class="h4 ">
                   <tr>
@@ -131,12 +126,7 @@
 
 @section monStyle {
       <style >
-         body{
-        background-image:url("../Images/Background/Bg_descktop_Favoris._1400-900_fade.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 900px;
-            }
+          <!--Solution trouvée pour l'image du héros-->
     </style>
 }
 @section Scripts {
