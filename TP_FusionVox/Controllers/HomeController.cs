@@ -7,6 +7,8 @@ using TP_FusionVox.Models.Data;
 using Microsoft.EntityFrameworkCore;
 using TP_FusionVox.Utility;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Localization;
+using Microsoft.AspNetCore.Localization;
 
 namespace TP2.Controllers
 {
@@ -15,11 +17,13 @@ namespace TP2.Controllers
     {
         private TP_FusionVoxDbContext _baseDonnees { get; set; }
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly IStringLocalizer<HomeController> _localizer;
 
-        public HomeController(TP_FusionVoxDbContext baseDonnees, IWebHostEnvironment webHostEnvironment)
+        public HomeController(TP_FusionVoxDbContext baseDonnees, IWebHostEnvironment webHostEnvironment, IStringLocalizer<HomeController> localizer)
         {
             _baseDonnees = baseDonnees;
             _webHostEnvironment = webHostEnvironment;
+            _localizer = localizer;
         }
         [Route("")]
         [Route("Home")]
@@ -197,5 +201,21 @@ namespace TP2.Controllers
             await _baseDonnees.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        //Cookie Culture
+        [HttpPost]
+        public IActionResult SetLanguage(string culture, string returnUrl)
+        {
+            var cookie = CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture));
+            var name = CookieRequestCultureProvider.DefaultCookieName;
+
+            Response.Cookies.Append(name, cookie, new CookieOptions
+            {
+                Path = "/",
+                Expires = DateTimeOffset.UtcNow.AddYears(1),
+            });
+
+            return LocalRedirect(returnUrl);
+        }
+
     }
 }

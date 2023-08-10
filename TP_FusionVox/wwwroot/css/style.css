@@ -351,6 +351,7 @@ a:active{
     padding: 10px 20px;
     position: relative;
     color:#FFFFFF;
+    background-color:transparent
 }
 .btn-menu:hover{
     padding-bottom:6px;
@@ -389,6 +390,7 @@ a:active{
     order: 0;
     flex-grow: 0;
     text-decoration: none; 
+    padding-inline:0px;
    
 }
 .navbar-toggler{
@@ -433,7 +435,23 @@ header .dropdown-menu{
     width:190px;
 }
 header .p1 {
-text-align:center;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    padding-inline: 0px;
+}
+header select option {
+    background-color: #1A1A1A;
+    border: 1px solid #FFFFFF;
+    margin-right: 15px;
+    width: 100%;
+}
+select .btn-ajouter-artistes{
+    width:100px;
 }
 
 /*----Utilisés pour les Boutons Reseaux sociaux----*/
