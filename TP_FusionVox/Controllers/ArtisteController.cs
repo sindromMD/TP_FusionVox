@@ -7,6 +7,7 @@ using TP_FusionVox.Models.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using TP_FusionVox.Utility;
+using Microsoft.Extensions.Localization;
 
 namespace TP_FusionVox.Controllers
 {
@@ -16,11 +17,15 @@ namespace TP_FusionVox.Controllers
 
         private TP_FusionVoxDbContext _baseDonnees { get; set; }
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly IStringLocalizer<ArtisteController> _localizer;
 
-        public ArtisteController(TP_FusionVoxDbContext baseDonnees, IWebHostEnvironment webHostEnvironment)
+        public ArtisteController(TP_FusionVoxDbContext baseDonnees,
+                                    IWebHostEnvironment webHostEnvironment,
+                                    IStringLocalizer<ArtisteController> localizer)
         {
             _baseDonnees = baseDonnees;
             _webHostEnvironment = webHostEnvironment;
+            _localizer = localizer;
         }
 
         [Route("artiste")]
@@ -36,7 +41,7 @@ namespace TP_FusionVox.Controllers
             //model.Resultat = _baseDonnees.Artistes.AsEnumerable().GroupBy(a => a.GenreMusical.Nom);
             var ListArtiste = await _baseDonnees.Artistes.Include(a => a.GenreMusical).ToListAsync();
             model.Resultat = ListArtiste.GroupBy(a => a.GenreMusical.Nom).ToList();
-
+            ViewData["Title"] = this._localizer["ArtisteListTitle"];
             return View(model);
         }
 
@@ -77,6 +82,7 @@ namespace TP_FusionVox.Controllers
             Artiste? detailArtiste =await _baseDonnees.Artistes.Where(a => a.Id == id).FirstOrDefaultAsync();
             if (detailArtiste != null)
             {
+                ViewData["Title"] = this._localizer["ArtisteDetailTitle"];
                 return View("Detail", detailArtiste);
             }
             else
@@ -92,7 +98,11 @@ namespace TP_FusionVox.Controllers
         { 
             Artiste? detailArtiste = await _baseDonnees.Artistes.Where(a => a.Nom.ToLower() == Nom.ToLower()).FirstOrDefaultAsync();
             if (detailArtiste != null)
+            {
+                ViewData["Title"] = this._localizer["ArtisteDetailTitle"];
                 return View("Detail", detailArtiste);
+            }
+                
             else
                 return View("NotFound");
 
@@ -116,17 +126,20 @@ namespace TP_FusionVox.Controllers
             {
                 //create
                 ArtisteVM.Artiste = new Artiste();
+                ViewData["Title"] = this._localizer["ArtisteCreateTitle"];
                 return View(ArtisteVM);
             }
             else
             {
                 //Edit
                 ArtisteVM.Artiste = await _baseDonnees.Artistes.FindAsync(Id);
-                ArtisteVM.AncienneImage = ArtisteVM.Artiste.ImageURL;//permet de mettre en valeur l'image de l'artiste dans AncienneImage
+                
                 if (ArtisteVM.Artiste == null)
                 {
                     return View("NotFound");
                 }
+                ArtisteVM.AncienneImage = ArtisteVM.Artiste.ImageURL;//permet de mettre en valeur l'image de l'artiste dans AncienneImage
+                ViewData["Title"] = this._localizer["ArtisteEditTitle"];
                 return View(ArtisteVM);
 
             }
@@ -231,6 +244,7 @@ namespace TP_FusionVox.Controllers
             artisteVM.Artiste =await _baseDonnees.Artistes.Where(a => a.Id == id).FirstOrDefaultAsync();
             if (artisteVM.Artiste != null)
             {
+                ViewData["Title"] = this._localizer["ArtisteDeleteTitle"];
                 return View(artisteVM.Artiste);
             }
             else

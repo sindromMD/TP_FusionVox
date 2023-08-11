@@ -1,12 +1,13 @@
 ﻿@model GenreMusicalVM
 @{
-    ViewData["Title"] = "Ajouter";//Il est également utilisé pour le texte des boutons
-    var titre = "AJOUTER UN NOUVEAU GENRE MUSICAL";
+    //create
+    ViewData["classeSuffixe"] = "Ajouter";
+    var titre = Locals["TitleFormAdd"];
     if (Model.GenreMusical.Id != 0)
     {
         //Edit
-        ViewData["Title"] = "Modifier";//Il est également utilisé pour le texte des boutons
-        titre = "MODIFIER LE GENRE DE MUSIQUE";
+        ViewData["classeSuffixe"] = "Modifier";
+        titre = Locals["TitleFormEdit"];
     }
 }
 <main class="container">

@@ -52,6 +52,7 @@ namespace TP_FusionVox.Controllers
                 NbTotalChansons = await _baseDonnees.Artistes.Select(a => a.NbChansons).SumAsync()
 
             };
+            ViewData["Title"] = this._localizer["IndexTitle"];
             return View(statistiqueVM);
         }
         //GET Upsert
@@ -64,17 +65,20 @@ namespace TP_FusionVox.Controllers
             {
                 //create
                 genreMusicalVM.GenreMusical = new GenreMusical();
+                ViewData["Title"] = this._localizer["CreateTitle"];
                 return View(genreMusicalVM);
             }
             else
             {
                 //Edit
                 genreMusicalVM.GenreMusical = await _baseDonnees.genresMusicaux.FindAsync(id);
-                genreMusicalVM.AncienneImage = genreMusicalVM.GenreMusical.ImageUrl;  //permet de mettre en valeur l'image de l'artiste dans AncienneImage
+               
                 if (genreMusicalVM.GenreMusical == null)
                 {
                     return View("NotFound");
                 }
+                genreMusicalVM.AncienneImage = genreMusicalVM.GenreMusical.ImageUrl;  //permet de mettre en valeur l'image de l'artiste dans AncienneImage
+                ViewData["Title"] = this._localizer["EditTitle"];
                 return View(genreMusicalVM);
             }
         }
@@ -167,6 +171,7 @@ namespace TP_FusionVox.Controllers
 
             if(genreMusicalVM.GenreMusical != null) 
             {
+                ViewData["Title"] = this._localizer["DeleteTitle"];
                 return View(genreMusicalVM.GenreMusical);
             }
             else

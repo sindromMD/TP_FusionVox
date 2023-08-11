@@ -1,12 +1,12 @@
 ﻿@model NewArtisteVM
 @{
-    ViewData["Title"] = "Ajouter"; // Il est également utilisé pour le texte des boutons
-    var titreFormulaire = "AJOUTER UN ARTISTE";
+    ViewData["classeSuffixe"] = "Ajouter";
+    var titreFormulaire = Locals["TitleFormAdd"];
     if (Model.Artiste.Id != 0)
     {
         //Edit
-        ViewData["Title"] = "Modifier"; //Il est également utilisé pour le texte des boutons
-        titreFormulaire = "MODIFIER LES DONNÉES DE L'ARTISTE";
+        ViewData["classeSuffixe"] = "Modifier"; 
+        titreFormulaire = Locals["TitleFormEdit"];
     }
 }
 <main class="container">
