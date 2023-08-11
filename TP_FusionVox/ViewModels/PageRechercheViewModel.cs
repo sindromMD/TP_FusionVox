@@ -1,6 +1,6 @@
-﻿using TP2.Models;
+﻿using TP_FusionVox.Models;
 
-namespace TP2.ViewModels
+namespace TP_FusionVox.ViewModels
 {
     public class PageRechercheViewModel
     {

@@ -1,14 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
-using TP2.Models;
+using TP_FusionVox.Models;
 using System.Linq;
-using TP2.ViewModels;
+using TP_FusionVox.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TP_FusionVox.Models.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using TP_FusionVox.Utility;
 
-namespace TP2.Controllers
+namespace TP_FusionVox.Controllers
 {
 
     public class ArtisteController : Controller

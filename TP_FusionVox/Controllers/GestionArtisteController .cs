@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TP_FusionVox.Models.Data;
-using TP2.Models;
-using TP2.ViewModels;
+using TP_FusionVox.Models;
+using TP_FusionVox.ViewModels;
 
-namespace TP2.Controllers
+namespace TP_FusionVox.Controllers
 {
     public class GestionArtisteController : Controller
     {

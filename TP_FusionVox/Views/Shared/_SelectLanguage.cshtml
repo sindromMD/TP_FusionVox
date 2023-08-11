@@ -21,14 +21,13 @@
 </div>*@
 
 
-<li>
+
 <form id="selectLanguage" asp-controller="Home"
       asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path"
-      method="post" class="  " role="form">
+          method="post" class="" role="form">
         <div >
-        <select onchange="this.form.submit()" name="culture" class=" p1 btn-menu form-control btn-ajouter-artistes "
+        <select onchange="this.form.submit()" name="culture" class=" p1"
                 asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
         </select>
         </div>
     </form>
-</li>

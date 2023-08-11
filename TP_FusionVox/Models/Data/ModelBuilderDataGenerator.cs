@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TP2.Models;
+using TP_FusionVox.Models;
 
 namespace TP_FusionVox.Models.Data
 {

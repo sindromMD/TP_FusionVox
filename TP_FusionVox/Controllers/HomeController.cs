@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TP2.Models;
+using TP_FusionVox.Models;
 using System.Linq;
-using TP2.ViewModels;
 using TP_FusionVox.ViewModels;
 using TP_FusionVox.Models.Data;
 using Microsoft.EntityFrameworkCore;
@@ -9,8 +8,9 @@ using TP_FusionVox.Utility;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Localization;
 using Microsoft.AspNetCore.Localization;
+using System.Diagnostics;
 
-namespace TP2.Controllers
+namespace TP_FusionVox.Controllers
 {
 
     public class HomeController : Controller
@@ -19,7 +19,9 @@ namespace TP2.Controllers
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IStringLocalizer<HomeController> _localizer;
 
-        public HomeController(TP_FusionVoxDbContext baseDonnees, IWebHostEnvironment webHostEnvironment, IStringLocalizer<HomeController> localizer)
+        public HomeController(TP_FusionVoxDbContext baseDonnees,
+                                IWebHostEnvironment webHostEnvironment,
+                                IStringLocalizer<HomeController> localizer)
         {
             _baseDonnees = baseDonnees;
             _webHostEnvironment = webHostEnvironment;
@@ -201,7 +203,7 @@ namespace TP2.Controllers
             await _baseDonnees.SaveChangesAsync();
             return RedirectToAction("Index");
         }
-        //Cookie Culture
+
         [HttpPost]
         public IActionResult SetLanguage(string culture, string returnUrl)
         {

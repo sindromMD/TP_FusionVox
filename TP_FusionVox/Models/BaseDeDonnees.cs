@@ -1,4 +1,4 @@
-﻿namespace TP2.Models
+﻿namespace TP_FusionVox.Models
 {
     public class BaseDeDonnees
     {

@@ -341,8 +341,20 @@
       "PackagePath": "staticwebassets\\Images\\Icons\\_img_Scroll_down_android.svg"
     },
     {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Icons\\chevron-bottom.svg",
+      "PackagePath": "staticwebassets\\Images\\Icons\\chevron-bottom.svg"
+    },
+    {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Icons\\polymer.svg",
       "PackagePath": "staticwebassets\\Images\\Icons\\polymer.svg"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Icons\\square-caret-down-solid.svg",
+      "PackagePath": "staticwebassets\\Images\\Icons\\square-caret-down-solid.svg"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Icons\\square-caret-down-solid2.svg",
+      "PackagePath": "staticwebassets\\Images\\Icons\\square-caret-down-solid2.svg"
     },
     {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Logo\\Logo_android.svg",
