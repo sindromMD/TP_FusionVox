@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 using System.Globalization;
 using TP_FusionVox.Models;
 using TP_FusionVox.Models.Data;
-
+using TP_FusionVox.Services;
 
 var builder = WebApplication.CreateBuilder(args); // Crée une web app avec les paramètres envoyés
 
@@ -45,6 +45,8 @@ builder.Services.AddDbContext<TP_FusionVoxDbContext>(options =>
 
 builder.Services.AddDistributedMemoryCache(); // Permet l'utilisation de cookies
 builder.Services.AddSession(option => { option.IdleTimeout = TimeSpan.FromMinutes(20); }); // Configure l'expiration d'un cookies,
+builder.Services.AddScoped(typeof(IServiceBaseAsync<>), typeof(ServiceBaseAsync<>));
+builder.Services.AddScoped<IGenreMusicalService, GenreMusicalService>();
 
 var app = builder.Build();
 
