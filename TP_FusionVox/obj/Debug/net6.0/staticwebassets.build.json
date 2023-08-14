@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "S1R9o0xhrKQfW0Q1WrkjZbukwAkzFmr3d3PeOaVMwj4=",
+  "Hash": "LCbmozH9EpHBbfi39OPWITkQHbRzoxFHzmOd1T6YL1g=",
   "Source": "TP_FusionVox",
   "BasePath": "_content/TP_FusionVox",
   "Mode": "Default",
@@ -1462,6 +1462,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\Icons\\_img_Scroll_down_android.svg"
     },
     {
+      "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Icons\\chevron-bottom.svg",
+      "SourceId": "TP_FusionVox",
+      "SourceType": "Discovered",
+      "ContentRoot": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\",
+      "BasePath": "_content/TP_FusionVox",
+      "RelativePath": "Images/Icons/chevron-bottom.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Icons\\chevron-bottom.svg"
+    },
+    {
       "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Icons\\Line.svg",
       "SourceId": "TP_FusionVox",
       "SourceType": "Discovered",
@@ -1494,6 +1511,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Icons\\polymer.svg"
+    },
+    {
+      "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Icons\\square-caret-down-solid.svg",
+      "SourceId": "TP_FusionVox",
+      "SourceType": "Discovered",
+      "ContentRoot": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\",
+      "BasePath": "_content/TP_FusionVox",
+      "RelativePath": "Images/Icons/square-caret-down-solid.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Icons\\square-caret-down-solid.svg"
+    },
+    {
+      "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Icons\\square-caret-down-solid2.svg",
+      "SourceId": "TP_FusionVox",
+      "SourceType": "Discovered",
+      "ContentRoot": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\",
+      "BasePath": "_content/TP_FusionVox",
+      "RelativePath": "Images/Icons/square-caret-down-solid2.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Icons\\square-caret-down-solid2.svg"
     },
     {
       "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Logo\\Logo_android.svg",

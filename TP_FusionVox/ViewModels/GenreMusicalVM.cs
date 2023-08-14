@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using TP2.Models;
+using TP_FusionVox.Models;
 
 namespace TP_FusionVox.ViewModels
 {

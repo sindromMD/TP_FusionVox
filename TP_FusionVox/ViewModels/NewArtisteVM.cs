@@ -4,9 +4,9 @@ using Microsoft.Build.ObjectModelRemoting;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using TP2.Models;
+using TP_FusionVox.Models;
 
-namespace TP2.ViewModels
+namespace TP_FusionVox.ViewModels
 {
     public class NewArtisteVM
     {

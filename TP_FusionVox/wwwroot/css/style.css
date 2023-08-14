@@ -351,6 +351,7 @@ a:active{
     padding: 10px 20px;
     position: relative;
     color:#FFFFFF;
+    background-color:transparent
 }
 .btn-menu:hover{
     padding-bottom:6px;
@@ -389,6 +390,7 @@ a:active{
     order: 0;
     flex-grow: 0;
     text-decoration: none; 
+    padding-inline:0px;
    
 }
 .navbar-toggler{
@@ -404,7 +406,7 @@ a:active{
     padding: 10px 20px;
     position: relative;
     color:#FFFFFF;
-    border: 2px solid ;
+    border: 2px solid;
     border-radius: 10px;
     margin-left: 15px;
     margin-right: 15px;
@@ -420,9 +422,8 @@ a:active{
     }
 .btn-ajouter-artistes:active{
     padding-bottom:6px;
-    
     color: #FFFFFF;
-    border: 2px solid ;
+    border: 3px solid ;
     border-radius: 10px;
     border-color: #FFC920;
 }
@@ -430,11 +431,23 @@ header .dropdown-menu{
     background-color:#1A1A1A;
     border:1px solid #FFFFFF;
     margin-right:15px;
-    width:190px;
+    width:200px;
 }
 header .p1 {
-text-align:center;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    padding-inline: 10px;
 }
+header select option {
+    background-color: #1A1A1A;
+    border: 2px solid #FFFFFF;
+}
+
 
 /*----Utilisés pour les Boutons Reseaux sociaux----*/
 .btn-reseaux_sociaux {
@@ -450,9 +463,32 @@ text-align:center;
 .btn-reseaux_sociaux:active{
     color: #FFC920;
 }
+header select {
+    background-color: transparent;
+    /*    background: url("../Images/Icons/chevron-bottom.svg") no-repeat right #ddd;*/
+    -webkit-appearance: none;
+    background-position-x: 97%;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-inline:15px;
+}
+    header select:hover {
+        padding-bottom: 8px;
+        padding-top: 8px;
+        color: #898585;
+        border:2px solid #898585 ;
+    }
+    header select option {
+        background-color: #1A1A1A;
+        color: white;
+        padding: 8px;
+    }
 
-/*----Utilisés pour les Boutons Ajouter ou Retirer de la liste de favoris----*/
-.btn-heart-retirer{
+
+
+    /*----Utilisés pour les Boutons Ajouter ou Retirer de la liste de favoris----*/
+    .btn-heart-retirer{
   
     width: 36px;
     height: 36px;

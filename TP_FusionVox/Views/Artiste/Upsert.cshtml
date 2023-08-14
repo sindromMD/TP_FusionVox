@@ -1,12 +1,12 @@
 ﻿@model NewArtisteVM
 @{
-    ViewData["Title"] = "Ajouter"; // Il est également utilisé pour le texte des boutons
-    var titreFormulaire = "AJOUTER UN ARTISTE";
+    ViewData["classeSuffixe"] = "Ajouter";
+    var titreFormulaire = Locals["TitleFormAdd"];
     if (Model.Artiste.Id != 0)
     {
         //Edit
-        ViewData["Title"] = "Modifier"; //Il est également utilisé pour le texte des boutons
-        titreFormulaire = "MODIFIER LES DONNÉES DE L'ARTISTE";
+        ViewData["classeSuffixe"] = "Modifier"; 
+        titreFormulaire = Locals["TitleFormEdit"];
     }
 }
 <main class="container">
@@ -98,8 +98,8 @@
                                 <div class="text-center mb-2">
                                     <img src="@AppConstants.ImagePathArtiste@(string.IsNullOrWhiteSpace(Model.Artiste.ImageURL) ? AppConstants.ImageGenericArtiste : Model.Artiste.ImageURL)" class="w-75 border-img-artiste" alt="@Model.Artiste.Nom">
                                 </div>
-                                Image URL
                             </label>
+                            <label asp-for="@Model.Artiste.ImageURL" class="form-label"></label>
                             <input type="file" name="files" class="form-control" asp-for="@Model.Artiste.ImageURL" onchange="this.nextElementSibling.style.display = 'none'" placeholder="Exemple: Eminem.jpg" multiple>
                             <span asp-validation-for="@Model.Artiste.ImageURL" class="text-danger"></span>
 

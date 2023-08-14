@@ -1,10 +1,38 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using System.Globalization;
+using TP_FusionVox.Models;
 using TP_FusionVox.Models.Data;
-using TP2.Models;
+
 
 var builder = WebApplication.CreateBuilder(args); // Crée une web app avec les paramètres envoyés
-builder.Services.AddControllersWithViews(); // Permet MVC
+
+// Injecter la localisation
+#region Localizer configuration
+CultureInfo[] supportedCultures = new[]
+{
+    new CultureInfo("fr-CA"),
+    new CultureInfo("en-US"),
+    new CultureInfo("ro-RO")
+};
+#endregion
+
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+// Ajouter des services au conteneur.
+builder.Services.AddControllersWithViews()// Permet MVC
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization();
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
+});
+
 builder.Services.AddRazorPages(); // Permet utilisation de Razor
 builder.Services.AddMvc().AddRazorRuntimeCompilation();
 builder.Services.AddSingleton<BaseDeDonnees>(); // Permet l'utilisation du Singleton
@@ -19,6 +47,9 @@ builder.Services.AddDistributedMemoryCache(); // Permet l'utilisation de cookies
 builder.Services.AddSession(option => { option.IdleTimeout = TimeSpan.FromMinutes(20); }); // Configure l'expiration d'un cookies,
 
 var app = builder.Build();
+
+var locOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
+app.UseRequestLocalization(locOptions.Value);
 
 if (app.Environment.IsDevelopment())
 {

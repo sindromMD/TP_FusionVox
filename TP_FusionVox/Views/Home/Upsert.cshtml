@@ -1,12 +1,13 @@
 ﻿@model GenreMusicalVM
 @{
-    ViewData["Title"] = "Ajouter";//Il est également utilisé pour le texte des boutons
-    var titre = "AJOUTER UN NOUVEAU GENRE MUSICAL";
+    //create
+    ViewData["classeSuffixe"] = "Ajouter";
+    var titre = Locals["TitleFormAdd"];
     if (Model.GenreMusical.Id != 0)
     {
         //Edit
-        ViewData["Title"] = "Modifier";//Il est également utilisé pour le texte des boutons
-        titre = "MODIFIER LE GENRE DE MUSIQUE";
+        ViewData["classeSuffixe"] = "Modifier";
+        titre = Locals["TitleFormEdit"];
     }
 }
 <main class="container">
@@ -48,8 +49,8 @@
                                 <div class="text-center mb-2">
                                     <img src="@AppConstants.ImagePathGenreMusical@(string.IsNullOrWhiteSpace(Model.GenreMusical.ImageUrl) ? AppConstants.ImageGenericGenreMusical : Model.GenreMusical.ImageUrl)" class="w-75 border-img-artiste" alt="@Model.GenreMusical.Nom">
                                 </div>
-                                Image URL
                             </label>
+                            <label asp-for="@Model.GenreMusical.ImageUrl" class="form-label"></label>
                             <input type="file" name="files" class="form-control" asp-for="@Model.GenreMusical.ImageUrl" onchange="this.nextElementSibling.style.display = 'none'" placeholder="Exemple: Hip_Hop.png" multiple>
                             <span asp-validation-for="@Model.GenreMusical.ImageUrl" class="text-danger"></span>
 

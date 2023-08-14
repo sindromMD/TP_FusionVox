@@ -16,10 +16,10 @@
     <link rel="stylesheet" type="text/css" href="~/css/style.css" asp-append-version="true">
     @RenderSection("monStyle", false)
 </head>
-<body class="container hero-image_@(ViewData["Title"])">
+<body class="container hero-image_@(ViewData["classeSuffixe"])">
 @*<body class="container">*@
     <!--header-->
-    <header class="container-fluid marge_header_bot_@(ViewData["Title"])">
+    <header class="container-fluid marge_header_bot_@(ViewData["classeSuffixe"])">
         <nav class="row ">
             <!--LOGO-->
             <div class="col-7 col-sm-4 header-logo">
@@ -28,7 +28,7 @@
                 </a>
             </div>
             <!--Menu (Favoris/Rechercher alias :Artistes / Ajouter un Artiste)-->
-            <div class="col navbar navbar-expand-lg navbar-dark ">
+            <div class="col navbar navbar-expand-xl navbar-dark ">
                 <div class="col text-end">
                     <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon">
@@ -63,7 +63,11 @@
                                     <li><a class="p1 btn-menu" href="#">Agent</a></li>
                                 </ul>
                             </li>
+                            <li>
+                            @await Html.PartialAsync("_SelectLanguage")
+                            </li>
                         </ul>
+                       
                     </div>
                 </div>
              </div>

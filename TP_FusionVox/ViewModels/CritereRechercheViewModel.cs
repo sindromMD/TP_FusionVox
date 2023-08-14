@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Eventing.Reader;
 
-namespace TP2.ViewModels
+namespace TP_FusionVox.ViewModels
 {
     public class CritereRechercheViewModel
     {
