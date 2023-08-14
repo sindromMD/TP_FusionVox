@@ -9,40 +9,38 @@ namespace TP_FusionVox.Services
     {
         public GenreMusicalService(TP_FusionVoxDbContext dbContext) : base(dbContext) { }
        
-        public async Task<StatistiqueVM> StatistiquesGenresMusicauxAsync()
+        public async Task<StatistiqueGenresMusicauxVM> StatistiquesUnGenreMusicalAsync(GenreMusical genre)
         {
-            StatistiqueVM statistiqueVM = new StatistiqueVM()
-            {
-                // remplissage de statistiques pour chaque genre musical
-                StatsGenresMusicaux = await _dbContext.genresMusicaux
-               .GroupBy(g => new
-               {
-                   g.Id,
-                   g.Nom,
-                   g.Description,
-                   g.ImageUrl,
-                   g.EstDisponible,
-                   NbA = g.Artistes.Count,
-                   NbC = g.Artistes.Select(x => x.NbChansons).Sum(),
-                   NbAb = g.Artistes.Select(x => x.NbAbonnees).Sum()
-               })
-               .Select(std => new StatistiqueGenresMusicauxVM
-               {
-                   Id = std.Key.Id,
-                   Nom = std.Key.Nom,
-                   Description = std.Key.Description,
-                   EstDisponible = std.Key.EstDisponible,
-                   ImageUrl = std.Key.ImageUrl,
-                   NbArtistes = std.Key.NbA,
-                   NbChansonsPubliees = std.Key.NbC,
-                   NbAbonnees = std.Key.NbAb,
-               }).ToListAsync(),
-                //statistiques globales sur les totaux des entités de la société d'enregistrement
-                NbTotalArtistes = await _dbContext.Artistes.CountAsync(),
-                NbTotalAbonnees = await _dbContext.Artistes.Select(a => a.NbAbonnees).SumAsync(),
-                NbTotalChansons = await _dbContext.Artistes.Select(a => a.NbChansons).SumAsync()
+            var statistiqueGenre = await _dbContext.genresMusicaux
+                .Where(g => g.Id == genre.Id)
+                .Select(g => new StatistiqueGenresMusicauxVM
+                {
+                    Id = g.Id,
+                    Nom = g.Nom,
+                    Description = g.Description,
+                    EstDisponible = g.EstDisponible,
+                    ImageUrl = g.ImageUrl,
+                    NbArtistes = g.Artistes.Count,
+                    NbChansonsPubliees = g.Artistes.Select(x => x.NbChansons).Sum(),
+                    NbAbonnees = g.Artistes.Select(x => x.NbAbonnees).Sum(),
+                }).FirstOrDefaultAsync();
 
-            };
+            return statistiqueGenre;
+        }
+        public async Task<StatistiqueVM> StatistiquesTousGenresMusicauxAsync()
+        {
+            var genres = await _dbContext.genresMusicaux.ToListAsync();
+            StatistiqueVM statistiqueVM = new StatistiqueVM();
+            statistiqueVM.StatsGenresMusicaux = new List<StatistiqueGenresMusicauxVM>();
+
+            foreach (var genre in genres)
+            {
+                statistiqueVM.StatsGenresMusicaux.Add(await StatistiquesUnGenreMusicalAsync(genre));
+            }
+
+            statistiqueVM.NbTotalArtistes = await _dbContext.Artistes.CountAsync();
+            statistiqueVM.NbTotalAbonnees = await _dbContext.Artistes.Select(a => a.NbAbonnees).SumAsync();
+            statistiqueVM.NbTotalChansons = await _dbContext.Artistes.Select(a => a.NbChansons).SumAsync();
             return statistiqueVM;
         }
 

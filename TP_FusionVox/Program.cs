@@ -47,6 +47,7 @@ builder.Services.AddDistributedMemoryCache(); // Permet l'utilisation de cookies
 builder.Services.AddSession(option => { option.IdleTimeout = TimeSpan.FromMinutes(20); }); // Configure l'expiration d'un cookies,
 builder.Services.AddScoped(typeof(IServiceBaseAsync<>), typeof(ServiceBaseAsync<>));
 builder.Services.AddScoped<IGenreMusicalService, GenreMusicalService>();
+builder.Services.AddScoped<IArtisteService, ArtisteService>();
 
 var app = builder.Build();
 

@@ -20,14 +20,17 @@ namespace TP_FusionVox.Controllers
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IStringLocalizer<HomeController> _localizer;
         private IGenreMusicalService _serviceGM { get; set; }
+        private IArtisteService _serviceA { get; set; }
 
         public HomeController(/*TP_FusionVoxDbContext baseDonnees,*/
                                 IGenreMusicalService serviceGM,
+                                IArtisteService serviceA,
                                 IWebHostEnvironment webHostEnvironment,
                                 IStringLocalizer<HomeController> localizer)
         {
             //_baseDonnees = baseDonnees;
             _serviceGM = serviceGM;
+            _serviceA = serviceA;
             _webHostEnvironment = webHostEnvironment;
             _localizer = localizer;
         }
@@ -36,9 +39,20 @@ namespace TP_FusionVox.Controllers
         public async Task<IActionResult> Index()
         {
             ViewData["Title"] = this._localizer["IndexTitle"];
-            return View(await _serviceGM.StatistiquesGenresMusicauxAsync());
+            return View(await _serviceGM.StatistiquesTousGenresMusicauxAsync());
         }
-        //GET Upsert
+        //public async Task<IActionResult> DetailParID(int id)
+        //{
+        //    var artiste = await _serviceA.ObtenirToutParGenreMusicalAsync(id);
+
+        //    GenreMusicalVM genreMusicalVM = new()
+        //    {
+
+        //    }
+
+        //    return View(artiste);
+        //}
+        //GET Upsert 
         [Route("GenreMusical/create")]
         [Route("GenreMusical/edit/{id:int}")]
         public async Task<IActionResult> Upsert(int? id)

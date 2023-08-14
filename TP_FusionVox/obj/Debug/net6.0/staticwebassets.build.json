@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uMdPnL3Mor0HtvuPphWkU9KkC92f+4bDkjpy1GXeef4=",
+  "Hash": "LCbmozH9EpHBbfi39OPWITkQHbRzoxFHzmOd1T6YL1g=",
   "Source": "TP_FusionVox",
   "BasePath": "_content/TP_FusionVox",
   "Mode": "Default",
@@ -151,23 +151,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Artistes\\descktop\\Eminem.png"
-    },
-    {
-      "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\fdcdedb0-ae68-45d6-ab5a-1c0a0bd98c53.png",
-      "SourceId": "TP_FusionVox",
-      "SourceType": "Discovered",
-      "ContentRoot": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\",
-      "BasePath": "_content/TP_FusionVox",
-      "RelativePath": "Images/Artistes/descktop/fdcdedb0-ae68-45d6-ab5a-1c0a0bd98c53.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Artistes\\descktop\\fdcdedb0-ae68-45d6-ab5a-1c0a0bd98c53.png"
     },
     {
       "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\GenericArtiste.png",

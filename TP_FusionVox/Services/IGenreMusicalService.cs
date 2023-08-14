@@ -6,7 +6,9 @@ namespace TP_FusionVox.Services
 {
     public interface IGenreMusicalService : IServiceBaseAsync<GenreMusical>
     {
-        Task<StatistiqueVM> StatistiquesGenresMusicauxAsync();
+        Task<StatistiqueGenresMusicauxVM> StatistiquesUnGenreMusicalAsync(GenreMusical genre);
+        Task<StatistiqueVM> StatistiquesTousGenresMusicauxAsync();
+
         public bool ADesArtistesAssocies(int id);
     }
 }
