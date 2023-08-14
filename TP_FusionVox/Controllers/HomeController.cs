@@ -16,14 +16,13 @@ namespace TP_FusionVox.Controllers
 
     public class HomeController : Controller
     {
-        //private TP_FusionVoxDbContext _baseDonnees { get; set; }
+
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IStringLocalizer<HomeController> _localizer;
         private IGenreMusicalService _serviceGM { get; set; }
         private IArtisteService _serviceA { get; set; }
 
-        public HomeController(/*TP_FusionVoxDbContext baseDonnees,*/
-                                IGenreMusicalService serviceGM,
+        public HomeController(  IGenreMusicalService serviceGM,
                                 IArtisteService serviceA,
                                 IWebHostEnvironment webHostEnvironment,
                                 IStringLocalizer<HomeController> localizer)
@@ -41,17 +40,21 @@ namespace TP_FusionVox.Controllers
             ViewData["Title"] = this._localizer["IndexTitle"];
             return View(await _serviceGM.StatistiquesTousGenresMusicauxAsync());
         }
-        //public async Task<IActionResult> DetailParID(int id)
-        //{
-        //    var artiste = await _serviceA.ObtenirToutParGenreMusicalAsync(id);
-
-        //    GenreMusicalVM genreMusicalVM = new()
-        //    {
-
-        //    }
-
-        //    return View(artiste);
-        //}
+        [Route("GenreMusical/Details/{id:int}")]
+        public async Task<IActionResult> DetailParID(int id)
+        {
+            var genreMusical = await _serviceGM.ObtenirParIdAsync(id);
+            if (genreMusical != null)
+            {
+                StatistiqueGenresMusicauxVM DetailsArtisteVM = await _serviceGM.StatistiquesUnGenreMusicalAsync(genreMusical);
+                DetailsArtisteVM.ListArtisteGenreMusical = await _serviceA.ObtenirToutParGenreMusicalAsync(id); ;
+                ViewData["Title"] = this._localizer["DetailsTitle"];
+                return View("Details", DetailsArtisteVM);
+            }
+            else
+                return View("NotFound");
+           
+        }
         //GET Upsert 
         [Route("GenreMusical/create")]
         [Route("GenreMusical/edit/{id:int}")]

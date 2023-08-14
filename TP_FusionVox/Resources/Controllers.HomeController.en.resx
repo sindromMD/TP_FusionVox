@@ -123,6 +123,9 @@
   <data name="DeleteTitle" xml:space="preserve">
     <value>Delete music genre</value>
   </data>
+  <data name="DetailsTitle" xml:space="preserve">
+    <value>Details</value>
+  </data>
   <data name="EditTitle" xml:space="preserve">
     <value>Edit musical genre</value>
   </data>
