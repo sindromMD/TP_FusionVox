@@ -39,7 +39,7 @@ namespace TP_FusionVox.Controllers
             model.Criteres.EstGenreMusicalHipHop = true;
             model.Criteres.EstGenreMuscialElectro = true;
             //model.Resultat = _baseDonnees.Artistes.AsEnumerable().GroupBy(a => a.GenreMusical.Nom);
-            var ListArtiste = await _baseDonnees.Artistes.Include(a => a.GenreMusical).ToListAsync();
+            var ListArtiste = await _baseDonnees.Artistes.Include(a => a.GenreMusical).Where(g=>g.GenreMusical.EstDisponible).ToListAsync();
             model.Resultat = ListArtiste.GroupBy(a => a.GenreMusical.Nom).ToList();
             ViewData["Title"] = this._localizer["ArtisteListTitle"];
             return View(model);

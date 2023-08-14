@@ -120,6 +120,9 @@
   <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="EstDisponible" xml:space="preserve">
+    <value>Est disponible</value>
+  </data>
   <data name="ImageURL" xml:space="preserve">
     <value>Image représentative</value>
   </data>
