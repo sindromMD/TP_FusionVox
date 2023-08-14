@@ -98,8 +98,8 @@
                                 <div class="text-center mb-2">
                                     <img src="@AppConstants.ImagePathArtiste@(string.IsNullOrWhiteSpace(Model.Artiste.ImageURL) ? AppConstants.ImageGenericArtiste : Model.Artiste.ImageURL)" class="w-75 border-img-artiste" alt="@Model.Artiste.Nom">
                                 </div>
-                                @Html.DisplayNameFor(model => model.Artiste.ImageURL)
                             </label>
+                            <label asp-for="@Model.Artiste.ImageURL" class="form-label"></label>
                             <input type="file" name="files" class="form-control" asp-for="@Model.Artiste.ImageURL" onchange="this.nextElementSibling.style.display = 'none'" placeholder="Exemple: Eminem.jpg" multiple>
                             <span asp-validation-for="@Model.Artiste.ImageURL" class="text-danger"></span>
 

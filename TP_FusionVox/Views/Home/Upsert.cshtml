@@ -49,8 +49,8 @@
                                 <div class="text-center mb-2">
                                     <img src="@AppConstants.ImagePathGenreMusical@(string.IsNullOrWhiteSpace(Model.GenreMusical.ImageUrl) ? AppConstants.ImageGenericGenreMusical : Model.GenreMusical.ImageUrl)" class="w-75 border-img-artiste" alt="@Model.GenreMusical.Nom">
                                 </div>
-                                @Html.DisplayNameFor(model => model.GenreMusical.ImageUrl)
                             </label>
+                            <label asp-for="@Model.GenreMusical.ImageUrl" class="form-label"></label>
                             <input type="file" name="files" class="form-control" asp-for="@Model.GenreMusical.ImageUrl" onchange="this.nextElementSibling.style.display = 'none'" placeholder="Exemple: Hip_Hop.png" multiple>
                             <span asp-validation-for="@Model.GenreMusical.ImageUrl" class="text-danger"></span>
 
