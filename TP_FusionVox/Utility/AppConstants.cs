@@ -21,6 +21,11 @@ namespace TP_FusionVox.Utility
         public static string ImageGenericArtiste = @"GenericArtiste.png";
         public static string ImageGenericGenreMusical = @"GenericGenreMusical.jpg";
         public static string ImageGenericDetailsArtiste = @"GenericDetailsArtiste.png";
+
+        //Id pour les genres musicaux
+        public static int PopID = 1;
+        public static int HipHopID = 2;
+        public static int ElectroID = 3;
     }
 
 }

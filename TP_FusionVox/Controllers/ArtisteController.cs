@@ -8,22 +8,25 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using TP_FusionVox.Utility;
 using Microsoft.Extensions.Localization;
+using TP_FusionVox.Services;
 
 namespace TP_FusionVox.Controllers
 {
 
     public class ArtisteController : Controller
     {
-
-        private TP_FusionVoxDbContext _baseDonnees { get; set; }
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IStringLocalizer<ArtisteController> _localizer;
+        private IArtisteService _serviceA { get; set; }
+        private IGenreMusicalService _serviceGM { get; set; }
 
-        public ArtisteController(TP_FusionVoxDbContext baseDonnees,
+        public ArtisteController(   IArtisteService serviceA,
+                                    IGenreMusicalService serviceGM,
                                     IWebHostEnvironment webHostEnvironment,
                                     IStringLocalizer<ArtisteController> localizer)
         {
-            _baseDonnees = baseDonnees;
+            _serviceA = serviceA;
+            _serviceGM = serviceGM;
             _webHostEnvironment = webHostEnvironment;
             _localizer = localizer;
         }
@@ -32,14 +35,12 @@ namespace TP_FusionVox.Controllers
         [Route("artiste/recherche")]
         public async Task<IActionResult> Recherche()
         {
-            //IEnumerable<IGrouping<string, Artiste>> ListeArtisteByGenreMusical = _baseDonnees.Artistes.GroupBy(a => a.GenreMusical.Nom);
             var model = new PageRechercheViewModel();
             model.Criteres = new CritereRechercheViewModel();
             model.Criteres.EstGenreMusicalPOP = true;
             model.Criteres.EstGenreMusicalHipHop = true;
             model.Criteres.EstGenreMuscialElectro = true;
-            //model.Resultat = _baseDonnees.Artistes.AsEnumerable().GroupBy(a => a.GenreMusical.Nom);
-            var ListArtiste = await _baseDonnees.Artistes.Include(a => a.GenreMusical).ToListAsync();
+            var ListArtiste = await _serviceA.ObtenirToutListAsync();
             model.Resultat = ListArtiste.GroupBy(a => a.GenreMusical.Nom).ToList();
             ViewData["Title"] = this._localizer["ArtisteListTitle"];
             return View(model);
@@ -51,35 +52,22 @@ namespace TP_FusionVox.Controllers
             var modelRecherche = new PageRechercheViewModel();
             modelRecherche.Criteres = criteres;
 
-            IEnumerable<Artiste> ListArtisteFiltre = _baseDonnees.Artistes.Where(a => (criteres.EstGenreMusicalPOP && a.IdGenreMusical == 1) || (criteres.EstGenreMusicalHipHop && a.IdGenreMusical == 2) || (criteres.EstGenreMuscialElectro && a.IdGenreMusical == 3));
+            modelRecherche.Resultat = _serviceA.FiltrageArtiste(criteres)
+                                     .AsEnumerable()
+                                     .GroupBy(a => a.GenreMusical.Nom);
 
-            if (criteres.InputNomArtiste != null)
-                ListArtisteFiltre = ListArtisteFiltre.Where(a => a.Nom.ToLower().Contains(criteres.InputNomArtiste.ToLower()));
-            if (criteres.NbMinAbonnes.HasValue)
-                ListArtisteFiltre = ListArtisteFiltre.Where(a => a.NbAbonnees >= criteres.NbMinAbonnes.Value);
-            if (criteres.NbMaxAbonnes.HasValue)
-                ListArtisteFiltre = ListArtisteFiltre.Where(a => a.NbAbonnees <= criteres.NbMaxAbonnes.Value);
-            if (criteres.ChoiPourPersonnageVedette == "Oui")
-                ListArtisteFiltre = ListArtisteFiltre.Where(a => a.EstVedette);
-            if (criteres.ChoiPourPersonnageVedette == "Non")
-                ListArtisteFiltre = ListArtisteFiltre.Where(a => !a.EstVedette);
-
-            modelRecherche.Resultat = ListArtisteFiltre.AsEnumerable().GroupBy(a => a.GenreMusical.Nom);
             if (modelRecherche.Resultat.Count() == 0)
                 TempData["NotFound"] = $"Malheureusement, l'artiste {criteres.InputNomArtiste} que vous recherchez ne figure pas sur notre liste. ";
 
             return View("Recherche", modelRecherche);
         }
 
-
         [Route("artiste/detail/{id:int}")]
         [Route("artiste/{id:int}")]
         [Route("{id:int}")]
         public async Task<IActionResult> DetailParID(int id)
         {
-
-            //Artiste detailArtiste = null;
-            Artiste? detailArtiste =await _baseDonnees.Artistes.Where(a => a.Id == id).FirstOrDefaultAsync();
+            Artiste? detailArtiste = await _serviceA.ObtenirParIdAsync(id);
             if (detailArtiste != null)
             {
                 ViewData["Title"] = this._localizer["ArtisteDetailTitle"];
@@ -87,26 +75,23 @@ namespace TP_FusionVox.Controllers
             }
             else
             { return View("NotFound"); }
-
         }
-
 
         [Route("artiste/detail/{Nom}")]
         [Route("artiste/{Nom}")]
         [Route("{Nom}")]
         public async Task<IActionResult> DetailParNom(string Nom)
-        { 
-            Artiste? detailArtiste = await _baseDonnees.Artistes.Where(a => a.Nom.ToLower() == Nom.ToLower()).FirstOrDefaultAsync();
+        {
+            Artiste? detailArtiste = await _serviceA.ObtenirArtisteParNomAsync(Nom);
             if (detailArtiste != null)
             {
                 ViewData["Title"] = this._localizer["ArtisteDetailTitle"];
                 return View("Detail", detailArtiste);
-            }
-                
+            }              
             else
                 return View("NotFound");
-
         }
+
         //Get UPSERT
         [Route("artiste/create")]
         [Route("artiste/upsert/create")]
@@ -115,12 +100,7 @@ namespace TP_FusionVox.Controllers
         public async Task<IActionResult> Upsert(int? Id)
         {
             NewArtisteVM ArtisteVM = new NewArtisteVM();
-            ArtisteVM.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
-            
-            {
-                Text = gm.Nom,
-                Value = gm.Id.ToString()
-            }).OrderBy(gm => gm.Text);
+            ArtisteVM.GenresSelectList = _serviceGM.ListGenresMusicauxDisponible();
 
             if (Id == null || Id == 0)
             {
@@ -132,13 +112,14 @@ namespace TP_FusionVox.Controllers
             else
             {
                 //Edit
-                ArtisteVM.Artiste = await _baseDonnees.Artistes.FindAsync(Id);
-                
+                ArtisteVM.Artiste = await _serviceA.ObtenirParIdAsync(Id);
+
                 if (ArtisteVM.Artiste == null)
                 {
                     return View("NotFound");
                 }
                 ArtisteVM.AncienneImage = ArtisteVM.Artiste.ImageURL;//permet de mettre en valeur l'image de l'artiste dans AncienneImage
+                ArtisteVM.NomInitial = ArtisteVM.Artiste.Nom;
                 ViewData["Title"] = this._localizer["ArtisteEditTitle"];
                 return View(ArtisteVM);
 
@@ -156,9 +137,19 @@ namespace TP_FusionVox.Controllers
         {
             try
             {
+                if (artisteVM.NomInitial != artisteVM.Artiste.Nom)
+                {
+                    if (_serviceA.ArtisteNomExist(artisteVM.Artiste.Nom))
+                    {
+                        TempData[AppConstants.Error] = $"L'artiste {artisteVM.Artiste.Nom} existe déjà.";
+                        artisteVM.GenresSelectList = _serviceGM.ListGenresMusicauxDisponible();
+                        ViewData["Title"] = (artisteVM.Artiste.Id != 0) ? this._localizer["ArtisteEditTitle"] : this._localizer["ArtisteCreateTitle"];
+                        artisteVM.Artiste.Nom = artisteVM.NomInitial;
+                        return View(artisteVM);
+                    }
+                }
                 if (ModelState.IsValid)
                 {
-
                     string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de Artiste
                     var files = HttpContext.Request.Form.Files; // Nouvelle image récupérée
 
@@ -183,7 +174,6 @@ namespace TP_FusionVox.Controllers
                                     System.IO.File.Delete(PreviousImage);
                                 }
                             }
-
                             //Create un cannal pour transférer le fichier
                             using (var filesStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                             {
@@ -198,38 +188,52 @@ namespace TP_FusionVox.Controllers
                         else
                         {
                             return ancienneImageURL;
-                        }
+                        }                       
                     }
-
+                    
                     if (artisteVM.Artiste.Id == 0)
                     {
-                         //create
-                         artisteVM.Artiste.ImageURL = TelechargerImageEtObtenirURL(null);
-                         await _baseDonnees.Artistes.AddAsync(artisteVM.Artiste);
-                         TempData[AppConstants.Success] = $"L'artiste {artisteVM.Artiste.Nom} a été ajouté.";
+                        //create
+                        //if (_serviceA.ArtisteNomExist(artisteVM.Artiste.Nom))
+                        //{
+                        //    TempData[AppConstants.Error] = $"L'artiste {artisteVM.Artiste.Nom} existe déjà.";
+                        //    artisteVM.GenresSelectList = _serviceGM.ListGenresMusicauxDisponible();
+                        //    ViewData["Title"] = this._localizer["ArtisteCreateTitle"];
+                        //    return View(artisteVM);
+                        //}
+
+                        artisteVM.Artiste.ImageURL = TelechargerImageEtObtenirURL(null);
+                        await _serviceA.CreerAsync(artisteVM.Artiste);
+                        TempData[AppConstants.Success] = $"L'artiste {artisteVM.Artiste.Nom} a été ajouté.";
                     }
                     else
                     {
-                        //update
+                        ////update
+                        //if (artisteVM.NomInitial != null && artisteVM.NomInitial != artisteVM.Artiste.Nom)
+                        //{
+                        //    if (_serviceA.ArtisteNomExist(artisteVM.Artiste.Nom))
+                        //    {
+                        //        TempData[AppConstants.Error] = $"L'artiste {artisteVM.Artiste.Nom} existe déjà.";
+                        //        artisteVM.GenresSelectList = _serviceGM.ListGenresMusicauxDisponible();
+                        //        ViewData["Title"] = this._localizer["ArtisteEditTitle"];
+                        //        artisteVM.Artiste.Nom = artisteVM.NomInitial;
+                        //        return View(artisteVM);
+                        //    }
+                        //}
+
                         artisteVM.Artiste.ImageURL = TelechargerImageEtObtenirURL(artisteVM.AncienneImage);
-                        _baseDonnees.Artistes.Update(artisteVM.Artiste);
+                        await _serviceA.EditerAsync(artisteVM.Artiste);
                         TempData[AppConstants.Success] = $"Les renseignements sur l'artiste {artisteVM.Artiste.Nom} ont été modifiés.";
                     }
-                    await _baseDonnees.SaveChangesAsync();
                     return RedirectToAction("Recherche");
                 }
-                artisteVM.GenresSelectList = _baseDonnees.genresMusicaux.Select(gm => new SelectListItem
-                {
-                    Text = gm.Nom,
-                    Value = gm.Id.ToString()
-                }).OrderBy(gm => gm.Text);
+                artisteVM.GenresSelectList = _serviceGM.ListGenresMusicauxDisponible();
                 return View(artisteVM);
             }
             catch
             {
                 return View();
             }
-
         }
 
         // GET: Artiste/Delete/5
@@ -241,7 +245,7 @@ namespace TP_FusionVox.Controllers
         {
             NewArtisteVM artisteVM = new NewArtisteVM();
 
-            artisteVM.Artiste =await _baseDonnees.Artistes.Where(a => a.Id == id).FirstOrDefaultAsync();
+            artisteVM.Artiste = await _serviceA.ObtenirParIdAsync(id);
             if (artisteVM.Artiste != null)
             {
                 ViewData["Title"] = this._localizer["ArtisteDeleteTitle"];
@@ -251,7 +255,6 @@ namespace TP_FusionVox.Controllers
             { 
                 return View("NotFound");
             }
-
         }
 
         // POST: delete
@@ -266,13 +269,13 @@ namespace TP_FusionVox.Controllers
             try
             {   //1.Supprimer l'artiste de la base de données
 
-                Artiste? artisteASupprimer = await _baseDonnees.Artistes.Where(a => a.Id == Id).FirstOrDefaultAsync();
+                Artiste? artisteASupprimer = await _serviceA.ObtenirParIdAsync(Id);
                 if (artisteASupprimer == null)
                 {
                     return View("NotFound");
                 }
-         
-                _baseDonnees.Artistes.Remove(artisteASupprimer);
+
+                await _serviceA.SupprimerAsync(Id);
 
                 // Supprimer les images du fichier
                 string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de zombies
@@ -286,8 +289,6 @@ namespace TP_FusionVox.Controllers
                 }
 
                 TempData[AppConstants.Success] = $"L'artiste {artisteASupprimer.Nom} a été supprimé de la base de données.";
-                await _baseDonnees.SaveChangesAsync();
-
 
                 //2.Supprimer un artiste de la liste des favoris
                 //(un artiste supprimé de la BD doit également être supprimé de la liste des favoris)

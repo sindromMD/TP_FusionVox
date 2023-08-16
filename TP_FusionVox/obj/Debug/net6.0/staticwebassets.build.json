@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LCbmozH9EpHBbfi39OPWITkQHbRzoxFHzmOd1T6YL1g=",
+  "Hash": "Dz5BFtEnz74RE6XUuGir5xxPsSqtQAXCxkQEa+m3TAE=",
   "Source": "TP_FusionVox",
   "BasePath": "_content/TP_FusionVox",
   "Mode": "Default",
@@ -34,6 +34,40 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
+      "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\06f026a3-7bf6-43ad-bff7-8f28e371f8bb.png",
+      "SourceId": "TP_FusionVox",
+      "SourceType": "Discovered",
+      "ContentRoot": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\",
+      "BasePath": "_content/TP_FusionVox",
+      "RelativePath": "Images/Artistes/descktop/06f026a3-7bf6-43ad-bff7-8f28e371f8bb.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Artistes\\descktop\\06f026a3-7bf6-43ad-bff7-8f28e371f8bb.png"
+    },
+    {
+      "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\5ea3e5b3-b14d-4b0c-954d-c8ecc0693cd7.png",
+      "SourceId": "TP_FusionVox",
+      "SourceType": "Discovered",
+      "ContentRoot": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\",
+      "BasePath": "_content/TP_FusionVox",
+      "RelativePath": "Images/Artistes/descktop/5ea3e5b3-b14d-4b0c-954d-c8ecc0693cd7.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Artistes\\descktop\\5ea3e5b3-b14d-4b0c-954d-c8ecc0693cd7.png"
+    },
+    {
       "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\Adele.png",
       "SourceId": "TP_FusionVox",
       "SourceType": "Discovered",
@@ -51,12 +85,12 @@
       "OriginalItemSpec": "wwwroot\\Images\\Artistes\\descktop\\Adele.png"
     },
     {
-      "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\alexei.jpg",
+      "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\b7ac8805-a227-4baf-bd20-a4791f49e083.png",
       "SourceId": "TP_FusionVox",
       "SourceType": "Discovered",
       "ContentRoot": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\",
       "BasePath": "_content/TP_FusionVox",
-      "RelativePath": "Images/Artistes/descktop/alexei.jpg",
+      "RelativePath": "Images/Artistes/descktop/b7ac8805-a227-4baf-bd20-a4791f49e083.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,7 +99,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Artistes\\descktop\\alexei.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\Artistes\\descktop\\b7ac8805-a227-4baf-bd20-a4791f49e083.png"
     },
     {
       "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\Bruno_Mars.png",

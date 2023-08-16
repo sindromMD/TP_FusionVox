@@ -27,6 +27,9 @@ namespace TP_FusionVox.Models
         [DataType(DataType.MultilineText)]
         public string? Description { get; set; }
 
+        [Display(Name = "EstDisponible")]
+        public bool EstDisponible { get; set; } = true;
+
         [Display(Name ="List")]
         [ValidateNever]
         public virtual List<Artiste>? Artistes { get; set; }

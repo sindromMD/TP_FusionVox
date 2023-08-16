@@ -25,7 +25,7 @@ namespace TP_FusionVox.ViewModels
         public int? NbMinAbonnes { get; set; }
 
         [Display(Name = "Nom de l'artiste")]
-        public string InputNomArtiste { get; set; }
+        public string? InputNomArtiste { get; set; }
 
         public CritereRechercheViewModel() { }
     }

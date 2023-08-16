@@ -60,7 +60,8 @@ namespace TP_FusionVox.ViewModels
 
         [ValidateNever]
         public string? AncienneImage { get; set; } = "";
-
+        [ValidateNever]
+        public string? NomInitial { get; set; }
         public IEnumerable<SelectListItem>? GenresSelectList { get; set; }
 
     }

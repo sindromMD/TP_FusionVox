@@ -120,6 +120,9 @@
   <data name="Description" xml:space="preserve">
     <value>Descrierea</value>
   </data>
+  <data name="EstDisponible" xml:space="preserve">
+    <value>Este disponibil</value>
+  </data>
   <data name="ImageURL" xml:space="preserve">
     <value>Imaginea reprezentativă</value>
   </data>

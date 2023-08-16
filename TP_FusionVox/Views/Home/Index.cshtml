@@ -128,7 +128,7 @@
                     <div class="col-12 col-lg-5 text-center position-relative">
                         <img src="@AppConstants.ImagePathGenreMusical@(string.IsNullOrWhiteSpace(genre.ImageUrl) ? AppConstants.ImageGenericGenreMusical : genre.ImageUrl)" alt="musique @genre.Nom" class="img-fluid mb-4 border-img-parents">
                         
-                        <a href="Artiste/Recherche#section@(genre.Nom)" class="bouton-parents btn-action-icon" style="position: relative; top:-38px">
+                        <a href="Artiste/Recherche#section@(genre.Nom)" class="bouton-parents btn-action-icon @(genre.EstDisponible ? "" : "btn disabled")" style="position: relative; top:-38px">
                                 NOS ARTISTES 
                                 <i class="fa-solid fa-angle-right"></i>
                         </a> 
@@ -137,8 +137,9 @@
                     <!--description-->
                     <div class="col-12 col-lg-5 x position-relative">
                         <h2>
-                            @genre.Nom
-                        </h2>
+                            @genre.Nom @(genre.EstDisponible ? "" : @Html.Raw("<span class=\"badge rounded-pill text-bg-secondary\">Indisponible</span>"))
+                        </h2>  
+                        
                             <a asp-action="Upsert" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste btn-edit-card-position">
                             <i class="fa-solid fa-pen-to-square fa-lg"></i>
                             </a>
