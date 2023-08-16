@@ -73,7 +73,7 @@ namespace TP_FusionVox.Migrations
 
                     b.HasIndex("IdGenreMusical");
 
-                    b.ToTable("Artistes");
+                    b.ToTable("Artistes", (string)null);
 
                     b.HasData(
                         new
@@ -271,7 +271,7 @@ namespace TP_FusionVox.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("genresMusicaux");
+                    b.ToTable("genresMusicaux", (string)null);
 
                     b.HasData(
                         new

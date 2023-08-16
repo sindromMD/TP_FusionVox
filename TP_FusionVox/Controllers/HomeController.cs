@@ -27,7 +27,6 @@ namespace TP_FusionVox.Controllers
                                 IWebHostEnvironment webHostEnvironment,
                                 IStringLocalizer<HomeController> localizer)
         {
-            //_baseDonnees = baseDonnees;
             _serviceGM = serviceGM;
             _serviceA = serviceA;
             _webHostEnvironment = webHostEnvironment;
@@ -47,7 +46,7 @@ namespace TP_FusionVox.Controllers
             if (genreMusical != null)
             {
                 StatistiqueGenresMusicauxVM DetailsArtisteVM = await _serviceGM.StatistiquesUnGenreMusicalAsync(genreMusical);
-                DetailsArtisteVM.ListArtisteGenreMusical = await _serviceA.ObtenirToutParGenreMusicalAsync(id); ;
+                DetailsArtisteVM.ListArtisteGenreMusical = await _serviceA.ObtenirToutParIdAsync(id); ;
                 ViewData["Title"] = this._localizer["DetailsTitle"];
                 return View("Details", DetailsArtisteVM);
             }

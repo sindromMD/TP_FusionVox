@@ -1,11 +1,14 @@
 ﻿using TP_FusionVox.Models;
+using TP_FusionVox.ViewModels;
 
 namespace TP_FusionVox.Services
 {
     public interface IArtisteService:IServiceBaseAsync<Artiste>
     {
-        public Task<IReadOnlyList<Artiste>> ObtenirToutParGenreMusicalAsync(int genreMusicalID);
-        public Task<IReadOnlyList<Artiste>> GetAllIndexAsync();
-        public bool ZombieNameExit(string name);
+        Task<IReadOnlyList<Artiste>> ObtenirToutParIdAsync(int genreMusicalID);
+        Task<IReadOnlyList<Artiste>> ObtenirToutListAsync();
+        IEnumerable<Artiste> FiltrageArtiste(CritereRechercheViewModel criteres);
+        Task<Artiste?> ObtenirArtisteParNomAsync(string nom);
+        bool ArtisteNomExist(string nom);
     }
 }

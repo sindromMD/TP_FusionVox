@@ -29,7 +29,7 @@ namespace TP_FusionVox.Services
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<T?> ObtenirParIdAsync(int id)
+        public async Task<T?> ObtenirParIdAsync(int? id)
         {
             return await _dbContext.Set<T>().FindAsync(id);
         }

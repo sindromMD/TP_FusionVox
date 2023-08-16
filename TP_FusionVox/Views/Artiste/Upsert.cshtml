@@ -22,12 +22,13 @@
                     <!--region input Hidden-->
                     <input type="hidden" asp-for="@Model.Artiste.Id" />
                     <input asp-for="@Model.AncienneImage" value="@Model.Artiste.ImageURL" class="form-control" type="hidden" /> <!--permet de conserver l'ancienne image-->
+                    <input asp-for="@Model.NomInitial" value="@Model.Artiste.Nom" class="form-control" type="hidden" /> <!--permet de conserver le nom initiale-->
                     <!--Vedtte switch-->
                     <div class="row justify-content-center ">
                         <div class="col col-md-8 col-lg-7 col-xl-6 mb-3">
                             <div class="form-check form-switch form-check-reverse">
                                 <label class="form-check-label" asp-for="@Model.Artiste.EstVedette"> </label>
-                                <input class="form-check-input" type="checkbox" role="switch" asp-for="@Model.Artiste.EstVedette" value=true checked>
+                                <input class="form-check-input" type="checkbox" role="switch" asp-for="@Model.Artiste.EstVedette" value=true checked="@Model.Artiste.EstVedette">
                                 <span asp-validation-for="@Model.Artiste.EstVedette" class="text-danger"></span>
 
                             </div>
@@ -38,7 +39,7 @@
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6 ">
                             <label asp-for="@Model.Artiste.Nom" class="form-label"></label>
-                            <input type="text" class="form-control" asp-for="@Model.Artiste.Nom" placeholder="Exemple: Eminem">
+                            <input type="text" class="form-control" asp-for="@Model.Artiste.Nom" id="nomArtiste" placeholder="Exemple: Eminem">
                             <span asp-validation-for="@Model.Artiste.Nom" class="text-danger"></span>
                         </div>
                     </div>
@@ -166,5 +167,6 @@
             })  
         });
     </script>
+
 
 }

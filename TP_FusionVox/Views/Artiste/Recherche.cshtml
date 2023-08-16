@@ -14,68 +14,49 @@
                     <form asp-controller="Artiste" asp-action="Filtrage" method="post" class="text-start p1"> 
                       <div class="row justify-content-center">
                         <div class="col col-md-10 col-lg-8 col-xl-6  mb-3  ">
-                            <label for="InputNomArtiste" class="form-label">Nom de l'artiste</label>
-                            <input type="text" class="form-control" name="InputNomArtiste" id="InputNomArtiste" placeholder="Ex: Eminem" value="@Model.Criteres.InputNomArtiste">
+                            <label asp-for="@Model.Criteres.InputNomArtiste" class="form-label"></label>
+                            <input type="text" class="form-control" asp-for="@Model.Criteres.InputNomArtiste" placeholder="Ex: Eminem" value="@Model.Criteres.InputNomArtiste">
                           </div>
                       </div>
                       <div class="row justify-content-center">
                         <div class="col col-md-5 col-lg-4 col-xl-3">
-                          <label for="NbMinAbonnes" class="form-label">Nombre d'abonnees</label>
+                            <label asp-for="@Model.Criteres.NbMinAbonnes" class="form-label"></label>
                           <div class="input-group mb-3">
-                            <span class="input-group-text" id="NbMinAbonnesLabel">Min</span>
-                            <input type="number" class="form-control" name="NbMinAbonnes" id="NbMinAbonnes" placeholder="0" aria-label="Nombre Min Abonnes" aria-describedby="NbMinAbonnesLabel" min="0" value="@Model.Criteres.NbMinAbonnes">
+                            <span asp-for="@Model.Criteres.NbMinAbonnes" class="input-group-text">Min</span>
+                            <input type="number" class="form-control" asp-for="@Model.Criteres.NbMinAbonnes" placeholder="0" aria-label="@Html.DisplayNameFor(model => model.Criteres.NbMinAbonnes)"  min="0" value="@Model.Criteres.NbMinAbonnes">
                           </div>
                           
                         </div>
                         <div class="col col-md-5 col-lg-4 col-xl-3">
-                          <label for="NbMaxAbonnes" class="form-label">Nombre d'abonnees</label>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="NbMaxAbonnesLabel">Max</span>
-                                <input type="number" class="form-control" name="NbMaxAbonnes" id="NbMaxAbonnes" placeholder="1-1000..." aria-label="Nombre Max Abonnes" aria-describedby="NbMaxAbonnesLabel" min="0" value="@Model.Criteres.NbMaxAbonnes">
+                            <label asp-for="@Model.Criteres.NbMaxAbonnes" class="form-label"></label>
+                            <div class="input-group mb-3"> 
+                                <span asp-for="@Model.Criteres.NbMaxAbonnes" class="input-group-text">Max</span>
+                                <input type="number" class="form-control" asp-for="@Model.Criteres.NbMaxAbonnes" placeholder="1-1000..." aria-label="@Html.DisplayNameFor(model => model.Criteres.NbMaxAbonnes)" min="0" value="@Model.Criteres.NbMaxAbonnes">
                               </div>
                         </div>
                       </div>
                       <div class="row justify-content-center">
                         <div class="col col-md-5 col-lg-4 col-xl-3">
-                            <label for="CheckBoxPop" class="form-label">Genres musicaux</label>
+                            <label asp-for="@Model.Criteres.EstGenreMusicalPOP" class="form-label">Genres musicaux</label>
                             <div class="form-check form-switch">
-                                @if(Model.Criteres.EstGenreMusicalPOP)
-                                {
-                                    <input class="form-check-input" type="checkbox"  id="EstGenreMusicalPOP" name="EstGenreMusicalPOP" value="true" checked>
-                                }
-                                else
-                                {
-                                    <input class="form-check-input" type="checkbox" id="EstGenreMusicalPOP" name="EstGenreMusicalPOP" value="true">
-                                }
-
-                                <label class="form-check-label" for="EstGenreMusicalPOP">POP</label>
+                                <label class="form-check-label" asp-for="@Model.Criteres.EstGenreMusicalPOP"> </label>
+                                <input class="form-check-input" type="checkbox" role="switch" asp-for="@Model.Criteres.EstGenreMusicalPOP" value=true checked="@Model.Criteres.EstGenreMusicalPOP">
+                                <span asp-validation-for="@Model.Criteres.EstGenreMusicalPOP" class="text-danger"></span>
                             </div>
                             <div class="form-check form-switch">
-                                @if(Model.Criteres.EstGenreMusicalHipHop)
-                                {
-                                    <input class="form-check-input" type="checkbox"  id="EstGenreMusicalHipHop" name="EstGenreMusicalHipHop" value="true" checked>
-                                }
-                                else
-                                {
-                                    <input class="form-check-input" type="checkbox"  id="EstGenreMusicalHipHop" name="EstGenreMusicalHipHop" value="true" >
-                                }
-                            <label class="form-check-label" for="EstGenreMusicalHipHop">Hip-Hop</label>
+                                <label class="form-check-label" asp-for="@Model.Criteres.EstGenreMusicalHipHop"> </label>
+                                <input class="form-check-input" type="checkbox" role="switch" asp-for="@Model.Criteres.EstGenreMusicalHipHop" value=true checked="@Model.Criteres.EstGenreMusicalHipHop">
+                                <span asp-validation-for="@Model.Criteres.EstGenreMusicalHipHop" class="text-danger"></span>
                             </div>
                             <div class="form-check form-switch">
-                                @if(Model.Criteres.EstGenreMuscialElectro)
-                                {
-                                    <input class="form-check-input" type="checkbox"  id="EstGenreMuscialElectro" name="EstGenreMuscialElectro" value="true" checked>
-                                }
-                                else
-                                {
-                                    <input class="form-check-input" type="checkbox" id="EstGenreMuscialElectro" name="EstGenreMuscialElectro" value="true">
-                                }
-                            <label class="form-check-label" for="EstGenreMuscialElectro">Électro</label>
+                                <label class="form-check-label" asp-for="@Model.Criteres.EstGenreMuscialElectro"> </label>
+                                <input class="form-check-input" type="checkbox" role="switch" asp-for="@Model.Criteres.EstGenreMuscialElectro" value=true checked="@Model.Criteres.EstGenreMuscialElectro">
+                                <span asp-validation-for="@Model.Criteres.EstGenreMuscialElectro" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col col-md-5 col-lg-4 col-xl-3">
-                            <label for="ChoiPourPersonnageVedette" class="form-label">Artiste vedette</label>
-                            <select class="form-select" name="ChoiPourPersonnageVedette" id="ChoiPourPersonnageVedette" aria-label="Artiste vedette">
+                            <label asp-for="@Model.Criteres.ChoiPourPersonnageVedette" class="form-label"></label>
+                            <select class="form-select" asp-for="@Model.Criteres.ChoiPourPersonnageVedette" aria-label="Artiste vedette">
                                 @if(Model.Criteres.ChoiPourPersonnageVedette == "Peu importe")
                                 {
                                     <option selected>Peu importe</option>
@@ -115,9 +96,6 @@
                         <div class="col col-md-6 my-2">
                              <a class="btn-reinitialiser" href="/Artiste/Recherche">
                                     Réinitialiser <i class="fa-solid fa-arrow-rotate-left me-2"></i></a>
-                           @* <button type="reset" class="btn-reinitialiser">
-                              Réinitialiser <i class="fa-solid fa-arrow-rotate-left"></i>
-                            </button>*@
                         </div>
                     </div>
                     </form> 

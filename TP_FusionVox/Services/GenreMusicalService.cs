@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using TP_FusionVox.Models;
 using TP_FusionVox.Models.Data;
 using TP_FusionVox.ViewModels;
@@ -65,6 +66,19 @@ namespace TP_FusionVox.Services
                 await base.SupprimerAsync(id);
             }
         }
+
+        public IEnumerable<SelectListItem> ListGenresMusicauxDisponible()
+        {
+            var genresMusicauxDisponibleList = _dbContext.genresMusicaux.Where(gm => gm.EstDisponible == true)
+            .Select(x => new SelectListItem
+            {
+                Text = x.Nom,
+                Value = x.Id.ToString()
+            }).OrderBy(t => t.Text);
+
+            return genresMusicauxDisponibleList;
+        }
+
 
     }
 }
