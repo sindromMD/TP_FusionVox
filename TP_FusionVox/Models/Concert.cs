@@ -56,7 +56,7 @@ namespace TP_FusionVox.Models
         [Required(ErrorMessage = "ValidationRequired")]
         [Range(0.01, double.MaxValue, ErrorMessage = "ValidationRange")]
         [DataType(DataType.Currency)]
-        //[DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true, NullDisplayText = "N/A")]
+        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true, NullDisplayText = "N/A")]
         public decimal PrixBillet { get; set; }
 
         [Required]
