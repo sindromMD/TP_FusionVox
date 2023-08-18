@@ -61,5 +61,8 @@ namespace TP_FusionVox.Models
         [ValidateNever]
         public virtual GenreMusical GenreMusical { get; set; }
 
+        [Display(Name = "ListConcerts")]
+        [ValidateNever]
+        public virtual ICollection<Concert>? ListConcerts { get; set; }
     }
 }

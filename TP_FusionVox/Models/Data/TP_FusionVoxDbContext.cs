@@ -15,6 +15,10 @@ namespace TP_FusionVox.Models.Data
         {
             //Générer des données de départ
             modelBuilder.GenerateData();
+
+            modelBuilder.Entity<Concert>()
+                   .Property(c => c.PrixBillet)
+                   .HasColumnType("decimal(18, 2)"); // spécifie que la colonne dans la base de données sera de type décimal avec une précision totale de 18 chiffres et 2 décimales.
         }
     }
 }
