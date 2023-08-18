@@ -193,6 +193,7 @@ h4 {
     text-decoration: none;
 }
 
+
 /* P1 Montserrat 16 */
 .p1 {
     font-family: 'Montserrat', sans-serif;
@@ -201,10 +202,14 @@ h4 {
     font-size: 16px;
     line-height: 20px;
     color: #FFFFFF;
-    
     text-decoration: none;
 }
-
+p.description-genre p{
+    color:#FFFFFF;
+}
+#description.collapse p {
+    color: black;
+}
 
 /* P2 Montserrat 14 */
 .p2{
@@ -933,6 +938,10 @@ div.x a.btn-edit-card-position {
     .note-frame .p4 {
         color: black;
     }
+
+/*Counter css*/
+
+/*END Counter css*/
 
 /*.form-switch input::backdrop{
     color:black;

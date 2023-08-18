@@ -140,16 +140,18 @@
                             @genre.Nom @(genre.EstDisponible ? "" : @Html.Raw("<span class=\"badge rounded-pill text-bg-secondary\">Indisponible</span>"))
                         </h2>  
                         
-                            <a asp-action="Upsert" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste btn-edit-card-position">
+                            <a asp-controller="GenreMusical" asp-action="Upsert" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste btn-edit-card-position">
                             <i class="fa-solid fa-pen-to-square fa-lg"></i>
                             </a>
-                             <a asp-action="Delete" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste">
+                             <a asp-controller="GenreMusical" asp-action="Delete" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste">
                             <i class="fa-solid fa-trash"></i>
                             </a>
                         <br>
-                        <p class="p1 description-genre">
-                            @genre.Description
-                        </p>
+                        <div class="p1 description-genre">
+                            @Html.Raw(genre.Description)
+                            </div>
+                            
+
                         <!--Statistique @genre.Nom-->
                         <div class="row justify-content-evenly text-center">
                             <div class="col-5 ">
