@@ -65,10 +65,34 @@ $(document).ready(function(){
     //         $('header').addClass('marge_header_bot_Modifier');
     //         break;
     //     case pathToLower.includes('delete'):
-    //         $('header').addClass('marge_header_bot_Delete'); 
-    //         break;  
+    //         $('header').addClass('marge_header_bot_Delete');
+    //         break;
     //     default:
-    //      
+    //
     //   }
+    
 })
+/*let table = new DataTable('#dataTable');*/
+$(document).ready(function () {
+    $('#dataTable').DataTable({
+        "language": {
+            "decimal": ",",
+            "thousands": ".",
+            "lengthMenu": "Affichage de _MENU_ enregistrements par page",
+            "zeroRecords": "Rien trouvé… Désolé! ",
+            "info": "Affichage de la page _PAGE_ de _PAGES_",
+            "infoEmpty": "Aucun enregistrement disponible ",
+            "infoFiltered": "(filtré d’un maximum de _MAX_ enregistrement)",
+            "search": "Recherche: ",
+            "paginate": {
+                "first": "Première",
+                "last": "Dernière",
+                "next": "Suivant",
+                "previous": "Précédent",
+            }
+
+        }
+    });
+});
+
 

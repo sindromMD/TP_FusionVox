@@ -54,10 +54,10 @@ namespace TP_FusionVox.Models
 
         [Display(Name = "PrixBillet")]
         [Required(ErrorMessage = "ValidationRequired")]
-        [Range(0.01, double.MaxValue, ErrorMessage = "ValidationRange")]
+        [Range(0.01, float.MaxValue, ErrorMessage = "ValidationRange")]
         [DataType(DataType.Currency)]
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true, NullDisplayText = "N/A")]
-        public decimal PrixBillet { get; set; }
+        public float PrixBillet { get; set; }
 
         [Required]
         [Display(Name = "ListArtistes")]

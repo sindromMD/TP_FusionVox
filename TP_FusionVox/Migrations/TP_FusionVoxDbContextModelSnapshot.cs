@@ -34,7 +34,7 @@ namespace TP_FusionVox.Migrations
 
                     b.HasIndex("ListConcertsId");
 
-                    b.ToTable("ArtisteConcert");
+                    b.ToTable("ArtisteConcert", (string)null);
                 });
 
             modelBuilder.Entity("TP_FusionVox.Models.Artiste", b =>
@@ -88,7 +88,7 @@ namespace TP_FusionVox.Migrations
 
                     b.HasIndex("IdGenreMusical");
 
-                    b.ToTable("Artistes");
+                    b.ToTable("Artistes", (string)null);
 
                     b.HasData(
                         new
@@ -310,7 +310,7 @@ namespace TP_FusionVox.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Concert");
+                    b.ToTable("Concert", (string)null);
                 });
 
             modelBuilder.Entity("TP_FusionVox.Models.GenreMusical", b =>
@@ -338,7 +338,7 @@ namespace TP_FusionVox.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("genresMusicaux");
+                    b.ToTable("genresMusicaux", (string)null);
 
                     b.HasData(
                         new
