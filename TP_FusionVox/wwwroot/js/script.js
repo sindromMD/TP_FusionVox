@@ -94,5 +94,11 @@ $(document).ready(function () {
         }
     });
 });
+$(document).ready(function () {
+    var paginateButtonsHorsSpan = $("a.paginate_button:not(span a.paginate_button)");
+    paginateButtonsHorsSpan.removeClass('paginate_button').addClass('p1 mx-4')
+    $('span a.paginate_button').removeClass('paginate_button').addClass('btn-rechercher')
+});
+
 
 

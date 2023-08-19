@@ -4,11 +4,15 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table" id="dataTable">
+<h1>Liste des concerts</h1>
+<div class="col col-md-8 col-xl-6 my-3 ">
+    <a class="btn-rechercher" asp-controller="Concerts" asp-action="Create">
+        Ajouter
+        <i class="fa-solid fa-plus"></i>
+    </a>
+</div>
+<div class="table-responsive-sm">
+<table class="table stripe hover order-column  " id="dataTable">
     <thead>
         <tr>
             <th>
@@ -16,9 +20,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DateConcert)
@@ -54,9 +55,6 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.DateConcert)
             </td>
             <td>
@@ -86,6 +84,7 @@
 }
     </tbody>
 </table>
+</div>
 <script>
     
 </script>
