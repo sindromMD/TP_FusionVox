@@ -47,12 +47,11 @@
                                     ARTISTES
                                 </a>
                             </li>
-                            @*<li class="nav-item">
-                                <a class="header-ajouter btn-ajouter-artistes" asp-controller="Artiste" asp-action="Create">
-                                    Ajouter 
-                                    <i class="fa-solid fa-user-plus"></i>
+                            <li class="nav-item ">
+                                <a class="header-text btn-menu" asp-controller="Concerts" asp-action="Index">
+                                    CONCERTS
                                 </a>
-                            </li>*@
+                            </li>
                             <li class="btn-group">
                                 <a class="header-ajouter btn-ajouter-artistes " data-bs-toggle="dropdown" aria-expanded="false">
                                     Ajouter
@@ -134,7 +133,8 @@
                     <ul class="mt-4 mb-3 px-3 footer-links white-link">
                         <li><a class="p1 " asp-controller="Favoris" asp-action="Favoris">Favoris</a></li>
                         <li><a class="p1 " asp-controller="Artiste" asp-action="Recherche">Artistes</a></li>
-                        <li><a class="p1 " asp-controller="Artiste" asp-action="Create">Ajouter un artiste</a></li>
+                        <li><a class="p1 " asp-controller="Concerts" asp-action="Index">Concerts</a></li>
+                        <li><a class="p1 " asp-controller="" asp-action="">Confidentialité</a></li>
                     </ul>
                 </div>
             </div>

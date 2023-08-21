@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using TP_FusionVox.Models;
 
 namespace TP_FusionVox.Models.Data
@@ -34,6 +35,13 @@ namespace TP_FusionVox.Models.Data
 
                 );
             #endregion
-        }
+            #region Concerts
+            builder.Entity<Concert>().HasData(
+                new Concert() { Id = 1, Nom = "Hope Tour", DateConcert = new DateTime(2023, 10, 3, 20, 00, 00), Pays = "Canada", Ville = "Laval", Scene = "Place Bell", NbTotalBillets = 1000, PrixBillet = 100, ImageUrl = "", Description = "Informations importantes sur l'événement: En achetant des billets pour cet événement, vous acceptez de respecter les mesures de santé et de sécurité en vigueur lors de l'événement, qui peuvent inclure, notamment, le port du masque. Notez que ces règlements s'appliquent à tous les utilisateurs de billets. Directives sujettes à changement. Vérifiez régulièrement le site de la salle de votre événement." },
+                new Concert() { Id = 2, Nom = "Guitar Story", DateConcert = new DateTime(2023, 10, 21, 20, 00, 00), Pays = "Canada", Ville = "Brossard", Scene = "Le Club Square Dix30", NbTotalBillets = 300, PrixBillet = 35, ImageUrl = "", Description = "Informations importantes sur l'événement: En achetant des billets pour cet événement, vous acceptez de respecter les mesures de santé et de sécurité en vigueur lors de l'événement, qui peuvent inclure, notamment, le port du masque. Notez que ces règlements s'appliquent à tous les utilisateurs de billets. Directives sujettes à changement. Vérifiez régulièrement le site de la salle de votre événement." },
+                new Concert() { Id = 3, Nom = "MetalCore", DateConcert = new DateTime(2023, 10, 31, 20, 00, 00), Pays = "Canada", Ville = "Montreal", Scene = "L'Etoile", NbTotalBillets = 600, PrixBillet = 45, ImageUrl = "", Description = "Informations importantes sur l'événement: En achetant des billets pour cet événement, vous acceptez de respecter les mesures de santé et de sécurité en vigueur lors de l'événement, qui peuvent inclure, notamment, le port du masque. Notez que ces règlements s'appliquent à tous les utilisateurs de billets. Directives sujettes à changement. Vérifiez régulièrement le site de la salle de votre événement." }
+                );
+                    #endregion
+                }
     }
 }
