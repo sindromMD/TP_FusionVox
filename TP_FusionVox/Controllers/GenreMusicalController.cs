@@ -25,7 +25,7 @@ namespace TP_FusionVox.Controllers
             _webHostEnvironment = webHostEnvironment;
             _localizer = localizer;
         }
-        
+        [Route("GenreMusical/Details/{id:int}")]
         public async Task<IActionResult> DetailParID(int id)
         {
             var genreMusical = await _serviceGM.ObtenirParIdAsync(id);

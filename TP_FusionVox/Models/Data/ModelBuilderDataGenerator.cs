@@ -42,6 +42,6 @@ namespace TP_FusionVox.Models.Data
                 new Concert() { Id = 3, Nom = "MetalCore", DateConcert = new DateTime(2023, 10, 31, 20, 00, 00), Pays = "Canada", Ville = "Montreal", Scene = "L'Etoile", NbTotalBillets = 600, PrixBillet = 45, ImageUrl = "", Description = "Informations importantes sur l'événement: En achetant des billets pour cet événement, vous acceptez de respecter les mesures de santé et de sécurité en vigueur lors de l'événement, qui peuvent inclure, notamment, le port du masque. Notez que ces règlements s'appliquent à tous les utilisateurs de billets. Directives sujettes à changement. Vérifiez régulièrement le site de la salle de votre événement." }
                 );
                     #endregion
-                }
+        }
     }
 }

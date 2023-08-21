@@ -126,8 +126,9 @@
              <div class="row justify-content-around mb-5 @(cmt%2==0 ? "flex-row-reverse" : "")">
                     <!--( IMG_@genre.Nom + btn )-->
                     <div class="col-12 col-lg-5 text-center position-relative">
+                        <a asp-controller="GenreMusical" asp-action="DetailParID" asp-route-Id="@genre.Id">
                         <img src="@AppConstants.ImagePathGenreMusical@(string.IsNullOrWhiteSpace(genre.ImageUrl) ? AppConstants.ImageGenericGenreMusical : genre.ImageUrl)" alt="musique @genre.Nom" class="img-fluid mb-4 border-img-parents">
-                        
+                        </a>
                         <a href="Artiste/Recherche#section@(genre.Nom)" class="bouton-parents btn-action-icon @(genre.EstDisponible ? "" : "btn disabled")" style="position: relative; top:-38px">
                                 NOS ARTISTES 
                                 <i class="fa-solid fa-angle-right"></i>
