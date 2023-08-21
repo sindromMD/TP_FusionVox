@@ -10,6 +10,7 @@ using TP_FusionVox.Utility;
 using Microsoft.Extensions.Localization;
 using TP_FusionVox.Services;
 using static TP_FusionVox.ViewModels.NewArtisteVM;
+using Microsoft.Extensions.Logging;
 
 namespace TP_FusionVox.Controllers
 {
@@ -18,6 +19,7 @@ namespace TP_FusionVox.Controllers
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IStringLocalizer<ArtisteController> _localizer;
+        private readonly ILogger<ArtisteController> _logger;
         private IArtisteService _serviceA { get; set; }
         private IGenreMusicalService _serviceGM { get; set; }
         private IConcertService _serviceC { get; set; }
@@ -26,13 +28,15 @@ namespace TP_FusionVox.Controllers
                                     IGenreMusicalService serviceGM,
                                     IConcertService serviceC,
                                     IWebHostEnvironment webHostEnvironment,
-                                    IStringLocalizer<ArtisteController> localizer)
+                                    IStringLocalizer<ArtisteController> localizer,
+                                    ILogger<ArtisteController> logger)
         {
             _serviceA = serviceA;
             _serviceGM = serviceGM;
             _serviceC = serviceC;
             _webHostEnvironment = webHostEnvironment;
             _localizer = localizer;
+            _logger = logger;
         }
 
         [Route("artiste")]
@@ -223,6 +227,7 @@ namespace TP_FusionVox.Controllers
 
                         artisteVM.Artiste.ImageURL = TelechargerImageEtObtenirURL(null);
                         await _serviceA.CreerAsync(artisteVM.Artiste);
+                        _logger.LogInformation($"L'Artiste  a été créé : {artisteVM.Artiste.Nom}, {DateTime.Now}");
                         TempData[AppConstants.Success] = $"L'artiste {artisteVM.Artiste.Nom} a été ajouté.";
                     }
                     else
@@ -285,6 +290,7 @@ namespace TP_FusionVox.Controllers
                         #endregion
                         artisteVM.Artiste.ImageURL = TelechargerImageEtObtenirURL(artisteVM.AncienneImage);
                         await _serviceA.EditerAsync(artisteVM.Artiste);
+                        _logger.LogInformation($"L'Artiste a été modifiés: {artisteVM.Artiste.Nom}, {DateTime.Now}");
                         TempData[AppConstants.Success] = $"Les renseignements sur l'artiste {artisteVM.Artiste.Nom} ont été modifiés.";
                     }
                     return RedirectToAction("Recherche");
@@ -294,8 +300,9 @@ namespace TP_FusionVox.Controllers
                 artisteVM.ConsertsSelectList = _serviceC.ListConcerts();
                 return View(artisteVM);
             }
-            catch
+            catch (Exception ex) 
             {
+                _logger.LogError(ex.Message);
                 return View();
             }
         }

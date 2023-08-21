@@ -1,14 +1,6 @@
 {
   "Files": [
     {
-      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\441bc51f-d78e-4dc7-8ae2-d80dcb53d549.png",
-      "PackagePath": "staticwebassets\\Images\\Artistes\\descktop\\441bc51f-d78e-4dc7-8ae2-d80dcb53d549.png"
-    },
-    {
-      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\444a6b62-3825-4ed3-a66d-d02f93b96de6.png",
-      "PackagePath": "staticwebassets\\Images\\Artistes\\descktop\\444a6b62-3825-4ed3-a66d-d02f93b96de6.png"
-    },
-    {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\Adele.png",
       "PackagePath": "staticwebassets\\Images\\Artistes\\descktop\\Adele.png"
     },
