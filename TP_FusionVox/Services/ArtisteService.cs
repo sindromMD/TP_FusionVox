@@ -62,6 +62,17 @@ namespace TP_FusionVox.Services
             return _dbContext.Artistes.Where(x => x.Nom == nom).Any(); ;
         }
 
+        public async Task ClearConcertsAsync(int artistId)
+        {
+            var artist = await _dbContext.Artistes.Include(a => a.ListConcerts)
+                                                 .FirstOrDefaultAsync(a => a.Id == artistId);
+            if (artist != null)
+            {
+                artist.ListConcerts.Clear();
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+
 
     }
 }

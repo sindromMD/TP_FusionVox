@@ -48,6 +48,7 @@ builder.Services.AddSession(option => { option.IdleTimeout = TimeSpan.FromMinute
 builder.Services.AddScoped(typeof(IServiceBaseAsync<>), typeof(ServiceBaseAsync<>));
 builder.Services.AddScoped<IGenreMusicalService, GenreMusicalService>();
 builder.Services.AddScoped<IArtisteService, ArtisteService>();
+builder.Services.AddScoped<IConcertService, ConcertService>();
 
 var app = builder.Build();
 

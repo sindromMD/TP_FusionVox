@@ -9,7 +9,7 @@ namespace TP_FusionVox.Services
     public class GenreMusicalService : ServiceBaseAsync<GenreMusical>, IGenreMusicalService
     {
         public GenreMusicalService(TP_FusionVoxDbContext dbContext) : base(dbContext) { }
-       
+
         public async Task<StatistiqueGenresMusicauxVM> StatistiquesUnGenreMusicalAsync(GenreMusical genre)
         {
             var statistiqueGenre = await _dbContext.genresMusicaux
@@ -78,7 +78,8 @@ namespace TP_FusionVox.Services
 
             return genresMusicauxDisponibleList;
         }
-
+      
+      
 
     }
 }

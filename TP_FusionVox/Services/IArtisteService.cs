@@ -10,5 +10,6 @@ namespace TP_FusionVox.Services
         IEnumerable<Artiste> FiltrageArtiste(CritereRechercheViewModel criteres);
         Task<Artiste?> ObtenirArtisteParNomAsync(string nom);
         bool ArtisteNomExist(string nom);
+        Task ClearConcertsAsync(int id);
     }
 }

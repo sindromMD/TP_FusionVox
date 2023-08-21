@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eh66LCP0NhFDCytHLGbiLFt+FMFEeZftppXq7w2BKxc=",
+  "Hash": "Q74XLZCOj7L/CKKsWSKKTzaToiS6TX0o8/OfQBFGiqU=",
   "Source": "TP_FusionVox",
   "BasePath": "_content/TP_FusionVox",
   "Mode": "Default",
@@ -32,6 +32,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\441bc51f-d78e-4dc7-8ae2-d80dcb53d549.png",
+      "SourceId": "TP_FusionVox",
+      "SourceType": "Discovered",
+      "ContentRoot": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\",
+      "BasePath": "_content/TP_FusionVox",
+      "RelativePath": "Images/Artistes/descktop/441bc51f-d78e-4dc7-8ae2-d80dcb53d549.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Artistes\\descktop\\441bc51f-d78e-4dc7-8ae2-d80dcb53d549.png"
+    },
+    {
+      "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\444a6b62-3825-4ed3-a66d-d02f93b96de6.png",
+      "SourceId": "TP_FusionVox",
+      "SourceType": "Discovered",
+      "ContentRoot": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\",
+      "BasePath": "_content/TP_FusionVox",
+      "RelativePath": "Images/Artistes/descktop/444a6b62-3825-4ed3-a66d-d02f93b96de6.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Artistes\\descktop\\444a6b62-3825-4ed3-a66d-d02f93b96de6.png"
     },
     {
       "Identity": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\Adele.png",
