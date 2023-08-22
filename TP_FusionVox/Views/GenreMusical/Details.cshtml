@@ -5,7 +5,7 @@
     <div class="row  text-center align-items-center ">
 
         <!--Tire hero-->
-        <div class="col mb-5">
+        <div class="col mb-5 mt-5">
             <h1 class="h0">
                 @Model.Nom
             </h1>
@@ -155,18 +155,18 @@
                             <tr>
                                 <td class="w-20">
                                     <div class="card text-bg-dark">
-                                        <a href="/Artiste/@artiste.Id">
+                                    <a asp-controller="Artiste" asp-action="Detail" asp-route-id="@artiste.Id">
                                             <img src="@AppConstants.ImagePathArtiste@artiste.ImageURL" alt="@artiste.Nom" class="card-img">
                                         </a>
                                     </div>
                                 </td>
                                 <td>
-                                    <a href="details.html" class="p1">
-                                            @artiste.Nom
+                                <a asp-controller="Artiste" asp-action="Detail" asp-route-id="@artiste.Id" class="p1">
+                                    @artiste.Nom
                                     </a>
                                 </td>
                                 <td>
-                                        @artiste.NbChansons
+                                    @artiste.NbChansons
                                 </td>
                                 <td>
                                     @artiste.NbAbonnees

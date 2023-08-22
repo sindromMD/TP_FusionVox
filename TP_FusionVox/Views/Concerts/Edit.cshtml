@@ -1,74 +1,91 @@
-﻿@model TP_FusionVox.Models.Concert
+﻿@model Concert
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["classeSuffixe"] = "Modifier";
+    ViewData["Title"] = "Editer le concert ";
 }
 
-<h1>Edit</h1>
-
-<h4>Concert</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group p1">
-                <label asp-for="Nom" class="control-label"></label>
-                <input asp-for="Nom" class="form-control" />
-                <span asp-validation-for="Nom" class="text-danger"></span>
-            </div>
-            <div class="form-group p1">
-                <label asp-for="Description" class="control-label"></label>
-                <textarea asp-for="Description" class="form-control summernote"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group p1">
-                <label asp-for="ImageUrl" class="control-label"></label>
-                <input asp-for="ImageUrl" class="form-control" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group p1">
-                <label asp-for="DateConcert" class="control-label"></label>
-                <input asp-for="DateConcert" class="form-control" />
-                <span asp-validation-for="DateConcert" class="text-danger"></span>
-            </div>
-            <div class="form-group p1">
-                <label asp-for="Pays" class="control-label"></label>
-                <input asp-for="Pays" class="form-control" />
-                <span asp-validation-for="Pays" class="text-danger"></span>
-            </div>
-            <div class="form-group p1">
-                <label asp-for="Ville" class="control-label"></label>
-                <input asp-for="Ville" class="form-control" />
-                <span asp-validation-for="Ville" class="text-danger"></span>
-            </div>
-            <div class="form-group p1">
-                <label asp-for="Scene" class="control-label"></label>
-                <input asp-for="Scene" class="form-control" />
-                <span asp-validation-for="Scene" class="text-danger"></span>
-            </div>
-            <div class="form-group p1">
-                <label asp-for="NbTotalBillets" class="control-label"></label>
-                <input asp-for="NbTotalBillets" class="form-control" />
-                <span asp-validation-for="NbTotalBillets" class="text-danger"></span>
-            </div>
+<main class="container">
+    <div class="container-fluid">
+        <div class="row justify-content-around text-center">
+            <div class="col col-lg-10 col-xl-9">
+                <h1 class="h0">Modifier les dates de concert</h1>
+                <div class="divider-2 mb-3 "></div><!--devider linear gradient cian-->
+                <br>
+                <form asp-action="Edit" class="text-start p1">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="Nom" class="control-label"></label>
+                        <input asp-for="Nom" class="form-control" />
+                        <span asp-validation-for="Nom" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="Description" class="control-label"></label>
+                        <textarea asp-for="Description" class="form-control summernote"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="ImageUrl" class="control-label"></label>
+                        <input asp-for="ImageUrl" class="form-control" />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="DateConcert" class="control-label"></label>
+                        <input asp-for="DateConcert" class="form-control" />
+                        <span asp-validation-for="DateConcert" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="Pays" class="control-label"></label>
+                        <input asp-for="Pays" class="form-control" />
+                        <span asp-validation-for="Pays" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="Ville" class="control-label"></label>
+                        <input asp-for="Ville" class="form-control" />
+                        <span asp-validation-for="Ville" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="Scene" class="control-label"></label>
+                        <input asp-for="Scene" class="form-control" />
+                        <span asp-validation-for="Scene" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="NbTotalBillets" class="control-label"></label>
+                        <input asp-for="NbTotalBillets" class="form-control" />
+                        <span asp-validation-for="NbTotalBillets" class="text-danger"></span>
+                        </div>
+                    </div>
             
-            <div class="form-group p1">
-                <label asp-for="PrixBillet" class="control-label"></label>
-                <input type="currency" asp-for="PrixBillet" class="form-control" />
-                <span asp-validation-for="PrixBillet" class="text-danger"></span>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="PrixBillet" class="control-label"></label>
+                        <input type="currency" asp-for="PrixBillet" class="form-control" />
+                        <span asp-validation-for="PrixBillet" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <partial name="_CreateEditBackToListReinitiliseButtonPartielle" model="Model" />
+                </form>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+</main>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{

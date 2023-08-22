@@ -20,6 +20,7 @@ namespace TP_FusionVox.Controllers
         }
 
         // GET: Agents
+        [Route("Agents/Index")]
         public async Task<IActionResult> Index()
         {
             return _context.Agent != null ?

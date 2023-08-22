@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TP_FusionVox.Models.Agent>
+﻿@model IEnumerable<Agent>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,7 +13,7 @@
     </a>
 </div>
 <div class="table-responsive-sm">
-    <table class="table stripe hover order-column id=" dataTable" ">
+    <table class="table stripe hover order-column " id="dataTable">
     <thead>
         <tr>
             <th>
@@ -56,7 +56,7 @@
                 @Html.DisplayFor(modelItem => item.DateNaissance)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Biographie)
+                        @Html.Raw(item.Biographie)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SalaireMensuel)

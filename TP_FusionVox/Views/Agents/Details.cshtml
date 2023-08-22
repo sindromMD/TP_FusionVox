@@ -1,4 +1,4 @@
-﻿@model TP_FusionVox.Models.Agent
+﻿@model Agent
 
 @{
     ViewData["Title"] = "Details";
@@ -9,7 +9,7 @@
 <div>
     <h4>Agent</h4>
     <hr />
-    <dl class="row">
+    <dl class="row p1">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Nom)
         </dt>
@@ -38,7 +38,7 @@
             @Html.DisplayNameFor(model => model.Biographie)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Biographie)
+            @Html.Raw(Model.Biographie)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.SalaireMensuel)
@@ -46,15 +46,14 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.SalaireMensuel)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-2 p1">
             @Html.DisplayNameFor(model => model.Curriel)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-10  white-link ">
             @Html.DisplayFor(model => model.Curriel)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <partial name="_VersEditOuDeleteBackToLisButtonPartielle" model="Model" />
 </div>

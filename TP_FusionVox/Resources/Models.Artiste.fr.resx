@@ -144,6 +144,9 @@
   <data name="Image" xml:space="preserve">
     <value>Image de l'artiste</value>
   </data>
+  <data name="ListConcerts" xml:space="preserve">
+    <value>Liste des concerts</value>
+  </data>
   <data name="NbChansons" xml:space="preserve">
     <value>Nombre de chansons</value>
   </data>

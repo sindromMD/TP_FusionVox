@@ -1,6 +1,7 @@
-﻿@model TP_FusionVox.Models.Agent
+﻿@model Agent
 
 @{
+    ViewData["classeSuffixe"] = "Delete";
     ViewData["Title"] = "Delete";
 }
 
@@ -10,7 +11,7 @@
 <div>
     <h4>Agent</h4>
     <hr />
-    <dl class="row">
+    <dl class="row p1">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Nom)
         </dt>
@@ -39,7 +40,7 @@
             @Html.DisplayNameFor(model => model.Biographie)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Biographie)
+            @Html.Raw(Model.Biographie)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.SalaireMensuel)
@@ -50,14 +51,14 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Curriel)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-10 white-link">
             @Html.DisplayFor(model => model.Curriel)
         </dd>
     </dl>
-    
-    <form asp-action="Delete">
+    <form asp-action="Delete" method="post">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <partial name="_VersEditOuDeleteBackToLisButtonPartielle" model="Model" />
+@*        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>*@
     </form>
 </div>

@@ -1,4 +1,4 @@
-﻿@model TP_FusionVox.Models.Concert
+﻿@model Concert
 
 @{
     ViewData["Title"] = "Details";
@@ -20,7 +20,7 @@
             @Html.DisplayNameFor(model => model.Description)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
+            @Html.Raw(Model.Description)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ImageUrl)
@@ -73,6 +73,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <partial name="_VersEditOuDeleteBackToLisButtonPartielle" model="Model" />
 </div>

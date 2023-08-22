@@ -131,7 +131,7 @@
              <!--concert -->
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6">
-                            <label class="form-label">Concerts</label>
+                            <label asp-for="@Model.Artiste.ListConcerts" class="form-label"></label>
                             @foreach (var concert in Model.ConsertsSelectList)
                             {
                                 var isChecked = Model.SelectedConcertIds.Contains(int.Parse(concert.Value));

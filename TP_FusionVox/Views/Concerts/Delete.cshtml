@@ -1,6 +1,7 @@
 ﻿@model TP_FusionVox.Models.Concert
 
 @{
+    ViewData["classeSuffixe"] = "Delete";
     ViewData["Title"] = "Delete";
 }
 
@@ -10,7 +11,7 @@
 <div>
     <h4>Concert</h4>
     <hr />
-    <dl class="row">
+    <dl class="row p1">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Nom)
         </dt>
@@ -21,7 +22,7 @@
             @Html.DisplayNameFor(model => model.Description)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
+            @Html.Raw(Model.Description)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ImageUrl)
@@ -75,7 +76,6 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <partial name="_VersEditOuDeleteBackToLisButtonPartielle" model="Model" />
     </form>
 </div>
