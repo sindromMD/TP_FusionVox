@@ -123,6 +123,12 @@
   <data name="Agent" xml:space="preserve">
     <value>Agentul</value>
   </data>
+  <data name="AgentRepr" xml:space="preserve">
+    <value>Agentul</value>
+  </data>
+  <data name="AgentReprId" xml:space="preserve">
+    <value>Agentul</value>
+  </data>
   <data name="Biographie" xml:space="preserve">
     <value>Biografia artistului</value>
   </data>

@@ -9,7 +9,7 @@ namespace TP_FusionVox.Models.Data
         public DbSet<Artiste> Artistes { get; set; }
         public DbSet<GenreMusical> genresMusicaux { get; set; }
         public DbSet<Concert>? Concert { get; set; }
-        //public DbSet<Agent> Agent { get; set; }
+        public DbSet<Agent> Agent { get; set; }
 
         public TP_FusionVoxDbContext(DbContextOptions<TP_FusionVoxDbContext> options) : base(options) { }
 

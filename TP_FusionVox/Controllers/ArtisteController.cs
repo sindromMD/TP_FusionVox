@@ -161,9 +161,10 @@ namespace TP_FusionVox.Controllers
                         return View(artisteVM);
                     }
                 }
-             
+                
                 if (ModelState.IsValid)
                 {
+                    #region  TelechargerImage
                     string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de Artiste
                     var files = HttpContext.Request.Form.Files; // Nouvelle image récupérée
 
@@ -204,7 +205,8 @@ namespace TP_FusionVox.Controllers
                             return ancienneImageURL;
                         }                       
                     }
-                    
+                    #endregion
+                    #region Create
                     if (artisteVM.Artiste.Id == 0)
                     {
                         //create
@@ -230,6 +232,7 @@ namespace TP_FusionVox.Controllers
                         _logger.LogInformation($"L'Artiste  a été créé : {artisteVM.Artiste.Nom}, {DateTime.Now}");
                         TempData[AppConstants.Success] = $"L'artiste {artisteVM.Artiste.Nom} a été ajouté.";
                     }
+                    #endregion
                     else
                     {
                         //update

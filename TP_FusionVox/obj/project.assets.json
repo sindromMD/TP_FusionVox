@@ -12989,19 +12989,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\6217367\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\TP_FusionVox.csproj",
+      "projectUniqueName": "C:\\Users\\6217367\\Desktop\\TP_FusionVox\\TP_FusionVox\\TP_FusionVox.csproj",
       "projectName": "TP_FusionVox",
-      "projectPath": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\TP_FusionVox.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\obj\\",
+      "projectPath": "C:\\Users\\6217367\\Desktop\\TP_FusionVox\\TP_FusionVox\\TP_FusionVox.csproj",
+      "packagesPath": "C:\\Users\\6217367\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\6217367\\Desktop\\TP_FusionVox\\TP_FusionVox\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\6217367\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

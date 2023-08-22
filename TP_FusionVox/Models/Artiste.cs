@@ -64,5 +64,14 @@ namespace TP_FusionVox.Models
         [Display(Name = "ListConcerts")]
         [ValidateNever]
         public virtual ICollection<Concert>? ListConcerts { get; set; }
+
+        [ForeignKey("Agent")]
+        [Display(Name = "AgentReprId")]
+        [Required(ErrorMessage = "ValidationRequired")]
+        public int AgentReprId { get; set; }
+
+        [Display(Name = "AgentRepr")]
+        [ValidateNever]
+        public virtual Agent AgentRepr { get; set; }
     }
 }
