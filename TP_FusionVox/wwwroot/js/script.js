@@ -101,4 +101,41 @@ $(document).ready(function () {
 });
 
 
+//summernote
+$(document).ready(function () {
+    $('.summernote').summernote({
+        toolbar: [
+
+            ['Menu', ['style', 'bold', 'italic', 'underline',
+                'clear', 'fontname', 'fontsize', 'color', 'ul', 'ol',
+                'paragraph', 'link', 'picture', 'video', 'fullscreen', 'codeview', 'help']],
+        ],
+
+        styleTags: ['p', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+        fontNames: ['Montserrat', 'Arial', 'Courier New'],
+        height: 130,
+        minHeight: 65,
+        maxHeight: 400,
+        placeholder: "Saisir la biographie de l\'artiste",
+        callbacks: {
+            onInit: function () {
+                var editor = elem.next(),
+                    placeholder = editor.find(".note-placeholder");
+
+                function isEditorEmpty() {
+                    var code = elem.summernote("code");
+                    return code === "<p><br></p>" || code === "";
+                }
+
+                editor.on("focusin focusout", ".note-editable", function (e) {
+                    if (isEditorEmpty()) {
+                        placeholder[e.type === "focusout" ? "show" : "hide"]();
+                    }
+                });
+            }
+        }
+    })
+});
+//End Summernote
+
 
