@@ -23,7 +23,7 @@ namespace TP_FusionVox.ViewModels
         public int SelectedConcertId { get; set; }
         public List<int> SelectedConcertIds { get; set; } = new List<int>();
         public IEnumerable<SelectListItem>? ConsertsSelectList { get; set; }
-
+        public IEnumerable<SelectListItem>? AgentSelectList { get; set; }
         //public List<ConcertCheckboxItem> ConcertCheckboxItems { get; set; } = new List<ConcertCheckboxItem>();
         //public class ConcertCheckboxItem
         //{

@@ -49,6 +49,7 @@ builder.Services.AddScoped(typeof(IServiceBaseAsync<>), typeof(ServiceBaseAsync<
 builder.Services.AddScoped<IGenreMusicalService, GenreMusicalService>();
 builder.Services.AddScoped<IArtisteService, ArtisteService>();
 builder.Services.AddScoped<IConcertService, ConcertService>();
+builder.Services.AddScoped<IAgentService, AgentService>();
 
 var app = builder.Build();
 

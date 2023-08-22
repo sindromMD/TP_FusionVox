@@ -23,10 +23,11 @@ namespace TP_FusionVox.Controllers
         private IArtisteService _serviceA { get; set; }
         private IGenreMusicalService _serviceGM { get; set; }
         private IConcertService _serviceC { get; set; }
-
+        private IAgentService _serviceAgent { get; set; }
         public ArtisteController(   IArtisteService serviceA,
                                     IGenreMusicalService serviceGM,
                                     IConcertService serviceC,
+                                    IAgentService serivceAgent,
                                     IWebHostEnvironment webHostEnvironment,
                                     IStringLocalizer<ArtisteController> localizer,
                                     ILogger<ArtisteController> logger)
@@ -34,6 +35,7 @@ namespace TP_FusionVox.Controllers
             _serviceA = serviceA;
             _serviceGM = serviceGM;
             _serviceC = serviceC;
+            _serviceAgent = serivceAgent;
             _webHostEnvironment = webHostEnvironment;
             _localizer = localizer;
             _logger = logger;
@@ -110,6 +112,7 @@ namespace TP_FusionVox.Controllers
             NewArtisteVM ArtisteVM = new NewArtisteVM();
             ArtisteVM.GenresSelectList = _serviceGM.ListGenresMusicauxDisponible();
             ArtisteVM.ConsertsSelectList = _serviceC.ListConcerts();
+            ArtisteVM.AgentSelectList = _serviceAgent.ListAgentDisponible();
             if (Id == null || Id == 0)
             {
                 //create
@@ -156,6 +159,7 @@ namespace TP_FusionVox.Controllers
                         TempData[AppConstants.Error] = $"L'artiste {artisteVM.Artiste.Nom} existe déjà.";
                         artisteVM.GenresSelectList = _serviceGM.ListGenresMusicauxDisponible();
                         artisteVM.ConsertsSelectList = _serviceC.ListConcerts();
+                        artisteVM.AgentSelectList = _serviceAgent.ListAgentDisponible();
                         ViewData["Title"] = (artisteVM.Artiste.Id != 0) ? this._localizer["ArtisteEditTitle"] : this._localizer["ArtisteCreateTitle"];
                         artisteVM.Artiste.Nom = artisteVM.NomInitial;
                         return View(artisteVM);
@@ -301,6 +305,7 @@ namespace TP_FusionVox.Controllers
                 // Si ModelState n'est pas valide, le formulaire est réaffiché avec les erreurs
                 artisteVM.GenresSelectList = _serviceGM.ListGenresMusicauxDisponible();
                 artisteVM.ConsertsSelectList = _serviceC.ListConcerts();
+                artisteVM.AgentSelectList = _serviceAgent.ListAgentDisponible();
                 return View(artisteVM);
             }
             catch (Exception ex) 

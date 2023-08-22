@@ -118,6 +118,16 @@
                             <span asp-validation-for="@Model.Artiste.IdGenreMusical" class="text-danger"></span>
                         </div>
                     </div>
+                    <!--Agent-->
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6">
+                            <label asp-for="@Model.Artiste.AgentReprId" class="form-label"></label>
+                            <select class="form-select" asp-for="@Model.Artiste.AgentReprId" aria-label="agent" asp-items="@Model.AgentSelectList">
+                                <option selected value="">Choisissez parmi les options proposées</option>
+                            </select>
+                            <span asp-validation-for="@Model.Artiste.AgentReprId" class="text-danger"></span>
+                        </div>
+                    </div>
              <!--concert -->
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6">
