@@ -72,7 +72,9 @@ $(document).ready(function(){
     //   }
     
 })
-/*let table = new DataTable('#dataTable');*/
+
+//Start DATATABLE
+//================================================== 
 $(document).ready(function () {
     $('#dataTable').DataTable({
         "language": {
@@ -99,9 +101,11 @@ $(document).ready(function () {
     paginateButtonsHorsSpan.removeClass('paginate_button').addClass('p1 mx-4')
     $('span a.paginate_button').removeClass('paginate_button').addClass('btn-rechercher')
 });
-
+//END DATATABLES
+//================================================== 
 
 //summernote
+//================================================== 
 $(document).ready(function () {
     $('.summernote').summernote({
         toolbar: [
@@ -137,5 +141,83 @@ $(document).ready(function () {
     })
 });
 //End Summernote
+//================================================== 
+
+/*Start PROGRESS: Buton Retour au début avec l'indicateur de progression
+    ================================================== 
+*/
+(function ($) {
+    "use strict";
+    $(document).ready(function () {
+        "use strict";
+        //Scroll back to top
+        var progressPath = document.querySelector('.progress-wrap path');
+        var pathLength = progressPath.getTotalLength();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+        progressPath.style.strokeDashoffset = pathLength;
+        progressPath.getBoundingClientRect();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+        var updateProgress = function () {
+            var scroll = $(window).scrollTop();
+            var height = $(document).height() - $(window).height();
+            var progress = pathLength - (scroll * pathLength / height);
+            progressPath.style.strokeDashoffset = progress;
+        }
+        updateProgress();
+        $(window).scroll(updateProgress);
+        var offset = 50;
+        var duration = 550;
+        jQuery(window).on('scroll', function () {
+            if (jQuery(this).scrollTop() > offset) {
+                jQuery('.progress-wrap').addClass('active-progress');
+            } else {
+                jQuery('.progress-wrap').removeClass('active-progress');
+            }
+        });
+        jQuery('.progress-wrap').on('click', function (event) {
+            event.preventDefault();
+            jQuery('html, body').animate({ scrollTop: 0 }, duration);
+            return false;
+        })
 
 
+    });
+
+})(jQuery);
+/*END PROGRESS: Buton Retour au début avec l'indicateur de progression
+    ================================================== 
+*/
+
+//Start - COUNTER
+//   ==================================================
+// animate each counter when element visible using intersection observer
+// .counter inner text is the target number
+
+if ("IntersectionObserver" in window) {
+    let counterObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                let counter = entry.target;
+                let target = parseInt(counter.innerText);
+                let step = target / 200;
+                let current = 0;
+                let timer = setInterval(function () {
+                    current += step;
+                    counter.innerText = Math.floor(current);
+                    if (parseInt(counter.innerText) >= target) {
+                        clearInterval(timer);
+                    }
+                }, 10);
+                counterObserver.unobserve(counter);
+            }
+        });
+    });
+
+    let counters = document.querySelectorAll(".counter");
+    counters.forEach(function (counter) {
+        counterObserver.observe(counter);
+    });
+}
+//END - COUNTER
+//   ================================================== 
