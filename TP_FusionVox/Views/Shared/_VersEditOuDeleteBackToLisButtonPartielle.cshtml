@@ -1,0 +1,38 @@
+﻿@{
+    var btnPour = ViewData["Title"];
+}
+
+@if (btnPour.ToString().Contains("Details"))
+{
+    <div class="row justify-content-center text-center">
+        <div class="col col-md-8 col-xl-6 mb-2 mt-4">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn-rechercher">
+                <span id="btntextUpsert">
+                    Modifier
+                </span>
+                <i class="fa-solid fa-pen-to-square"></i>
+            </a>
+        </div>
+    </div>
+}
+else if (btnPour.ToString().Contains("Delete"))
+{
+    <div class="row justify-content-center text-center">
+        <div class="col col-md-8 col-xl-6 mb-2 mt-4">
+            <button type="submit" asp-action="Delete" asp-route-id="@Model?.Id" class="btn-rechercher">
+                <span id="btntextUpsert">
+                    Supprimer
+                </span>
+                <i class="fa-solid  fa-trash ms-2"></i>
+            </button>
+        </div>
+    </div>
+}
+<div class="row justify-content-center text-center">
+    <div class="col col-md-8 col-xl-6 my-2 ">
+        <a class="p1 " asp-action="Index">
+            <i class="fa-solid fa-chevron-left"></i>
+            Retour à la liste
+        </a>
+    </div>
+</div>

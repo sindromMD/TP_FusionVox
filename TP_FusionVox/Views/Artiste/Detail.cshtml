@@ -37,7 +37,7 @@
                         <div class="col-md-4">
                             <i class="fa-solid fa-location-dot fa-xl icons-rs"></i>
                             <p class="p2">
-                                Pays <br>
+                                @Html.DisplayNameFor(model => model.Pays) <br>
                                 <span class="infoSpan">
                                     @Model.Pays
                                 </span>
@@ -47,7 +47,7 @@
                         <div class="col-md-4">
                             <i class="fa-solid fa-microphone-lines fa-xl icons-rs"></i>
                             <p class="p2">
-                                Genre <br>
+                                @Html.DisplayNameFor(model => model.GenreMusical) <br>
                                 <span class="infoSpan">
                                     @Model.GenreMusical.Nom
                                 </span>
@@ -57,9 +57,9 @@
                         <div class="col-md-4">
                             <i class="fa-solid fa-user-tie fa-xl icons-rs"></i>
                             <p class="p2">
-                                Agent <br>
+                                @Html.DisplayNameFor(model => model.AgentRepr) <br>
                                 <span class="infoSpan">
-                                   @Model.Agent
+                                   @Model.AgentRepr.Nom
                                 </span>
                             </p>
                             <div class="divider-2 mb-3 "></div><!--devider linear gradient cian-->
@@ -84,7 +84,7 @@
 
                 <div class="biography">
                     <p>
-                       @Model.Biographie
+                        @Html.Raw(Model.Biographie)
                     </p>
                         <!--Biographie colapse-->
                     <p class="text-center">
@@ -100,31 +100,31 @@
                                     <Caption>Détails du artiste</Caption>
                                     <tbody>
                                         <tr>
-                                            <th>Nom :</th>
+                                            <th>@Html.DisplayNameFor(model => model.Nom) :</th>
                                             <td>@Model.Nom</td>
                                         </tr>
                                         <tr>
-                                            <th>Pays</th>
+                                            <th>@Html.DisplayNameFor(model => model.Pays) :</th>
                                             <td>@Model.Pays</td>
                                         </tr>
                                         <tr>
-                                            <th>Agent</th>
-                                            <td>@Model.Agent</td>
+                                            <th>@Html.DisplayNameFor(model => model.AgentRepr) :</th>
+                                            <td>@Model.AgentRepr.Nom</td>
                                         </tr>
                                         <tr>
-                                            <th>Date de début</th>
+                                            <th>@Html.DisplayNameFor(model => model.DebutCarrier) :</th>
                                             <td>@(Model.DebutCarrier != null ? Model.DebutCarrier.Value.ToString("MMM yyyy") : "")</td>
                                         </tr>
                                         <tr>
-                                            <th>Nombre de chansons</th>
+                                            <th>@Html.DisplayNameFor(model => model.NbChansons) :</th>
                                             <td>@Model.NbChansons</td>
                                         </tr>
                                         <tr>
-                                            <th>Genre de musique</th>
+                                            <th>@Html.DisplayNameFor(model => model.GenreMusical) :</th>
                                             <td>@Model.GenreMusical.Nom</td>
                                         </tr>
                                         <tr>
-                                            <th>Nombres d'abonnees'</th>
+                                            <th>@Html.DisplayNameFor(model => model.NbAbonnees) :</th>
                                             <td>@Model.NbAbonnees</td>
                                         </tr>
                                     </tbody>

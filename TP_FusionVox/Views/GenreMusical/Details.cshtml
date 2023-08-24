@@ -1,0 +1,181 @@
+﻿@model StatistiqueGenresMusicauxVM
+
+<main class="container">
+    <!--intro hero-->
+    <div class="row  text-center align-items-center ">
+
+        <!--Tire hero-->
+        <div class="col mb-5 mt-5">
+            <h1 class="h0">
+                @Model.Nom
+            </h1>
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card_stats_small border-left-green shadow_background h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                            <i class="fa-solid fa-users fa-2xl"></i>
+                        </div>
+                        <div class="col mr-2">
+                            <div class="titre_card_small text-uppercase mb-1">
+                                Nombre total d'artistes
+                            </div>
+                            <div class="row align-content align-items-center">
+                                <div class="col mb-0">
+                                    <h2 class="color_grey">
+                                        @Model.NbArtistes
+                                    </h2>
+                                </div>
+                                <div class="col text-end">
+                                    <span class="p3 badge rounded-pill text-bg-success ms">+20%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card_stats_small border-left-bleu shadow_background h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                            <i class="fa-solid fa-microphone-lines fa-2xl"></i>
+                        </div>
+                        <div class="col mr-2">
+                            <div class="titre_card_small text-uppercase mb-1">
+                                Nombre de chansons publiées
+                            </div>
+                            <div class="row align-content align-items-center">
+                                <div class=" col mb-0">
+                                    <h2 class="color_grey">
+                                        @Model.NbChansonsPubliees
+                                    </h2>
+                                </div>
+                                <div class="col text-end">
+                                    <span class="p3 badge rounded-pill text-bg-danger ms">-2,0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card_stats_small border-left-rouge shadow_background h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                            <i class="fa-solid fa-heart fa-2xl"></i>
+                        </div>
+                        <div class="col mr-2">
+                            <div class="titre_card_small text-uppercase mb-1">
+                                Nombre total d'abonnés
+                            </div>
+                            <div class="row align-content align-items-center">
+                                <div class=" col mb-0">
+                                    <h2 class="color_grey">
+                                        @Model.NbAbonnees
+                                    </h2>
+                                </div>
+                                <div class="col text-end">
+                                    <span class="p3 badge rounded-pill text-bg-success ms">+20%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="row justify-content-center p1">
+
+            <div class="col col-lg-10 col-xl-8">
+                  <div class="cardul text-bg-dark mb-3">
+                        <div class="card-header h4 text-center">
+                            Details
+                        </div>
+                        <div class="card-body">
+                            <div class="col text-center my-4">
+
+                                <img src="@AppConstants.ImagePathGenreMusical@(string.IsNullOrWhiteSpace(Model.ImageUrl) ? AppConstants.ImageGenericGenreMusical : Model.ImageUrl)" alt="@Model.Nom" class="card-img border-img-parents w-50">
+                            </div>
+
+                            <!--tableau details-->
+
+                            <div class="table-responsive-sm">
+                                <table class="table table-dark table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.Id)</th>
+                                            <td>@Html.DisplayFor(model => model.Id)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.Nom)</th>
+                                            <td>@Html.DisplayFor(model => model.Nom)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!--Biographie colapse-->
+                            <p>
+                            <button class="btn-reinitialiser" type="button" data-bs-toggle="collapse" data-bs-target="#description" aria-expanded="false" aria-controls="description">
+                                    Description <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </p>
+                            <div class="collapse" id="description">
+                                <div class="cardul card-body">
+                                    @Model.Description
+                                </div>
+                            </div>
+                      
+                        </div>
+
+                  </div>
+             </div>
+        </div>
+    <div class="row justify-content-center p1">
+        <div class="col col-lg-10 col-xl-8 table-responsive-sm">
+                <table class="table table-dark table-striped align-middle text-center marge-description-genre ">
+                    <thead class=" ">
+                        <tr>
+                            <th>Image</th>
+                            <th>Nom artiste</th>
+                            <th>Nombre des chansons</th>
+                            <th>Nombre d'abonnés</th>
+                        </tr>
+                    </thead>
+                    <tbody class="p1 ">
+                        @foreach (var artiste in Model.ListArtisteGenreMusical)
+                        {
+                            <tr>
+                                <td class="w-20">
+                                    <div class="card text-bg-dark">
+                                    <a asp-controller="Artiste" asp-action="Detail" asp-route-id="@artiste.Id">
+                                            <img src="@AppConstants.ImagePathArtiste@artiste.ImageURL" alt="@artiste.Nom" class="card-img">
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                <a asp-controller="Artiste" asp-action="Detail" asp-route-id="@artiste.Id" class="p1">
+                                    @artiste.Nom
+                                    </a>
+                                </td>
+                                <td>
+                                    @artiste.NbChansons
+                                </td>
+                                <td>
+                                    @artiste.NbAbonnees
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</main>
+

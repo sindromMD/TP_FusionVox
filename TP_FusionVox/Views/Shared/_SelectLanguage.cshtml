@@ -5,7 +5,7 @@
 @{
     var requestCulture = Context.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>();
     var cultureItems = LocOptions.Value.SupportedUICultures
-        .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName })
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.Name })
         .ToList();
 }
 @*<div style="display: inline-block; vertical-align: middle;">

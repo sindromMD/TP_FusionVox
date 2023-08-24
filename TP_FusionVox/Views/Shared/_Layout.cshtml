@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" @*data-bs-theme="dark"*@>
 <head>
     <!--Métadonnées-->
     <meta charset="UTF-8">
@@ -13,6 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
     <link rel="stylesheet" type="text/css" href="~/css/style.css" asp-append-version="true">
     @RenderSection("monStyle", false)
 </head>
@@ -46,12 +47,11 @@
                                     ARTISTES
                                 </a>
                             </li>
-                            @*<li class="nav-item">
-                                <a class="header-ajouter btn-ajouter-artistes" asp-controller="Artiste" asp-action="Create">
-                                    Ajouter 
-                                    <i class="fa-solid fa-user-plus"></i>
+                            <li class="nav-item ">
+                                <a class="header-text btn-menu" asp-controller="Concerts" asp-action="Index">
+                                    CONCERTS
                                 </a>
-                            </li>*@
+                            </li>
                             <li class="btn-group">
                                 <a class="header-ajouter btn-ajouter-artistes " data-bs-toggle="dropdown" aria-expanded="false">
                                     Ajouter
@@ -59,8 +59,9 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     <li><a class="p1 btn-menu" asp-controller="Artiste" asp-action="Upsert">Artiste&nbsp; <i class="fa-solid fa-user-plus"></i></a></li>
-                                    <li><a class="p1 btn-menu" asp-controller="Home" asp-action="Upsert">Genre Musical&nbsp; <i class="fa-solid fa-folder-plus"></i></a></li>
-                                    <li><a class="p1 btn-menu" href="#">Agent</a></li>
+                                    <li><a class="p1 btn-menu" asp-controller="GenreMusical" asp-action="Upsert">Genre Musical&nbsp; <i class="fa-solid fa-folder-plus"></i></a></li>
+                                    <li><a class="p1 btn-menu" asp-controller="Agents" asp-action="Create">Agent&nbsp; <i class="fa-solid fa-user-tie"></i></a></li>
+                                    <li><a class="p1 btn-menu" asp-controller="Concerts" asp-action="Create">Concert&nbsp; <i class="fa-regular fa-calendar-plus"></i></a></li>
                                 </ul>
                             </li>
                             <li>
@@ -132,7 +133,8 @@
                     <ul class="mt-4 mb-3 px-3 footer-links white-link">
                         <li><a class="p1 " asp-controller="Favoris" asp-action="Favoris">Favoris</a></li>
                         <li><a class="p1 " asp-controller="Artiste" asp-action="Recherche">Artistes</a></li>
-                        <li><a class="p1 " asp-controller="Artiste" asp-action="Create">Ajouter un artiste</a></li>
+                        <li><a class="p1 " asp-controller="Concerts" asp-action="Index">Concerts</a></li>
+                        <li><a class="p1 " asp-controller="" asp-action="">Confidentialité</a></li>
                     </ul>
                 </div>
             </div>
@@ -151,6 +153,7 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>@*Summernote*@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> @*Simple javascript toast notifications*@
     <script src="https://kit.fontawesome.com/63463ff979.js" crossorigin="anonymous"></script>@*Fontawesome*@
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
     <script src="~/js/script.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
     </body>

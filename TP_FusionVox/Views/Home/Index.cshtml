@@ -126,8 +126,9 @@
              <div class="row justify-content-around mb-5 @(cmt%2==0 ? "flex-row-reverse" : "")">
                     <!--( IMG_@genre.Nom + btn )-->
                     <div class="col-12 col-lg-5 text-center position-relative">
+                        <a asp-controller="GenreMusical" asp-action="DetailParID" asp-route-Id="@genre.Id">
                         <img src="@AppConstants.ImagePathGenreMusical@(string.IsNullOrWhiteSpace(genre.ImageUrl) ? AppConstants.ImageGenericGenreMusical : genre.ImageUrl)" alt="musique @genre.Nom" class="img-fluid mb-4 border-img-parents">
-                        
+                        </a>
                         <a href="Artiste/Recherche#section@(genre.Nom)" class="bouton-parents btn-action-icon @(genre.EstDisponible ? "" : "btn disabled")" style="position: relative; top:-38px">
                                 NOS ARTISTES 
                                 <i class="fa-solid fa-angle-right"></i>
@@ -140,16 +141,18 @@
                             @genre.Nom @(genre.EstDisponible ? "" : @Html.Raw("<span class=\"badge rounded-pill text-bg-secondary\">Indisponible</span>"))
                         </h2>  
                         
-                            <a asp-action="Upsert" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste btn-edit-card-position">
+                            <a asp-controller="GenreMusical" asp-action="Upsert" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste btn-edit-card-position">
                             <i class="fa-solid fa-pen-to-square fa-lg"></i>
                             </a>
-                             <a asp-action="Delete" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste">
+                             <a asp-controller="GenreMusical" asp-action="Delete" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste">
                             <i class="fa-solid fa-trash"></i>
                             </a>
                         <br>
-                        <p class="p1 description-genre">
-                            @genre.Description
-                        </p>
+                        <div class="p1 description-genre">
+                            @Html.Raw(genre.Description)
+                            </div>
+                            
+
                         <!--Statistique @genre.Nom-->
                         <div class="row justify-content-evenly text-center">
                             <div class="col-5 ">

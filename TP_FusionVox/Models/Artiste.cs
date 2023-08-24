@@ -46,11 +46,11 @@ namespace TP_FusionVox.Models
         [Range(0, int.MaxValue, ErrorMessage = "ValidationRange")]
         public int NbChansons { get; set; }
 
-        [Required(ErrorMessage = "ValidationRequired")]
-        [DataType(DataType.Text)]
-        [Display(Name ="Agent")]
-        [StringLength(25, MinimumLength = 0, ErrorMessage = "ValidationMaxMin")]
-        public string Agent { get; set; }
+        //[Required(ErrorMessage = "ValidationRequired")]
+        //[DataType(DataType.Text)]
+        //[Display(Name = "Agent")]
+        //[StringLength(25, MinimumLength = 0, ErrorMessage = "ValidationMaxMin")]
+        //public string Agent { get; set; }
 
         [ForeignKey("GenreMusical")]
         [Display(Name = "GenreMusicalID")]
@@ -61,5 +61,17 @@ namespace TP_FusionVox.Models
         [ValidateNever]
         public virtual GenreMusical GenreMusical { get; set; }
 
+        [Display(Name = "ListConcerts")]
+        [ValidateNever]
+        public virtual ICollection<Concert>? ListConcerts { get; set; }
+
+        [ForeignKey("Agent")]
+        [Display(Name = "AgentReprId")]
+        [Required(ErrorMessage = "ValidationRequired")]
+        public int AgentReprId { get; set; }
+
+        [Display(Name = "AgentRepr")]
+        [ValidateNever]
+        public virtual Agent AgentRepr { get; set; }
     }
 }

@@ -27,6 +27,9 @@
           }
         }
       },
+      "cldrjs/0.4.1": {
+        "type": "package"
+      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -619,6 +622,28 @@
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
           }
+        }
+      },
+      "jQuery/1.4.4": {
+        "type": "package"
+      },
+      "jquery-globalize/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "cldrjs": "0.4.1"
+        }
+      },
+      "jQuery.Validation/1.19.5": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.4.4"
+        }
+      },
+      "jQuery.Validation.Globalize/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "jQuery.Validation": "1.14.0",
+          "jquery-globalize": "1.0.0"
         }
       },
       "Localization.AspNetCore.TagHelpers/0.6.0": {
@@ -1265,14 +1290,14 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Session/2.2.0": {
+      "Microsoft.AspNetCore.Session/2.1.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.DataProtection": "2.2.0",
-          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "Microsoft.Extensions.Caching.Abstractions": "2.2.0",
-          "Microsoft.Extensions.Logging.Abstractions": "2.2.0",
-          "Microsoft.Extensions.Options": "2.2.0"
+          "Microsoft.AspNetCore.DataProtection": "2.1.1",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.1.1",
+          "Microsoft.Extensions.Caching.Abstractions": "2.1.1",
+          "Microsoft.Extensions.Logging.Abstractions": "2.1.1",
+          "Microsoft.Extensions.Options": "2.1.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Session.dll": {
@@ -1912,11 +1937,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/6.0.18": {
+      "Microsoft.EntityFrameworkCore/6.0.21": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.18",
-          "Microsoft.EntityFrameworkCore.Analyzers": "6.0.18",
+          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.21",
+          "Microsoft.EntityFrameworkCore.Analyzers": "6.0.21",
           "Microsoft.Extensions.Caching.Memory": "6.0.1",
           "Microsoft.Extensions.DependencyInjection": "6.0.1",
           "Microsoft.Extensions.Logging": "6.0.0",
@@ -1937,7 +1962,7 @@
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/6.0.18": {
+      "Microsoft.EntityFrameworkCore.Abstractions/6.0.21": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -1950,7 +1975,7 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/6.0.18": {
+      "Microsoft.EntityFrameworkCore.Analyzers/6.0.21": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -1959,11 +1984,11 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/6.0.18": {
+      "Microsoft.EntityFrameworkCore.Design/6.0.21": {
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.8.26",
-          "Microsoft.EntityFrameworkCore.Relational": "6.0.18"
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.21"
         },
         "compile": {
           "lib/net6.0/_._": {
@@ -1996,10 +2021,10 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/6.0.18": {
+      "Microsoft.EntityFrameworkCore.Relational/6.0.21": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "6.0.18",
+          "Microsoft.EntityFrameworkCore": "6.0.21",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
         },
         "compile": {
@@ -2013,11 +2038,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/6.0.18": {
+      "Microsoft.EntityFrameworkCore.SqlServer/6.0.21": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.SqlClient": "2.1.4",
-          "Microsoft.EntityFrameworkCore.Relational": "6.0.18"
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.21"
         },
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
@@ -2030,10 +2055,10 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/6.0.18": {
+      "Microsoft.EntityFrameworkCore.Tools/6.0.21": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "6.0.18"
+          "Microsoft.EntityFrameworkCore.Design": "6.0.21"
         },
         "compile": {
           "lib/net6.0/_._": {}
@@ -4794,6 +4819,21 @@
         "readme.txt"
       ]
     },
+    "cldrjs/0.4.1": {
+      "sha512": "WQ5Ey4MYeDjzFMSmaB6zDhxcjn+DN2zB2ahYemOZiQ1WhrMI8mXz/ssv3difmF545sOSmrliHOzRmjst6+Kd8Q==",
+      "type": "package",
+      "path": "cldrjs/0.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cldrjs.0.4.1.nupkg.sha512",
+        "cldrjs.nuspec",
+        "content/Scripts/cldr.js",
+        "content/Scripts/cldr/event.js",
+        "content/Scripts/cldr/supplemental.js",
+        "content/Scripts/cldr/unresolved.js"
+      ]
+    },
     "Humanizer/2.14.1": {
       "sha512": "/FUTD3cEceAAmJSCPN9+J+VhGwmL/C12jvwlyM1DFXShEMsBzvLzLqSrJ2rb+k/W2znKw7JyflZgZpyE+tI7lA==",
       "type": "package",
@@ -5540,6 +5580,66 @@
         "logo.png"
       ]
     },
+    "jQuery/1.4.4": {
+      "sha512": "kexCeYIZehR5fRjo8CK1sngN5SZEQRFNfCYZHMS1RxwEEiSKetBw/gliYJcLJdJEBB+e9aHqleLCjuaSI7u23g==",
+      "type": "package",
+      "path": "jquery/1.4.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-1.4.4-vsdoc.js",
+        "Content/Scripts/jquery-1.4.4.js",
+        "Content/Scripts/jquery-1.4.4.min.js",
+        "jquery.1.4.4.nupkg.sha512",
+        "jquery.nuspec"
+      ]
+    },
+    "jquery-globalize/1.0.0": {
+      "sha512": "lQMu3s31x6fy6uC/sSOnjl1FPbHkhhswKvGuvXMChEWImC+CKAQZ9YscMnNn94T9w4KHXoG9NSipXlgFbgBXYg==",
+      "type": "package",
+      "path": "jquery-globalize/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Scripts/globalize.js",
+        "content/Scripts/globalize/currency.js",
+        "content/Scripts/globalize/date.js",
+        "content/Scripts/globalize/message.js",
+        "content/Scripts/globalize/number.js",
+        "content/Scripts/globalize/plural.js",
+        "content/Scripts/globalize/relative-time.js",
+        "jquery-globalize.1.0.0.nupkg.sha512",
+        "jquery-globalize.nuspec"
+      ]
+    },
+    "jQuery.Validation/1.19.5": {
+      "sha512": "lBHoaszLpKYxiVCWwIoxdqSCrlqnW9jeVMinMQ0uNMFcl3rmY8XyeaerfGLRbkVRUzh/fM3APaKepEezrR5AcA==",
+      "type": "package",
+      "path": "jquery.validation/1.19.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery.validate-vsdoc.js",
+        "Content/Scripts/jquery.validate.js",
+        "Content/Scripts/jquery.validate.min.js",
+        "jquery.validation.1.19.5.nupkg.sha512",
+        "jquery.validation.nuspec"
+      ]
+    },
+    "jQuery.Validation.Globalize/1.1.0": {
+      "sha512": "qzka221RX45z642DOhlxGg/wvW4w8Md2Q02deZ0j6EfgyQEnXdLAeHw5xMK9EuFCjWoRbmISt/oFsJAvKqnmCA==",
+      "type": "package",
+      "path": "jquery.validation.globalize/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "content/Scripts/jquery.validate.globalize.js",
+        "content/Scripts/jquery.validate.globalize.min.js",
+        "jquery.validation.globalize.1.1.0.nupkg.sha512",
+        "jquery.validation.globalize.nuspec"
+      ]
+    },
     "Localization.AspNetCore.TagHelpers/0.6.0": {
       "sha512": "jfirfCU68ZMdHgJef0DzOHnj/Us9PxSYX+R5em/usWcy75Vjv/P60V5wcsfx6YFiiXNGxGNYxjptlxlmnfIrvA==",
       "type": "package",
@@ -6036,16 +6136,16 @@
         "microsoft.aspnetcore.routing.abstractions.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Session/2.2.0": {
-      "sha512": "lOjJVh293AKaOEPi1MIC1/G9gOVZMrve2a05o56oslK6bo0PMgMB17rmPomvqrJAjMdlWZ/MGdN2y78Z9wzWTw==",
+    "Microsoft.AspNetCore.Session/2.1.1": {
+      "sha512": "hQ4PHIHw1RmqoqjZKRfT4eL6msUd7K+GwcLUGtd1WZT7mOzqmt2oXkzL0Q+qudgXsNdWmH+zpe0zzqKM8Hz45w==",
       "type": "package",
-      "path": "microsoft.aspnetcore.session/2.2.0",
+      "path": "microsoft.aspnetcore.session/2.1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Session.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Session.xml",
-        "microsoft.aspnetcore.session.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.session.2.1.1.nupkg.sha512",
         "microsoft.aspnetcore.session.nuspec"
       ]
     },
@@ -6777,10 +6877,10 @@
         "microsoft.dotnet.scaffolding.shared.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore/6.0.18": {
-      "sha512": "klzF+50q5HzYX7Jjl+L6FUR+IxgNY3vLjC3LlKCmGCW5vQRHdnu6AXsJKEdGN0oyDyCGq7D6nEleqoAx1VsJGQ==",
+    "Microsoft.EntityFrameworkCore/6.0.21": {
+      "sha512": "XUPcDrn/Vrv9yF4M3b9FYEZvqW1gyS3hfJhFiP0pttuRYnGRB+y3/6g/9k0GIoU62+XkxGa78l1JUccq1uvAXQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/6.0.18",
+      "path": "microsoft.entityframeworkcore/6.0.21",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6788,42 +6888,42 @@
         "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.6.0.18.nupkg.sha512",
+        "microsoft.entityframeworkcore.6.0.21.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/6.0.18": {
-      "sha512": "XzdebCtEqLJMiegLYzfSI6Te9nyO5vnKv0qWo+zavl+LtcG1CPa4RMe1PL2QfrT00NUjN7YoBakRCBIVIPZKaA==",
+    "Microsoft.EntityFrameworkCore.Abstractions/6.0.21": {
+      "sha512": "GlNsy7qoFnCxgZlPpb8H/Srq1juOiV6W5XaijSA0+h8V0yn1VJ0owjb01If3di3Covs/8682A+ByTFjmEUxePA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/6.0.18",
+      "path": "microsoft.entityframeworkcore.abstractions/6.0.21",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.6.0.18.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.6.0.21.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/6.0.18": {
-      "sha512": "XWCVI7KXaf+3FR3bKezmUm/kuY/5HPVdkuc4PTtT4HBTLbAX1oxH5N/aBmdqJM1j9jIszM/ZsjBlg/nVeqE1Lw==",
+    "Microsoft.EntityFrameworkCore.Analyzers/6.0.21": {
+      "sha512": "gS8tH419vOY2kEyqEZBX8VnXWmtHaor7gVx6zVaXCsEyQurGR/aVB++IZ62vzeQFS9R46LbNY6D6bqEA6j3iCg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/6.0.18",
+      "path": "microsoft.entityframeworkcore.analyzers/6.0.21",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.6.0.18.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.6.0.21.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/6.0.18": {
-      "sha512": "XfNxThFoN5TtieRWqDNjLgds+fs0Hiwft9UsibleFy8OV9De7aWl4j45wVjxV3FiOISZr4V6bdQ8ypBsWVTFGQ==",
+    "Microsoft.EntityFrameworkCore.Design/6.0.21": {
+      "sha512": "G+e0jPI1nD2DHszHXGqO57ogAVIKRy4930jCb7W/v2JfYKVcEbupzdYxEOQAGZws98MXllHNSqeb6fE1EW131A==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/6.0.18",
+      "path": "microsoft.entityframeworkcore.design/6.0.21",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6831,7 +6931,7 @@
         "build/net6.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.6.0.18.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.6.0.21.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
@@ -6849,45 +6949,45 @@
         "microsoft.entityframeworkcore.proxies.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/6.0.18": {
-      "sha512": "lCEvmkKips9cn77uc5umOF4VtU/O5hDSHbMQXDsKwUeEc2pIMdGI+IrwM0Wk8mGTartdPAqNmNd1QD3vsqn6TQ==",
+    "Microsoft.EntityFrameworkCore.Relational/6.0.21": {
+      "sha512": "Ev5FM2KpXJu7+Dm9qvLf1FhSJMytrhSXho92Vompmgeiz3p4InldluidmKKmv8nZQAjs9dTCUUyvk1pxQjysaQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/6.0.18",
+      "path": "microsoft.entityframeworkcore.relational/6.0.21",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.6.0.18.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.6.0.21.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/6.0.18": {
-      "sha512": "mFiOQIZEJ0bhRjCLNJpphqe+o31AimU/8cP9G6SUrnnEaU/gb2AEUwiCUsTsTd7ui9gCI3+GygzzlQa53zZLkw==",
+    "Microsoft.EntityFrameworkCore.SqlServer/6.0.21": {
+      "sha512": "csFkL9F/pk3od2p6I9OxlnYmKGM0kmWoJx2GOQbAgvmq8QT41MUZKETVAewAKmGiI7lg10jc4KTb/IaLr7rN+w==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/6.0.18",
+      "path": "microsoft.entityframeworkcore.sqlserver/6.0.21",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.6.0.18.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.6.0.21.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Tools/6.0.18": {
-      "sha512": "ujVs/OsH057dvWVzB7TZ0TVpdbbaqKUtt9YU5Q5zF1igX3VrCB1usJKOeQ9Sd1hKT1VB7BYi/0esyg/I2PYWXQ==",
+    "Microsoft.EntityFrameworkCore.Tools/6.0.21": {
+      "sha512": "IFh+eXqp0t4WEQ7ZE++lJWEdaX4NQ6HcNpHqNKqFd+h+tnFgTM/RIEYzo56U//+dbIi4/bhnglSMH9cvYqLZ5A==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.tools/6.0.18",
+      "path": "microsoft.entityframeworkcore.tools/6.0.21",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/_._",
-        "microsoft.entityframeworkcore.tools.6.0.18.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.6.0.21.nupkg.sha512",
         "microsoft.entityframeworkcore.tools.nuspec",
         "tools/EntityFrameworkCore.PS2.psd1",
         "tools/EntityFrameworkCore.PS2.psm1",
@@ -12876,14 +12976,16 @@
     "net6.0": [
       "Localization.AspNetCore.TagHelpers >= 0.6.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.13",
-      "Microsoft.AspNetCore.Session >= 2.2.0",
-      "Microsoft.EntityFrameworkCore >= 6.0.18",
-      "Microsoft.EntityFrameworkCore.Design >= 6.0.18",
+      "Microsoft.AspNetCore.Session >= 2.1.1",
+      "Microsoft.EntityFrameworkCore >= 6.0.21",
+      "Microsoft.EntityFrameworkCore.Design >= 6.0.21",
       "Microsoft.EntityFrameworkCore.Proxies >= 6.0.16",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.18",
-      "Microsoft.EntityFrameworkCore.Tools >= 6.0.18",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.21",
+      "Microsoft.EntityFrameworkCore.Tools >= 6.0.21",
       "Microsoft.Extensions.Localization >= 6.0.16",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
+      "jQuery.Validation >= 1.19.5",
+      "jQuery.Validation.Globalize >= 1.1.0"
     ]
   },
   "packageFolders": {
@@ -12936,17 +13038,17 @@
           },
           "Microsoft.AspNetCore.Session": {
             "target": "Package",
-            "version": "[2.2.0, )"
+            "version": "[2.1.1, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
-            "version": "[6.0.18, )"
+            "version": "[6.0.21, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[6.0.18, )"
+            "version": "[6.0.21, )"
           },
           "Microsoft.EntityFrameworkCore.Proxies": {
             "target": "Package",
@@ -12954,13 +13056,13 @@
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
-            "version": "[6.0.18, )"
+            "version": "[6.0.21, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[6.0.18, )"
+            "version": "[6.0.21, )"
           },
           "Microsoft.Extensions.Localization": {
             "target": "Package",
@@ -12969,6 +13071,14 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[6.0.16, )"
+          },
+          "jQuery.Validation": {
+            "target": "Package",
+            "version": "[1.19.5, )"
+          },
+          "jQuery.Validation.Globalize": {
+            "target": "Package",
+            "version": "[1.1.0, )"
           }
         },
         "imports": [

@@ -123,6 +123,12 @@
   <data name="Agent" xml:space="preserve">
     <value>Agent</value>
   </data>
+  <data name="AgentRepr" xml:space="preserve">
+    <value>Agent</value>
+  </data>
+  <data name="AgentReprId" xml:space="preserve">
+    <value>Agent</value>
+  </data>
   <data name="Biographie" xml:space="preserve">
     <value>Artist biography</value>
   </data>
@@ -137,6 +143,9 @@
   </data>
   <data name="Image" xml:space="preserve">
     <value>Image of the artist</value>
+  </data>
+  <data name="ListConcerts" xml:space="preserve">
+    <value>List of concerts</value>
   </data>
   <data name="NbChansons" xml:space="preserve">
     <value>Number of songs</value>

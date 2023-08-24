@@ -193,18 +193,23 @@ h4 {
     text-decoration: none;
 }
 
+
 /* P1 Montserrat 16 */
-.p1 {
+.p1, .paginate_button {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
     color: #FFFFFF;
-    
     text-decoration: none;
 }
-
+p.description-genre p{
+    color:#FFFFFF;
+}
+#description.collapse p {
+    color: black;
+}
 
 /* P2 Montserrat 14 */
 .p2{
@@ -607,6 +612,7 @@ genres musicaux, pour chaque catégorie de musique. */
     text-decoration: none;
     background-color: #D9D9D9;
     border: none;
+    cursor:pointer;
 }
 .btn-reinitialiser:hover{
     background-color: #746E5D;
@@ -636,6 +642,7 @@ genres musicaux, pour chaque catégorie de musique. */
     align-items: center;
     position: relative;
     border: none;
+    cursor:pointer;
 }
 .btn-rechercher:hover{
     color: #FFFFFF;
@@ -933,7 +940,113 @@ div.x a.btn-edit-card-position {
     .note-frame .p4 {
         color: black;
     }
+/*datatable*/
+.dataTables_wrapper {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.dataTables_wrapper
+.dataTables_length,
+.dataTables_filter,
+.dataTables_info,
+.dataTables_paginate{
+    margin-bottom:8px;
+}
+.dataTables_wrapper .dataTables_length,.dataTables_info {
+        margin-left:6px;
+}
+.dataTables_wrapper .dataTables_paginate,
+.dataTables_info{
+    margin-top:8px;
+}
+.dataTables_wrapper .dataTables_length select,
+.dataTables_wrapper .dataTables_filter input {
+    color: black;
+    background-color: #FFFFFF;
+    font-family: Montserrat;
+}
+div.dataTables_paginate a.p1{
+    cursor:pointer;
+}
 
+
+
+/*end datatable*/
+
+/*card stats*/
+.card_stats_small {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+}
+
+    .card_stats_small .card-body {
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1.25rem;
+    }
+
+.border-left-green {
+    border-left: 5px solid rgba(12, 132, 29, 0.87) !important;
+}
+
+.border-left-bleu {
+    border-left: 5px solid rgba(12, 74, 132, 0.87) !important;
+}
+
+.border-left-rouge {
+    border-left: 5px solid rgba(211, 81, 89, 0.87) !important;
+}
+
+.shadow_background {
+    background: #F7FFF6;
+    box-shadow: 2px 2px 7px 0px rgba(255, 255, 255, 0.5);
+    color: #1a1a1ad5
+}
+
+.border-left-bleu.shadow_background {
+    background: #EDF2F6;
+}
+
+.border-left-rouge.shadow_background {
+    background: #FDF5F5;
+}
+
+.titre_card_small {
+    color: #2B943A;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.color_grey {
+    color: #21272A
+}
+
+.border-left-bleu .titre_card_small {
+    color: #2A6193;
+}
+
+.border-left-rouge .titre_card_small {
+    color: #D8676D;
+}
+/*End STATS CARD*/
+
+/*Counter css*/
+/*END Counter css*/
 /*.form-switch input::backdrop{
     color:black;
 }

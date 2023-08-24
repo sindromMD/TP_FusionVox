@@ -1,0 +1,76 @@
+﻿@model Agent
+
+@{
+    ViewData["classeSuffixe"] = "Modifier";
+    ViewData["Title"] = "Modifier Agent";
+}
+
+<main class="container">
+    <div class="container-fluid">
+        <div class="row justify-content-around text-center">
+            <div class="col col-lg-10 col-xl-9">
+                <h1 class="h0">Modifier les info sur l'agent</h1>
+                <div class="divider-2 mb-3 "></div><!--devider linear gradient cian-->
+                <br>
+                <form asp-action="Edit" class="text-start p1">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="Nom" class="control-label"></label>
+                        <input asp-for="Nom" class="form-control" />
+                        <span asp-validation-for="Nom" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="ImageURL" class="control-label"></label>
+                        <input asp-for="ImageURL" class="form-control" />
+                        <span asp-validation-for="ImageURL" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="Pays" class="control-label"></label>
+                        <input asp-for="Pays" class="form-control" />
+                        <span asp-validation-for="Pays" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="DateNaissance" class="control-label"></label>
+                        <input asp-for="DateNaissance" class="form-control" />
+                        <span asp-validation-for="DateNaissance" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="Biographie" class="control-label"></label>
+                        <textarea asp-for="Biographie" class="form-control summernote"></textarea>
+                        <span asp-validation-for="Biographie" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="SalaireMensuel" class="control-label"></label>
+                        <input asp-for="SalaireMensuel" class="form-control" />
+                        <span asp-validation-for="SalaireMensuel" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6 ">
+                        <label asp-for="Curriel" class="control-label"></label>
+                        <input asp-for="Curriel" class="form-control" />
+                        <span asp-validation-for="Curriel" class="text-danger"></span>
+                        </div>
+                    </div>
+            <partial name="_CreateEditBackToListReinitiliseButtonPartielle" model="Model" />
+        </form>
+    </div>
+</div>
+</div>
+</main>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

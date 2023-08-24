@@ -65,10 +65,77 @@ $(document).ready(function(){
     //         $('header').addClass('marge_header_bot_Modifier');
     //         break;
     //     case pathToLower.includes('delete'):
-    //         $('header').addClass('marge_header_bot_Delete'); 
-    //         break;  
+    //         $('header').addClass('marge_header_bot_Delete');
+    //         break;
     //     default:
-    //      
+    //
     //   }
+    
 })
+/*let table = new DataTable('#dataTable');*/
+$(document).ready(function () {
+    $('#dataTable').DataTable({
+        "language": {
+            "decimal": ",",
+            "thousands": ".",
+            "lengthMenu": "Affichage de _MENU_ enregistrements par page",
+            "zeroRecords": "Rien trouvé… Désolé! ",
+            "info": "Affichage de la page _PAGE_ de _PAGES_",
+            "infoEmpty": "Aucun enregistrement disponible ",
+            "infoFiltered": "(filtré d’un maximum de _MAX_ enregistrement)",
+            "search": "Recherche: ",
+            "paginate": {
+                "first": "Première",
+                "last": "Dernière",
+                "next": "Suivant",
+                "previous": "Précédent",
+            }
+
+        }
+    });
+});
+$(document).ready(function () {
+    var paginateButtonsHorsSpan = $("a.paginate_button:not(span a.paginate_button)");
+    paginateButtonsHorsSpan.removeClass('paginate_button').addClass('p1 mx-4')
+    $('span a.paginate_button').removeClass('paginate_button').addClass('btn-rechercher')
+});
+
+
+//summernote
+$(document).ready(function () {
+    $('.summernote').summernote({
+        toolbar: [
+
+            ['Menu', ['style', 'bold', 'italic', 'underline',
+                'clear', 'fontname', 'fontsize', 'color', 'ul', 'ol',
+                'paragraph', 'link', 'picture', 'video', 'fullscreen', 'codeview', 'help']],
+        ],
+
+        styleTags: ['p', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+        fontNames: ['Montserrat', 'Arial', 'Courier New'],
+        height: 130,
+        minHeight: 65,
+        maxHeight: 400,
+        placeholder: "Saisir la biographie de l\'artiste",
+        callbacks: {
+            onInit: function () {
+                var editor = elem.next(),
+                    placeholder = editor.find(".note-placeholder");
+
+                function isEditorEmpty() {
+                    var code = elem.summernote("code");
+                    return code === "<p><br></p>" || code === "";
+                }
+
+                editor.on("focusin focusout", ".note-editable", function (e) {
+                    if (isEditorEmpty()) {
+                        placeholder[e.type === "focusout" ? "show" : "hide"]();
+                    }
+                });
+            }
+        }
+    })
+});
+//End Summernote
+
 

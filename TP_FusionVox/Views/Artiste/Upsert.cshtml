@@ -21,6 +21,7 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <!--region input Hidden-->
                     <input type="hidden" asp-for="@Model.Artiste.Id" />
+                    <input type="hidden" asp-for="@Model.Artiste.ListConcerts" />
                     <input asp-for="@Model.AncienneImage" value="@Model.Artiste.ImageURL" class="form-control" type="hidden" /> <!--permet de conserver l'ancienne image-->
                     <input asp-for="@Model.NomInitial" value="@Model.Artiste.Nom" class="form-control" type="hidden" /> <!--permet de conserver le nom initiale-->
                     <!--Vedtte switch-->
@@ -54,19 +55,19 @@
                     </div>
 
                     <!--Agent-->
-                    <div class="row justify-content-center">
+                  @*  <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6 ">
                             <label asp-for="@Model.Artiste.Agent" class="form-label"></label>
                             <input type="text" class="form-control" asp-for="@Model.Artiste.Agent" placeholder="Exemple: Cristi Ochiu">
                             <span asp-validation-for="@Model.Artiste.Agent" class="text-danger"></span>
                         </div>
-                    </div>
+                    </div>*@
 
                     <!--Date de début de la carrière-->
                     <div class="row justify-content-center">
                         <div class="col col-md-8 col-lg-7 col-xl-6 ">
                             <label asp-for="@Model.Artiste.DebutCarrier" class="form-label"></label>
-                            <input type="date" class="form-control" asp-for="@Model.Artiste.DebutCarrier">
+                            <input  class="form-control" asp-for="@Model.Artiste.DebutCarrier">
                             <span asp-validation-for="@Model.Artiste.DebutCarrier" class="text-danger"></span>
 
                         </div>
@@ -113,15 +114,51 @@
                             <label asp-for="@Model.Artiste.IdGenreMusical" class="form-label"></label>
                             <select class="form-select" asp-for="@Model.Artiste.IdGenreMusical" aria-label="Genre de musique" asp-items="@Model.GenresSelectList">
                                 <option selected value="">Choisissez parmi les options proposées</option>
-                                @*<option value="POP">POP</option>
-                                <option value="HIP-HOP">Hip-Hop</option>
-                                <option value="ÉLECTRO">Électro</option>*@
-
                             </select>
-                            @*<span asp-validation-for="GenreMusical" class="text-danger"></span>*@
                             <span asp-validation-for="@Model.Artiste.IdGenreMusical" class="text-danger"></span>
                         </div>
                     </div>
+                    <!--Agent-->
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6">
+                            <label asp-for="@Model.Artiste.AgentReprId" class="form-label"></label>
+                            <select class="form-select" asp-for="@Model.Artiste.AgentReprId" aria-label="agent" asp-items="@Model.AgentSelectList">
+                                <option selected value="">Choisissez parmi les options proposées</option>
+                            </select>
+                            <span asp-validation-for="@Model.Artiste.AgentReprId" class="text-danger"></span>
+                        </div>
+                    </div>
+             <!--concert -->
+                    <div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6">
+                            <label asp-for="@Model.Artiste.ListConcerts" class="form-label"></label>
+                            @foreach (var concert in Model.ConsertsSelectList)
+                            {
+                                var isChecked = Model.SelectedConcertIds.Contains(int.Parse(concert.Value));
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="SelectedConcertIds" value="@int.Parse(concert.Value)" @(isChecked ? "checked" : "")>
+                                    <label class="form-check-label">@concert.Text</label>
+                                </div>
+                            }
+                            <span asp-validation-for="@Model.SelectedConcertIds" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <!--Concerts-->
+                    @*<div class="row justify-content-center">
+                        <div class="col col-md-8 col-lg-7 col-xl-6">
+                            <label class="form-label">Concerts</label>
+                            @foreach (var concertCheckboxItem in Model.ConcertCheckboxItems)
+                            {
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="SelectedConcertIds" value="@concertCheckboxItem.ConcertId" @(concertCheckboxItem.IsSelected ? "checked" : "")>
+                                    <label class="form-check-label">@concertCheckboxItem.ConcertName</label>
+                                </div>
+                            }
+                            <span asp-validation-for="SelectedConcertIds" class="text-danger"></span>
+                        </div>
+                    </div>*@
+
+                    
                     <partial name="_CreateEditReinitBackCatalogueButtonPartielle" model="@Model.Artiste.Id" />
                 </form>
             </div>
@@ -133,40 +170,6 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     <script>
-        $(document).ready(function () { $('.summernote').summernote({
-                toolbar: [
-
-                    ['Menu', ['style', 'bold', 'italic', 'underline', 
-                    'clear', 'fontname', 'fontsize', 'color', 'ul', 'ol', 
-                    'paragraph', 'link', 'picture', 'video', 'fullscreen', 'codeview', 'help']],     
-                ],
-                
-                styleTags: ['p','pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-                fontNames: ['Montserrat', 'Arial', 'Courier New'],
-                height: 130,
-                minHeight: 65,
-                maxHeight: 400,
-                placeholder: "Saisir la biographie de l\'artiste",
-                callbacks: {
-                    onInit: function () {
-                        var editor = elem.next(),
-                            placeholder = editor.find(".note-placeholder");
-
-                        function isEditorEmpty() {
-                            var code = elem.summernote("code");
-                            return code === "<p><br></p>" || code === "";
-                        }
-
-                        editor.on("focusin focusout", ".note-editable", function (e) {
-                            if (isEditorEmpty()) {
-                                placeholder[e.type === "focusout" ? "show" : "hide"]();
-                            }
-                        });
-                    }
-                }
-            })  
-        });
+    //summernote est dans fischier JS
     </script>
-
-
 }

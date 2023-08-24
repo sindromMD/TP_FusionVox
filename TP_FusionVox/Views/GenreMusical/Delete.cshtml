@@ -1,0 +1,81 @@
+﻿@model GenreMusical
+@{
+    ViewData["classeSuffixe"] = "Delete";
+}
+
+<main class="container">
+
+    <!--intro hero-->
+    <div class="row  text-center align-items-center ">
+
+        <!--Tire hero-->
+        <div class="col mb-5">
+            <h1 class="h0">
+                <span class="text-danger">SUPPRIMER :</span><br />
+                @Model.Nom
+            </h1>
+        </div>
+    </div>
+    <div class="container-fluid">
+
+        <div class="row justify-content-center p1">
+
+            <div class="col col-lg-10 col-xl-8">
+                <form asp-controller="GenreMusical" asp-action="DeletePost" method="post" class="text-start p1">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="@Model.Id" />
+                    <div class="cardul text-bg-dark mb-3">
+                        <div class="card-header h4 text-center">
+                            Êtes-vous sûr de vouloir supprimer ce genre de musique ?
+                        </div>
+                        <div class="card-body">
+                            <div class="col text-center my-4">
+
+                                <img src="@AppConstants.ImagePathGenreMusical@(string.IsNullOrWhiteSpace(Model.ImageUrl) ? AppConstants.ImageGenericGenreMusical : Model.ImageUrl)" alt="@Model.Nom" class="card-img border-img-parents w-50">
+                            </div>
+
+                            <!--tableau details-->
+
+                            <div class="table-responsive-sm">
+                                <table class="table table-dark table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.Id)</th>
+                                            <td>@Html.DisplayFor(model => model.Id)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.Nom)</th>
+                                            <td>@Html.DisplayFor(model => model.Nom)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!--Decription colapse-->
+                            <p>
+                                <button class="btn-reinitialiser" type="button" data-bs-toggle="collapse" data-bs-target="#description" aria-expanded="false" aria-controls="description">
+                                    Description <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </p>
+                            <div class="collapse" id="description">
+                                <div class="cardul card-body">
+                                    
+                                    <p></p>@Html.Raw(Model.Description)
+                                </div>
+                            </div>
+
+                        </div>
+                        <partial name="_DeleteBackToRechercheButtonPartialle" model="Model" />
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</main>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

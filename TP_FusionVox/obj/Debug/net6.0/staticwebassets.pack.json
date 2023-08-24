@@ -1,14 +1,6 @@
 {
   "Files": [
     {
-      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\06f026a3-7bf6-43ad-bff7-8f28e371f8bb.png",
-      "PackagePath": "staticwebassets\\Images\\Artistes\\descktop\\06f026a3-7bf6-43ad-bff7-8f28e371f8bb.png"
-    },
-    {
-      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\5ea3e5b3-b14d-4b0c-954d-c8ecc0693cd7.png",
-      "PackagePath": "staticwebassets\\Images\\Artistes\\descktop\\5ea3e5b3-b14d-4b0c-954d-c8ecc0693cd7.png"
-    },
-    {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\Adele.png",
       "PackagePath": "staticwebassets\\Images\\Artistes\\descktop\\Adele.png"
     },
@@ -63,10 +55,6 @@
     {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\The_Weeknd.png",
       "PackagePath": "staticwebassets\\Images\\Artistes\\descktop\\The_Weeknd.png"
-    },
-    {
-      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\b7ac8805-a227-4baf-bd20-a4791f49e083.png",
-      "PackagePath": "staticwebassets\\Images\\Artistes\\descktop\\b7ac8805-a227-4baf-bd20-a4791f49e083.png"
     },
     {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\Images\\Artistes\\descktop\\tiesto.png",
@@ -399,6 +387,1538 @@
     {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\js\\script.js",
       "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\README",
+      "PackagePath": "staticwebassets\\lib\\cldr-data"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\apache-license.txt",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\apache-license.txt"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\icu-license.html",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\icu-license.html"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-buddhist.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-buddhist.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-chinese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-chinese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-coptic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-coptic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-dangi.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-dangi.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-ethiopic-amete-alem.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-ethiopic-amete-alem.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-ethiopic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-ethiopic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-generic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-generic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-gregorian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-gregorian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-hebrew.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-hebrew.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-indian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-indian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-islamic-civil.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-islamic-civil.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-islamic-rgsa.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-islamic-rgsa.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-islamic-tbla.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-islamic-tbla.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-islamic-umalqura.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-islamic-umalqura.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-islamic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-islamic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-japanese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-japanese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-persian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-persian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\ca-roc.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\ca-roc.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\characters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\characters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\contextTransforms.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\contextTransforms.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\currencies.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\currencies.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\dateFields.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\dateFields.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\delimiters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\delimiters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\languages.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\languages.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\layout.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\layout.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\listPatterns.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\listPatterns.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\localeDisplayNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\localeDisplayNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\measurementSystemNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\measurementSystemNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\numbers.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\numbers.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\posix.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\posix.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\scripts.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\scripts.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\territories.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\territories.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\timeZoneNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\timeZoneNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\transformNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\transformNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\units.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\units.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-001\\variants.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-001\\variants.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-buddhist.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-buddhist.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-chinese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-chinese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-coptic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-coptic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-dangi.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-dangi.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-ethiopic-amete-alem.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-ethiopic-amete-alem.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-ethiopic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-ethiopic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-generic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-generic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-gregorian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-gregorian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-hebrew.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-hebrew.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-indian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-indian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-islamic-civil.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-islamic-civil.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-islamic-rgsa.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-islamic-rgsa.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-islamic-tbla.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-islamic-tbla.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-islamic-umalqura.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-islamic-umalqura.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-islamic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-islamic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-japanese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-japanese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-persian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-persian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\ca-roc.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\ca-roc.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\characters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\characters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\contextTransforms.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\contextTransforms.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\currencies.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\currencies.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\dateFields.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\dateFields.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\delimiters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\delimiters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\languages.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\languages.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\layout.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\layout.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\listPatterns.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\listPatterns.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\localeDisplayNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\localeDisplayNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\measurementSystemNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\measurementSystemNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\numbers.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\numbers.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\posix.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\posix.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\scripts.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\scripts.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\territories.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\territories.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\timeZoneNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\timeZoneNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\transformNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\transformNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\units.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\units.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-AU\\variants.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-AU\\variants.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-buddhist.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-buddhist.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-chinese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-chinese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-coptic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-coptic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-dangi.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-dangi.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-ethiopic-amete-alem.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-ethiopic-amete-alem.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-ethiopic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-ethiopic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-generic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-generic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-gregorian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-gregorian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-hebrew.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-hebrew.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-indian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-indian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-islamic-civil.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-islamic-civil.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-islamic-rgsa.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-islamic-rgsa.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-islamic-tbla.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-islamic-tbla.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-islamic-umalqura.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-islamic-umalqura.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-islamic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-islamic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-japanese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-japanese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-persian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-persian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\ca-roc.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\ca-roc.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\characters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\characters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\contextTransforms.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\contextTransforms.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\currencies.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\currencies.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\dateFields.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\dateFields.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\delimiters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\delimiters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\languages.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\languages.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\layout.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\layout.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\listPatterns.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\listPatterns.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\localeDisplayNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\localeDisplayNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\measurementSystemNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\measurementSystemNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\numbers.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\numbers.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\posix.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\posix.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\scripts.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\scripts.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\territories.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\territories.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\timeZoneNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\timeZoneNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\transformNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\transformNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\units.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\units.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-CA\\variants.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-CA\\variants.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-buddhist.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-buddhist.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-chinese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-chinese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-coptic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-coptic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-dangi.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-dangi.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-ethiopic-amete-alem.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-ethiopic-amete-alem.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-ethiopic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-ethiopic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-generic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-generic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-gregorian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-gregorian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-hebrew.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-hebrew.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-indian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-indian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-islamic-civil.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-islamic-civil.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-islamic-rgsa.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-islamic-rgsa.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-islamic-tbla.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-islamic-tbla.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-islamic-umalqura.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-islamic-umalqura.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-islamic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-islamic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-japanese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-japanese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-persian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-persian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\ca-roc.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\ca-roc.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\characters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\characters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\contextTransforms.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\contextTransforms.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\currencies.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\currencies.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\dateFields.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\dateFields.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\delimiters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\delimiters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\languages.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\languages.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\layout.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\layout.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\listPatterns.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\listPatterns.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\localeDisplayNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\localeDisplayNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\measurementSystemNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\measurementSystemNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\numbers.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\numbers.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\posix.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\posix.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\scripts.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\scripts.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\territories.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\territories.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\timeZoneNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\timeZoneNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\transformNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\transformNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\units.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\units.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-GB\\variants.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-GB\\variants.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-buddhist.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-buddhist.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-chinese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-chinese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-coptic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-coptic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-dangi.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-dangi.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-ethiopic-amete-alem.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-ethiopic-amete-alem.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-ethiopic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-ethiopic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-generic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-generic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-gregorian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-gregorian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-hebrew.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-hebrew.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-indian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-indian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-islamic-civil.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-islamic-civil.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-islamic-rgsa.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-islamic-rgsa.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-islamic-tbla.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-islamic-tbla.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-islamic-umalqura.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-islamic-umalqura.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-islamic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-islamic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-japanese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-japanese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-persian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-persian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\ca-roc.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\ca-roc.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\characters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\characters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\contextTransforms.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\contextTransforms.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\currencies.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\currencies.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\dateFields.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\dateFields.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\delimiters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\delimiters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\languages.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\languages.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\layout.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\layout.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\listPatterns.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\listPatterns.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\localeDisplayNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\localeDisplayNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\measurementSystemNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\measurementSystemNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\numbers.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\numbers.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\posix.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\posix.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\scripts.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\scripts.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\territories.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\territories.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\timeZoneNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\timeZoneNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\transformNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\transformNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\units.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\units.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-HK\\variants.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-HK\\variants.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-buddhist.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-buddhist.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-chinese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-chinese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-coptic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-coptic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-dangi.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-dangi.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-ethiopic-amete-alem.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-ethiopic-amete-alem.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-ethiopic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-ethiopic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-generic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-generic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-gregorian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-gregorian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-hebrew.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-hebrew.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-indian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-indian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-islamic-civil.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-islamic-civil.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-islamic-rgsa.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-islamic-rgsa.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-islamic-tbla.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-islamic-tbla.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-islamic-umalqura.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-islamic-umalqura.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-islamic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-islamic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-japanese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-japanese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-persian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-persian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\ca-roc.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\ca-roc.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\characters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\characters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\contextTransforms.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\contextTransforms.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\currencies.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\currencies.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\dateFields.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\dateFields.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\delimiters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\delimiters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\languages.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\languages.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\layout.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\layout.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\listPatterns.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\listPatterns.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\localeDisplayNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\localeDisplayNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\measurementSystemNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\measurementSystemNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\numbers.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\numbers.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\posix.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\posix.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\scripts.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\scripts.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\territories.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\territories.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\timeZoneNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\timeZoneNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\transformNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\transformNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\units.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\units.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en-IN\\variants.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en-IN\\variants.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-buddhist.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-buddhist.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-chinese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-chinese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-coptic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-coptic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-dangi.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-dangi.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-ethiopic-amete-alem.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-ethiopic-amete-alem.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-ethiopic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-ethiopic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-generic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-generic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-gregorian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-gregorian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-hebrew.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-hebrew.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-indian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-indian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-islamic-civil.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-islamic-civil.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-islamic-rgsa.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-islamic-rgsa.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-islamic-tbla.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-islamic-tbla.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-islamic-umalqura.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-islamic-umalqura.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-islamic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-islamic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-japanese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-japanese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-persian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-persian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\ca-roc.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\ca-roc.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\characters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\characters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\contextTransforms.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\contextTransforms.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\currencies.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\currencies.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\dateFields.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\dateFields.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\delimiters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\delimiters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\languages.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\languages.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\layout.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\layout.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\listPatterns.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\listPatterns.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\localeDisplayNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\localeDisplayNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\measurementSystemNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\measurementSystemNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\numbers.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\numbers.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\posix.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\posix.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\scripts.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\scripts.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\territories.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\territories.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\timeZoneNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\timeZoneNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\transformNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\transformNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\units.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\units.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\en\\variants.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\en\\variants.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-buddhist.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-buddhist.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-chinese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-chinese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-coptic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-coptic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-dangi.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-dangi.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-ethiopic-amete-alem.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-ethiopic-amete-alem.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-ethiopic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-ethiopic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-generic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-generic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-gregorian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-gregorian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-hebrew.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-hebrew.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-indian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-indian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-islamic-civil.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-islamic-civil.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-islamic-rgsa.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-islamic-rgsa.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-islamic-tbla.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-islamic-tbla.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-islamic-umalqura.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-islamic-umalqura.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-islamic.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-islamic.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-japanese.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-japanese.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-persian.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-persian.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\ca-roc.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\ca-roc.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\characters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\characters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\contextTransforms.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\contextTransforms.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\currencies.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\currencies.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\dateFields.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\dateFields.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\delimiters.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\delimiters.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\languages.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\languages.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\layout.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\layout.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\listPatterns.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\listPatterns.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\localeDisplayNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\localeDisplayNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\measurementSystemNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\measurementSystemNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\numbers.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\numbers.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\posix.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\posix.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\scripts.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\scripts.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\territories.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\territories.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\timeZoneNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\timeZoneNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\transformNames.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\transformNames.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\units.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\units.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\main\\fr\\variants.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\main\\fr\\variants.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\readme.html",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\readme.html"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\calendarData.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\calendarData.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\calendarPreferenceData.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\calendarPreferenceData.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\characterFallbacks.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\characterFallbacks.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\codeMappings.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\codeMappings.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\currencyData.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\currencyData.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\dayPeriods.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\dayPeriods.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\gender.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\gender.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\languageData.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\languageData.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\languageMatching.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\languageMatching.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\likelySubtags.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\likelySubtags.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\measurementData.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\measurementData.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\metaZones.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\metaZones.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\metadata.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\metadata.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\numberingSystems.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\numberingSystems.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\ordinals.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\ordinals.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\parentLocales.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\parentLocales.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\plurals.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\plurals.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\postalCodeData.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\postalCodeData.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\primaryZones.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\primaryZones.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\references.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\references.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\telephoneCodeData.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\telephoneCodeData.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\territoryContainment.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\territoryContainment.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\territoryInfo.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\territoryInfo.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\timeData.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\timeData.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\weekData.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\weekData.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\supplemental\\windowsZones.json",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\supplemental\\windowsZones.json"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldr-data\\unicode-license.txt",
+      "PackagePath": "staticwebassets\\lib\\cldr-data\\unicode-license.txt"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldrjs\\cldr.js",
+      "PackagePath": "staticwebassets\\lib\\cldrjs\\cldr.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldrjs\\cldr.min.js",
+      "PackagePath": "staticwebassets\\lib\\cldrjs\\cldr.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldrjs\\cldr.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\cldrjs\\cldr.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldrjs\\cldr\\event.js",
+      "PackagePath": "staticwebassets\\lib\\cldrjs\\cldr\\event.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldrjs\\cldr\\event.min.js",
+      "PackagePath": "staticwebassets\\lib\\cldrjs\\cldr\\event.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldrjs\\cldr\\event.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\cldrjs\\cldr\\event.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldrjs\\cldr\\supplemental.js",
+      "PackagePath": "staticwebassets\\lib\\cldrjs\\cldr\\supplemental.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldrjs\\cldr\\supplemental.min.js",
+      "PackagePath": "staticwebassets\\lib\\cldrjs\\cldr\\supplemental.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldrjs\\cldr\\supplemental.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\cldrjs\\cldr\\supplemental.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldrjs\\cldr\\unresolved.js",
+      "PackagePath": "staticwebassets\\lib\\cldrjs\\cldr\\unresolved.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldrjs\\cldr\\unresolved.min.js",
+      "PackagePath": "staticwebassets\\lib\\cldrjs\\cldr\\unresolved.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\cldrjs\\cldr\\unresolved.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\cldrjs\\cldr\\unresolved.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\currency.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\currency.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\currency.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\currency.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\currency.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\currency.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\date.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\date.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\date.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\date.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\date.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\date.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\message.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\message.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\message.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\message.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\message.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\message.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\number.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\number.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\number.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\number.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\number.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\number.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\plural.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\plural.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\plural.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\plural.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\plural.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\plural.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\relative-time.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\relative-time.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\relative-time.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\relative-time.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\relative-time.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\relative-time.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\unit.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\unit.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\unit.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\unit.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize-runtime\\unit.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize-runtime\\unit.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\currency.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\currency.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\currency.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\currency.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\currency.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\currency.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\date.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\date.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\date.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\date.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\date.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\date.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\message.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\message.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\message.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\message.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\message.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\message.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\number.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\number.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\number.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\number.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\number.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\number.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\plural.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\plural.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\plural.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\plural.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\plural.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\plural.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\relative-time.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\relative-time.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\relative-time.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\relative-time.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\relative-time.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\relative-time.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\unit.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\unit.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\unit.min.js",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\unit.min.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\globalize\\globalize\\unit.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\globalize\\globalize\\unit.min.js.map"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\jquery-validation-globalize\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-globalize"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\jquery-validation-globalize\\README.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-globalize\\README.md"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\jquery-validation-globalize\\jquery.validate.globalize.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-globalize\\jquery.validate.globalize.js"
+    },
+    {
+      "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\jquery-validation-globalize\\jquery.validate.globalize.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-globalize\\jquery.validate.globalize.min.js"
     },
     {
       "Id": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
