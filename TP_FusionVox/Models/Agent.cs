@@ -48,5 +48,13 @@ namespace TP_FusionVox.Models
         [Display(Name = "ListArtistes")]
         [ValidateNever]
         public virtual ICollection<Artiste>? ListArtistes { get; set; }
+
+        [ForeignKey("DonneesConfidentiellesAgent")]
+        [Display(Name = "infoConfidentiellesAgent")]
+        public int DonneesConfidentiellesAgentID { get; set; }
+
+        [Display(Name = "infoConfidentiellesAgent")]
+        [ValidateNever]
+        public virtual DonneesConfidentiellesAgent? DonneesConfidentiellesAgent { get; set; }
     }
 }
