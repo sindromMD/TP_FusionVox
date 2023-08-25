@@ -20,7 +20,7 @@ namespace TP_FusionVox.Controllers
         private readonly IStringLocalizer<HomeController> _localizer;
         private IGenreMusicalService _serviceGM { get; set; }
 
-        public HomeController(  IGenreMusicalService serviceGM,
+        public HomeController(IGenreMusicalService serviceGM,
                                 IStringLocalizer<HomeController> localizer)
         {
             _serviceGM = serviceGM;
@@ -34,7 +34,22 @@ namespace TP_FusionVox.Controllers
             ViewData["Title"] = this._localizer["IndexTitle"];
             return View(await _serviceGM.StatistiquesTousGenresMusicauxAsync());
         }
-        
+        [Route("Privacy")]
+        [Route("Confidentialite")]
+        public IActionResult Privacy()
+        {
+            ViewData["Title"] = this._localizer["PrivacyTitle"];
+            return View();
+        }
+
+        //[Route("Dashboard")]
+        //[Route("TableauDeBord")]
+        //public async Task<IActionResult> Dashboard()
+        //{
+        //    ViewData["Title"] = this._localizer["DashboarTitle"];
+        //    return View(await _serviceGM.StatistiquesTousGenresMusicauxAsync());
+        //}
+
         [HttpPost]
         public IActionResult SetLanguage(string culture, string returnUrl)
         {

@@ -971,6 +971,7 @@ div.x a.btn-edit-card-position {
     .note-frame .p4 {
         color: black;
     }
+
 /*END-Btn reseaux social footer
     ================================================== 
 */
@@ -1210,6 +1211,140 @@ div.dataTables_paginate a.p1{
 /*END Counter css
     ================================================== 
 */
+
+
+/*--ACCORDEON PRIVACY--
+  ================================================== 
+*/
+.accordion-style ul {
+    list-style-type:disc;
+    margin-inline-start:30px;
+}
+.accordion-style .card {
+    background: transparent;
+    box-shadow: none;
+    margin-bottom: 15px;
+    margin-top: 0 !important;
+    border: none;
+}
+
+    .accordion-style .card:last-child {
+        margin-bottom: 0;
+    }
+
+.accordion-style .card-header {
+    border: 0;
+    background: none;
+    padding: 0;
+    border-bottom: none;
+}
+
+.accordion-style .btn-link {
+    color: #FFC920;
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+    box-shadow: none;
+    padding: 15px 55px;
+    text-decoration: none;
+}
+
+.mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.rounded {
+    border-radius: 0.25rem !important;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+.accordion-style .btn-link:hover {
+    text-decoration: none;
+}
+
+.accordion-style .btn-link.collapsed {
+    color: #FFFFFF;
+}
+
+    .accordion-style .btn-link.collapsed:after {
+        content: '+';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #1A1A1A;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-50%);
+        box-shadow: 8px 8px 30px 0 rgba(70, 69, 69, 0.719);
+    }
+
+.accordion-style .btn-link:after {
+    content: "-";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 1rem;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #FFC920;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    box-shadow: 8px 8px 30px 0 rgba(75, 71, 71, 0.616);
+}
+
+.accordion-style .card-body {
+    padding-top: 0px;
+    padding-left: 3.5rem;
+    padding-bottom: 0;
+}
+
+    .accordion-style .card-body:before {
+        position: absolute;
+        content: "";
+        border-style: dashed;
+        border-width: 0 0 0 1.2px;
+        border-color: #FFC920;
+        left: 20px;
+        top: 0;
+        z-index: 1;
+        bottom: 0;
+    }
+
+@media screen and (max-width: 767px) {
+    .accordion-style .btn-link {
+        padding: 15px 40px 15px 55px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .accordion-style .btn-link {
+        padding: 15px 30px 15px 55px;
+    }
+}
+/*End ACCORDEON
+  ================================================== 
+*/
+
+
 /*.form-switch input::backdrop{
     color:black;
 }
