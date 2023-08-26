@@ -25,7 +25,7 @@
                             </div>
                             <div class="row align-content align-items-center">
                                 <div class="col mb-0">
-                                    <h2 class="color_grey">
+                                    <h2 class="color_grey counter">
                                         @Model.NbArtistes
                                     </h2>
                                 </div>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="row align-content align-items-center">
                                 <div class=" col mb-0">
-                                    <h2 class="color_grey">
+                                    <h2 class="color_grey counter">
                                         @Model.NbChansonsPubliees
                                     </h2>
                                 </div>
@@ -77,7 +77,7 @@
                             </div>
                             <div class="row align-content align-items-center">
                                 <div class=" col mb-0">
-                                    <h2 class="color_grey">
+                                    <h2 class="color_grey counter">
                                         @Model.NbAbonnees
                                     </h2>
                                 </div>
@@ -156,7 +156,7 @@
                                 <td class="w-20">
                                     <div class="card text-bg-dark">
                                     <a asp-controller="Artiste" asp-action="Detail" asp-route-id="@artiste.Id">
-                                            <img src="@AppConstants.ImagePathArtiste@artiste.ImageURL" alt="@artiste.Nom" class="card-img">
+                                        <img src="@AppConstants.ImagePathArtiste@(string.IsNullOrWhiteSpace(artiste.ImageURL) ? AppConstants.ImageGenericArtiste : artiste.ImageURL)" alt="@artiste.Nom" class="card-img">
                                         </a>
                                     </div>
                                 </td>

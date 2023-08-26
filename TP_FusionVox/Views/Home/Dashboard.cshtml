@@ -1,0 +1,19 @@
+﻿@model StatistiqueVM
+
+<main class="container">
+    <!--intro hero-->
+    <div class="row  text-center align-items-center ">
+
+        <!--Tire hero-->
+        <div class="col mb-5 mt-5">
+            <h1 class="h0">
+                Tableau de bord
+            </h1>
+        </div>
+    </div>
+    @{
+        await Html.RenderPartialAsync("_DashboardStatsGroupAGENT");
+    }
+</main>
+
+

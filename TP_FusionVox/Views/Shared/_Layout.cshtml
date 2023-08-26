@@ -29,7 +29,7 @@
                 </a>
             </div>
             <!--Menu (Favoris/Rechercher alias :Artistes / Ajouter un Artiste)-->
-            <div class="col navbar navbar-expand-xl navbar-dark ">
+            <div class="col navbar navbar-expand-xxl navbar-dark ">
                 <div class="col text-end">
                     <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon">
@@ -37,35 +37,12 @@
                     </button>
                     <div class=" justify-content-end collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav align-items-center">
-                            <li class="nav-item ">
-                                <a class="header-text btn-menu" asp-controller="Favoris" asp-action="Favoris">
-                                    FAVORIS
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="header-text btn-menu" asp-controller="Artiste" asp-action="Recherche">
-                                    ARTISTES
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="header-text btn-menu" asp-controller="Concerts" asp-action="Index">
-                                    CONCERTS
-                                </a>
-                            </li>
-                            <li class="btn-group">
-                                <a class="header-ajouter btn-ajouter-artistes " data-bs-toggle="dropdown" aria-expanded="false">
-                                    Ajouter
-                                    <i class="fa-solid fa-square-caret-down"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li><a class="p1 btn-menu" asp-controller="Artiste" asp-action="Upsert">Artiste&nbsp; <i class="fa-solid fa-user-plus"></i></a></li>
-                                    <li><a class="p1 btn-menu" asp-controller="GenreMusical" asp-action="Upsert">Genre Musical&nbsp; <i class="fa-solid fa-folder-plus"></i></a></li>
-                                    <li><a class="p1 btn-menu" asp-controller="Agents" asp-action="Create">Agent&nbsp; <i class="fa-solid fa-user-tie"></i></a></li>
-                                    <li><a class="p1 btn-menu" asp-controller="Concerts" asp-action="Create">Concert&nbsp; <i class="fa-regular fa-calendar-plus"></i></a></li>
-                                </ul>
+                                @await Html.PartialAsync("_NavMenuAccesAnonymous")
+                            <li>
+                                @await Html.PartialAsync("_NavMenuAccesLimiter")
                             </li>
                             <li>
-                            @await Html.PartialAsync("_SelectLanguage")
+                                @await Html.PartialAsync("_SelectLanguage")
                             </li>
                         </ul>
                        
@@ -77,7 +54,7 @@
     
         <partial name="_NotificationPartielle" />
         @RenderBody()
-
+        <partial name="_ProgressScrollPatielle" />
     <footer class="container-fluid mt-5">
         <div class="container ">
             <div class="row">
@@ -134,7 +111,7 @@
                         <li><a class="p1 " asp-controller="Favoris" asp-action="Favoris">Favoris</a></li>
                         <li><a class="p1 " asp-controller="Artiste" asp-action="Recherche">Artistes</a></li>
                         <li><a class="p1 " asp-controller="Concerts" asp-action="Index">Concerts</a></li>
-                        <li><a class="p1 " asp-controller="" asp-action="">Confidentialité</a></li>
+                        <li><a class="p1 " asp-controller="Home" asp-action="Privacy">Confidentialité</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,132 @@
+﻿@model StatistiqueVM
+
+<!--L'ADMINISTRATEUR peut voir toutes les statistiquese (même ces)-->
+<div class="row justify-content-around">
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card_stats_small border-left-bleu shadow_background h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fa-solid fa-users fa-2xl"></i>
+                    </div>
+                    <div class="col mr-2">
+                        <div class="titre_card_small text-uppercase mb-1">
+                            Nombre total d'agents
+                        </div>
+                        <div class="row align-content align-items-center">
+                            <div class="col mb-0">
+                                <h2 class="color_grey counter">
+                                    @Model.NbTotalAgent
+                                </h2>
+                            </div>
+                            <div class="col text-end">
+                                <span class="p3 badge rounded-pill text-bg-success ms">+20%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card_stats_small border-left-green shadow_background h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fa-solid fa-hand-holding-dollar fa-2xl"></i>
+                    </div>
+                    <div class="col mr-2">
+                        <div class="titre_card_small text-uppercase mb-1">
+                            Salaire moyen d'un agent
+                        </div>
+                        <div class="row align-content align-items-center">
+                            <div class="col mb-0">
+                                <h2 class="color_grey counter">
+                                    @Model.SalaireMoyenAgents
+                                </h2>
+                            </div>
+                            <div class="col text-end">
+                                <span class="p3 badge rounded-pill text-bg-success ms">+20%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card_stats_small border-left-rouge shadow_background h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fa-solid fa-money-bill-wave fa-2xl"></i>
+                    </div>
+                    <div class="col mr-2">
+                        <div class="titre_card_small text-uppercase mb-1">
+                            Prix moyen d'un billet de concert
+                        </div>
+                        <div class="row align-content align-items-center">
+                            <div class=" col mb-0">
+                                <h2 class="color_grey counter">
+                                    @Model.prixMoyenConcert
+                                </h2>
+                            </div>
+                            <div class="col text-end">
+                                <span class="p3 badge rounded-pill text-bg-success ms">+20%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center p1">
+    <div class="col col-lg-10 col-xl-8 table-responsive-sm">
+        <table class="table table-dark table-striped align-middle text-center marge-description-genre ">
+            <thead class=" ">
+                <tr>
+                    <th>Image</th>
+                    <th>Nom agent</th>
+                    <th>Âge </th>
+                    <th>Curriel</th>
+                    <th>Salaire Mensuel</th>
+                    <th>Numero de contrat</th>
+
+                </tr>
+            </thead>
+            <tbody class="p1 ">
+                @foreach (var agent in Model.StatistiqueAgents)
+                {
+                    <tr>
+                        <td class="">
+                            <div class="bubble-container text-bg-dark ">
+                                <a asp-controller="Agents" asp-action="Details" asp-route-id="@agent.Id">
+                                    <img src="@AppConstants.ImagePathArtiste@(string.IsNullOrWhiteSpace(agent.ImageURL) ? AppConstants.ImageGenericArtiste : agent.ImageURL)" alt="@agent.Nom" class="bubble-image">
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <a asp-controller="Agents" asp-action="Details" asp-route-id="@agent.Id" class="p1">
+                                @agent.Nom
+                            </a>
+                        </td>
+                        <td>
+                            @((DateTime.Now - agent.DateNaissance).Value.Days / 365)
+                        </td>
+                        <td>
+                            @agent.Curriel
+                        </td>
+                        <td>
+                            @agent.SalaireMensuel
+                        </td>
+                        <td>
+                            @agent.DonneesConfidentiellesAgent.NumeroDeContrat
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
