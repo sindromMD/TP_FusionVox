@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography.X509Certificates;
 using TP_FusionVox.Models;
 
 namespace TP_FusionVox.Models.Data
 {
-    public class TP_FusionVoxDbContext :DbContext
+    public class TP_FusionVoxDbContext :IdentityDbContext
     {
         public DbSet<Artiste> Artistes { get; set; }
         public DbSet<GenreMusical> genresMusicaux { get; set; }
@@ -16,6 +17,9 @@ namespace TP_FusionVox.Models.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //éviter les erreurs lors de la génération de pages Razor
+            base.OnModelCreating(modelBuilder);
+
             //Générer des données de départ
             modelBuilder.GenerateData();
 

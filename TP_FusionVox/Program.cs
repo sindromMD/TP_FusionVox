@@ -7,6 +7,7 @@ using System.Globalization;
 using TP_FusionVox.Models;
 using TP_FusionVox.Models.Data;
 using TP_FusionVox.Services;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args); // Crée une web app avec les paramètres envoyés
 
@@ -42,6 +43,9 @@ builder.Services.AddDbContext<TP_FusionVoxDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
     options.UseLazyLoadingProxies();
 });
+
+builder.Services.AddDefaultIdentity<IdentityUser>(/*options => options.SignIn.RequireConfirmedAccount = false*/)
+    .AddEntityFrameworkStores<TP_FusionVoxDbContext>();
 
 builder.Services.AddDistributedMemoryCache(); // Permet l'utilisation de cookies
 builder.Services.AddSession(option => { option.IdleTimeout = TimeSpan.FromMinutes(20); }); // Configure l'expiration d'un cookies,
@@ -81,6 +85,7 @@ app.UseEndpoints(endpoints =>
 });
 
 app.MapRazorPages();
+app.UseAuthentication();
 app.Run();
 
 // Doc
