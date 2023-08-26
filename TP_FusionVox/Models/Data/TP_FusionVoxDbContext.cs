@@ -12,6 +12,7 @@ namespace TP_FusionVox.Models.Data
         public DbSet<Concert>? Concert { get; set; }
         public DbSet<Agent> Agent { get; set; }
         public DbSet<DonneesConfidentiellesAgent> DonneesConfidentiellesAgent { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         public TP_FusionVoxDbContext(DbContextOptions<TP_FusionVoxDbContext> options) : base(options) { }
 

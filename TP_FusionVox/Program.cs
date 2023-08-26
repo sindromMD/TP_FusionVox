@@ -76,6 +76,10 @@ else
 app.UseSession(); // Permet l'utilisation de cookies
 
 app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
@@ -85,7 +89,7 @@ app.UseEndpoints(endpoints =>
 });
 
 app.MapRazorPages();
-app.UseAuthentication();
+
 app.Run();
 
 // Doc
