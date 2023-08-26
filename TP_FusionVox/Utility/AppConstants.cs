@@ -26,6 +26,11 @@ namespace TP_FusionVox.Utility
         public static int PopID = 1;
         public static int HipHopID = 2;
         public static int ElectroID = 3;
+
+        //Rôles
+        public const string AdminRole = "Admin";
+        public const string AgentRole = "Agent";
+        public const string ArtisteRole = "Artiste";
     }
 
 }

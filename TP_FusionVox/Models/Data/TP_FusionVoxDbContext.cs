@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography.X509Certificates;
 using TP_FusionVox.Models;
 
 namespace TP_FusionVox.Models.Data
 {
-    public class TP_FusionVoxDbContext :IdentityDbContext
+    public class TP_FusionVoxDbContext :IdentityDbContext<IdentityUser>
     {
         public DbSet<Artiste> Artistes { get; set; }
         public DbSet<GenreMusical> genresMusicaux { get; set; }
