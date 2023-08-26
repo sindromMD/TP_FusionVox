@@ -1124,7 +1124,7 @@ div.dataTables_paginate a.p1{
     ================================================== 
 */
 :root {
-    font-size: 20px;
+
     --red: #da2c4d;
     --yellow: #f8ab37;
     --green: #2ecc71;
@@ -1291,12 +1291,12 @@ div.dataTables_paginate a.p1{
     border-radius: 0.25rem !important;
 }
 
-img {
+/*img {
     max-width: 100%;
     height: auto;
     vertical-align: top;
 }
-
+*/
 .accordion-style .btn-link:hover {
     text-decoration: none;
 }
