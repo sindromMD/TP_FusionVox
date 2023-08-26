@@ -32,7 +32,6 @@ namespace TP_FusionVox.Controllers
             if (genreMusical != null)
             {
                 StatistiqueGenresMusicauxVM DetailsArtisteVM = await _serviceGM.StatistiquesUnGenreMusicalAsync(genreMusical);
-                DetailsArtisteVM.ListArtisteGenreMusical = await _serviceA.ObtenirToutParIdAsync(id); ;
                 ViewData["Title"] = this._localizer["DetailsTitle"];
                 return View("Details", DetailsArtisteVM);
             }

@@ -156,7 +156,7 @@
                                 <td class="w-20">
                                     <div class="card text-bg-dark">
                                     <a asp-controller="Artiste" asp-action="Detail" asp-route-id="@artiste.Id">
-                                            <img src="@AppConstants.ImagePathArtiste@artiste.ImageURL" alt="@artiste.Nom" class="card-img">
+                                        <img src="@AppConstants.ImagePathArtiste@(string.IsNullOrWhiteSpace(artiste.ImageURL) ? AppConstants.ImageGenericArtiste : artiste.ImageURL)" alt="@artiste.Nom" class="card-img">
                                         </a>
                                     </div>
                                 </td>

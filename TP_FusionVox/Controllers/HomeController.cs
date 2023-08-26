@@ -19,11 +19,14 @@ namespace TP_FusionVox.Controllers
 
         private readonly IStringLocalizer<HomeController> _localizer;
         private IGenreMusicalService _serviceGM { get; set; }
+        private IAgentService _serivceAgent { get; set; }
 
         public HomeController(IGenreMusicalService serviceGM,
+                                IAgentService serviceAgent, 
                                 IStringLocalizer<HomeController> localizer)
         {
             _serviceGM = serviceGM;
+            _serivceAgent = serviceAgent;
             _localizer = localizer;
         }
 
@@ -42,13 +45,16 @@ namespace TP_FusionVox.Controllers
             return View();
         }
 
-        //[Route("Dashboard")]
-        //[Route("TableauDeBord")]
-        //public async Task<IActionResult> Dashboard()
-        //{
-        //    ViewData["Title"] = this._localizer["DashboarTitle"];
-        //    return View(await _serviceGM.StatistiquesTousGenresMusicauxAsync());
-        //}
+        [Route("Dashboard")]
+        [Route("TableauDeBord")]
+        public async Task<IActionResult> Dashboard()
+        {
+            var statsDashboard = await _serviceGM.StatistiquesTousGenresMusicauxAsync();
+            statsDashboard.StatistiqueAgents = await _serivceAgent.StatistiqueTousAgentAsync();
+           
+            ViewData["Title"] = this._localizer["DashboarTitle"];
+            return View(statsDashboard);
+        }
 
         [HttpPost]
         public IActionResult SetLanguage(string culture, string returnUrl)

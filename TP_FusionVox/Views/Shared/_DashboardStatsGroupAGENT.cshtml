@@ -1,0 +1,143 @@
+﻿@model StatistiqueVM
+<!-- L'AGENT peut voir certaines statistiques, les statistiques pour l'administrateur au milieu de la page (Partielle vue) -->
+<div class="row justify-content-around">
+
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card_stats_small border-left-green shadow_background h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fa-solid fa-users-line fa-2xl"></i>
+                    </div>
+                    <div class="col mr-2">
+                        <div class="titre_card_small text-uppercase mb-1">
+                            Nombre total d'artistes
+                        </div>
+                        <div class="row align-content align-items-center">
+                            <div class=" col mb-0">
+                                <h2 class="color_grey counter">
+                                    @Model.NbTotalArtistes
+                                </h2>
+                            </div>
+                            <div class="col text-end">
+                                <span class="p3 badge rounded-pill text-bg-danger ms">-2,0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card_stats_small border-left-bleu shadow_background h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fa-solid fa-compact-disc fa-2xl"></i>
+                    </div>
+                    <div class="col mr-2">
+                        <div class="titre_card_small text-uppercase mb-1">
+                            Nombre total de chansons
+                        </div>
+                        <div class="row align-content align-items-center">
+                            <div class=" col mb-0">
+                                <h2 class="color_grey counter">
+                                    @Model.NbTotalChansons
+                                </h2>
+                            </div>
+                            <div class="col text-end">
+                                <span class="p3 badge rounded-pill text-bg-danger ms">-2,0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card_stats_small border-left-rouge shadow_background h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fa-solid fa-heart fa-2xl"></i>
+                    </div>
+                    <div class="col mr-2">
+                        <div class="titre_card_small text-uppercase mb-1">
+                            Nombre total d'abonnés
+                        </div>
+                        <div class="row align-content align-items-center">
+                            <div class=" col mb-0">
+                                <h2 class="color_grey counter">
+                                    @Model.NbTotalAbonnees
+                                </h2>
+                            </div>
+                            <div class="col text-end">
+                                <span class="p3 badge rounded-pill text-bg-success ms">+20%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Statistiques que seul l'administrateur voit -->
+@{
+    await Html.RenderPartialAsync("_DashboardStatsGroupADMIN");
+}
+<!---->
+<div class="row justify-content-center p1">
+    <div class="col col-lg-10 col-xl-8 table-responsive-sm">
+        <table class="table table-dark table-striped align-middle text-center marge-description-genre ">
+            <thead class=" ">
+                <tr>
+                    <th>Image</th>
+                    <th>Nom artiste</th>
+                    <th>Agent</th>
+                    <th>Genre Musical</th>
+                    <th>Nombre des chansons</th>
+                    <th>Nombre d'abonnés</th>
+
+                </tr>
+            </thead>
+            <tbody class="p1 ">
+                @foreach (var artisteList in Model.StatsGenresMusicaux)
+                {
+                    foreach (var artiste in artisteList.ListArtisteGenreMusical)
+                    {
+                        <tr>
+                            <td class="">
+                                <div class="bubble-container text-bg-dark ">
+                                    <a asp-controller="Artiste" asp-action="Detail" asp-route-id="@artiste.Id">
+                                        <img src="@AppConstants.ImagePathArtiste@(string.IsNullOrWhiteSpace(artiste.ImageURL) ? AppConstants.ImageGenericArtiste : artiste.ImageURL)" alt="@artiste.Nom" class="bubble-image">
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <a asp-controller="Artiste" asp-action="Detail" asp-route-id="@artiste.Id" class="p1">
+                                    @artiste.Nom
+                                </a>
+                            </td>
+                            <td>
+                                <a asp-controller="Agents" asp-action="Details" asp-route-id="@artiste.AgentReprId" class="p1">
+                                    @artiste.AgentRepr.Nom
+                                </a>
+                            </td>
+                            <td>
+                                <a asp-controller="GenreMusical" asp-action="DetailParID" asp-route-id="@artiste.IdGenreMusical" class="p1">
+                                    @artiste.GenreMusical.Nom
+                                </a>
+                            </td>
+                            <td>
+                                @artiste.NbChansons
+                            </td>
+                            <td>
+                                @artiste.NbAbonnees
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

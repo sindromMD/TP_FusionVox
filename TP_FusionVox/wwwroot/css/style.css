@@ -678,13 +678,44 @@ genres musicaux, pour chaque catégorie de musique.
     color: white;
 }
 
+/* Petites images rondes pour tables 
+     ================================================== 
+*/
+.bubble-container {
+    width: 40px;
+    height: 40px;
+    background-color: #e0e0e0; /* Couleur de fond de la bulle */
+    border-radius: 50%; /* Border-radius pour arrondir le conteneur*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Pour masquer l'image à l'extérieur du conteneur */
+    transition: transform 0.3s ease-in-out; /* Transition pour l'effet de transformation*/
+}
 
+    .bubble-container:hover {
+        transform: scale(1.1); /* Effet d'échelle au survol */
+        box-shadow: 0 8px 15px -6px rgba(255, 201, 32, 0.8);
+    }
+
+    .bubble-container:active {
+        transform: scale(0.9); /* Effet d'échelle au clic (actif) */
+    }
+
+.bubble-image {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Rayon de bordure pour arrondir l'image */
+}
+
+/* END Petites images rondes pour tables 
+     ================================================== 
+*/
 
 /*----Carte cliquable----
     ================================================== 
 */
-
-.card:hover{
+.card:hover {
     border-color: #898585;
     background-color: #898585;
     opacity: 1;

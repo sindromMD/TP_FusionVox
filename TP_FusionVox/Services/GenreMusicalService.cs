@@ -24,10 +24,12 @@ namespace TP_FusionVox.Services
                     NbArtistes = g.Artistes.Count,
                     NbChansonsPubliees = g.Artistes.Select(x => x.NbChansons).Sum(),
                     NbAbonnees = g.Artistes.Select(x => x.NbAbonnees).Sum(),
+                    ListArtisteGenreMusical = g.Artistes.Where(a=>a.GenreMusical.Id == genre.Id).ToList(),
                 }).FirstOrDefaultAsync();
 
             return statistiqueGenre;
         }
+
         public async Task<StatistiqueVM> StatistiquesTousGenresMusicauxAsync()
         {
             var genres = await _dbContext.genresMusicaux.ToListAsync();
@@ -38,10 +40,18 @@ namespace TP_FusionVox.Services
             {
                 statistiqueVM.StatsGenresMusicaux.Add(await StatistiquesUnGenreMusicalAsync(genre));
             }
-
+            
+            //statistiques globales
             statistiqueVM.NbTotalArtistes = await _dbContext.Artistes.CountAsync();
             statistiqueVM.NbTotalAbonnees = await _dbContext.Artistes.Select(a => a.NbAbonnees).SumAsync();
             statistiqueVM.NbTotalChansons = await _dbContext.Artistes.Select(a => a.NbChansons).SumAsync();
+            statistiqueVM.NbTotalAgent = await _dbContext.Agent.CountAsync();
+            statistiqueVM.SalaireMoyenAgents = await _dbContext.Agent.Select(x => x.SalaireMensuel).AverageAsync();
+            statistiqueVM.prixMoyenConcert = await _dbContext.Concert.Select(c => c.PrixBillet).AverageAsync();
+            statistiqueVM.ConcertSucces = await _dbContext.Concert
+                                         .OrderByDescending(c => c.NbBilletsVendu)
+                                         .FirstOrDefaultAsync();
+
             return statistiqueVM;
         }
 
