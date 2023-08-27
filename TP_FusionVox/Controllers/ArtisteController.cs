@@ -358,7 +358,7 @@ namespace TP_FusionVox.Controllers
                 await _serviceA.SupprimerAsync(Id);
 
                 // Supprimer les images du fichier
-                string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de zombies
+                string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images d'artiste
                 if (artisteASupprimer.ImageURL != null)
                 {
                     var pathImage = Path.Combine(webRootPath, AppConstants.ImagePathArtisteCtrl, artisteASupprimer.ImageURL.TrimStart('\\'));
