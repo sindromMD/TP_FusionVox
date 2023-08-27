@@ -8,6 +8,15 @@ namespace TP_FusionVox.Models.Data
 {
     public class TP_FusionVoxDbContext :IdentityDbContext<IdentityUser>
     {
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseInMemoryDatabase("scaffolding");
+            }
+        }
+
         public DbSet<Artiste> Artistes { get; set; }
         public DbSet<GenreMusical> genresMusicaux { get; set; }
         public DbSet<Concert>? Concert { get; set; }

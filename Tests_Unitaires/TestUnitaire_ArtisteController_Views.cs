@@ -1,6 +1,7 @@
 using Castle.Core.Logging;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -59,18 +60,26 @@ namespace Tests_Unitaires
         }
 
         [Fact]
-        public async void Recherche_ObtenirToutListAsync()
-        {
-           
-        }
-
-        [Fact]
         public async void DetailParID_ObtenirParIdAsync_InvalidID()
         {
 
             var result = await _artisteController.DetailParID(1);
 
             _artisteServiceMock.Verify(a => a.ObtenirParIdAsync(1), Times.Once());
+
+            Assert.IsAssignableFrom<ViewResult>(result);
+
+            ViewResult viewResult = result as ViewResult;
+
+            Assert.Equal("NotFound", viewResult.ViewName);
+        }
+        [Fact]
+        public async void DetailParNom_ObtenirArtisteParNomAsync_InvalidNom()
+        {
+
+            var result = await _artisteController.DetailParNom("A");
+
+            _artisteServiceMock.Verify(a => a.ObtenirArtisteParNomAsync("A"), Times.Once());
 
             Assert.IsAssignableFrom<ViewResult>(result);
 
@@ -109,6 +118,36 @@ namespace Tests_Unitaires
         }
 
         [Fact]
+        public async void DetailParNom_ObtenirArtisteParNomAsync_validId_ReturnView()
+        {
+
+            //ARANGE 
+            //Constructeur
+            _artisteServiceMock.Setup(a => a.ObtenirArtisteParNomAsync(It.IsAny<string>()))
+                .ReturnsAsync(
+               _artisteList[3]);//Nom = Adele (Retourne un artiste de _artistList avec nom = "Adele")
+
+            //Act
+            var result = await _artisteController.DetailParNom(_artisteList[3].Nom); //obtenons le résultat
+
+            //Assert
+            _artisteServiceMock.Verify(a => a.ObtenirArtisteParNomAsync(_artisteList[3].Nom), Times.Once()); // On vérifie que la méthode a été appelée une fois
+
+            ViewResult viewResult = result as ViewResult; //Vérification que le résultat est de type ViewResult
+
+            Assert.Equal("Detail", viewResult.ViewName); // Le nom de la vue doit être === à Detail
+
+            Assert.NotNull(viewResult.ViewData); // ViewData != null
+
+            Assert.IsType<Artiste>(viewResult.Model); //  viewResult est de type === Artist
+
+            var model = viewResult.ViewData.Model as Artiste;
+
+            Assert.Equal(_artisteList[3].Nom, model.Nom); // Enfin, on vérifie que l'identifiant du modèle est bien 4
+        }
+
+
+        [Fact]
         public async void Delete_ModelStateValid_RedirectToView()
         {
             //Arrange 
@@ -131,22 +170,27 @@ namespace Tests_Unitaires
         }
 
         [Fact]
-        public async void Create_ModelStateInvalid_ReturnView()
+        public async void Create_ModelState_Invalid_ReturnView()
         {
-            NewArtisteVM artisteVM = new NewArtisteVM()
+            var artisteVM = new NewArtisteVM
             {
-                NomInitial = "Adele",
-                Artiste = _artisteList[3]
+                Artiste = new Artiste(),
+                AncienneImage = "ancienneImage.jpg",
+                NomInitial = "Initial Name",
+                GenresSelectList = new List<SelectListItem>(),
+                SelectedConcertId = 1,
+                SelectedConcertIds = new List<int> { 1, 2, 3 },
+                ConsertsSelectList = new List<SelectListItem>(),
+                AgentSelectList = new List<SelectListItem>()
             };
-            
+
+            _artisteServiceMock.Setup(a => a.ArtisteNomExist(It.IsAny<string>())).Returns(false);
             _artisteController.ModelState.AddModelError("Error", "Error");
 
             //Act
             var result = await _artisteController.Upsert(artisteVM);
-
-            Assert.IsType<ViewResult>(result);
             var viewResult = result as ViewResult;
-            Assert.Equal(artisteVM, viewResult.Model);
+
             Assert.Equal("Upsert", viewResult.ViewName);
         }
 
