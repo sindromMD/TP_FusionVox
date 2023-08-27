@@ -8,19 +8,6 @@
         .Select(c => new SelectListItem { Value = c.Name, Text = c.Name })
         .ToList();
 }
-@*<div style="display: inline-block; vertical-align: middle;">
-    <form id="selectLanguage" asp-controller="Home"
-          asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path"
-          method="post" class="form-horizontal" role="form">
-        <div class="form-group" style="margin-bottom:0">
-            <select onchange="this.form.submit()" name="culture" class="form-control btn btn-dark"
-                    asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
-            </select>
-        </div>
-    </form>
-</div>*@
-
-
 
 <form id="selectLanguage" asp-controller="Home"
       asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path"
@@ -30,4 +17,4 @@
                 asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
         </select>
         </div>
-    </form>
+</form>

@@ -11,10 +11,11 @@ using Microsoft.Extensions.Localization;
 using TP_FusionVox.Services;
 using static TP_FusionVox.ViewModels.NewArtisteVM;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TP_FusionVox.Controllers
 {
-
+    
     public class ArtisteController : Controller
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
@@ -24,7 +25,7 @@ namespace TP_FusionVox.Controllers
         private IGenreMusicalService _serviceGM { get; set; }
         private IConcertService _serviceC { get; set; }
         private IAgentService _serviceAgent { get; set; }
-        public ArtisteController(   IArtisteService serviceA,
+        public ArtisteController(IArtisteService serviceA,
                                     IGenreMusicalService serviceGM,
                                     IConcertService serviceC,
                                     IAgentService serivceAgent,
@@ -40,7 +41,7 @@ namespace TP_FusionVox.Controllers
             _localizer = localizer;
             _logger = logger;
         }
-
+        [AllowAnonymous]
         [Route("artiste")]
         [Route("artiste/recherche")]
         public async Task<IActionResult> Recherche()
@@ -55,7 +56,7 @@ namespace TP_FusionVox.Controllers
             ViewData["Title"] = this._localizer["ArtisteListTitle"];
             return View(model);
         }
-
+        [AllowAnonymous]
         [Route("artiste/filtre")]
         public IActionResult Filtrage(CritereRechercheViewModel criteres)
         {
@@ -71,7 +72,7 @@ namespace TP_FusionVox.Controllers
 
             return View("Recherche", modelRecherche);
         }
-
+        [AllowAnonymous]
         [Route("artiste/detail/{id:int}")]
         [Route("artiste/{id:int}")]
         [Route("{id:int}")]
@@ -86,7 +87,7 @@ namespace TP_FusionVox.Controllers
             else
             { return View("NotFound"); }
         }
-
+        [AllowAnonymous]
         [Route("artiste/detail/{Nom}")]
         [Route("artiste/{Nom}")]
         [Route("{Nom}")]
@@ -101,7 +102,7 @@ namespace TP_FusionVox.Controllers
             else
                 return View("NotFound");
         }
-
+        [Authorize(Roles = AppConstants.AgentRole + "," + AppConstants.AdminRole)]
         //Get UPSERT
         [Route("artiste/create")]
         [Route("artiste/upsert/create")]
@@ -314,7 +315,7 @@ namespace TP_FusionVox.Controllers
                 return View();
             }
         }
-
+        [Authorize(Roles = AppConstants.AdminRole)]
         // GET: Artiste/Delete/5
         [Route("Artiste/Delete/{id:int}")]
         [Route("Artiste/Supprimer/{id:int}")]
@@ -335,7 +336,7 @@ namespace TP_FusionVox.Controllers
                 return View("NotFound");
             }
         }
-
+        [Authorize(Roles = AppConstants.AdminRole)]
         // POST: delete
         [Route("Artiste/DeletePost")]
         [Route("Artiste/Supprimer")]

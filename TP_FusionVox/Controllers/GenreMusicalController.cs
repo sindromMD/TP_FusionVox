@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Localization;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using TP_FusionVox.Models;
@@ -8,6 +9,7 @@ using TP_FusionVox.ViewModels;
 
 namespace TP_FusionVox.Controllers
 {
+    [Authorize(Roles = AppConstants.AdminRole)]
     public class GenreMusicalController : Controller
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
@@ -25,6 +27,7 @@ namespace TP_FusionVox.Controllers
             _webHostEnvironment = webHostEnvironment;
             _localizer = localizer;
         }
+        [AllowAnonymous]
         [Route("GenreMusical/Details/{id:int}")]
         public async Task<IActionResult> DetailParID(int id)
         {

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TP_FusionVox.Models;
 using TP_FusionVox.Models.Data;
+using TP_FusionVox.Utility;
 
 namespace TP_FusionVox
 {
@@ -18,16 +20,17 @@ namespace TP_FusionVox
         {
             _context = context;
         }
-
+        [AllowAnonymous]
         // GET: Concerts
         [Route("Concerts/Index")]
         public async Task<IActionResult> Index()
         {
-              return _context.Concert != null ? 
-                          View(await _context.Concert.ToListAsync()) :
-                          Problem("Entity set 'TP_FusionVoxDbContext.Concert'  is null.");
+            return _context.Concert != null ?
+                        View(await _context.Concert.ToListAsync()) :
+                        Problem("Entity set 'TP_FusionVoxDbContext.Concert'  is null.");
         }
 
+        [Authorize]
         // GET: Concerts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -47,6 +50,7 @@ namespace TP_FusionVox
         }
 
         // GET: Concerts/Create
+        [Authorize(Roles = AppConstants.AgentRole + "," + AppConstants.AdminRole)]
         public IActionResult Create()
         {
             return View();
@@ -69,6 +73,7 @@ namespace TP_FusionVox
         }
 
         // GET: Concerts/Edit/5
+        [Authorize(Roles = AppConstants.AgentRole + "," + AppConstants.AdminRole)]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Concert == null)
@@ -120,6 +125,7 @@ namespace TP_FusionVox
         }
 
         // GET: Concerts/Delete/5
+        [Authorize(Roles = AppConstants.AdminRole)]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Concert == null)
@@ -138,6 +144,7 @@ namespace TP_FusionVox
         }
 
         // POST: Concerts/Delete/5
+        [Authorize(Roles = AppConstants.AdminRole)]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

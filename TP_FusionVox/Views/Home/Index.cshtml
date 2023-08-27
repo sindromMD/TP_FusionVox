@@ -140,13 +140,16 @@
                         <h2>
                             @genre.Nom @(genre.EstDisponible ? "" : @Html.Raw("<span class=\"badge rounded-pill text-bg-secondary\">Indisponible</span>"))
                         </h2>  
-                        
+                    @if (this.User.IsInRole(AppConstants.AdminRole))
+                    {
                             <a asp-controller="GenreMusical" asp-action="Upsert" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste btn-edit-card-position">
-                            <i class="fa-solid fa-pen-to-square fa-lg"></i>
+                                    <i class="fa-solid fa-pen-to-square fa-lg"></i>
                             </a>
-                             <a asp-controller="GenreMusical" asp-action="Delete" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste">
-                            <i class="fa-solid fa-trash"></i>
+                            <a asp-controller="GenreMusical" asp-action="Delete" asp-route-Id="@genre.Id" class="btn btn-warning btn-circle btn-sm btn-supprimer-artiste">
+                                    <i class="fa-solid fa-trash"></i>
                             </a>
+                    }
+                
                         <br>
                         <div class="p1 description-genre">
                             @Html.Raw(genre.Description)

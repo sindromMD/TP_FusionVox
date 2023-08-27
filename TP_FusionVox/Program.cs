@@ -35,7 +35,7 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.SupportedUICultures = supportedCultures;
 });
 
-builder.Services.AddRazorPages(); // Permet utilisation de Razor
+
 builder.Services.AddMvc().AddRazorRuntimeCompilation();
 builder.Services.AddSingleton<BaseDeDonnees>(); // Permet l'utilisation du Singleton
 
@@ -49,6 +49,7 @@ builder.Services.AddDbContext<TP_FusionVoxDbContext>(options =>
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<TP_FusionVoxDbContext>();
 builder.Services.AddScoped<IdbInitializer, DbInitializer>();
+builder.Services.AddRazorPages(); // Permet utilisation de Razor
 
 builder.Services.AddDistributedMemoryCache(); // Permet l'utilisation de cookies
 builder.Services.AddSession(option => { option.IdleTimeout = TimeSpan.FromMinutes(20); }); // Configure l'expiration d'un cookies,

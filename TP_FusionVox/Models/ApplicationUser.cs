@@ -4,6 +4,6 @@ namespace TP_FusionVox.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public string? Pseudonymes { get ; set; }
+        public string Pseudonymes { get ; set; }
     }
 }
