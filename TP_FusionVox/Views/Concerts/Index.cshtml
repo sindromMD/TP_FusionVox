@@ -5,12 +5,16 @@
 }
 
 <h1>Liste des concerts</h1>
-<div class="col col-md-8 col-xl-6 my-3 ">
-    <a class="btn-rechercher" asp-controller="Concerts" asp-action="Create">
-        Ajouter
-        <i class="fa-solid fa-plus"></i>
-    </a>
-</div>
+@if(this.User.IsInRole(AppConstants.AdminRole) || this.User.IsInRole(AppConstants.AgentRole))
+{
+    <div class="col col-md-8 col-xl-6 my-3 ">
+        <a class="btn-rechercher" asp-controller="Concerts" asp-action="Create">
+            Ajouter
+            <i class="fa-solid fa-plus"></i>
+        </a>
+    </div>
+}
+
 <div class="table-responsive-sm">
 <table class="table stripe hover order-column  " id="dataTable">
     <thead>
@@ -76,9 +80,22 @@
                 @Html.DisplayFor(modelItem => item.PrixBillet)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        @if (this.User.Identity.IsAuthenticated)
+                        {
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        }
+                        
+                        @if(this.User.IsInRole(AppConstants.AdminRole) || this.User.IsInRole(AppConstants.AgentRole))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        }
+                               
+                        @if(this.User.IsInRole(AppConstants.AdminRole))
+                        {
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        }
+                       
+
             </td>
         </tr>
 }

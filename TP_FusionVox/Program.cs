@@ -7,6 +7,8 @@ using System.Globalization;
 using TP_FusionVox.Models;
 using TP_FusionVox.Models.Data;
 using TP_FusionVox.Services;
+using Microsoft.AspNetCore.Identity;
+using TP_FusionVox.DbInitializer;
 
 var builder = WebApplication.CreateBuilder(args); // Crée une web app avec les paramètres envoyés
 
@@ -33,7 +35,7 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.SupportedUICultures = supportedCultures;
 });
 
-builder.Services.AddRazorPages(); // Permet utilisation de Razor
+
 builder.Services.AddMvc().AddRazorRuntimeCompilation();
 builder.Services.AddSingleton<BaseDeDonnees>(); // Permet l'utilisation du Singleton
 
@@ -43,13 +45,30 @@ builder.Services.AddDbContext<TP_FusionVoxDbContext>(options =>
     options.UseLazyLoadingProxies();
 });
 
+//IdentityRole
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<TP_FusionVoxDbContext>();
+builder.Services.AddScoped<IdbInitializer, DbInitializer>();
+builder.Services.AddRazorPages(); // Permet utilisation de Razor
+
 builder.Services.AddDistributedMemoryCache(); // Permet l'utilisation de cookies
 builder.Services.AddSession(option => { option.IdleTimeout = TimeSpan.FromMinutes(20); }); // Configure l'expiration d'un cookies,
+
+#region Servivces
 builder.Services.AddScoped(typeof(IServiceBaseAsync<>), typeof(ServiceBaseAsync<>));
 builder.Services.AddScoped<IGenreMusicalService, GenreMusicalService>();
 builder.Services.AddScoped<IArtisteService, ArtisteService>();
 builder.Services.AddScoped<IConcertService, ConcertService>();
 builder.Services.AddScoped<IAgentService, AgentService>();
+#endregion
+
+//la gestion du Cookie
+builder.Services.ConfigureApplicationCookie(options => {
+    options.LoginPath = $"/Identity/Account/Login";
+    options.LogoutPath = $"/Identity/Account/Logout";
+    options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+});
+
 
 var app = builder.Build();
 
@@ -72,6 +91,19 @@ else
 app.UseSession(); // Permet l'utilisation de cookies
 
 app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+void SeedDatabase()
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbInitializer = scope.ServiceProvider.GetRequiredService<IdbInitializer>();
+        dbInitializer.Initialize();
+    }
+}
+SeedDatabase();
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
@@ -81,6 +113,7 @@ app.UseEndpoints(endpoints =>
 });
 
 app.MapRazorPages();
+
 app.Run();
 
 // Doc

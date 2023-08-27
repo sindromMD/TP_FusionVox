@@ -4,9 +4,11 @@ using System.Linq;
 using TP_FusionVox.Utility;
 using TP_FusionVox.Models;
 using TP_FusionVox.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TP_FusionVox.Controllers
 {
+    [Authorize]
     public class FavorisController : Controller
     {
         private BaseDeDonnees _baseDonnees { get; set; }

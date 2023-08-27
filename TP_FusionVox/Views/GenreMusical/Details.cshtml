@@ -11,86 +11,10 @@
             </h1>
         </div>
     </div>
-    <div class="row justify-content-around">
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card_stats_small border-left-green shadow_background h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                            <i class="fa-solid fa-users fa-2xl"></i>
-                        </div>
-                        <div class="col mr-2">
-                            <div class="titre_card_small text-uppercase mb-1">
-                                Nombre total d'artistes
-                            </div>
-                            <div class="row align-content align-items-center">
-                                <div class="col mb-0">
-                                    <h2 class="color_grey counter">
-                                        @Model.NbArtistes
-                                    </h2>
-                                </div>
-                                <div class="col text-end">
-                                    <span class="p3 badge rounded-pill text-bg-success ms">+20%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card_stats_small border-left-bleu shadow_background h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                            <i class="fa-solid fa-microphone-lines fa-2xl"></i>
-                        </div>
-                        <div class="col mr-2">
-                            <div class="titre_card_small text-uppercase mb-1">
-                                Nombre de chansons publiées
-                            </div>
-                            <div class="row align-content align-items-center">
-                                <div class=" col mb-0">
-                                    <h2 class="color_grey counter">
-                                        @Model.NbChansonsPubliees
-                                    </h2>
-                                </div>
-                                <div class="col text-end">
-                                    <span class="p3 badge rounded-pill text-bg-danger ms">-2,0%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card_stats_small border-left-rouge shadow_background h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                            <i class="fa-solid fa-heart fa-2xl"></i>
-                        </div>
-                        <div class="col mr-2">
-                            <div class="titre_card_small text-uppercase mb-1">
-                                Nombre total d'abonnés
-                            </div>
-                            <div class="row align-content align-items-center">
-                                <div class=" col mb-0">
-                                    <h2 class="color_grey counter">
-                                        @Model.NbAbonnees
-                                    </h2>
-                                </div>
-                                <div class="col text-end">
-                                    <span class="p3 badge rounded-pill text-bg-success ms">+20%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @if (this.User.IsInRole(AppConstants.AdminRole) || this.User.IsInRole(AppConstants.AgentRole))
+    {
+        await Html.RenderPartialAsync("_CardsInfoPlusGenreMusicalDetailsPartial");
+    }
         <div class="row justify-content-center p1">
 
             <div class="col col-lg-10 col-xl-8">

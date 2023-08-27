@@ -37,6 +37,210 @@ namespace TP_FusionVox.Migrations
                     b.ToTable("ArtisteConcert");
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
+
             modelBuilder.Entity("TP_FusionVox.Models.Agent", b =>
                 {
                     b.Property<int>("Id")
@@ -87,38 +291,38 @@ namespace TP_FusionVox.Migrations
                         new
                         {
                             Id = 1,
-                            Biographie = "Abel Tesfaye, dit The Weeknd, né le 16 février 1990 à Toronto (Canada), est un chanteur, acteur, auteur-compositeur-interprète et producteur canadien. Il commence sa carrière musicale en 2009 en publiant anonymement de la musique sur YouTube.\r\n\r\nIl fonde le label XO en 2011 et publie ses premières mixtapes House of Balloons, Thursday, et Echoes of Silence. Il acquiert rapidement du succès et la reconnaissance de plusieurs médias en raison de son style de RnB contemporain sombre et de la part de mystère entourant son identité.\r\n\r\nEn 2012, il signe un contrat avec le label Republic Records et réédite les mixtapes dans l'album compilation Trilogy. Son premier album studio, Kiss Land, sort en 2013. Son deuxième album, Beauty Behind the Madness, mis en vente en 2015 et comprenant les singles classés en tête du Billboard Hot 100 Can't Feel My Face et The Hills, remporte le prix du « meilleur album urbain contemporain » aux Grammy Awards. Il fait partie des albums les plus vendus de l'année. Starboy, le troisième album, connait un succès commercial et remporte également le prix du meilleur album urbain contemporain aux Grammy Awards. Son quatrième album, After Hours, affiche plusieurs chansons en tête du classement Billboard Hot 100 telles que Heartless, Save Your Tears et Blinding Lights ; ce single est d’ailleurs devenu la première chanson de l'histoire à passer plus d'un an dans le top 10 du Billboard Hot 100 et est la chanson la plus écoutée sur la plateforme musicale Spotify en 2020.",
-                            Curriel = "TEST@TEST.TEST",
+                            Biographie = "Le professionnalisme de Alexei Culaxiz se reflète dans sa capacité à naviguer dans les complexités des contrats et des négociations, ce qui permet d'obtenir des avantages optimaux pour les artistes et la maison de disques. Sa riche expérience et sa connaissance approfondie de l'industrie ont fait de lui une source d'inspiration pour les artistes comme pour ses collègues.",
+                            Curriel = "Alexei@vox.ca",
                             DateNaissance = new DateTime(1999, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DonneesConfidentiellesAgentID = 1,
                             ImageURL = "",
                             Nom = "Alex Culaxiz",
                             Pays = "Canada",
-                            SalaireMensuel = 3000f
+                            SalaireMensuel = 3564.5f
                         },
                         new
                         {
                             Id = 2,
-                            Biographie = "Abel Tesfaye, dit The Weeknd, né le 16 février 1990 à Toronto (Canada), est un chanteur, acteur, auteur-compositeur-interprète et producteur canadien. Il commence sa carrière musicale en 2009 en publiant anonymement de la musique sur YouTube.\r\n\r\nIl fonde le label XO en 2011 et publie ses premières mixtapes House of Balloons, Thursday, et Echoes of Silence. Il acquiert rapidement du succès et la reconnaissance de plusieurs médias en raison de son style de RnB contemporain sombre et de la part de mystère entourant son identité.\r\n\r\nEn 2012, il signe un contrat avec le label Republic Records et réédite les mixtapes dans l'album compilation Trilogy. Son premier album studio, Kiss Land, sort en 2013. Son deuxième album, Beauty Behind the Madness, mis en vente en 2015 et comprenant les singles classés en tête du Billboard Hot 100 Can't Feel My Face et The Hills, remporte le prix du « meilleur album urbain contemporain » aux Grammy Awards. Il fait partie des albums les plus vendus de l'année. Starboy, le troisième album, connait un succès commercial et remporte également le prix du meilleur album urbain contemporain aux Grammy Awards. Son quatrième album, After Hours, affiche plusieurs chansons en tête du classement Billboard Hot 100 telles que Heartless, Save Your Tears et Blinding Lights ; ce single est d’ailleurs devenu la première chanson de l'histoire à passer plus d'un an dans le top 10 du Billboard Hot 100 et est la chanson la plus écoutée sur la plateforme musicale Spotify en 2020.",
-                            Curriel = "TEST@TEST.TEST",
+                            Biographie = "Connu pour son grand professionnalisme, sa passion indéniable et sa capacité à transformer les rêves des artistes en réalité, Simion Beblea est un agent exceptionnel dans l'industrie musicale. Avec une carrière solide et des réalisations impressionnantes, Simion a consolidé sa réputation de mentor dévoué et de soutien aux artistes.",
+                            Curriel = "Simion@vox.ca",
                             DateNaissance = new DateTime(1990, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DonneesConfidentiellesAgentID = 2,
                             ImageURL = "",
                             Nom = "Simion Beblea",
-                            Pays = "Canada",
-                            SalaireMensuel = 3000f
+                            Pays = "Romania",
+                            SalaireMensuel = 4268.1f
                         },
                         new
                         {
                             Id = 3,
-                            Biographie = "Abel Tesfaye, dit The Weeknd, né le 16 février 1990 à Toronto (Canada), est un chanteur, acteur, auteur-compositeur-interprète et producteur canadien. Il commence sa carrière musicale en 2009 en publiant anonymement de la musique sur YouTube.\r\n\r\nIl fonde le label XO en 2011 et publie ses premières mixtapes House of Balloons, Thursday, et Echoes of Silence. Il acquiert rapidement du succès et la reconnaissance de plusieurs médias en raison de son style de RnB contemporain sombre et de la part de mystère entourant son identité.\r\n\r\nEn 2012, il signe un contrat avec le label Republic Records et réédite les mixtapes dans l'album compilation Trilogy. Son premier album studio, Kiss Land, sort en 2013. Son deuxième album, Beauty Behind the Madness, mis en vente en 2015 et comprenant les singles classés en tête du Billboard Hot 100 Can't Feel My Face et The Hills, remporte le prix du « meilleur album urbain contemporain » aux Grammy Awards. Il fait partie des albums les plus vendus de l'année. Starboy, le troisième album, connait un succès commercial et remporte également le prix du meilleur album urbain contemporain aux Grammy Awards. Son quatrième album, After Hours, affiche plusieurs chansons en tête du classement Billboard Hot 100 telles que Heartless, Save Your Tears et Blinding Lights ; ce single est d’ailleurs devenu la première chanson de l'histoire à passer plus d'un an dans le top 10 du Billboard Hot 100 et est la chanson la plus écoutée sur la plateforme musicale Spotify en 2020.",
-                            Curriel = "TEST@TEST.TEST",
+                            Biographie = "Avec un dévouement inébranlable et une vision large de l'industrie musicale, Mirza Iurii continue à ajouter de la valeur à chaque projet dans lequel il s'implique. Qu'il s'agisse de jeunes talents ou d'artistes confirmés, Iurie est reconnu pour sa capacité à guider les carrières vers de nouveaux sommets de réussite.",
+                            Curriel = "Iurii@vox.ca",
                             DateNaissance = new DateTime(1998, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DonneesConfidentiellesAgentID = 3,
                             ImageURL = "",
                             Nom = "Mirza Iurii",
-                            Pays = "Canada",
-                            SalaireMensuel = 3000f
+                            Pays = "Moldova",
+                            SalaireMensuel = 9856.99f
                         });
                 });
 
@@ -404,10 +608,11 @@ namespace TP_FusionVox.Migrations
                             DateConcert = new DateTime(2023, 10, 3, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Informations importantes sur l'événement: En achetant des billets pour cet événement, vous acceptez de respecter les mesures de santé et de sécurité en vigueur lors de l'événement, qui peuvent inclure, notamment, le port du masque. Notez que ces règlements s'appliquent à tous les utilisateurs de billets. Directives sujettes à changement. Vérifiez régulièrement le site de la salle de votre événement.",
                             ImageUrl = "",
+                            NbBilletsVendu = 123,
                             NbTotalBillets = 1000,
                             Nom = "Hope Tour",
                             Pays = "Canada",
-                            PrixBillet = 100m,
+                            PrixBillet = 100.25m,
                             Scene = "Place Bell",
                             Ville = "Laval"
                         },
@@ -417,10 +622,11 @@ namespace TP_FusionVox.Migrations
                             DateConcert = new DateTime(2023, 10, 21, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Informations importantes sur l'événement: En achetant des billets pour cet événement, vous acceptez de respecter les mesures de santé et de sécurité en vigueur lors de l'événement, qui peuvent inclure, notamment, le port du masque. Notez que ces règlements s'appliquent à tous les utilisateurs de billets. Directives sujettes à changement. Vérifiez régulièrement le site de la salle de votre événement.",
                             ImageUrl = "",
-                            NbTotalBillets = 300,
+                            NbBilletsVendu = 56,
+                            NbTotalBillets = 323,
                             Nom = "Guitar Story",
                             Pays = "Canada",
-                            PrixBillet = 35m,
+                            PrixBillet = 35.99m,
                             Scene = "Le Club Square Dix30",
                             Ville = "Brossard"
                         },
@@ -430,10 +636,11 @@ namespace TP_FusionVox.Migrations
                             DateConcert = new DateTime(2023, 10, 31, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Informations importantes sur l'événement: En achetant des billets pour cet événement, vous acceptez de respecter les mesures de santé et de sécurité en vigueur lors de l'événement, qui peuvent inclure, notamment, le port du masque. Notez que ces règlements s'appliquent à tous les utilisateurs de billets. Directives sujettes à changement. Vérifiez régulièrement le site de la salle de votre événement.",
                             ImageUrl = "",
+                            NbBilletsVendu = 72,
                             NbTotalBillets = 600,
                             Nom = "MetalCore",
                             Pays = "Canada",
-                            PrixBillet = 45m,
+                            PrixBillet = 45.23m,
                             Scene = "L'Etoile",
                             Ville = "Montreal"
                         });
@@ -463,20 +670,20 @@ namespace TP_FusionVox.Migrations
                         new
                         {
                             Id = 1,
-                            BankAccountInfo = "1234589765478963",
-                            NumeroDeContrat = "2222-44445555"
+                            BankAccountInfo = "1278162365478963",
+                            NumeroDeContrat = "2522-45445576"
                         },
                         new
                         {
                             Id = 2,
-                            BankAccountInfo = "1234589765478963",
-                            NumeroDeContrat = "2222-44445555"
+                            BankAccountInfo = "8904589765450963",
+                            NumeroDeContrat = "2252-44745655"
                         },
                         new
                         {
                             Id = 3,
-                            BankAccountInfo = "1234589765478963",
-                            NumeroDeContrat = "2222-44445555"
+                            BankAccountInfo = "4255897697478343",
+                            NumeroDeContrat = "2426-48244589"
                         });
                 });
 
@@ -534,6 +741,16 @@ namespace TP_FusionVox.Migrations
                         });
                 });
 
+            modelBuilder.Entity("TP_FusionVox.Models.ApplicationUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("Pseudonymes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("ApplicationUser");
+                });
+
             modelBuilder.Entity("ArtisteConcert", b =>
                 {
                     b.HasOne("TP_FusionVox.Models.Artiste", null)
@@ -545,6 +762,57 @@ namespace TP_FusionVox.Migrations
                     b.HasOne("TP_FusionVox.Models.Concert", null)
                         .WithMany()
                         .HasForeignKey("ListConcertsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

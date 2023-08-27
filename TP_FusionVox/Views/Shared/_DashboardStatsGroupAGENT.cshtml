@@ -82,9 +82,12 @@
     </div>
 </div>
 <!-- Statistiques que seul l'administrateur voit -->
-@{
-    await Html.RenderPartialAsync("_DashboardStatsGroupADMIN");
-}
+
+    @if(this.User.IsInRole(AppConstants.AdminRole))
+    {
+        await Html.RenderPartialAsync("_DashboardStatsGroupADMIN");
+    }
+
 <!---->
 <div class="row justify-content-center p1">
     <div class="col col-lg-10 col-xl-8 table-responsive-sm">

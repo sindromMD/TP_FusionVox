@@ -10,6 +10,7 @@ using Microsoft.Extensions.Localization;
 using Microsoft.AspNetCore.Localization;
 using System.Diagnostics;
 using TP_FusionVox.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TP_FusionVox.Controllers
 {
@@ -22,14 +23,14 @@ namespace TP_FusionVox.Controllers
         private IAgentService _serivceAgent { get; set; }
 
         public HomeController(IGenreMusicalService serviceGM,
-                                IAgentService serviceAgent, 
+                                IAgentService serviceAgent,
                                 IStringLocalizer<HomeController> localizer)
         {
             _serviceGM = serviceGM;
             _serivceAgent = serviceAgent;
             _localizer = localizer;
         }
-
+        [AllowAnonymous]
         [Route("")]
         [Route("Home")]
         public async Task<IActionResult> Index()
@@ -37,6 +38,8 @@ namespace TP_FusionVox.Controllers
             ViewData["Title"] = this._localizer["IndexTitle"];
             return View(await _serviceGM.StatistiquesTousGenresMusicauxAsync());
         }
+
+        [Authorize]
         [Route("Privacy")]
         [Route("Confidentialite")]
         public IActionResult Privacy()
@@ -44,7 +47,7 @@ namespace TP_FusionVox.Controllers
             ViewData["Title"] = this._localizer["PrivacyTitle"];
             return View();
         }
-
+        [Authorize(Roles = AppConstants.AdminRole + "," + AppConstants.AgentRole)]
         [Route("Dashboard")]
         [Route("TableauDeBord")]
         public async Task<IActionResult> Dashboard()
