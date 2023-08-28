@@ -1,5 +1,6 @@
 using Castle.Core.Logging;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Localization;
@@ -36,7 +37,7 @@ namespace Tests_Unitaires
             _loggerMock = new Mock<ILogger<ArtisteController>>();
             _webHostEnvironmentMock = new Mock<IWebHostEnvironment>();
             _stringLocalizerMock = new Mock<IStringLocalizer<ArtisteController>>();
-           
+
 
             _artisteController = new ArtisteController(_artisteServiceMock.Object,
                                                        _musicalGenreServiceMock.Object,
@@ -59,34 +60,6 @@ namespace Tests_Unitaires
 
         }
 
-        [Fact]
-        public async void DetailParID_ObtenirParIdAsync_InvalidID()
-        {
-
-            var result = await _artisteController.DetailParID(1);
-
-            _artisteServiceMock.Verify(a => a.ObtenirParIdAsync(1), Times.Once());
-
-            Assert.IsAssignableFrom<ViewResult>(result);
-
-            ViewResult viewResult = result as ViewResult;
-
-            Assert.Equal("NotFound", viewResult.ViewName);
-        }
-        [Fact]
-        public async void DetailParNom_ObtenirArtisteParNomAsync_InvalidNom()
-        {
-
-            var result = await _artisteController.DetailParNom("A");
-
-            _artisteServiceMock.Verify(a => a.ObtenirArtisteParNomAsync("A"), Times.Once());
-
-            Assert.IsAssignableFrom<ViewResult>(result);
-
-            ViewResult viewResult = result as ViewResult;
-
-            Assert.Equal("NotFound", viewResult.ViewName);
-        }
 
         [Fact]
         public async void DetailParID_ObtenirParIdAsync_validId_ReturnView()
@@ -146,7 +119,53 @@ namespace Tests_Unitaires
             Assert.Equal(_artisteList[3].Nom, model.Nom); // Enfin, on vérifie que l'identifiant du modèle est bien 4
         }
 
+        [Fact]
+        public async void DetailParID_ObtenirParIdAsync_InvalidID()
+        {
 
+            var result = await _artisteController.DetailParID(1);
+
+            _artisteServiceMock.Verify(a => a.ObtenirParIdAsync(1), Times.Once());
+
+            Assert.IsAssignableFrom<ViewResult>(result);
+
+            ViewResult viewResult = result as ViewResult;
+
+            Assert.Equal("NotFound", viewResult.ViewName);
+        }
+        [Fact]
+        public async void DetailParNom_ObtenirArtisteParNomAsync_InvalidNom()
+        {
+
+            var result = await _artisteController.DetailParNom("A");
+
+            _artisteServiceMock.Verify(a => a.ObtenirArtisteParNomAsync("A"), Times.Once());
+
+            Assert.IsAssignableFrom<ViewResult>(result);
+
+            ViewResult viewResult = result as ViewResult;
+
+            Assert.Equal("NotFound", viewResult.ViewName);
+        }
+
+        [Fact]
+        public async Task DeletePost_InvalidId_ReturnsNotFoundView()
+        {
+            // Arrange
+            _artisteServiceMock.Setup(a => a.ObtenirParIdAsync(It.IsAny<int>())).ReturnsAsync((Artiste)null);
+
+            // Act
+            var result = await _artisteController.DeletePost(123);
+
+            // Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            Assert.Equal("NotFound", viewResult.ViewName);
+        }
+
+
+        //Message : J'imagine que le test a été implémenté presque correctement.
+        //Mais je ne comprends pas pourquoi il ne passe pas.
+        //C'est au-delà de ma compréhension pour le moment.
         [Fact]
         public async void Delete_ModelStateValid_RedirectToView()
         {
@@ -160,15 +179,18 @@ namespace Tests_Unitaires
             var result = await _artisteController.DeletePost(artisteIdASupprimer);
 
             //Assert
-            _artisteServiceMock.Verify(a=>a.ObtenirParIdAsync(artisteIdASupprimer), Times.Once());
+            _artisteServiceMock.Verify(a => a.ObtenirParIdAsync(artisteIdASupprimer), Times.Once());
             _artisteServiceMock.Verify(a => a.SupprimerAsync(artisteIdASupprimer), Times.Once());
 
-            Assert.IsAssignableFrom<RedirectToActionResult>(result);
+            Assert.IsType<RedirectToActionResult>(result);
             var redirectToActionResult = result as RedirectToActionResult;
             Assert.Equal("Recherche", redirectToActionResult.ActionName);
-            Assert.Equal("Artiste", redirectToActionResult.ControllerName); 
+            Assert.Equal("Artiste", redirectToActionResult.ControllerName);
         }
 
+        //Message : la logique du test semble correcte.
+        //Mais je ne comprends pas pourquoi il ne passe pas.
+        //C'est au-delà de ma compréhension pour le moment.
         [Fact]
         public async void Create_ModelState_Invalid_ReturnView()
         {
@@ -178,7 +200,7 @@ namespace Tests_Unitaires
                 AncienneImage = "ancienneImage.jpg",
                 NomInitial = "Initial Name",
                 GenresSelectList = new List<SelectListItem>(),
-                SelectedConcertId = 1,
+                //SelectedConcertId = 1,
                 SelectedConcertIds = new List<int> { 1, 2, 3 },
                 ConsertsSelectList = new List<SelectListItem>(),
                 AgentSelectList = new List<SelectListItem>()
@@ -192,7 +214,6 @@ namespace Tests_Unitaires
             var viewResult = result as ViewResult;
 
             Assert.Equal("Upsert", viewResult.ViewName);
-        }
-
+        }        
     }
 }

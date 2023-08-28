@@ -36,38 +36,6 @@ namespace Tests_Unitaires
                 _stringLocalizerMock.Object);
         }
 
-        [Fact]
-        public async Task DetailParID_ObtenirParIdAsync_ValidID()
-        {
-            //Arange
-            var genreMusicalMock = new GenreMusical()
-            {
-                Id = 1,
-                Nom = "POP",
-                ImageUrl = "POP.jpg",
-                Description = "La musique pop"
-            };
-
-            _genreMusicalService_Mock.Setup(a => a.ObtenirParIdAsync(1)).ReturnsAsync(genreMusicalMock);
-            //Act
-            var result = await _genreMusicalController.DetailParID(1);
-
-            //Assert
-            _genreMusicalService_Mock.Verify(g => g.ObtenirParIdAsync(1), Times.Once());
-
-            ViewResult viewResult = result as ViewResult;
-
-            Assert.Equal("Details", viewResult.ViewName);
-
-            Assert.NotNull(viewResult.ViewData);
-
-            //Assert.Equal(genreMusicalMock, viewResult.Model);
-
-            var model = viewResult.ViewData.Model as GenreMusical;
-
-            Assert.Equal(1, model.Id);
-
-        }
 
         [Fact]
         public async void Create_ModelStateValid_RedirectToView()
@@ -82,20 +50,54 @@ namespace Tests_Unitaires
             };
             var genreMusicalVM = new GenreMusicalVM() { };
             genreMusicalVM.GenreMusical = new GenreMusical();
-            _genreMusicalService_Mock.Setup(g => g.CreerAsync(It.IsAny<GenreMusical>())).ReturnsAsync(new GenreMusical());
+            _genreMusicalService_Mock.Setup(g => g.CreerAsync(It.IsAny<GenreMusical>())).ReturnsAsync(genreMusicalMock);
+            var result = _genreMusicalController.Upsert(genreMusicalVM).Result;
+
             _genreMusicalService_Mock.Verify(g => g.CreerAsync(It.IsAny<GenreMusical>()), Times.Once());
-            var result = _genreMusicalController.Upsert(new GenreMusicalVM()).Result;
-
             
-
-            Assert.IsType<RedirectToActionResult>(result);
             var viewResult = result as RedirectToActionResult;
-
+            Assert.IsType<RedirectToActionResult>(viewResult);
             Assert.Equal("Index", viewResult.ActionName);
-            Assert.Equal("Home", viewResult.ControllerName);
+            Assert.Equal("Home", viewResult.ControllerName);         
             Assert.Null(viewResult.ControllerName);
         }
-    }
-    
+        [Fact]
+        public async void DetailParId_ObtenirParIdAsync_RetunrView()
+        {
+            //arrange
+            var genreMusical = new GenreMusical() { Id = 1, Nom = "POP" };
+            var stats = new StatistiqueGenresMusicauxVM() { Id = 99, Nom ="test", EstDisponible = true, NbChansonsPubliees=10,NbArtistes=23,NbAbonnees=21 };
+
+            _genreMusicalService_Mock.Setup(g => g.ObtenirParIdAsync(It.IsAny<int>())).ReturnsAsync(genreMusical);
+            _genreMusicalService_Mock.Setup(G=>G.StatistiquesUnGenreMusicalAsync(It.IsAny<GenreMusical>())).ReturnsAsync(stats);
+            //act
+            var result = _genreMusicalController.DetailParID(1).Result;
+
+            _genreMusicalService_Mock.Verify(g=>g.ObtenirParIdAsync(It.IsAny<int>()), Times.Once());
+
+        
+            var viewResult = result as ViewResult;
+            Assert.NotNull(viewResult);
+            Assert.Equal("Details", viewResult.ViewName);
+            Assert.IsType<StatistiqueGenresMusicauxVM> (viewResult.Model);
+            var model = viewResult.Model as StatistiqueGenresMusicauxVM;
+            Assert.Equal(99, model.Id);
+        }
+        [Fact]
+        public async void DetailParId_ObtenirParIdAsync_NotFound()
+        {
+            //arrange
+            
+            //act
+            var result = _genreMusicalController.DetailParID(1).Result;
+
+            _genreMusicalService_Mock.Verify(g => g.ObtenirParIdAsync(It.IsAny<int>()), Times.Once());
+
+            var viewResult = result as ViewResult;
+            Assert.NotNull(viewResult);
+            Assert.Equal("NotFound", viewResult.ViewName);
+            Assert.Null(viewResult.Model);
+        }
+    }    
 }
 
