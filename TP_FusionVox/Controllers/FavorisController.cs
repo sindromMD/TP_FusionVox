@@ -5,14 +5,15 @@ using TP_FusionVox.Utility;
 using TP_FusionVox.Models;
 using TP_FusionVox.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using TP_FusionVox.Models.Data;
 
 namespace TP_FusionVox.Controllers
 {
     [Authorize]
     public class FavorisController : Controller
     {
-        private BaseDeDonnees _baseDonnees { get; set; }
-        public FavorisController(BaseDeDonnees baseDonnees)
+        private TP_FusionVoxDbContext _baseDonnees { get; set; }
+        public FavorisController(TP_FusionVoxDbContext baseDonnees)
         {
             _baseDonnees = baseDonnees;
         }

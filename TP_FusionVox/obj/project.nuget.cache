@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Oxn4xBi10Ej3z7e2BQK0ShKT4tVe5h2JYY7BTbQHMYqvUKpBAMaAgDmvn2yTYaQwKJOZ7iziXvaFNLHKs57b4w==",
+  "dgSpecHash": "W8tm2Ck9bNXRB0QYuLr7ATAFhZSRAjji68VT9SzLtBjXfy9Po/uCx1lVeYx7yZAt7memtwJG+C5OWa+mNpmGcw==",
   "success": true,
   "projectFilePath": "M:\\Programmation Web transactionnelle\\Clone Repo Git\\TP_FusionVox\\TP_FusionVox\\TP_FusionVox.csproj",
   "expectedPackageFiles": [
@@ -124,6 +124,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.21\\microsoft.entityframeworkcore.abstractions.6.0.21.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.21\\microsoft.entityframeworkcore.analyzers.6.0.21.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.21\\microsoft.entityframeworkcore.design.6.0.21.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\6.0.21\\microsoft.entityframeworkcore.inmemory.6.0.21.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore.proxies\\6.0.16\\microsoft.entityframeworkcore.proxies.6.0.16.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.21\\microsoft.entityframeworkcore.relational.6.0.21.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.21\\microsoft.entityframeworkcore.sqlserver.6.0.21.nupkg.sha512",

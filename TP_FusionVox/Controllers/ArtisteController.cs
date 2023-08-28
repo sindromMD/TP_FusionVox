@@ -241,25 +241,7 @@ namespace TP_FusionVox.Controllers
                     else
                     {
                         //update
-                        #region test1
-                        //Remplir la liste de concerts de l'artiste avec les concerts sélectionnés(nouvelles valeurs)
-                        //Faire parcourir la liste des éléments sélectionnés (case à cocher) 
-                        //await _serviceA.ClearConcertsAsync(artisteVM.Artiste.Id);
-                        //if (artisteVM.Artiste.ListConcerts == null)
-                        //    artisteVM.Artiste.ListConcerts = new List<Concert>();
-                        //foreach (var selectedConcertId in artisteVM.SelectedConcertIds)
-                        //{
-                        //    //Recherche du concert à ajouter à l'aide de l'ID de l'élément sélectionné
-                        //    var concertToAdd = await _serviceC.ObtenirParIdAsync(selectedConcertId);
-                        //    //vérifier si on a trouvé quelque chose
-                        //    if (concertToAdd != null)
-                        //    {
-                        //        // Ajouter le concert à la liste des concerts de l'artiste
-                        //        artisteVM.Artiste.ListConcerts.Add(concertToAdd);
-                        //    }
-                        //}
-                        #endregion
-                        #region Code Je n'arrive pas à dépasser l'Editer
+                        #region Code Je n'arrive pas a éditer la relation "plus" à "plus"
                         //await _serviceA.ClearConcertsAsync(artisteVM.Artiste.Id);
                         //List<Concert> newConcerts = new List<Concert>();
                         //foreach (var selectedConcertId in artisteVM.SelectedConcertIds)
@@ -273,29 +255,7 @@ namespace TP_FusionVox.Controllers
 
                         //artisteVM.Artiste.ListConcerts = newConcerts;
                         #endregion
-                        #region test2
-                        ////  Artiste directement à partir du contexte en utilisant l'ID
-                        //var artisteToUpdate = await _serviceA.ObtenirParIdAsync(artisteVM.Artiste.Id);
 
-                        //// Mise à jour de la liste des concerts de l'entité
-                        //artisteToUpdate.ListConcerts.Clear();
-                        //foreach (var selectedConcertId in artisteVM.SelectedConcertIds)
-                        //{
-                        //    var concertToAdd = await _serviceC.ObtenirParIdAsync(selectedConcertId);
-                        //    if (concertToAdd != null)
-                        //    {
-                        //        artisteToUpdate.ListConcerts.Add(concertToAdd);
-                        //    }
-                        //}
-                        //artisteToUpdate = await _serviceA.ObtenirParIdAsync(artisteVM.Artiste.Id);
-                        //// Met à jour d'autres propriétés 
-                        //artisteToUpdate.ImageURL = TelechargerImageEtObtenirURL(artisteVM.AncienneImage);
-
-                        //// Salvează entitatea actualizată în baza de date
-                        //await _serviceA.EditerAsync(artisteToUpdate);
-
-                        //TempData[AppConstants.Success] = $"Les renseignements sur l'artiste {artisteVM.Artiste.Nom} ont été modifiés.";
-                        #endregion
                         artisteVM.Artiste.ImageURL = TelechargerImageEtObtenirURL(artisteVM.AncienneImage);
                         await _serviceA.EditerAsync(artisteVM.Artiste);
                         _logger.LogInformation($"L'Artiste a été modifiés: {artisteVM.Artiste.Nom}, {DateTime.Now}");
@@ -358,7 +318,7 @@ namespace TP_FusionVox.Controllers
                 await _serviceA.SupprimerAsync(Id);
 
                 // Supprimer les images du fichier
-                string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images de zombies
+                string webRootPath = _webHostEnvironment.WebRootPath; //Chemin des images d'artiste
                 if (artisteASupprimer.ImageURL != null)
                 {
                     var pathImage = Path.Combine(webRootPath, AppConstants.ImagePathArtisteCtrl, artisteASupprimer.ImageURL.TrimStart('\\'));
