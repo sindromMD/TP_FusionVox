@@ -15,6 +15,7 @@ namespace TP_FusionVox.Models
         public string NumeroDeContrat { get; set; }
 
         [Display(Name = "BankAccountInfo")]
+        [StringLength(16, ErrorMessage = "The {0} must be {1} characters long.", MinimumLength = 16)]
         [DataType(DataType.CreditCard)]
         public string BankAccountInfo { get; set; }
 

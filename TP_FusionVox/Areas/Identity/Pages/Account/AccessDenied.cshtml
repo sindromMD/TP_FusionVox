@@ -5,6 +5,31 @@
 }
 
 <header>
+    <div class="row justify-content-around text-center mt-5">
+        <div class="col col-lg-10 col-xl-9">
     <h1 class="text-danger">@ViewData["Title"]</h1>
-    <p class="text-danger">You do not have access to this resource.</p>
+            <p class="text-danger">Vous n'avez pas accès à cette ressource.</p>
+
+
+
+        </div>
+        <div class="scene">
+            <div class="overlay"></div>
+            <div class="overlay"></div>
+            <div class="overlay"></div>
+            <div class="overlay"></div>
+            <span class="bg-403">403</span>
+            <div class="text">
+                <span class="hero-text"></span>
+                <span class="msg">can't let <span>you</span> in.</span>
+                <span class="support">
+                    <span>unexpected?</span>
+                    <a asp-controller="Home" asp-action="Privacy">contact support</a>
+                </span>
+            </div>
+            <div class="lock"></div>
+        </div>
+        </div>
+
+    
 </header>
