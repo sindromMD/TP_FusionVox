@@ -61,7 +61,7 @@ namespace TP_FusionVox.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nom,ImageURL,Pays,DateNaissance,Biographie,SalaireMensuel,Curriel")] Agent agent)
+        public async Task<IActionResult> Create([Bind("Id,Nom,ImageURL,Pays,DateNaissance,Biographie,SalaireMensuel,Curriel, DonneesConfidentiellesAgent")] Agent agent)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +93,7 @@ namespace TP_FusionVox.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nom,ImageURL,Pays,DateNaissance,Biographie,SalaireMensuel,Curriel")] Agent agent)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nom,ImageURL,Pays,DateNaissance,Biographie,SalaireMensuel,Curriel, DonneesConfidentiellesAgentID, DonneesConfidentiellesAgent")] Agent agent)
         {
             if (id != agent.Id)
             {
@@ -104,6 +104,7 @@ namespace TP_FusionVox.Controllers
             {
                 try
                 {
+                    _context.Update(agent.DonneesConfidentiellesAgent);
                     _context.Update(agent);
                     await _context.SaveChangesAsync();
                 }
