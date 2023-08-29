@@ -37,7 +37,7 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 
 
 builder.Services.AddMvc().AddRazorRuntimeCompilation();
-builder.Services.AddSingleton<BaseDeDonnees>(); // Permet l'utilisation du Singleton
+/*builder.Services.AddSingleton<BaseDeDonnees>();*/ // Permet l'utilisation du Singleton
 
 builder.Services.AddDbContext<TP_FusionVoxDbContext>(options =>
 {

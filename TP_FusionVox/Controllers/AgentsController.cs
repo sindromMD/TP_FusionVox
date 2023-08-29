@@ -104,7 +104,7 @@ namespace TP_FusionVox.Controllers
             {
                 try
                 {
-                    _context.Update(agent.DonneesConfidentiellesAgent);
+
                     _context.Update(agent);
                     await _context.SaveChangesAsync();
                 }

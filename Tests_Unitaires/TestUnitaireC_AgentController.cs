@@ -1,22 +1,21 @@
-﻿using Castle.Components.DictionaryAdapter.Xml;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore;
+using Moq;
+using NuGet.Protocol;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TP_FusionVox.Controllers;
 using TP_FusionVox.Models;
 using TP_FusionVox.Models.Data;
 using TP_FusionVox.Services;
-using TP_FusionVox.ViewModels;
 
 namespace Tests_Unitaires
 {
-    public class TestUnitaire_ArtisteService
+    public class TestUnitaireC_AgentController
     {
-
         // Définir la DB InMemory
 
         private DbContextOptions<TP_FusionVoxDbContext> SetUpInMemory(string uniqueName)
@@ -30,7 +29,7 @@ namespace Tests_Unitaires
         {
             using (var context = new TP_FusionVoxDbContext(options))
             {
-                if (!context.Artistes.Any())
+                if (!context.Agent.Any())
                 {
                     context.Artistes.AddRange(
                      //POP
@@ -70,7 +69,7 @@ namespace Tests_Unitaires
                          new DonneesConfidentiellesAgent() { Id = 2, BankAccountInfo = "8904589765450963", NumeroDeContrat = "2252-44745655" },
                          new DonneesConfidentiellesAgent() { Id = 3, BankAccountInfo = "4255897697478343", NumeroDeContrat = "2426-48244589" }
                       );
- 
+
                     context.SaveChanges();
                 }
 
@@ -79,113 +78,127 @@ namespace Tests_Unitaires
         }
 
         [Fact]
-        public async Task ObtenirToutListAsyncReturnList()
+        public async Task Delete_Get_Return_NotFound_Id_Null()
         {
-            using (var dbTest = new TP_FusionVoxDbContext(SetUpInMemory("ObtenirToutListAsyncReturnList")))
-            {
-                IArtisteService artisteService = new ArtisteService(dbTest);
+            // Arrange
 
-                var result = await artisteService.ObtenirToutListAsync();
-                var artisteInResult = result.Count();
-                var artisteInBD = dbTest.Artistes.Count();
-                Assert.NotNull(result);
-                Assert.Equal(artisteInBD, artisteInResult);
-                Assert.IsType<List<Artiste>>(result);
-            }
-        }
-        [Fact]
-        public async Task ObtenirToutParIdAsync_ReturnList_Selon_GenreMusical()
-        {
-            using (var dbTest = new TP_FusionVoxDbContext(SetUpInMemory("ObtenirToutParIdAsync_ReturnList_Selon_GenreMusical")))
+            using (var dbTest = new TP_FusionVoxDbContext(SetUpInMemory("Delete_Get_Return_NotFound_Id_Null")))
             {
-                IArtisteService artisteService = new ArtisteService(dbTest);
-                var genreMusical = dbTest.genresMusicaux.First();
-                var nbArtisteGMFirst = dbTest.Artistes.Where(x => x.IdGenreMusical == genreMusical.Id).Count();
-                var result = await artisteService.ObtenirToutParIdAsync(genreMusical.Id);
-                var artisteInResult = result.Count();
-                Assert.NotNull(result);
-                Assert.Equal(nbArtisteGMFirst, artisteInResult);
-                Assert.IsType<List<Artiste>>(result);
-            }
-        }
-        [Fact]
-        public async Task ObtenirArtisteParNomAsync_ReturnArtiste()
-        {
-            using (var dbTest = new TP_FusionVoxDbContext(SetUpInMemory("ObtenirArtisteParNomAsync_ReturnArtiste")))
-            {
-                IArtisteService artisteService = new ArtisteService(dbTest);
-                var artisteAChercher = await dbTest.Artistes.LastOrDefaultAsync();
-                var nomArtisteInexistant = ""; 
-                var result1 = await artisteService.ObtenirArtisteParNomAsync(artisteAChercher.Nom);
-                var result2 = await artisteService.ObtenirArtisteParNomAsync(nomArtisteInexistant);
+                var controller = new AgentsController(dbTest);
 
-                Assert.NotNull(result1);
-                Assert.IsType<Artiste>(result1);
-                Assert.Equal(artisteAChercher, result1);
+                // Act
+                var result = await controller.Delete(null);
 
-                Assert.Null(result2);
+                // Assert
+                var viewResult = Assert.IsType<NotFoundResult>(result);
             }
         }
 
         [Fact]
-        public async Task FiltrageArtiste_ReturnListArtiste()
+        public async Task Delete_Get_Return_NotFound_Agent_Inexistent()
         {
-            using (var dbTest = new TP_FusionVoxDbContext(SetUpInMemory("FiltrageArtiste_ReturnListArtiste")))
+            // Arrange
+            using (var dbTest = new TP_FusionVoxDbContext(SetUpInMemory("Delete_Get_Return_NotFound_Agent_Inexistent")))
             {
-                IArtisteService artisteService = new ArtisteService(dbTest);
-                var criteres = new CritereRechercheViewModel
-                {
-                    EstGenreMusicalPOP = true,
-                    EstGenreMusicalHipHop = false,
-                    EstGenreMuscialElectro = false,
-                    ChoiPourPersonnageVedette = "Non",
-                    NbMinAbonnes = 100,
-                    NbMaxAbonnes = 1000,
-                    InputNomArtiste = "Adele"
-                };
+                var controller = new AgentsController(dbTest);
 
-                var result = artisteService.FiltrageArtiste(criteres);
-                Assert.NotNull(result);
-                Assert.IsAssignableFrom<IEnumerable<Artiste>>(result);
-                Assert.Equal(1, result.Count());
+                // Act  l'agent avec l'Id 99 n'existe pas dans Moq
+                var result = await controller.Delete(99);
 
+                // Assert
+                var viewResult = Assert.IsType<NotFoundResult>(result);
             }
         }
+
         [Fact]
-        public async Task ArtisteNomExist_RetunrTrueOrFalse()
+        public async Task Delete_Get_Return_ViewResult_Agent_Existe()
         {
-            using (var dbTest = new TP_FusionVoxDbContext(SetUpInMemory("ArtisteNomExist_RetunrTrueOrFalse")))
+            // Arrange
+            using (var dbTest = new TP_FusionVoxDbContext(SetUpInMemory("Delete_Get_Return_ViewResult_Agent_Existe")))
             {
-                IArtisteService artisteService = new ArtisteService(dbTest);
-                var nomArtiste_Vrai = "Lil Nas X";
-                var nomArtiste_Faux = "Alexei";
-                var resultV = artisteService.ArtisteNomExist(nomArtiste_Vrai);
-                var resultF = artisteService.ArtisteNomExist(nomArtiste_Faux);
-                Assert.NotNull(resultV);
-                Assert.NotNull(resultF);
-                Assert.IsType<bool>(resultV);
-                Assert.IsType<bool>(resultF);
-                Assert.Equal(true, resultV);
-                Assert.Equal(false, resultF);
+                var controller = new AgentsController(dbTest);
+                // Act
+                var result = await controller.Delete(1);
+
+                // Assert
+                var viewResult = Assert.IsType<ViewResult>(result);
             }
         }
+
+        
         [Fact]
-        public async Task ClearConcertsAsync_ReturnListVide()
+        public async Task DeleteConfirmed_Post_Return_RedirectToActionResult()
         {
-            using (var dbTest = new TP_FusionVoxDbContext(SetUpInMemory("ClearConcertsAsync_ReturnListVide")))
+            using (var dbTest = new TP_FusionVoxDbContext(SetUpInMemory("DeleteConfirmed_Post_Return_RedirectToActionResult")))
             {
-                IArtisteService artisteService = new ArtisteService(dbTest);
-                var artiste = await artisteService.ObtenirArtisteParNomAsync("NF");
-                artiste.ListConcerts = new List<Concert>
-                {
-                    dbTest.Concert.FirstOrDefault(),
-                    dbTest.Concert.LastOrDefault()
-                };
-                artisteService.ClearConcertsAsync(artiste.Id);
+                var controller = new AgentsController(dbTest);
+                
+                // Act
+                var result = await controller.DeleteConfirmed(1);
 
-                Assert.Empty(artiste.ListConcerts);
-
+                // Assert
+                var viewResult = Assert.IsType<RedirectToActionResult>(result);
+                Assert.Equal("Index", viewResult.ActionName);
             }
         }
-    } 
+
+        [Fact]
+        public async Task Edit_Post_ModelState_Valid_RedirectToAction()
+        {
+            // Arrange
+            using (var dbTest = new TP_FusionVoxDbContext(SetUpInMemory("Edit_Post_ModelState_Valid_RedirectToAction")))
+            {
+                var controller = new AgentsController(dbTest);
+                var agentId = 1;
+                // Recherche d'un artiste dans notre fausse DB
+                var validAgent = dbTest.Agent.Where(x=>x.Id == agentId).FirstOrDefault();
+                // Simuler la modification de certaines propriétés pour l'édition
+                validAgent.Nom = "test";
+                validAgent.SalaireMensuel = 9999;
+
+                // Act
+                //éditer un agent valide
+                var result = await controller.Edit(agentId, validAgent);
+
+                // Assert
+                //récupérer l'agent qui a été modifié pour les contrôles
+                var agentEdited = dbTest.Agent.Find(1);
+
+                // vérifier la redirection
+                var viewResult = Assert.IsType<RedirectToActionResult>(result);
+                Assert.Equal("Index", viewResult.ActionName);
+
+                // Je vérifie que les nouvelles propriétés ont bien été modifiées
+                Assert.Equal("test", agentEdited.Nom);
+                Assert.Equal(9999, agentEdited.SalaireMensuel);
+            }
+        }
+
+        [Fact]
+        public async Task Edit_Post_ModelState_InValid_returnView()
+        {
+            // Arrange
+            using (var dbTest = new TP_FusionVoxDbContext(SetUpInMemory("Edit_Post_ModelState_InValid_returnView")))
+            {
+                var controller = new AgentsController(dbTest);
+                var agentId = 1;
+                // Recherche d'un artiste dans notre fausse DB (il simulera un agent non valide)
+                var nonValidAgent = dbTest.Agent.Where(x => x.Id == agentId).FirstOrDefault();
+                controller.ModelState.AddModelError("Error", "Error");
+                // Act
+                //éditer un agent valide
+                var result = await controller.Edit(agentId, nonValidAgent);
+                // Assert
+                //récupérer l'agent qui a été returné vers la vue
+                var agentReturne = dbTest.Agent.Find(1);
+
+                // vérifier la redirection vers view
+                var viewResult = Assert.IsType<ViewResult>(result);
+
+                Assert.Equal(nonValidAgent, viewResult.Model);
+                Assert.Equal(nonValidAgent.Nom, agentReturne.Nom);
+            }
+        }
+
+    }
 }

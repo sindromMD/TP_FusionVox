@@ -13,7 +13,7 @@ using TP_FusionVox.ViewModels;
 
 namespace Tests_Unitaires
 {
-    public class TestUnitaire_ArtisteController_Views
+    public class TestUnitaireB_ArtisteController_Views
     {
 
         private Mock<IArtisteService> _artisteServiceMock;
@@ -28,7 +28,7 @@ namespace Tests_Unitaires
         private GenreMusical genreMusicalTest;
         private Agent _agentTest;
 
-        public TestUnitaire_ArtisteController_Views()
+        public TestUnitaireB_ArtisteController_Views()
         {
             _artisteServiceMock = new Mock<IArtisteService>();
             _agentServiceMock = new Mock<IAgentService>();
