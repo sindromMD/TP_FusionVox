@@ -68,7 +68,12 @@ namespace TP_FusionVox.Services
                                                  .FirstOrDefaultAsync(a => a.Id == artistId);
             if (artist != null)
             {
+                if(_dbContext.Entry(artist).State == EntityState.Detached)
+                {
+                    _dbContext.Attach(artist);
+                }
                 artist.ListConcerts.Clear();
+                _dbContext.ChangeTracker.DetectChanges();
                 await _dbContext.SaveChangesAsync();
             }
         }
