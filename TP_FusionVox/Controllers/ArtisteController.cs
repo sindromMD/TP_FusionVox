@@ -241,19 +241,19 @@ namespace TP_FusionVox.Controllers
                     else
                     {
                         //update
-                        #region Code Je n'arrive pas a éditer la relation "plus" à "plus"
-                        //await _serviceA.ClearConcertsAsync(artisteVM.Artiste.Id);
-                        //List<Concert> newConcerts = new List<Concert>();
-                        //foreach (var selectedConcertId in artisteVM.SelectedConcertIds)
-                        //{
-                        //    var concertToAdd = await _serviceC.ObtenirParIdAsync(selectedConcertId);
-                        //    if (concertToAdd != null)
-                        //    {
-                        //        newConcerts.Add(concertToAdd);
-                        //    }
-                        //}
+                        #region Modifier la liste des concerts
+                        await _serviceA.ClearConcertsAsync(artisteVM.Artiste.Id);
+                        List<Concert> newConcerts = new List<Concert>();
+                        foreach (var selectedConcertId in artisteVM.SelectedConcertIds)
+                        {
+                            var concertToAdd = await _serviceC.ObtenirParIdAsync(selectedConcertId);
+                            if (concertToAdd != null)
+                            {
+                                newConcerts.Add(concertToAdd);
+                            }
+                        }
 
-                        //artisteVM.Artiste.ListConcerts = newConcerts;
+                        artisteVM.Artiste.ListConcerts = newConcerts;
                         #endregion
 
                         artisteVM.Artiste.ImageURL = TelechargerImageEtObtenirURL(artisteVM.AncienneImage);

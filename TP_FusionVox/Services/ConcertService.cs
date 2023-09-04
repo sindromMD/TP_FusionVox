@@ -19,6 +19,5 @@ namespace TP_FusionVox.Services
             }).OrderBy(c => c.Text);
             return concertsList;
         }
-
     }
 }

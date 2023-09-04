@@ -24,8 +24,13 @@ namespace TP_FusionVox.Services
 
         public async Task EditerAsync(T entity)
         {
+
             if (_dbContext.Entry(entity).State == EntityState.Detached)
+            {
+                _dbContext.ChangeTracker.Clear();
                 _dbContext.Update<T>(entity);
+            }
+               
             else _dbContext.Entry(entity).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
         }
